@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="660" viewBox="0 0 1000 660" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#2B6CB0"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="660" rx="18" fill="#F7F8FA"/>
+  <text x="500" y="46" font-size="28" font-weight="bold" fill="#1F2329" text-anchor="middle">数据库：软件的记忆库</text>
+  <text x="500" y="74" font-size="16" fill="#646A73" text-anchor="middle">数据存成"表"：行 = 一条记录，列 = 一个字段，主键唯一、外键关联</text>
+
+  <!-- 中央：零件台账表 -->
+  <g>
+    <rect x="180" y="110" width="640" height="240" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <text x="500" y="138" font-size="17" font-weight="bold" fill="#1F2329" text-anchor="middle">零件表（Table = 一张台账表）</text>
+    <!-- 表头 -->
+    <g font-size="14" font-weight="bold" fill="#FFFFFF" text-anchor="middle">
+      <rect x="200" y="152" width="140" height="34" rx="6" fill="#2B6CB0"/><text x="270" y="174">零件号</text>
+      <rect x="340" y="152" width="140" height="34" rx="6" fill="#2B6CB0"/><text x="410" y="174">名称</text>
+      <rect x="480" y="152" width="140" height="34" rx="6" fill="#2B6CB0"/><text x="550" y="174">材质</text>
+      <rect x="620" y="152" width="180" height="34" rx="6" fill="#2B6CB0"/><text x="710" y="174">车间编号</text>
+    </g>
+    <!-- 数据行 -->
+    <g font-size="14" fill="#1F2329" text-anchor="middle">
+      <rect x="200" y="186" width="140" height="34" rx="0" fill="#F8F9FB"/><text x="270" y="208">P-1001</text>
+      <rect x="340" y="186" width="140" height="34" rx="0" fill="#F8F9FB"/><text x="410" y="208">主轴</text>
+      <rect x="480" y="186" width="140" height="34" rx="0" fill="#F8F9FB"/><text x="550" y="208">45钢</text>
+      <rect x="620" y="186" width="180" height="34" rx="0" fill="#F8F9FB"/><text x="710" y="208">W-01</text>
+      <rect x="200" y="220" width="140" height="34" rx="0" fill="#FFFFFF"/><text x="270" y="242">P-1002</text>
+      <rect x="340" y="220" width="140" height="34" rx="0" fill="#FFFFFF"/><text x="410" y="242">轴承座</text>
+      <rect x="480" y="220" width="140" height="34" rx="0" fill="#FFFFFF"/><text x="550" y="242">HT200</text>
+      <rect x="620" y="220" width="180" height="34" rx="0" fill="#FFFFFF"/><text x="710" y="242">W-01</text>
+      <rect x="200" y="254" width="140" height="34" rx="0" fill="#F8F9FB"/><text x="270" y="276">P-1003</text>
+      <rect x="340" y="254" width="140" height="34" rx="0" fill="#F8F9FB"/><text x="410" y="276">齿轮</text>
+      <rect x="480" y="254" width="140" height="34" rx="0" fill="#F8F9FB"/><text x="550" y="276">20CrMnTi</text>
+      <rect x="620" y="254" width="180" height="34" rx="0" fill="#F8F9FB"/><text x="710" y="276">W-02</text>
+    </g>
+    <!-- 行与列标注 -->
+    <line x1="150" y1="203" x2="196" y2="203" stroke="#FF7D00" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="118" y="207" font-size="13" fill="#FF7D00" text-anchor="end">行=一条记录</text>
+    <line x1="300" y1="330" x2="300" y2="292" stroke="#34C07C" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="300" y="348" font-size="13" fill="#34C07C" text-anchor="middle">列=一个字段</text>
+    <text x="270" y="160" font-size="12" fill="#FF7D00" font-weight="bold">主键（唯一）</text>
+    <text x="710" y="160" font-size="12" fill="#2B6CB0" font-weight="bold">外键→车间表</text>
+  </g>
+
+  <!-- 下方三个机制 -->
+  <g>
+    <rect x="60" y="380" width="280" height="110" rx="12" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="82" y="410" font-size="15" font-weight="bold" fill="#1F2329">SQL 查询语言</text>
+    <text x="82" y="436" font-size="13" fill="#646A73">SELECT 零件号, 名称 FROM 零件表</text>
+    <text x="82" y="458" font-size="13" fill="#646A73">WHERE 材质 LIKE '%45钢%';</text>
+    <text x="82" y="480" font-size="12" fill="#8A9099">像对着台账发指令</text>
+    <rect x="360" y="380" width="280" height="110" rx="12" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="382" y="410" font-size="15" font-weight="bold" fill="#1F2329">索引 Index</text>
+    <text x="382" y="436" font-size="13" fill="#646A73">为列建的"查账目录"</text>
+    <text x="382" y="458" font-size="13" fill="#646A73">按编号直接定位，不用逐行翻</text>
+    <text x="382" y="480" font-size="12" fill="#8A9099">台账目录页：加速查询</text>
+    <rect x="660" y="380" width="280" height="110" rx="12" fill="#FFFFFF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="682" y="410" font-size="15" font-weight="bold" fill="#1F2329">事务 Transaction</text>
+    <text x="682" y="436" font-size="13" fill="#646A73">一组操作打包：全部成功</text>
+    <text x="682" y="458" font-size="13" fill="#646A73">或全部回滚，不留一半</text>
+    <text x="682" y="480" font-size="12" fill="#8A9099">扣钱+加钱，一步失败全撤销</text>
+  </g>
+
+  <!-- 底部：其他类型 -->
+  <rect x="60" y="510" width="880" height="56" rx="12" fill="#E8F6EF" stroke="#34C07C" stroke-width="1.5"/>
+  <text x="90" y="538" font-size="14" font-weight="bold" fill="#1F2329">不止关系型：NoSQL（文档/键值，灵活但弱约束）· 向量数据库（存 Embedding，供 AI 相似检索，第 7 章用）</text>
+  <text x="90" y="558" font-size="12" fill="#646A73">选型口诀：结构固定要一致性 → 关系型；数据灵活、要 AI 检索 → 向量库</text>
+
+  <text x="500" y="600" font-size="14" fill="#646A73" text-anchor="middle">图 2-7 数据库：表、索引、事务（示意）</text>
+</svg>

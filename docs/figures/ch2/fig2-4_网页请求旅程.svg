@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#2B6CB0"/></marker>
+    <marker id="arrowOr" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#FF7D00"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="560" rx="18" fill="#F7F8FA"/>
+  <text x="500" y="46" font-size="28" font-weight="bold" fill="#1F2329" text-anchor="middle">一次网页请求的旅程</text>
+  <text x="500" y="74" font-size="16" fill="#646A73" text-anchor="middle">你在浏览器里敲下网址，到页面显示出来，中间发生的事</text>
+
+  <!-- 角色泳道：4个角色块 -->
+  <g font-size="16" fill="#FFFFFF" text-anchor="middle">
+    <rect x="60" y="100" width="180" height="56" rx="12" fill="#2B6CB0"/><text x="150" y="126" font-weight="bold">浏览器</text><text x="150" y="146" font-size="13">参观窗口</text>
+    <rect x="280" y="100" width="180" height="56" rx="12" fill="#FF7D00"/><text x="370" y="126" font-weight="bold">DNS 查号台</text><text x="370" y="146" font-size="13">域名 → IP</text>
+    <rect x="500" y="100" width="180" height="56" rx="12" fill="#2B6CB0"/><text x="590" y="126" font-weight="bold">服务器</text><text x="590" y="146" font-size="13">24h 核心设备</text>
+    <rect x="720" y="100" width="180" height="56" rx="12" fill="#34C07C"/><text x="810" y="126" font-weight="bold">数据库</text><text x="810" y="146" font-size="13">电子台账</text>
+  </g>
+
+  <!-- 步骤节点与箭头 -->
+  <g font-size="15" fill="#1F2329">
+    <!-- 步骤1 -->
+    <rect x="60" y="220" width="180" height="52" rx="10" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <circle cx="86" cy="246" r="13" fill="#2B6CB0"/><text x="86" y="251" font-size="14" fill="#FFFFFF" text-anchor="middle" font-weight="bold">1</text>
+    <text x="110" y="240" font-size="14" font-weight="bold">输入网址</text>
+    <text x="110" y="260" font-size="13" fill="#646A73">www.example.com</text>
+    <!-- 步骤2：浏览器 -> DNS -->
+    <line x1="240" y1="246" x2="276" y2="246" stroke="#FF7D00" stroke-width="3" marker-end="url(#arrowOr)"/>
+    <text x="258" y="232" font-size="13" fill="#FF7D00" text-anchor="middle">② 问</text>
+    <rect x="280" y="220" width="180" height="52" rx="10" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/>
+    <circle cx="306" cy="246" r="13" fill="#FF7D00"/><text x="306" y="251" font-size="14" fill="#FFFFFF" text-anchor="middle" font-weight="bold">2</text>
+    <text x="330" y="240" font-size="14" font-weight="bold">域名翻译</text>
+    <text x="330" y="260" font-size="13" fill="#646A73">"公司门牌号是多少？"</text>
+    <!-- 步骤3：DNS -> 浏览器（返回） -->
+    <line x1="370" y1="272" x2="250" y2="330" stroke="#FF7D00" stroke-width="3" marker-end="url(#arrowOr)"/>
+    <text x="280" y="312" font-size="13" fill="#FF7D00">③ 返回 IP</text>
+    <!-- 步骤4：浏览器 -> 服务器 -->
+    <rect x="60" y="310" width="180" height="52" rx="10" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <circle cx="86" cy="336" r="13" fill="#2B6CB0"/><text x="86" y="341" font-size="14" fill="#FFFFFF" text-anchor="middle" font-weight="bold">4</text>
+    <text x="110" y="330" font-size="14" font-weight="bold">发 HTTP 请求</text>
+    <text x="110" y="350" font-size="13" fill="#646A73">递一张"标准单据"</text>
+    <line x1="240" y1="336" x2="496" y2="336" stroke="#2B6CB0" stroke-width="3" marker-end="url(#arrow)"/>
+    <!-- 步骤5：服务器 -> 数据库 -->
+    <rect x="500" y="310" width="180" height="52" rx="10" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <circle cx="526" cy="336" r="13" fill="#2B6CB0"/><text x="526" y="341" font-size="14" fill="#FFFFFF" text-anchor="middle" font-weight="bold">5</text>
+    <text x="550" y="330" font-size="14" font-weight="bold">查数据</text>
+    <text x="550" y="350" font-size="13" fill="#646A73">用 SQL 问台账</text>
+    <line x1="680" y1="336" x2="716" y2="336" stroke="#34C07C" stroke-width="3" marker-end="url(#arrow)"/>
+    <!-- 步骤6：数据库 -> 服务器 -->
+    <rect x="720" y="310" width="180" height="52" rx="10" fill="#FFFFFF" stroke="#34C07C" stroke-width="1.5"/>
+    <circle cx="746" cy="336" r="13" fill="#34C07C"/><text x="746" y="341" font-size="14" fill="#FFFFFF" text-anchor="middle" font-weight="bold">6</text>
+    <text x="770" y="330" font-size="14" font-weight="bold">返回数据</text>
+    <text x="770" y="350" font-size="13" fill="#646A73">找到内容交回去</text>
+    <!-- 步骤7：服务器 -> 浏览器 -->
+    <line x1="810" y1="310" x2="150" y2="412" stroke="#2B6CB0" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="470" y="410" font-size="13" fill="#2B6CB0">⑦ 返回页面内容</text>
+    <rect x="60" y="400" width="180" height="52" rx="10" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="1.5"/>
+    <circle cx="86" cy="426" r="13" fill="#2B6CB0"/><text x="86" y="431" font-size="14" fill="#FFFFFF" text-anchor="middle" font-weight="bold">7</text>
+    <text x="110" y="420" font-size="14" font-weight="bold">渲染显示</text>
+    <text x="110" y="440" font-size="13" fill="#646A73">画成你看到的页面</text>
+  </g>
+
+  <!-- 底部要点 -->
+  <rect x="60" y="480" width="880" height="44" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="500" y="508" font-size="15" fill="#1F2329" text-anchor="middle">要点：① 浏览器先找"查号台"（DNS）② 再递"标准单据"（HTTP）③ 服务器查"台账"（数据库）④ 最后画成页面（前端渲染）</text>
+  <text x="500" y="540" font-size="14" fill="#646A73" text-anchor="middle">图 2-4 一次网页请求的旅程（示意）</text>
+</svg>

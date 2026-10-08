@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect x="0" y="0" width="1000" height="560" rx="18" fill="#F7F8FA"/>
+  <text x="500" y="46" font-size="28" font-weight="bold" fill="#1F2329" text-anchor="middle">UI 与 UX：好看与好用</text>
+  <text x="500" y="74" font-size="16" fill="#646A73" text-anchor="middle">UI 是 UX 的一部分 · UI 决定第一印象，UX 决定是否用下去</text>
+
+  <!-- 大圆：UX -->
+  <circle cx="500" cy="290" r="175" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="3"/>
+  <text x="500" y="150" font-size="22" font-weight="bold" fill="#2B6CB0" text-anchor="middle">UX 用户体验</text>
+  <text x="500" y="176" font-size="14" fill="#2B6CB0" text-anchor="middle">回答"界面好不好用"</text>
+
+  <!-- UX 三个要素（大圆内、UI 圆外） -->
+  <g font-size="14" fill="#1F2329" text-anchor="middle">
+    <rect x="330" y="330" width="120" height="52" rx="10" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="390" y="352" font-weight="bold">操作顺手</text>
+    <text x="390" y="372" font-size="12" fill="#646A73">不别扭、不绕路</text>
+    <rect x="460" y="360" width="120" height="52" rx="10" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="520" y="382" font-weight="bold">少误操作</text>
+    <text x="520" y="402" font-size="12" fill="#646A73">急停按钮别藏角落</text>
+    <rect x="590" y="330" width="120" height="52" rx="10" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="650" y="352" font-weight="bold">上手快</text>
+    <text x="650" y="372" font-size="12" fill="#646A73">新用户几分钟会用</text>
+  </g>
+
+  <!-- 内圆：UI -->
+  <circle cx="500" cy="270" r="88" fill="#FFF1E5" stroke="#FF7D00" stroke-width="3"/>
+  <text x="500" y="250" font-size="19" font-weight="bold" fill="#FF7D00" text-anchor="middle">UI 用户界面</text>
+  <text x="500" y="272" font-size="13" fill="#FF7D00" text-anchor="middle">回答"界面长什么样"</text>
+  <g font-size="13" fill="#1F2329" text-anchor="middle">
+    <text x="500" y="300">布局 · 颜色 · 按钮 · 图标</text>
+  </g>
+
+  <!-- 底部两条判断 -->
+  <rect x="60" y="480" width="880" height="50" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="500" y="511" font-size="15" fill="#1F2329" text-anchor="middle">工程师原则：先保证好用（UX），再追求好看（UI）——你做的 AI 工具最终要给别人用</text>
+
+  <text x="500" y="546" font-size="14" fill="#646A73" text-anchor="middle">图 2-6 UI 与 UX 的关系（示意）</text>
+</svg>

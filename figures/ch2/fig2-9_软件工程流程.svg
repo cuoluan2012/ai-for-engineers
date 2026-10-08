@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#2B6CB0"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="500" rx="18" fill="#F7F8FA"/>
+  <text x="500" y="46" font-size="28" font-weight="bold" fill="#1F2329" text-anchor="middle">软件是怎么造出来的：工程流程全景</text>
+  <text x="500" y="74" font-size="16" fill="#646A73" text-anchor="middle">六个阶段，和你做产品一样：需求→设计→开发→测试→上线→迭代</text>
+
+  <!-- 六个阶段卡片（横排） -->
+  <g font-size="16" fill="#FFFFFF" text-anchor="middle">
+    <rect x="60" y="120" width="128" height="70" rx="12" fill="#2B6CB0"/>
+    <text x="124" y="152" font-weight="bold">需求</text>
+    <text x="124" y="174" font-size="13">要解决什么问题</text>
+    <rect x="212" y="120" width="128" height="70" rx="12" fill="#2B6CB0"/>
+    <text x="276" y="152" font-weight="bold">设计</text>
+    <text x="276" y="174" font-size="13">怎么实现</text>
+    <rect x="364" y="120" width="128" height="70" rx="12" fill="#2B6CB0"/>
+    <text x="428" y="152" font-weight="bold">开发</text>
+    <text x="428" y="174" font-size="13">写代码</text>
+    <rect x="516" y="120" width="128" height="70" rx="12" fill="#FF7D00"/>
+    <text x="580" y="152" font-weight="bold">测试</text>
+    <text x="580" y="174" font-size="13">验证质量</text>
+    <rect x="668" y="120" width="128" height="70" rx="12" fill="#34C07C"/>
+    <text x="732" y="152" font-weight="bold">上线</text>
+    <text x="732" y="174" font-size="13">部署投产</text>
+    <rect x="820" y="120" width="120" height="70" rx="12" fill="#34C07C"/>
+    <text x="880" y="152" font-weight="bold">迭代</text>
+    <text x="880" y="174" font-size="13">持续改进</text>
+  </g>
+
+  <!-- 阶段间箭头 -->
+  <g stroke="#2B6CB0" stroke-width="3" marker-end="url(#arrow)">
+    <line x1="192" y1="155" x2="208" y2="155"/>
+    <line x1="344" y1="155" x2="360" y2="155"/>
+    <line x1="496" y1="155" x2="512" y2="155"/>
+    <line x1="648" y1="155" x2="664" y2="155"/>
+    <line x1="800" y1="155" x2="816" y2="155"/>
+  </g>
+
+  <!-- 迭代回环 -->
+  <path d="M880,194 Q880,236 840,236 L150,236 Q120,236 120,236" stroke="#34C07C" stroke-width="3" fill="none" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <text x="500" y="228" font-size="14" fill="#34C07C" text-anchor="middle">收集反馈，回到"需求"，循环改进（像 PDCA）</text>
+
+  <!-- 下方：每个阶段的产物 -->
+  <g font-size="15" fill="#1F2329" text-anchor="middle">
+    <rect x="60" y="268" width="128" height="64" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="124" y="294" font-size="14" font-weight="bold">PRD</text>
+    <text x="124" y="314" font-size="13" fill="#646A73">设计任务书</text>
+    <rect x="212" y="268" width="128" height="64" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="276" y="294" font-size="14" font-weight="bold">架构图</text>
+    <text x="276" y="314" font-size="13" fill="#646A73">总体方案</text>
+    <rect x="364" y="268" width="128" height="64" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="428" y="294" font-size="14" font-weight="bold">代码</text>
+    <text x="428" y="314" font-size="13" fill="#646A73">制造装配</text>
+    <rect x="516" y="268" width="128" height="64" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="580" y="294" font-size="14" font-weight="bold">测试报告</text>
+    <text x="580" y="314" font-size="13" fill="#646A73">质检 / 试验</text>
+    <rect x="668" y="268" width="128" height="64" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="732" y="294" font-size="14" font-weight="bold">运行服务</text>
+    <text x="732" y="314" font-size="13" fill="#646A73">交付投产</text>
+    <rect x="820" y="268" width="120" height="64" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="880" y="294" font-size="14" font-weight="bold">新版本</text>
+    <text x="880" y="314" font-size="13" fill="#646A73">持续改进</text>
+  </g>
+
+  <!-- 底部两个工程概念 -->
+  <g font-size="15">
+    <rect x="60" y="368" width="424" height="62" rx="12" fill="#FFF1E5" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="84" y="396" font-size="15" font-weight="bold" fill="#1F2329">MVP 最小可行产品</text>
+    <text x="84" y="418" font-size="13" fill="#646A73">先做一台能加工一件零件的验证机，再考虑量产线</text>
+    <rect x="516" y="368" width="424" height="62" rx="12" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="540" y="396" font-size="15" font-weight="bold" fill="#1F2329">Git 版本管理</text>
+    <text x="540" y="418" font-size="13" fill="#646A73">代码的图纸版本管理：A0 / A1 / 定版，可回退、可协作</text>
+  </g>
+
+  <text x="500" y="474" font-size="14" fill="#646A73" text-anchor="middle">图 2-9 软件工程流程全景（示意）</text>
+</svg>

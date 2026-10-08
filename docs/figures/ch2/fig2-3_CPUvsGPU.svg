@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#2B6CB0"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="640" rx="18" fill="#F7F8FA"/>
+  <text x="500" y="46" font-size="28" font-weight="bold" fill="#1F2329" text-anchor="middle">CPU vs GPU：串行 vs 并行</text>
+  <text x="500" y="74" font-size="16" fill="#646A73" text-anchor="middle">CPU 核少但强，串行处理复杂任务 · GPU 核多但弱，并行处理海量简单计算</text>
+
+  <!-- 左侧：CPU -->
+  <g>
+    <rect x="60" y="110" width="420" height="300" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <rect x="60" y="110" width="420" height="52" rx="14" fill="#E8F0FA"/>
+    <text x="270" y="143" font-size="18" font-weight="bold" fill="#2B6CB0" text-anchor="middle">CPU 中央处理器</text>
+    <!-- 4 个强核 -->
+    <g font-size="15" fill="#FFFFFF" text-anchor="middle">
+      <rect x="100" y="180" width="76" height="76" rx="10" fill="#2B6CB0"/><text x="138" y="217">核1</text>
+      <rect x="192" y="180" width="76" height="76" rx="10" fill="#2B6CB0"/><text x="230" y="217">核2</text>
+      <rect x="284" y="180" width="76" height="76" rx="10" fill="#2B6CB0"/><text x="322" y="217">核3</text>
+      <rect x="376" y="180" width="76" height="76" rx="10" fill="#2B6CB0"/><text x="414" y="217">核4</text>
+    </g>
+    <!-- 串行队列 -->
+    <rect x="100" y="276" width="352" height="34" rx="8" fill="#F1F3F5"/>
+    <text x="276" y="298" font-size="14" fill="#646A73" text-anchor="middle">任务1 → 任务2 → 任务3 → ……（逐个来）</text>
+    <text x="276" y="360" font-size="14" fill="#646A73" text-anchor="middle">少量强核 · 适合复杂逻辑 · 单核算力强</text>
+    <text x="276" y="382" font-size="13" fill="#8A9099" text-anchor="middle">像全能老师傅：一次专心干一件事</text>
+  </g>
+
+  <!-- 右侧：GPU -->
+  <g>
+    <rect x="520" y="110" width="420" height="300" rx="14" fill="#FFFFFF" stroke="#FF7D00" stroke-width="2"/>
+    <rect x="520" y="110" width="420" height="52" rx="14" fill="#FFF1E5"/>
+    <text x="730" y="143" font-size="18" font-weight="bold" fill="#FF7D00" text-anchor="middle">GPU 图形处理器</text>
+    <!-- 一排小计算单元 -->
+    <g font-size="12" fill="#FFFFFF" text-anchor="middle">
+      <rect x="545" y="180" width="52" height="52" rx="8" fill="#FF7D00"/><text x="571" y="210">单元</text>
+      <rect x="603" y="180" width="52" height="52" rx="8" fill="#FF7D00"/><text x="629" y="210">单元</text>
+      <rect x="661" y="180" width="52" height="52" rx="8" fill="#FF7D00"/><text x="687" y="210">单元</text>
+      <rect x="719" y="180" width="52" height="52" rx="8" fill="#FF7D00"/><text x="745" y="210">单元</text>
+      <rect x="777" y="180" width="52" height="52" rx="8" fill="#FF7D00"/><text x="803" y="210">单元</text>
+      <rect x="835" y="180" width="52" height="52" rx="8" fill="#FF7D00"/><text x="861" y="210">单元</text>
+      <rect x="545" y="240" width="52" height="52" rx="8" fill="#FF9E45"/><text x="571" y="270">单元</text>
+      <rect x="603" y="240" width="52" height="52" rx="8" fill="#FF9E45"/><text x="629" y="270">单元</text>
+      <rect x="661" y="240" width="52" height="52" rx="8" fill="#FF9E45"/><text x="687" y="270">单元</text>
+      <rect x="719" y="240" width="52" height="52" rx="8" fill="#FF9E45"/><text x="745" y="270">单元</text>
+      <rect x="777" y="240" width="52" height="52" rx="8" fill="#FF9E45"/><text x="803" y="270">单元</text>
+      <rect x="835" y="240" width="52" height="52" rx="8" fill="#FF9E45"/><text x="861" y="270">单元</text>
+    </g>
+    <rect x="545" y="308" width="342" height="2" fill="#FF7D00" opacity="0.4"/>
+    <text x="716" y="340" font-size="14" fill="#646A73" text-anchor="middle">数千计算单元 · 同时处理海量简单计算</text>
+    <text x="716" y="362" font-size="13" fill="#8A9099" text-anchor="middle">像几千工位的流水线：每工位一步，整线同时出活</text>
+  </g>
+
+  <!-- 中间箭头 -->
+  <line x1="484" y1="260" x2="516" y2="260" stroke="#2B6CB0" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- 底部结论 -->
+  <g>
+    <rect x="60" y="430" width="880" height="100" rx="14" fill="#FFFFFF" stroke="#34C07C" stroke-width="2"/>
+    <text x="90" y="462" font-size="16" font-weight="bold" fill="#34C07C">为什么 AI 训练离不开 GPU</text>
+    <text x="90" y="490" font-size="14" fill="#1F2329">神经网络训练的本质 = 大量矩阵乘法：几百万个数字成批相乘相加</text>
+    <text x="90" y="512" font-size="14" fill="#646A73">这种运算"简单但量极大"，天生适合 GPU 的并行结构；一块消费级 GPU 浮点算力通常为同期 CPU 的几十倍</text>
+    <rect x="560" y="446" width="360" height="66" rx="10" fill="#E8F6EF"/>
+    <text x="580" y="470" font-size="14" font-weight="bold" fill="#1F2329">显存（VRAM）决定模型规模</text>
+    <text x="580" y="494" font-size="13" fill="#646A73">模型参数与训练数据都要装进显存</text>
+  </g>
+
+  <text x="500" y="570" font-size="14" fill="#646A73" text-anchor="middle">图 2-3 CPU vs GPU：串行 vs 并行（示意）</text>
+</svg>

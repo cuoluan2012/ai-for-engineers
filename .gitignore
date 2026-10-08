@@ -1,0 +1,27 @@
+# Site
+site/
+_site/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+*.aux
+*.log
+*.out
+build/
+dist/
+
+# PDF artifacts（通过 GitHub Releases 发布，不进仓库）
+artifacts/
+
+# IDE
+.idea/
+.vscode/

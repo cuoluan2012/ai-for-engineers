@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="900" viewBox="0 0 1000 900" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#646A73"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="900" rx="18" fill="#F7F8FA"/>
+  <text x="500" y="52" font-size="30" font-weight="bold" fill="#1F2329" text-anchor="middle">计算机世界地图：学 AI 前必懂的基础课</text>
+  <text x="500" y="80" font-size="16" fill="#646A73" text-anchor="middle">六层结构，从底到顶；每个概念问自己：它在哪一层、解决什么问题</text>
+
+  <!-- L6 软件工程 -->
+  <g>
+    <rect x="70" y="120" width="700" height="84" rx="14" fill="#E8F6EF" stroke="#34C07C" stroke-width="2"/>
+    <rect x="56" y="118" width="80" height="34" rx="10" fill="#34C07C"/>
+    <text x="96" y="140" font-size="16" fill="#FFFFFF" font-weight="bold" text-anchor="middle">L6 工程</text>
+    <text x="160" y="146" font-size="16" fill="#1F2329" font-weight="bold">软件工程流程</text>
+    <text x="160" y="176" font-size="14" fill="#646A73">需求→设计→开发→测试→上线→迭代 · PRD / MVP / Git / CI-CD</text>
+    <g font-size="13" fill="#FFFFFF" text-anchor="middle">
+      <rect x="690" y="134" width="70" height="28" rx="8" fill="#34C07C"/><text x="725" y="153">流程</text>
+    </g>
+  </g>
+
+  <!-- L5 容器与部署 -->
+  <g>
+    <rect x="70" y="220" width="700" height="84" rx="14" fill="#FFF1E5" stroke="#FF7D00" stroke-width="2"/>
+    <rect x="56" y="218" width="80" height="34" rx="10" fill="#FF7D00"/>
+    <text x="96" y="240" font-size="16" fill="#FFFFFF" font-weight="bold" text-anchor="middle">L5 部署</text>
+    <text x="160" y="246" font-size="16" fill="#1F2329" font-weight="bold">容器与部署</text>
+    <text x="160" y="276" font-size="14" fill="#646A73">云服务器（IaaS/PaaS/SaaS）· Docker（镜像/容器）· Kubernetes（编排）</text>
+    <g font-size="13" fill="#FFFFFF" text-anchor="middle">
+      <rect x="690" y="234" width="70" height="28" rx="8" fill="#FF7D00"/><text x="725" y="253">Docker</text>
+    </g>
+  </g>
+
+  <!-- L4 软件应用 -->
+  <g>
+    <rect x="70" y="320" width="700" height="84" rx="14" fill="#E8F6EF" stroke="#34C07C" stroke-width="2"/>
+    <rect x="56" y="318" width="80" height="34" rx="10" fill="#34C07C"/>
+    <text x="96" y="340" font-size="16" fill="#FFFFFF" font-weight="bold" text-anchor="middle">L4 应用</text>
+    <text x="160" y="346" font-size="16" fill="#1F2329" font-weight="bold">软件应用</text>
+    <text x="160" y="376" font-size="14" fill="#646A73">前端/后端/API/JSON · 数据库（SQL/事务/索引）· 架构（分层/微服务）</text>
+    <g font-size="13" fill="#FFFFFF" text-anchor="middle">
+      <rect x="690" y="334" width="70" height="28" rx="8" fill="#34C07C"/><text x="725" y="353">API</text>
+    </g>
+  </g>
+
+  <!-- L3 服务器与网络 -->
+  <g>
+    <rect x="70" y="420" width="700" height="84" rx="14" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="2"/>
+    <rect x="56" y="418" width="80" height="34" rx="10" fill="#2B6CB0"/>
+    <text x="96" y="440" font-size="16" fill="#FFFFFF" font-weight="bold" text-anchor="middle">L3 网络</text>
+    <text x="160" y="446" font-size="16" fill="#1F2329" font-weight="bold">服务器与网络</text>
+    <text x="160" y="476" font-size="14" fill="#646A73">服务器/集群 · IP/端口/DNS · HTTP（方法/状态码）· SSH</text>
+    <g font-size="13" fill="#FFFFFF" text-anchor="middle">
+      <rect x="690" y="434" width="70" height="28" rx="8" fill="#2B6CB0"/><text x="725" y="453">HTTP</text>
+    </g>
+  </g>
+
+  <!-- L2 Linux 与命令行 -->
+  <g>
+    <rect x="70" y="520" width="700" height="84" rx="14" fill="#FFF1E5" stroke="#FF7D00" stroke-width="2"/>
+    <rect x="56" y="518" width="80" height="34" rx="10" fill="#FF7D00"/>
+    <text x="96" y="540" font-size="16" fill="#FFFFFF" font-weight="bold" text-anchor="middle">L2 Linux</text>
+    <text x="160" y="546" font-size="16" fill="#1F2329" font-weight="bold">Linux 与命令行</text>
+    <text x="160" y="576" font-size="14" fill="#646A73">终端/Shell · 文件系统 · 命令集 · 环境变量/PATH · 包管理器</text>
+    <g font-size="13" fill="#1F2329" text-anchor="start">
+      <rect x="690" y="532" width="70" height="28" rx="8" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/><text x="725" y="551" fill="#FF7D00" text-anchor="middle">$ ls</text>
+    </g>
+  </g>
+
+  <!-- L1 硬件 -->
+  <g>
+    <rect x="70" y="620" width="700" height="84" rx="14" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="2"/>
+    <rect x="56" y="618" width="80" height="34" rx="10" fill="#2B6CB0"/>
+    <text x="96" y="640" font-size="16" fill="#FFFFFF" font-weight="bold" text-anchor="middle">L1 硬件</text>
+    <text x="160" y="646" font-size="16" fill="#1F2329" font-weight="bold">硬件与操作系统</text>
+    <text x="160" y="676" font-size="14" fill="#646A73">CPU（指令/时钟）· 内存/硬盘 · GPU（并行/显存）· 操作系统（进程/权限）</text>
+    <g font-size="13" fill="#FFFFFF" text-anchor="middle">
+      <rect x="690" y="632" width="70" height="28" rx="8" fill="#FF7D00"/><text x="725" y="651">GPU</text>
+    </g>
+  </g>
+
+  <!-- 左侧升序箭头 -->
+  <line x1="44" y1="720" x2="44" y2="140" stroke="#646A73" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="32" y="430" font-size="15" fill="#646A73" transform="rotate(-90,32,430)" text-anchor="middle">从底层往上学</text>
+
+  <!-- 右侧：老张卡通小人 -->
+  <g transform="translate(880,330)">
+    <rect x="20" y="120" width="80" height="95" rx="14" fill="#2B6CB0"/>
+    <rect x="30" y="150" width="30" height="20" rx="4" fill="#FFFFFF" opacity="0.85"/>
+    <path d="M15,52 Q15,20 60,20 Q105,20 105,52 Z" fill="#FF7D00"/>
+    <rect x="8" y="48" width="104" height="12" rx="6" fill="#FF7D00"/>
+    <circle cx="60" cy="66" r="26" fill="#F6C9A0"/>
+    <circle cx="50" cy="62" r="4" fill="#1F2329"/>
+    <circle cx="70" cy="62" r="4" fill="#1F2329"/>
+    <path d="M50,76 Q60,84 70,76" stroke="#1F2329" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <rect x="-2" y="130" width="22" height="58" rx="10" fill="#2B6CB0" transform="rotate(-12,10,130)"/>
+    <rect x="100" y="130" width="22" height="58" rx="10" fill="#2B6CB0" transform="rotate(12,111,130)"/>
+    <circle cx="-4" cy="188" r="9" fill="#F6C9A0"/>
+    <circle cx="124" cy="188" r="9" fill="#F6C9A0"/>
+    <rect x="28" y="212" width="26" height="52" rx="8" fill="#334155"/>
+    <rect x="66" y="212" width="26" height="52" rx="8" fill="#334155"/>
+  </g>
+  <text x="940" y="668" font-size="15" fill="#1F2329" text-anchor="middle">老张</text>
+
+  <!-- 图注 -->
+  <rect x="70" y="830" width="860" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="500" y="856" font-size="15" fill="#646A73" text-anchor="middle">图 2-1 计算机世界地图：学 AI 前必懂的基础课（示意）</text>
+</svg>

@@ -1,0 +1,57 @@
+site_name: AI for Engineers · 从工程师到 AI 工程师
+site_description: 理工科零基础学习指南 —— 面向"有工作经验、零计算机背景"的理工科工程师
+site_url: https://cuoluan2012.github.io/ai-for-engineers/
+repo_url: https://github.com/cuoluan2012/ai-for-engineers
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: default
+      primary: blue
+      accent: orange
+  font:
+    text: Noto Sans SC
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.integrate
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tasklist
+
+nav:
+  - 首页: index.md
+  - 第 1 章 为什么工程师要拥抱 AI: ch1-为什么工程师要拥抱AI.md
+  - 第 2 章 计算机通识（样章）: ch2-计算机通识.md
+  - 第 3 章 Python 第一课: ch3-Python第一课.md
+  - 第 4 章 机器学习: ch4-机器学习.md
+  - 第 5 章 深度学习: ch5-深度学习.md
+  - 第 6 章 大语言模型: ch6-大语言模型.md
+  - 第 7 章 RAG 知识库: ch7-RAG知识库.md
+  - 第 8 章 AI 智能体: ch8-AI智能体.md
+  - 第 9 章 微调与私有化部署: ch9-微调与部署.md
+  - 第 10 章 工业数据与落地: ch10-工业落地.md
+  - 第 11 章 从学到做: ch11-从学到做.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cuoluan2012/ai-for-engineers
+
+copyright: 本作品采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议

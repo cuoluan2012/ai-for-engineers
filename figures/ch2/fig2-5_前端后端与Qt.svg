@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#FF7D00"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="640" rx="18" fill="#F7F8FA"/>
+  <text x="500" y="46" font-size="28" font-weight="bold" fill="#1F2329" text-anchor="middle">前端 = 操作面板，后端 = 控制柜</text>
+  <text x="500" y="74" font-size="16" fill="#646A73" text-anchor="middle">中间用"标准接口"（API）对接——就像法兰</text>
+
+  <!-- 左侧：前端操作面板 -->
+  <g>
+    <rect x="60" y="110" width="330" height="300" rx="16" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <rect x="60" y="110" width="330" height="46" rx="16" fill="#2B6CB0"/>
+    <text x="225" y="140" font-size="17" fill="#FFFFFF" font-weight="bold" text-anchor="middle">前端 Frontend · 操作面板</text>
+    <!-- 面板内容 -->
+    <g font-size="14" fill="#1F2329" text-anchor="middle">
+      <rect x="90" y="180" width="120" height="54" rx="10" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="1.5"/>
+      <text x="150" y="204" font-weight="bold">指示灯</text>
+      <text x="150" y="224" font-size="13" fill="#646A73">显示状态</text>
+      <rect x="240" y="180" width="120" height="54" rx="10" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="1.5"/>
+      <text x="300" y="204" font-weight="bold">按钮</text>
+      <text x="300" y="224" font-size="13" fill="#646A73">用户点按</text>
+      <rect x="90" y="250" width="270" height="54" rx="10" fill="#FFF1E5" stroke="#FF7D00" stroke-width="1.5"/>
+      <text x="225" y="274" font-weight="bold">仪表盘</text>
+      <text x="225" y="294" font-size="13" fill="#646A73">图形/表格/图表</text>
+      <text x="225" y="344" font-size="14" fill="#646A73">HTML 搭骨架 · CSS 上油漆 · JavaScript 装动作</text>
+    </g>
+    <rect x="90" y="360" width="270" height="34" rx="8" fill="#2B6CB0"/>
+    <text x="225" y="383" font-size="14" fill="#FFFFFF" text-anchor="middle">用户看得见、点得动</text>
+  </g>
+
+  <!-- 中间：API 法兰 -->
+  <g>
+    <line x1="400" y1="260" x2="560" y2="260" stroke="#FF7D00" stroke-width="5" marker-end="url(#arrow)"/>
+    <rect x="400" y="180" width="160" height="40" rx="10" fill="#FFFFFF" stroke="#FF7D00" stroke-width="2"/>
+    <text x="480" y="206" font-size="16" fill="#FF7D00" font-weight="bold" text-anchor="middle">API</text>
+    <!-- 法兰盘 -->
+    <circle cx="480" cy="280" r="26" fill="#FFF1E5" stroke="#FF7D00" stroke-width="3"/>
+    <circle cx="480" cy="280" r="10" fill="#FF7D00"/>
+    <circle cx="467" cy="266" r="4" fill="#FF7D00"/><circle cx="493" cy="266" r="4" fill="#FF7D00"/>
+    <circle cx="467" cy="294" r="4" fill="#FF7D00"/><circle cx="493" cy="294" r="4" fill="#FF7D00"/>
+    <text x="480" y="330" font-size="14" fill="#1F2329" text-anchor="middle">标准接口 · 两边按约定对接</text>
+  </g>
+
+  <!-- 右侧：后端控制柜 -->
+  <g>
+    <rect x="610" y="110" width="330" height="300" rx="16" fill="#FFFFFF" stroke="#34C07C" stroke-width="2"/>
+    <rect x="610" y="110" width="330" height="46" rx="16" fill="#34C07C"/>
+    <text x="775" y="140" font-size="17" fill="#FFFFFF" font-weight="bold" text-anchor="middle">后端 Backend · 控制柜</text>
+    <g font-size="14" fill="#1F2329" text-anchor="middle">
+      <rect x="640" y="180" width="120" height="54" rx="10" fill="#E8F6EF" stroke="#34C07C" stroke-width="1.5"/>
+      <text x="700" y="204" font-weight="bold">业务逻辑</text>
+      <text x="700" y="224" font-size="13" fill="#646A73">规则与判断</text>
+      <rect x="790" y="180" width="120" height="54" rx="10" fill="#E8F6EF" stroke="#34C07C" stroke-width="1.5"/>
+      <text x="850" y="204" font-weight="bold">数据读写</text>
+      <text x="850" y="224" font-size="13" fill="#646A73">连数据库</text>
+      <rect x="640" y="250" width="270" height="54" rx="10" fill="#E8F6EF" stroke="#34C07C" stroke-width="1.5"/>
+      <text x="775" y="274" font-weight="bold">安全与权限</text>
+      <text x="775" y="294" font-size="13" fill="#646A73">谁能访问、谁能改</text>
+      <text x="775" y="344" font-size="14" fill="#646A73">逻辑、数据、安全都在里面</text>
+    </g>
+    <rect x="640" y="360" width="270" height="34" rx="8" fill="#34C07C"/>
+    <text x="775" y="383" font-size="14" fill="#FFFFFF" text-anchor="middle">用户看不见、却真正干活</text>
+  </g>
+
+  <!-- 底部：Qt 说明 -->
+  <rect x="60" y="440" width="880" height="86" rx="14" fill="#FFF1E5" stroke="#FF7D00" stroke-width="2"/>
+  <rect x="84" y="456" width="60" height="54" rx="10" fill="#FF7D00"/>
+  <text x="114" y="478" font-size="20" fill="#FFFFFF" font-weight="bold" text-anchor="middle">Qt</text>
+  <text x="114" y="498" font-size="13" fill="#FFFFFF" text-anchor="middle">框架</text>
+  <text x="170" y="476" font-size="16" fill="#1F2329" font-weight="bold">Qt = 一套通用的"操作面板标准件"</text>
+  <text x="170" y="502" font-size="14" fill="#646A73">做的是装在本机上的原生桌面窗口（数控系统、仿真软件、上位机界面）——不是浏览器里的网页</text>
+  <text x="170" y="522" font-size="13" fill="#FF7D00">Windows / Linux / macOS 都能用 · 工业软件最常接触到的"前端"</text>
+
+  <text x="500" y="566" font-size="14" fill="#646A73" text-anchor="middle">图 2-5 前端 = 操作面板 / 后端 = 控制柜 / API = 法兰（示意）</text>
+</svg>
