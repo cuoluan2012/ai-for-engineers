@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="640" viewBox="0 0 1000 640" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect x="0" y="0" width="1000" height="640" rx="18" fill="#F7F8FA"/>
+  <text x="500" y="46" font-size="28" font-weight="bold" fill="#1F2329" text-anchor="middle">AI 的能力边界：能做什么、不能做什么</text>
+  <text x="500" y="74" font-size="16" fill="#646A73" text-anchor="middle">AI 是"概率工具"，不是"真理机器"——判断场景能不能上 AI，先看它落在哪一边</text>
+
+  <!-- 左栏：能做 -->
+  <rect x="40" y="105" width="440" height="440" rx="16" fill="#EAF7F0" stroke="#34C07C" stroke-width="2.5"/>
+  <text x="260" y="140" font-size="20" font-weight="bold" fill="#228B57" text-anchor="middle">AI 能做的四件事</text>
+  <text x="260" y="164" font-size="14" fill="#228B57" text-anchor="middle">模式识别 · 语言理解 · 预测 · 规划</text>
+
+  <g>
+    <rect x="70" y="190" width="380" height="62" rx="12" fill="#FFFFFF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="90" y="216" font-size="16" font-weight="bold" fill="#1F2329">① 模式识别</text>
+    <text x="90" y="240" font-size="13" fill="#646A73">图像/声音/振动里找规律：缺陷检测、设备诊断</text>
+  </g>
+  <g>
+    <rect x="70" y="264" width="380" height="62" rx="12" fill="#FFFFFF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="90" y="290" font-size="16" font-weight="bold" fill="#1F2329">② 语言理解与生成</text>
+    <text x="90" y="314" font-size="13" fill="#646A73">读文档、回答问题、写摘要：知识问答、翻译</text>
+  </g>
+  <g>
+    <rect x="70" y="338" width="380" height="62" rx="12" fill="#FFFFFF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="90" y="364" font-size="16" font-weight="bold" fill="#1F2329">③ 预测与趋势外推</text>
+    <text x="90" y="388" font-size="13" fill="#646A73">历史数据推未来：故障预测、寿命评估（大概率）</text>
+  </g>
+  <g>
+    <rect x="70" y="412" width="380" height="62" rx="12" fill="#FFFFFF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="90" y="438" font-size="16" font-weight="bold" fill="#1F2329">④ 规划与调度</text>
+    <text x="90" y="462" font-size="13" fill="#646A73">约束条件下找方案：排产、路径规划、任务拆解</text>
+  </g>
+  <text x="260" y="524" font-size="13" fill="#228B57" text-anchor="middle">最成熟的是模式识别 → 工业落地最多</text>
+
+  <!-- 右栏：不能做 -->
+  <rect x="520" y="105" width="440" height="440" rx="16" fill="#FFF4EC" stroke="#FF7D00" stroke-width="2.5"/>
+  <text x="740" y="140" font-size="20" font-weight="bold" fill="#D96A00" text-anchor="middle">AI 不能做的四件事</text>
+  <text x="740" y="164" font-size="14" fill="#D96A00" text-anchor="middle">不懂物理 · 不担责任 · 不绝对可靠 · 不擅因果</text>
+
+  <g>
+    <rect x="550" y="190" width="380" height="62" rx="12" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="570" y="216" font-size="16" font-weight="bold" fill="#1F2329">① 不懂物理定律</text>
+    <text x="570" y="240" font-size="13" fill="#646A73">学的是"相关"，不是"因果"；不会力学推导</text>
+  </g>
+  <g>
+    <rect x="550" y="264" width="380" height="62" rx="12" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="570" y="290" font-size="16" font-weight="bold" fill="#1F2329">② 不承担责任</text>
+    <text x="570" y="314" font-size="13" fill="#646A73">出了问题追责对象是人：关键输出必须有人确认</text>
+  </g>
+  <g>
+    <rect x="550" y="338" width="380" height="62" rx="12" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="570" y="364" font-size="16" font-weight="bold" fill="#1F2329">③ 不是绝对可靠</text>
+    <text x="570" y="388" font-size="13" fill="#646A73">输出的是概率：会漏检、会答错、会算错</text>
+  </g>
+  <g>
+    <rect x="550" y="412" width="380" height="62" rx="12" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="570" y="438" font-size="16" font-weight="bold" fill="#1F2329">④ 不擅长因果推理</text>
+    <text x="570" y="462" font-size="13" fill="#646A73">知道"一起出现"，不知道"谁导致谁"</text>
+  </g>
+  <text x="740" y="524" font-size="13" fill="#D96A00" text-anchor="middle">对策：人机分工 + 抽检复核，而不是指望永远正确</text>
+
+  <!-- 底部工程师贴士 -->
+  <rect x="60" y="572" width="880" height="46" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="500" y="600" font-size="15" fill="#1F2329" text-anchor="middle">工程师贴士：把 AI 想成"读过很多书、但没下过车间的新员工"——你当那个把关的老师傅</text>
+
+  <text x="500" y="632" font-size="14" fill="#646A73" text-anchor="middle">图 1-2 AI 的能力边界（示意）</text>
+</svg>

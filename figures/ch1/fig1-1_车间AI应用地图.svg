@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="660" viewBox="0 0 1000 660" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect x="0" y="0" width="1000" height="660" rx="18" fill="#F7F8FA"/>
+  <text x="500" y="46" font-size="28" font-weight="bold" fill="#1F2329" text-anchor="middle">AI 已经进入车间：四个场景速写</text>
+  <text x="500" y="74" font-size="16" fill="#646A73" text-anchor="middle">视觉质检 · 预测性维护 · 知识问答 · 排产优化</text>
+
+  <!-- 中心：车间示意（厂房轮廓 + 产线 + 机器人） -->
+  <rect x="330" y="180" width="340" height="280" rx="16" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="2.5"/>
+  <text x="500" y="210" font-size="18" font-weight="bold" fill="#2B6CB0" text-anchor="middle">工厂车间</text>
+  <!-- 产线传送带 -->
+  <rect x="365" y="350" width="270" height="16" rx="8" fill="#CBD5E1"/>
+  <!-- 机器人臂（简笔） -->
+  <g stroke="#2B6CB0" stroke-width="4" fill="none" stroke-linecap="round">
+    <line x1="470" y1="350" x2="470" y2="300"/>
+    <line x1="470" y1="300" x2="515" y2="290"/>
+    <line x1="515" y1="290" x2="515" y2="322"/>
+  </g>
+  <circle cx="515" cy="330" r="10" fill="#FF7D00"/>
+  <text x="500" y="398" font-size="13" fill="#646A73" text-anchor="middle">自动化产线 · 机器人 · 传感器 · 文档数据</text>
+
+  <!-- 场景卡片（四角） -->
+  <!-- 左上：视觉质检 -->
+  <g>
+    <rect x="55" y="130" width="230" height="150" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <circle cx="125" cy="180" r="26" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="2"/>
+    <rect x="108" y="166" width="34" height="24" rx="4" fill="#FFF"/>
+    <circle cx="122" cy="177" r="9" fill="none" stroke="#2B6CB0" stroke-width="2.5"/>
+    <text x="170" y="176" font-size="16" font-weight="bold" fill="#1F2329">机器视觉质检</text>
+    <text x="170" y="196" font-size="12" fill="#646A73">摄像头 + AI 判缺陷</text>
+    <text x="80" y="222" font-size="13" fill="#1F2329">不疲劳、不漂移、24 小时</text>
+    <text x="80" y="244" font-size="13" fill="#1F2329">标准统一的"电子眼"</text>
+    <text x="80" y="268" font-size="12" fill="#2B6CB0">→ 第 5 章</text>
+  </g>
+
+  <!-- 右上：预测性维护 -->
+  <g>
+    <rect x="715" y="130" width="230" height="150" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <rect x="760" y="150" width="44" height="44" rx="8" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="2"/>
+    <circle cx="782" cy="172" r="12" fill="none" stroke="#FF7D00" stroke-width="2.5"/>
+    <line x1="782" y1="160" x2="782" y2="180" stroke="#FF7D00" stroke-width="2"/>
+    <text x="830" y="176" font-size="16" font-weight="bold" fill="#1F2329">预测性维护</text>
+    <text x="830" y="196" font-size="12" fill="#646A73">设备数据 → 故障预警</text>
+    <text x="740" y="222" font-size="13" fill="#1F2329">振动/温度异常提前几天</text>
+    <text x="740" y="244" font-size="13" fill="#1F2329">减少非计划停机</text>
+    <text x="740" y="268" font-size="12" fill="#2B6CB0">→ 第 4 章</text>
+  </g>
+
+  <!-- 左下：知识问答 -->
+  <g>
+    <rect x="55" y="420" width="230" height="150" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <rect x="80" y="446" width="30" height="38" rx="4" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="2"/>
+    <text x="95" y="470" font-size="12" fill="#2B6CB0" text-anchor="middle">标准</text>
+    <circle cx="150" cy="462" r="24" fill="#FFF1E5" stroke="#FF7D00" stroke-width="2"/>
+    <text x="150" y="468" font-size="14" fill="#FF7D00" text-anchor="middle">问</text>
+    <text x="195" y="470" font-size="16" font-weight="bold" fill="#1F2329">知识问答</text>
+    <text x="80" y="506" font-size="13" fill="#1F2329">企业标准/图纸/手册</text>
+    <text x="80" y="528" font-size="13" fill="#1F2329">变成随时能问的助手</text>
+    <text x="80" y="552" font-size="12" fill="#2B6CB0">→ 第 6~7 章</text>
+  </g>
+
+  <!-- 右下：排产优化 -->
+  <g>
+    <rect x="715" y="420" width="230" height="150" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <rect x="740" y="446" width="40" height="40" rx="8" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="2"/>
+    <g>
+      <rect x="748" y="456" width="10" height="20" rx="2" fill="#2B6CB0"/>
+      <rect x="762" y="462" width="10" height="14" rx="2" fill="#FF7D00"/>
+      <rect x="776" y="452" width="10" height="24" rx="2" fill="#34C07C"/>
+    </g>
+    <text x="820" y="470" font-size="16" font-weight="bold" fill="#1F2329">排产优化</text>
+    <text x="740" y="500" font-size="13" fill="#1F2329">订单/设备/物料多约束</text>
+    <text x="740" y="522" font-size="13" fill="#1F2329">几分钟出多版方案</text>
+    <text x="740" y="546" font-size="12" fill="#2B6CB0">→ 第 10 章</text>
+  </g>
+
+  <!-- 底部共同规律 -->
+  <rect x="60" y="596" width="880" height="40" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="500" y="622" font-size="15" fill="#1F2329" text-anchor="middle">共同规律：AI 的价值是把重复、海量、靠经验的工作自动化，让人去做判断、协调和创新</text>
+
+  <text x="500" y="652" font-size="14" fill="#646A73" text-anchor="middle">图 1-1 AI 已经进入车间：四个场景速写（示意）</text>
+</svg>
