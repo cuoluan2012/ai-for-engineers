@@ -1,0 +1,10 @@
+# 第 7 章示例代码依赖
+# 安装：pip install -r requirements.txt
+# 说明：
+#  - 07-1/07-2/07-3 只用 numpy，零依赖也能跑；
+#  - 07-4 配套项目优先用 sentence-transformers 加载中文语义模型，
+#    首次运行会下载约 100MB 模型；下载慢可先设置环境变量
+#    HF_ENDPOINT=https://hf-mirror.com（HuggingFace 镜像）
+numpy>=1.24
+sentence-transformers>=2.2
+requests>=2.31

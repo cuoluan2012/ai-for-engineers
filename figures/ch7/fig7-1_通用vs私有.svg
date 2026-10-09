@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">通用知识 vs 企业私有知识</text>
+
+  <rect x="70" y="100" width="420" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="100" width="420" height="56" rx="14" fill="#E8F3FF"/>
+  <text x="280" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#2B6CB0">大模型学过的：网上通用知识</text>
+  <text x="110" y="196" font-size="15" fill="#1F2329">· 轴承的分类与选用</text>
+  <text x="110" y="232" font-size="15" fill="#1F2329">· 公差配合的基本概念</text>
+  <text x="110" y="268" font-size="15" fill="#1F2329">· 常见材料牌号含义</text>
+  <rect x="110" y="300" width="340" height="46" rx="10" fill="#EAFBF0"/>
+  <text x="280" y="329" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">答得很好（训练数据里多）</text>
+
+  <rect x="510" y="100" width="420" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="510" y="100" width="420" height="56" rx="14" fill="#FFF4E5"/>
+  <text x="720" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#D9480F">模型没学过的：你厂里的知识</text>
+  <text x="550" y="196" font-size="15" fill="#1F2329">· 企业标准条款（企标）</text>
+  <text x="550" y="232" font-size="15" fill="#1F2329">· 设备手册的具体参数</text>
+  <text x="550" y="268" font-size="15" fill="#1F2329">· 图纸说明 / 老师傅经验</text>
+  <rect x="550" y="300" width="340" height="46" rx="10" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+  <text x="720" y="329" text-anchor="middle" font-size="14" font-weight="bold" fill="#D9480F">说“不知道”，或者一本正经地编</text>
+
+  <rect x="180" y="470" width="640" height="66" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="500" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">结论：模型学得会“行业”，学不会“我们厂”</text>
+  <text x="500" y="524" text-anchor="middle" font-size="13" fill="#646A73">要让 AI 懂厂里的资料，得“先查资料、再作答”——这就是 RAG（图 7-3）</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 7-1 大模型知道网上的，不知道你厂里的（示意）</text>
+</svg>

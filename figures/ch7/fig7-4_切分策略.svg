@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">文档切分三种策略</text>
+
+  <rect x="70" y="100" width="280" height="300" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="100" width="280" height="50" rx="14" fill="#E8F3FF"/>
+  <text x="210" y="132" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">① 按章节切</text>
+  <rect x="95" y="168" width="230" height="34" rx="8" fill="#E8F3FF"/>
+  <text x="210" y="191" text-anchor="middle" font-size="13" fill="#2B6CB0">【概述】……</text>
+  <rect x="95" y="212" width="230" height="34" rx="8" fill="#E8F3FF"/>
+  <text x="210" y="235" text-anchor="middle" font-size="13" fill="#2B6CB0">【日常维护】……</text>
+  <rect x="95" y="256" width="230" height="34" rx="8" fill="#E8F3FF"/>
+  <text x="210" y="279" text-anchor="middle" font-size="13" fill="#2B6CB0">【常见故障】……</text>
+  <rect x="95" y="300" width="230" height="34" rx="8" fill="#E8F3FF"/>
+  <text x="210" y="323" text-anchor="middle" font-size="13" fill="#2B6CB0">【轴承更换】……</text>
+  <text x="210" y="368" text-anchor="middle" font-size="13" fill="#1E7A46">√ 语义完整，首选</text>
+
+  <rect x="360" y="100" width="280" height="300" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="360" y="100" width="280" height="50" rx="14" fill="#FFF4E5"/>
+  <text x="500" y="132" text-anchor="middle" font-size="16" font-weight="bold" fill="#D9480F">② 按固定长度切</text>
+  <rect x="385" y="168" width="120" height="34" rx="8" fill="#FFF4E5"/>
+  <text x="445" y="191" text-anchor="middle" font-size="13" fill="#D9480F">1~200 字</text>
+  <rect x="515" y="168" width="100" height="34" rx="8" fill="#FFF4E5"/>
+  <text x="565" y="191" text-anchor="middle" font-size="13" fill="#D9480F">201~400</text>
+  <rect x="385" y="212" width="120" height="34" rx="8" fill="#FFF4E5"/>
+  <text x="445" y="235" text-anchor="middle" font-size="13" fill="#D9480F">401~600</text>
+  <rect x="515" y="212" width="100" height="34" rx="8" fill="#FFF4E5"/>
+  <text x="565" y="235" text-anchor="middle" font-size="13" fill="#D9480F">601~800</text>
+  <rect x="385" y="300" width="230" height="34" rx="8" fill="#FFF4E5"/>
+  <text x="500" y="323" text-anchor="middle" font-size="13" fill="#D9480F">可加 20 字重叠防切断</text>
+  <text x="500" y="368" text-anchor="middle" font-size="13" fill="#646A73">结构乱时兜底</text>
+
+  <rect x="650" y="100" width="280" height="300" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="650" y="100" width="280" height="50" rx="14" fill="#EAFBF0"/>
+  <text x="790" y="132" text-anchor="middle" font-size="16" font-weight="bold" fill="#1E7A46">③ 按语义块切</text>
+  <rect x="675" y="168" width="230" height="74" rx="8" fill="#EAFBF0"/>
+  <text x="790" y="196" text-anchor="middle" font-size="13" fill="#1E7A46">让模型判断“哪里是一个</text>
+  <text x="790" y="218" text-anchor="middle" font-size="13" fill="#1E7A46">完整意思”，智能分块</text>
+  <rect x="675" y="256" width="230" height="74" rx="8" fill="#EAFBF0"/>
+  <text x="790" y="284" text-anchor="middle" font-size="13" fill="#1E7A46">效果最好</text>
+  <text x="790" y="306" text-anchor="middle" font-size="13" fill="#1E7A46">成本也最高</text>
+  <text x="790" y="368" text-anchor="middle" font-size="13" fill="#646A73">资料量大时慎用</text>
+
+  <rect x="130" y="430" width="740" height="66" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="460" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">两个约束互相矛盾，只能靠实验定：</text>
+  <text x="500" y="484" text-anchor="middle" font-size="13" fill="#646A73">块太小 → 上下文被切碎；块太大 → 检索不精准。改切法要回到 30 条评测对比命中率</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 7-4 长文档切成小段，太小丢上下文、太大不精准（示意）</text>
+</svg>

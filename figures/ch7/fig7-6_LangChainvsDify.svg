@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">两条搭 RAG 的路线</text>
+
+  <rect x="70" y="100" width="420" height="430" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="100" width="420" height="56" rx="14" fill="#E8F3FF"/>
+  <text x="280" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#2B6CB0">LangChain：代码路线</text>
+  <text x="280" y="190" text-anchor="middle" font-size="14" fill="#1F2329">Python 组件串成一条“链”：</text>
+  <rect x="100" y="210" width="360" height="36" rx="8" fill="#E8F3FF"/>
+  <text x="280" y="234" text-anchor="middle" font-size="13" fill="#2B6CB0">Loader → Splitter → Embedding</text>
+  <rect x="100" y="256" width="360" height="36" rx="8" fill="#E8F3FF"/>
+  <text x="280" y="280" text-anchor="middle" font-size="13" fill="#2B6CB0">VectorStore → Retriever → LLM</text>
+  <text x="280" y="340" text-anchor="middle" font-size="14" fill="#1F2329">换模型 / 换向量库，只改一个参数</text>
+  <rect x="100" y="380" width="360" height="46" rx="10" fill="#EAFBF0"/>
+  <text x="280" y="408" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">√ 灵活 · 数据可控 · 可自部署</text>
+  <text x="280" y="462" text-anchor="middle" font-size="13" fill="#646A73">代价：要写代码、理解组件概念</text>
+
+  <rect x="510" y="100" width="420" height="430" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="510" y="100" width="420" height="56" rx="14" fill="#FFF4E5"/>
+  <text x="720" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#D9480F">Dify：拖拽路线</text>
+  <text x="720" y="190" text-anchor="middle" font-size="14" fill="#1F2329">网页界面可视化编排：</text>
+  <rect x="540" y="210" width="360" height="36" rx="8" fill="#FFF4E5"/>
+  <text x="720" y="234" text-anchor="middle" font-size="13" fill="#D9480F">上传文档 → 建知识库 → 选模型</text>
+  <rect x="540" y="256" width="360" height="36" rx="8" fill="#FFF4E5"/>
+  <text x="720" y="280" text-anchor="middle" font-size="13" fill="#D9480F">拖拽流程图 → 生成问答链接</text>
+  <text x="720" y="340" text-anchor="middle" font-size="14" fill="#1F2329">几乎不写代码，业务团队能上手</text>
+  <rect x="540" y="380" width="360" height="46" rx="10" fill="#EAFBF0"/>
+  <text x="720" y="408" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">√ 上手快 · 平台托管省心</text>
+  <text x="720" y="462" text-anchor="middle" font-size="13" fill="#646A73">代价：默认 SaaS，私有化要企业版</text>
+
+  <rect x="130" y="560" width="740" height="52" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="586" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">选型看“谁在维护”：会写代码走 LangChain，纯业务团队走 Dify</text>
+  <text x="500" y="606" text-anchor="middle" font-size="13" fill="#646A73">工具是给“以后天天用”的人选的，不是给“搭的那天”的人选的</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 7-6 会写代码走 LangChain，纯业务团队走 Dify（示意）</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">文字变坐标：语义越近，坐标越近</text>
+
+  <rect x="70" y="100" width="360" height="190" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="250" y="132" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">文本 → 向量（Embedding）</text>
+  <text x="110" y="172" font-size="15" fill="#1F2329">“轴承磨损了要换”</text>
+  <rect x="110" y="195" width="300" height="36" rx="8" fill="#E8F3FF"/>
+  <text x="260" y="219" text-anchor="middle" font-size="14" fill="#2B6CB0">→ 512 个数字：[0.12, 0.55, ...]</text>
+  <text x="110" y="266" font-size="14" fill="#646A73">一段文字 = 高维空间里的一个坐标点</text>
+
+  <text x="480" y="205" text-anchor="middle" font-size="22" font-weight="bold" fill="#FF7D00">→</text>
+
+  <rect x="530" y="100" width="400" height="300" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="730" y="132" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">语义空间（示意二维）</text>
+  <line x1="600" y1="340" x2="880" y2="340" stroke="#C1C9D4" stroke-width="2"/>
+  <line x1="700" y1="150" x2="700" y2="380" stroke="#C1C9D4" stroke-width="2"/>
+  <circle cx="700" cy="330" r="8" fill="#34C07C"/>
+  <text x="714" y="334" font-size="13" fill="#1F2329">“轴承磨损了要换”</text>
+  <circle cx="760" cy="310" r="8" fill="#2B6CB0"/>
+  <text x="774" y="314" font-size="13" fill="#1F2329">“磨损后应及时更换”</text>
+  <circle cx="640" cy="180" r="8" fill="#FF7D00"/>
+  <text x="600" y="170" font-size="13" fill="#1F2329">“今天天气不错”</text>
+  <line x1="700" y1="330" x2="760" y2="310" stroke="#34C07C" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <line x1="700" y1="330" x2="640" y2="180" stroke="#FF7D00" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="700" y="285" text-anchor="middle" font-size="13" font-weight="bold" fill="#34C07C">近（语义相关）</text>
+  <text x="640" y="245" text-anchor="middle" font-size="13" font-weight="bold" fill="#D9480F">远（无关）</text>
+
+  <rect x="130" y="360" width="740" height="60" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="388" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">相似度怎么量：余弦相似度</text>
+  <text x="500" y="410" text-anchor="middle" font-size="13" fill="#646A73">两支箭头的方向越一致，夹角越小，相似度分数越高（0~1）</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 7-2 文字变坐标，语义越近坐标越近（示意）</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">检索两段式：先多召回，再精排</text>
+  <defs>
+    <marker id="arrc" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  </defs>
+
+  <rect x="70" y="110" width="400" height="360" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="110" width="400" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="270" y="141" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">粗召回（快而糙）</text>
+  <text x="270" y="186" text-anchor="middle" font-size="14" fill="#1F2329">向量检索：库里先捞 50 条候选</text>
+  <rect x="100" y="210" width="340" height="40" rx="8" fill="#E8F3FF"/>
+  <text x="270" y="236" text-anchor="middle" font-size="13" fill="#2B6CB0">段 12 · 段 5 · 段 38 · 段 2 · ……（50 条）</text>
+  <text x="270" y="300" text-anchor="middle" font-size="14" fill="#1F2329">相似度 0.79 · 0.61 · 0.55 · ……</text>
+  <text x="270" y="420" text-anchor="middle" font-size="13" fill="#646A73">特点：快，能覆盖全库，但排序不够精细</text>
+
+  <line x1="470" y1="290" x2="540" y2="290" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrc)"/>
+  <text x="505" y="280" text-anchor="middle" font-size="13" font-weight="bold" fill="#FF7D00">精排</text>
+
+  <rect x="546" y="110" width="384" height="360" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="546" y="110" width="384" height="52" rx="14" fill="#FFF4E5"/>
+  <text x="738" y="141" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">精排（慢而准）</text>
+  <text x="738" y="186" text-anchor="middle" font-size="14" fill="#1F2329">重排：50 条逐条精细打分，只留 5 条</text>
+  <rect x="576" y="210" width="324" height="40" rx="8" fill="#FFF4E5"/>
+  <text x="738" y="236" text-anchor="middle" font-size="13" fill="#D9480F">段 5（最相关）→ 段 12 → 段 2 → 段 38 → 段 20</text>
+  <text x="738" y="300" text-anchor="middle" font-size="14" fill="#1F2329">这 5 段进提示词，交给大模型</text>
+  <text x="738" y="420" text-anchor="middle" font-size="13" fill="#646A73">特点：慢，只在几十条上跑，把最相关的顶到最前</text>
+
+  <rect x="200" y="510" width="600" height="56" rx="12" fill="#EAFBF0" stroke="#34C07C" stroke-width="1.5"/>
+  <text x="500" y="538" text-anchor="middle" font-size="15" font-weight="bold" fill="#1E7A46">口诀：粗召回多取，精排少留</text>
+  <text x="500" y="558" text-anchor="middle" font-size="13" fill="#646A73">两段式命中率显著高于“直接向量 Top-5”</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 7-5 先多召回再精排，把最相关的顶上来（示意）</text>
+</svg>
