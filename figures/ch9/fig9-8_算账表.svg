@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="640" fill="#F7F8FA"/>
+  <text x="500" y="50" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">自建 vs 调用 API：算账表（示意价）</text>
+  <text x="500" y="78" text-anchor="middle" font-size="15" fill="#646A73">月调用 100 万次，每次 500 输入 + 200 输出 token；价格为示意值，算法可复用</text>
+
+  <!-- 表头 -->
+  <rect x="100" y="110" width="800" height="48" rx="10" fill="#2B6CB0"/>
+  <text x="170" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">项目</text>
+  <text x="420" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">调用云端 API</text>
+  <text x="690" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">私有化部署（自建）</text>
+
+  <!-- 行 1 -->
+  <rect x="100" y="158" width="800" height="58" rx="0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="170" y="192" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">年度成本</text>
+  <text x="420" y="192" text-anchor="middle" font-size="16" font-weight="bold" fill="#D9480F">¥100,800</text>
+  <text x="690" y="192" text-anchor="middle" font-size="16" font-weight="bold" fill="#D9480F">¥211,213</text>
+
+  <!-- 行 2 -->
+  <rect x="100" y="216" width="800" height="58" rx="0" fill="#F7F8FA" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="170" y="250" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">构成</text>
+  <text x="420" y="244" text-anchor="middle" font-size="14" fill="#1F2329">按量付费</text>
+  <text x="420" y="264" text-anchor="middle" font-size="14" fill="#646A73">约 ¥144 / 百万 token</text>
+  <text x="690" y="244" text-anchor="middle" font-size="14" fill="#1F2329">硬件折旧 + 电费 + 运维</text>
+  <text x="690" y="264" text-anchor="middle" font-size="14" fill="#646A73">30 万 / 3 年 + ¥11,213 + 10 万</text>
+
+  <!-- 行 3 -->
+  <rect x="100" y="274" width="800" height="58" rx="0" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="170" y="308" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">数据安全</text>
+  <text x="420" y="302" text-anchor="middle" font-size="14" fill="#1F2329">数据出域（要过合规评估）</text>
+  <text x="420" y="322" text-anchor="middle" font-size="14" fill="#646A73">供应商涨价风险</text>
+  <text x="690" y="302" text-anchor="middle" font-size="14" fill="#1E7A46">数据不出内网（红线友好）</text>
+  <text x="690" y="322" text-anchor="middle" font-size="14" fill="#646A73">GPU 故障 / 升级维护自己做</text>
+
+  <!-- 行 4：盈亏临界 -->
+  <rect x="100" y="332" width="800" height="70" rx="10" fill="#EAFBF0" stroke="#34C07C" stroke-width="2"/>
+  <text x="500" y="362" text-anchor="middle" font-size="16" font-weight="bold" fill="#1E7A46">盈亏临界点：月调用量约 2,095,366 次时，两条路线打平</text>
+  <text x="500" y="388" text-anchor="middle" font-size="14" fill="#1E7A46">低于临界点选 API；高于临界点自建更划算</text>
+
+  <!-- 底部结论 -->
+  <rect x="100" y="430" width="800" height="70" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="458" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">当前参数下：调用 API 更便宜（¥10 万 vs ¥21 万）</text>
+  <text x="500" y="484" text-anchor="middle" font-size="14" fill="#646A73">先别买 GPU；等月调用量涨过 209 万次再考虑自建</text>
+
+  <rect x="100" y="516" width="800" height="54" rx="12" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+  <text x="500" y="540" text-anchor="middle" font-size="14" font-weight="bold" fill="#D9480F">账外账要自己加：API 的数据出域 / 涨价风险；自建的 GPU 故障 / 专人运维</text>
+  <text x="500" y="562" text-anchor="middle" font-size="14" fill="#D9480F">改参数重跑：09-5_cost_calculator.py，得到你自己的结论</text>
+
+  <rect x="180.0" y="596" width="640" height="34" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="617" text-anchor="middle" font-size="14" fill="#646A73">图 9-8 自建 vs 调用 API：算账表（示意）</text>
+</svg>

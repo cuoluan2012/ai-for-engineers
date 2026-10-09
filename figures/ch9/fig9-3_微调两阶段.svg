@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="640" fill="#F7F8FA"/>
+  <text x="500" y="50" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">微调机制：先学会“说话”，再学会“说厂里的话”</text>
+
+  <!-- 阶段一：预训练 -->
+  <rect x="60" y="100" width="400" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="60" y="100" width="400" height="56" rx="14" fill="#E8F3FF"/>
+  <text x="260" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#2B6CB0">阶段一：预训练（学通用）</text>
+  <text x="92" y="196" font-size="14" fill="#1F2329">· 数据：海量互联网文本</text>
+  <text x="92" y="222" font-size="14" fill="#1F2329">· 学什么：会说话、懂世界</text>
+  <text x="92" y="248" font-size="14" fill="#1F2329">· 决定基础能力</text>
+  <rect x="92" y="284" width="336" height="46" rx="10" fill="#EAFBF0"/>
+  <text x="260" y="307" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">对通用规则误差 0.1360</text>
+  <text x="260" y="327" text-anchor="middle" font-size="14" fill="#1E7A46">对厂规误差 1.2517（不懂厂里）</text>
+  <text x="92" y="386" font-size="14" fill="#1F2329">成本：极高（只有大厂做）</text>
+  <text x="92" y="408" font-size="14" fill="#646A73">对应 6 章“GPT 三步炼成”第一步</text>
+
+  <!-- 箭头 -->
+  <polygon points="485,265 508,265 508,257 530,270 508,283 508,275 485,275" fill="#2B6CB0"/>
+  <text x="508" y="248" text-anchor="middle" font-size="14" font-weight="bold" fill="#2B6CB0">继续训练</text>
+
+  <!-- 阶段二：微调 -->
+  <rect x="540" y="100" width="400" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="540" y="100" width="400" height="56" rx="14" fill="#FFF4E5"/>
+  <text x="740" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#D9480F">阶段二：微调（学厂里）</text>
+  <text x="572" y="196" font-size="14" fill="#1F2329">· 数据：企业语料（问答对）</text>
+  <text x="572" y="222" font-size="14" fill="#1F2329">· 学什么：厂里口径、术语</text>
+  <text x="572" y="248" font-size="14" fill="#1F2329">· 更新模型权重</text>
+  <rect x="572" y="284" width="336" height="46" rx="10" fill="#EAFBF0"/>
+  <text x="740" y="307" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">对厂规误差降到 0.0715</text>
+  <text x="740" y="327" text-anchor="middle" font-size="14" fill="#1E7A46">抽查口径 Ra3.2 → Ra1.9（厂规）</text>
+  <text x="572" y="386" font-size="14" fill="#1F2329">成本：低（中小企业自己做）</text>
+  <text x="572" y="408" font-size="14" fill="#646A73">权重平均只动 0.02~0.08（微调）</text>
+
+  <!-- 关键点 -->
+  <rect x="150" y="470" width="700" height="70" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="500" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">微调改的是权重：让损失函数在你的数据上继续下降</text>
+  <text x="500" y="524" text-anchor="middle" font-size="14" fill="#646A73">不是换模型，是把“通用口径”一点点挪向“厂里口径”</text>
+
+  <!-- 坑 -->
+  <rect x="150" y="558" width="700" height="40" rx="10" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+  <text x="500" y="584" text-anchor="middle" font-size="14" fill="#D9480F">全量微调会把通用知识“带偏”（0.1360 → 1.2461）——9.4 节 LoRA 来解决</text>
+
+  <rect x="180.0" y="604" width="640" height="32" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="625" text-anchor="middle" font-size="14" fill="#646A73">图 9-3 微调机制：预训练学通用，微调学厂里口径（示意）</text>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="620" fill="#F7F8FA"/>
+  <text x="500" y="50" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">推理服务四层：从请求到结果</text>
+  <text x="500" y="78" text-anchor="middle" font-size="15" fill="#646A73">训练是“学”，推理是“用”——用模型的方式，是把它变成常驻服务</text>
+
+  <!-- 请求箭头 -->
+  <line x1="140" y1="200" x2="300" y2="200" stroke="#2B6CB0" stroke-width="3"/>
+  <polygon points="300,200 286,192 286,208" fill="#2B6CB0"/>
+  <text x="220" y="184" text-anchor="middle" font-size="14" font-weight="bold" fill="#2B6CB0">HTTP 请求</text>
+
+  <line x1="360" y1="200" x2="500" y2="200" stroke="#2B6CB0" stroke-width="3"/>
+  <polygon points="500,200 486,192 486,208" fill="#2B6CB0"/>
+  <text x="430" y="184" text-anchor="middle" font-size="14" font-weight="bold" fill="#2B6CB0">转发</text>
+
+  <line x1="560" y1="200" x2="700" y2="200" stroke="#2B6CB0" stroke-width="3"/>
+  <polygon points="700,200 686,192 686,208" fill="#2B6CB0"/>
+  <text x="630" y="184" text-anchor="middle" font-size="14" font-weight="bold" fill="#2B6CB0">前向计算</text>
+
+  <!-- 响应箭头 -->
+  <line x1="700" y1="300" x2="560" y2="300" stroke="#34C07C" stroke-width="3"/>
+  <polygon points="560,300 574,292 574,308" fill="#34C07C"/>
+  <text x="630" y="324" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">返回结果</text>
+
+  <line x1="500" y1="300" x2="360" y2="300" stroke="#34C07C" stroke-width="3"/>
+  <polygon points="360,300 374,292 374,308" fill="#34C07C"/>
+  <text x="430" y="324" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">包装响应</text>
+
+  <line x1="300" y1="300" x2="140" y2="300" stroke="#34C07C" stroke-width="3"/>
+  <polygon points="140,300 154,292 154,308" fill="#34C07C"/>
+  <text x="220" y="324" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">展示回答</text>
+
+  <!-- 四层卡片 -->
+  <rect x="60" y="120" width="240" height="260" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="60" y="120" width="240" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="180" y="146" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">① 客户端</text>
+  <text x="88" y="202" font-size="14" fill="#1F2329">· 厂里软件 / 网页</text>
+  <text x="88" y="226" font-size="14" fill="#1F2329">· 第 8 章的智能体</text>
+  <text x="88" y="250" font-size="14" fill="#1F2329">· 发起请求、展示结果</text>
+  <text x="88" y="320" font-size="14" fill="#646A73">你写的调用代码</text>
+
+  <rect x="320" y="120" width="200" height="260" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="320" y="120" width="200" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="420" y="146" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">② API 层</text>
+  <text x="348" y="202" font-size="14" fill="#1F2329">· 接收请求</text>
+  <text x="348" y="226" font-size="14" fill="#1F2329">· 校验参数</text>
+  <text x="348" y="250" font-size="14" fill="#1F2329">· 包装返回</text>
+  <text x="348" y="320" font-size="14" fill="#646A73">第 6 章你调别人的</text>
+  <text x="348" y="342" font-size="14" fill="#646A73">这里是你自己的</text>
+
+  <rect x="540" y="120" width="200" height="260" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="540" y="120" width="200" height="52" rx="14" fill="#FFF4E5"/>
+  <text x="640" y="146" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">③ 模型服务</text>
+  <text x="568" y="202" font-size="14" fill="#1F2329">· 常驻推理进程</text>
+  <text x="568" y="226" font-size="14" fill="#1F2329">· 加载模型</text>
+  <text x="568" y="250" font-size="14" fill="#1F2329">· 执行前向、返回</text>
+  <text x="568" y="320" font-size="14" fill="#646A73">Ollama / vLLM</text>
+  <text x="568" y="342" font-size="14" fill="#646A73">（9.6 节工具链）</text>
+
+  <rect x="760" y="120" width="180" height="260" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="760" y="120" width="180" height="52" rx="14" fill="#EAFBF0"/>
+  <text x="850" y="146" text-anchor="middle" font-size="17" font-weight="bold" fill="#1E7A46">④ GPU</text>
+  <text x="788" y="202" font-size="14" fill="#1F2329">· 真正跑计算的</text>
+  <text x="788" y="226" font-size="14" fill="#1F2329">· 硬件</text>
+  <text x="788" y="250" font-size="14" fill="#1F2329">· 显存装模型</text>
+  <text x="788" y="320" font-size="14" fill="#646A73">算力账见 9.5.4</text>
+
+  <!-- 底部 -->
+  <rect x="150" y="420" width="700" height="62" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="446" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">推理服务 = 一个一直跑着的进程：接收请求、调用模型、返回结果</text>
+  <text x="500" y="470" text-anchor="middle" font-size="14" fill="#646A73">与“跑一次就结束”的脚本不同，服务是常驻的——9.8 配套项目演示</text>
+
+  <rect x="180.0" y="528" width="640" height="32" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="549" text-anchor="middle" font-size="14" fill="#646A73">图 9-6 推理服务四层：客户端 → API → 模型服务 → GPU（示意）</text>
+</svg>

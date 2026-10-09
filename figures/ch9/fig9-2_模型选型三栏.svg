@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500" y="50" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">开源模型选型：参数规模 / 能力 / 许可证</text>
+  <text x="500" y="78" text-anchor="middle" font-size="15" fill="#646A73">选型不看热度看条款——先读许可证，再比能力，最后用业务问题验证</text>
+
+  <!-- 栏 1：参数规模 -->
+  <rect x="50" y="110" width="290" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="50" y="110" width="290" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="195" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#2B6CB0">参数规模 7B/13B/70B</text>
+  <text x="78" y="196" font-size="14" fill="#1F2329">· B = Billion，参数量（亿）</text>
+  <text x="78" y="222" font-size="14" fill="#1F2329">· 越大越聪明：理解、推理更强</text>
+  <text x="78" y="248" font-size="14" fill="#1F2329">· 越大越吃资源：显存、算力</text>
+  <rect x="78" y="286" width="234" height="46" rx="10" fill="#EAFBF0"/>
+  <text x="195" y="309" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">7B 跑得动，70B 更聪明</text>
+  <text x="195" y="329" text-anchor="middle" font-size="14" fill="#1E7A46">（9.5 节算显存账）</text>
+  <text x="78" y="392" font-size="14" fill="#1F2329">任务：查规范、填模板</text>
+  <text x="78" y="414" font-size="14" fill="#1F2329">→ 7B 级够用</text>
+
+  <!-- 栏 2：能力 -->
+  <rect x="355" y="110" width="290" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="355" y="110" width="290" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="500" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#2B6CB0">能力评估</text>
+  <text x="383" y="196" font-size="14" fill="#1F2329">· 先跑通再升级：</text>
+  <text x="395" y="218" font-size="14" fill="#1F2329">先用 API / 最小模型验证业务</text>
+  <text x="383" y="248" font-size="14" fill="#1F2329">· 评估三步：</text>
+  <text x="395" y="270" font-size="14" fill="#1F2329">1. 读模型卡（能力与限制）</text>
+  <text x="395" y="292" font-size="14" fill="#1F2329">2. 看基准测试（按任务类型）</text>
+  <text x="395" y="314" font-size="14" fill="#1F2329">3. 自己跑 50 条业务问题</text>
+  <rect x="383" y="350" width="234" height="46" rx="10" fill="#EAFBF0"/>
+  <text x="500" y="373" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">自己跑一轮最可靠</text>
+  <text x="500" y="393" text-anchor="middle" font-size="14" fill="#1E7A46">选型是“先验证再定级”</text>
+
+  <!-- 栏 3：许可证 -->
+  <rect x="660" y="110" width="290" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="660" y="110" width="290" height="52" rx="14" fill="#FFF4E5"/>
+  <text x="805" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#D9480F">许可证（最易踩坑）</text>
+  <text x="688" y="196" font-size="14" fill="#1F2329">· 允许商用吗？</text>
+  <text x="688" y="222" font-size="14" fill="#1F2329">· 允许修改吗？</text>
+  <text x="688" y="248" font-size="14" fill="#1F2329">· 商用后要不要开源？</text>
+  <text x="688" y="274" font-size="14" fill="#1F2329">· 要不要注明出处？</text>
+  <rect x="688" y="312" width="234" height="46" rx="10" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+  <text x="805" y="335" text-anchor="middle" font-size="14" font-weight="bold" fill="#D9480F">选型第一步：先读条款</text>
+  <text x="805" y="355" text-anchor="middle" font-size="14" fill="#D9480F">违规上线 = 合规事故</text>
+  <text x="688" y="392" font-size="14" fill="#1F2329">· 工业场景还要看数据权</text>
+  <text x="688" y="414" font-size="14" fill="#1F2329">· 微调成果能不能商用</text>
+
+  <!-- 底部 -->
+  <rect x="120" y="470" width="760" height="72" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="502" text-anchor="middle" font-size="16" font-weight="bold" fill="#1F2329">选型工作底稿：逐行填，就是你的决策表</text>
+  <text x="500" y="528" text-anchor="middle" font-size="14" fill="#646A73">候选模型 / 参数规模 / 许可证条款 / 硬件预算 / 社区活跃度 → 通过或淘汰</text>
+
+  <rect x="120" y="560" width="760" height="62" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="586" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">去哪下：Hugging Face（模型库）、GitHub、国内镜像站</text>
+  <text x="500" y="608" text-anchor="middle" font-size="14" fill="#646A73">本书记方法不写死型号——模型迭代快，写死的型号半年后过时</text>
+
+  <rect x="180.0" y="636" width="640" height="36" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="659" text-anchor="middle" font-size="14" fill="#646A73">图 9-2 开源模型选型：参数规模 / 能力 / 许可证（示意）</text>
+</svg>

@@ -1,0 +1,5 @@
+# 第 9 章《模型微调与私有化部署》依赖说明
+# 代码 9-3（量化演示）、9-4（本地推理服务）、9-5（算账表）零依赖（仅标准库）。
+# 代码 9-1（微调演示）、9-2（LoRA 演示）需要 torch，CPU 版即可：
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# 运行环境：Python 3.10+。
