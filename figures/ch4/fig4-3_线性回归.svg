@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <!-- 标题 -->
+  <text x="500" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">线性回归：刀具磨损曲线</text>
+
+  <!-- 坐标系 -->
+  <g>
+    <!-- 轴 -->
+    <line x1="120" y1="560" x2="880" y2="560" stroke="#1F2329" stroke-width="2"/>
+    <line x1="120" y1="560" x2="120" y2="100" stroke="#1F2329" stroke-width="2"/>
+    <!-- 轴刻度 -->
+    <text x="120" y="586" text-anchor="middle" font-size="12" fill="#646A73">0</text>
+    <text x="270" y="586" text-anchor="middle" font-size="12" fill="#646A73">200</text>
+    <text x="420" y="586" text-anchor="middle" font-size="12" fill="#646A73">400</text>
+    <text x="570" y="586" text-anchor="middle" font-size="12" fill="#646A73">600</text>
+    <text x="720" y="586" text-anchor="middle" font-size="12" fill="#646A73">800</text>
+    <text x="870" y="586" text-anchor="middle" font-size="12" fill="#646A73">1000</text>
+    <text x="500" y="614" text-anchor="middle" font-size="14" fill="#1F2329">累计切削件数（件）</text>
+    <!-- y 轴 -->
+    <text x="80" y="560" text-anchor="end" font-size="12" fill="#646A73">0.0</text>
+    <text x="80" y="430" text-anchor="end" font-size="12" fill="#646A73">0.3</text>
+    <text x="80" y="300" text-anchor="end" font-size="12" fill="#646A73">0.6</text>
+    <text x="80" y="170" text-anchor="end" font-size="12" fill="#646A73">0.9</text>
+    <text x="60" y="330" font-size="14" fill="#1F2329" transform="rotate(-90 60 330)">磨损量（mm）</text>
+
+    <!-- 换刀线 0.60mm（y=300 处） -->
+    <line x1="120" y1="300" x2="880" y2="300" stroke="#D32F2F" stroke-width="2.5" stroke-dasharray="8 6"/>
+    <text x="880" y="290" text-anchor="end" font-size="13" font-weight="bold" fill="#D32F2F">换刀线 0.60 mm</text>
+
+    <!-- 散点（实测磨损）蓝点：件数→x = 120 + 件数/1000*760；磨损→y = 560 - 磨损/0.9*430 -->
+    <!-- (100,0.03)~(500,0.12) 附近，带波动 -->
+    <circle cx="196" cy="524" r="7" fill="#2B6CB0" opacity="0.85"/>
+    <circle cx="272" cy="508" r="7" fill="#2B6CB0" opacity="0.85"/>
+    <circle cx="348" cy="490" r="7" fill="#2B6CB0" opacity="0.85"/>
+    <circle cx="424" cy="472" r="7" fill="#2B6CB0" opacity="0.85"/>
+    <circle cx="500" cy="462" r="7" fill="#2B6CB0" opacity="0.85"/>
+    <circle cx="576" cy="438" r="7" fill="#2B6CB0" opacity="0.85"/>
+    <circle cx="652" cy="420" r="7" fill="#2B6CB0" opacity="0.85"/>
+    <circle cx="728" cy="406" r="7" fill="#2B6CB0" opacity="0.85"/>
+    <circle cx="804" cy="386" r="7" fill="#2B6CB0" opacity="0.85"/>
+    <circle cx="880" cy="368" r="7" fill="#2B6CB0" opacity="0.85"/>
+    <text x="810" y="356" font-size="12" fill="#2B6CB0">● 实测磨损量</text>
+
+    <!-- 拟合直线（斜率 0.018mm/100件 → 磨损/0.9*430；件数每100件 → y 降 8.6） -->
+    <line x1="120" y1="544" x2="880" y2="358" stroke="#FF7D00" stroke-width="4"/>
+    <text x="640" y="340" font-size="13" font-weight="bold" fill="#FF7D00">拟合直线：磨损 = 0.018×件数/100 + 0</text>
+
+    <!-- 预测第600件：y = 0.109 → 560-0.109/0.9*430 = 508 -->
+    <circle cx="576" cy="508" r="10" fill="none" stroke="#FF7D00" stroke-width="3"/>
+    <text x="576" y="488" text-anchor="middle" font-size="13" font-weight="bold" fill="#FF7D00">预测第 600 件：0.109 mm</text>
+  </g>
+
+  <!-- 底部图注 -->
+  <text x="500" y="652" text-anchor="middle" font-size="16" fill="#646A73">图 4-3 刀具磨损线性回归：散点、拟合直线与换刀线（示意）</text>
+</svg>

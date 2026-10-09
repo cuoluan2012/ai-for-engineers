@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <!-- 标题 -->
+  <text x="500" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">混淆矩阵：质检的四个结果</text>
+
+  <!-- 矩阵表 -->
+  <g>
+    <!-- 行标签 -->
+    <rect x="140" y="150" width="180" height="230" rx="10" fill="#F1F5F9"/>
+    <text x="230" y="200" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">实际</text>
+    <text x="230" y="240" text-anchor="middle" font-size="14" fill="#1F2329">正常</text>
+    <text x="230" y="355" text-anchor="middle" font-size="14" fill="#1F2329">故障</text>
+    <!-- 列标签 -->
+    <rect x="320" y="90" width="520" height="60" rx="10" fill="#F1F5F9"/>
+    <text x="580" y="118" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">预测</text>
+    <text x="420" y="136" text-anchor="middle" font-size="14" fill="#1F2329">正常</text>
+    <text x="740" y="136" text-anchor="middle" font-size="14" fill="#1F2329">故障</text>
+
+    <!-- 四格 -->
+    <rect x="320" y="150" width="240" height="230" rx="10" fill="#E6F7ED"/>
+    <text x="440" y="215" text-anchor="middle" font-size="17" font-weight="bold" fill="#18794E">正确放行</text>
+    <text x="440" y="245" text-anchor="middle" font-size="13" fill="#1F2329">真阴性</text>
+    <text x="440" y="280" text-anchor="middle" font-size="12" fill="#646A73">好设备正常运转</text>
+    <text x="440" y="300" text-anchor="middle" font-size="12" fill="#646A73">√ 放心</text>
+
+    <rect x="600" y="150" width="240" height="230" rx="10" fill="#FFF4E5"/>
+    <text x="720" y="215" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">误报</text>
+    <text x="720" y="245" text-anchor="middle" font-size="13" fill="#1F2329">假阳性</text>
+    <text x="720" y="280" text-anchor="middle" font-size="12" fill="#646A73">好设备被冤枉</text>
+    <text x="720" y="300" text-anchor="middle" font-size="12" fill="#646A73">代价：一次停机检查</text>
+
+    <rect x="320" y="380" width="240" height="230" rx="10" fill="#FFF4E5"/>
+    <text x="440" y="445" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">漏检</text>
+    <text x="440" y="475" text-anchor="middle" font-size="13" fill="#1F2329">假阴性</text>
+    <text x="440" y="510" text-anchor="middle" font-size="12" fill="#646A73">坏设备溜过去</text>
+    <text x="440" y="530" text-anchor="middle" font-size="12" fill="#646A73">代价：可能酿成事故</text>
+
+    <rect x="600" y="380" width="240" height="230" rx="10" fill="#E6F7ED"/>
+    <text x="720" y="445" text-anchor="middle" font-size="17" font-weight="bold" fill="#18794E">正确拦截</text>
+    <text x="720" y="475" text-anchor="middle" font-size="13" fill="#1F2329">真阳性</text>
+    <text x="720" y="510" text-anchor="middle" font-size="12" fill="#646A73">故障被抓住</text>
+    <text x="720" y="530" text-anchor="middle" font-size="12" fill="#646A73">√ 及时检修</text>
+  </g>
+
+  <!-- 底部要点 -->
+  <rect x="140" y="640" width="760" height="1" fill="none"/>
+  <text x="500" y="668" text-anchor="middle" font-size="13" fill="#1F2329">左下两格 = 漏检（召回率管它）；右上两格 = 误报（精确率管它）；准确率只看对角线的和</text>
+  <text x="500" y="692" text-anchor="middle" font-size="16" fill="#646A73">图 4-5 混淆矩阵 2×2：质检的"误收 / 误判"四格（示意）</text>
+</svg>

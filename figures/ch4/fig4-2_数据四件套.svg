@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <!-- 标题 -->
+  <text x="500" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">数据四件套：特征 / 标签 / 训练集 / 测试集</text>
+
+  <!-- 中央：数据表 -->
+  <g>
+    <rect x="230" y="100" width="540" height="270" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="500" y="132" text-anchor="middle" font-size="16" font-weight="bold" fill="#1F2329">设备记录表（每一行 = 一个样本）</text>
+    <!-- 表头 -->
+    <rect x="260" y="150" width="120" height="34" fill="#EEF2FF"/>
+    <text x="320" y="173" text-anchor="middle" font-size="13" font-weight="bold" fill="#2B6CB0">振动幅值 X₁</text>
+    <rect x="380" y="150" width="100" height="34" fill="#EEF2FF"/>
+    <text x="430" y="173" text-anchor="middle" font-size="13" font-weight="bold" fill="#2B6CB0">温度 X₂</text>
+    <rect x="480" y="150" width="100" height="34" fill="#EEF2FF"/>
+    <text x="530" y="173" text-anchor="middle" font-size="13" font-weight="bold" fill="#2B6CB0">转速 X₃</text>
+    <rect x="580" y="150" width="160" height="34" fill="#E6F7ED"/>
+    <text x="660" y="173" text-anchor="middle" font-size="13" font-weight="bold" fill="#18794E">状态 y（标签）</text>
+    <!-- 数据行 -->
+    <rect x="260" y="184" width="120" height="32" fill="#FFFFFF"/><text x="320" y="205" text-anchor="middle" font-size="13" fill="#1F2329">2.1 mm/s</text>
+    <rect x="380" y="184" width="100" height="32" fill="#FFFFFF"/><text x="430" y="205" text-anchor="middle" font-size="13" fill="#1F2329">41°C</text>
+    <rect x="480" y="184" width="100" height="32" fill="#FFFFFF"/><text x="530" y="205" text-anchor="middle" font-size="13" fill="#1F2329">1452</text>
+    <rect x="580" y="184" width="160" height="32" fill="#F5FBF8"/><text x="660" y="205" text-anchor="middle" font-size="13" fill="#18794E">正常</text>
+    <rect x="260" y="216" width="120" height="32" fill="#FFFFFF"/><text x="320" y="237" text-anchor="middle" font-size="13" fill="#1F2329">6.3 mm/s</text>
+    <rect x="380" y="216" width="100" height="32" fill="#FFFFFF"/><text x="430" y="237" text-anchor="middle" font-size="13" fill="#1F2329">72°C</text>
+    <rect x="480" y="216" width="100" height="32" fill="#FFFFFF"/><text x="530" y="237" text-anchor="middle" font-size="13" fill="#1F2329">1398</text>
+    <rect x="580" y="216" width="160" height="32" fill="#FFF6EE"/><text x="660" y="237" text-anchor="middle" font-size="13" fill="#D9480F">故障</text>
+    <rect x="260" y="248" width="120" height="32" fill="#FFFFFF"/><text x="320" y="269" text-anchor="middle" font-size="13" fill="#1F2329">3.4 mm/s</text>
+    <rect x="380" y="248" width="100" height="32" fill="#FFFFFF"/><text x="430" y="269" text-anchor="middle" font-size="13" fill="#1F2329">52°C</text>
+    <rect x="480" y="248" width="100" height="32" fill="#FFFFFF"/><text x="530" y="269" text-anchor="middle" font-size="13" fill="#1F2329">1440</text>
+    <rect x="580" y="248" width="160" height="32" fill="#FFF6EE"/><text x="660" y="269" text-anchor="middle" font-size="13" fill="#D9480F">磨损预警</text>
+    <text x="500" y="318" text-anchor="middle" font-size="12" fill="#646A73">…… 共 400 行（样本）</text>
+  </g>
+
+  <!-- 左下：特征卡 -->
+  <g>
+    <rect x="60" y="400" width="270" height="150" rx="14" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="195" y="432" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">特征 Feature（X）</text>
+    <text x="90" y="462" font-size="13" fill="#1F2329">做判断用的输入量</text>
+    <text x="90" y="486" font-size="13" fill="#1F2329">类比：质检要量的尺寸</text>
+    <text x="90" y="510" font-size="12" fill="#646A73">选的量越多越准，但也不是越多越好</text>
+    <text x="90" y="534" font-size="12" fill="#646A73">y = f(X)：特征进，判断出</text>
+  </g>
+
+  <!-- 右下：标签卡 -->
+  <g>
+    <rect x="670" y="400" width="270" height="150" rx="14" fill="#E6F7ED" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="805" y="432" text-anchor="middle" font-size="16" font-weight="bold" fill="#18794E">标签 Label（y）</text>
+    <text x="700" y="462" font-size="13" fill="#1F2329">标准答案（监督学习必须有）</text>
+    <text x="700" y="486" font-size="13" fill="#1F2329">类比：老师傅告诉你"正常/故障"</text>
+    <text x="700" y="510" font-size="12" fill="#646A73">分类任务：类别（正常/故障）</text>
+    <text x="700" y="534" font-size="12" fill="#646A73">回归任务：数值（寿命/磨损量）</text>
+  </g>
+
+  <!-- 左上：训练集卡 -->
+  <g>
+    <rect x="60" y="100" width="140" height="120" rx="14" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="130" y="132" text-anchor="middle" font-size="15" font-weight="bold" fill="#D9480F">训练集</text>
+    <text x="130" y="156" text-anchor="middle" font-size="13" fill="#1F2329">喂饱模型</text>
+    <text x="130" y="178" text-anchor="middle" font-size="12" fill="#646A73">设计校核：反复核算</text>
+    <text x="130" y="200" text-anchor="middle" font-size="12" fill="#646A73">约占 70%~75%</text>
+  </g>
+
+  <!-- 右上：测试集卡 -->
+  <g>
+    <rect x="800" y="100" width="140" height="120" rx="14" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="870" y="132" text-anchor="middle" font-size="15" font-weight="bold" fill="#D9480F">测试集</text>
+    <text x="870" y="156" text-anchor="middle" font-size="13" fill="#1F2329">封存验收</text>
+    <text x="870" y="178" text-anchor="middle" font-size="12" fill="#646A73">交付验收：最后考一次</text>
+    <text x="870" y="200" text-anchor="middle" font-size="12" fill="#646A73">约占 25%，模型没见过</text>
+  </g>
+
+  <!-- 底部图注 -->
+  <text x="500" y="640" text-anchor="middle" font-size="16" fill="#646A73">图 4-2 数据四件套：特征 / 标签 / 训练集 / 测试集（示意）</text>
+</svg>

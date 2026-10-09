@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <!-- 标题 -->
+  <text x="500" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">设备异常分类项目：六步流水线</text>
+
+  <!-- 六个节点（3×2 布局） -->
+  <g>
+    <!-- 节点1 -->
+    <rect x="70" y="120" width="260" height="150" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <circle cx="110" cy="160" r="18" fill="#2B6CB0"/><text x="110" y="166" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">1</text>
+    <text x="200" y="162" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">数据采集</text>
+    <text x="200" y="190" text-anchor="middle" font-size="12" fill="#646A73">6 台泵、400 条记录</text>
+    <text x="200" y="210" text-anchor="middle" font-size="12" fill="#646A73">振动/温度/转速/RMS</text>
+    <text x="200" y="248" text-anchor="middle" font-size="12" fill="#2B6CB0">带标签：正常/磨损/故障</text>
+
+    <!-- 节点2 -->
+    <rect x="370" y="120" width="260" height="150" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <circle cx="410" cy="160" r="18" fill="#2B6CB0"/><text x="410" y="166" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">2</text>
+    <text x="500" y="162" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">数据检查</text>
+    <text x="500" y="190" text-anchor="middle" font-size="12" fill="#646A73">看概览：量纲、范围</text>
+    <text x="500" y="210" text-anchor="middle" font-size="12" fill="#646A73">看类别数量是否失衡</text>
+    <text x="500" y="248" text-anchor="middle" font-size="12" fill="#2B6CB0">动手建模前先认识数据</text>
+
+    <!-- 节点3 -->
+    <rect x="670" y="120" width="260" height="150" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <circle cx="710" cy="160" r="18" fill="#2B6CB0"/><text x="710" y="166" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">3</text>
+    <text x="800" y="162" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">切分数据</text>
+    <text x="800" y="190" text-anchor="middle" font-size="12" fill="#646A73">训练集 75% + 测试集 25%</text>
+    <text x="800" y="210" text-anchor="middle" font-size="12" fill="#646A73">stratify 分层保比例</text>
+    <text x="800" y="248" text-anchor="middle" font-size="12" fill="#2B6CB0">测试集封存，最后验收</text>
+
+    <!-- 节点4 -->
+    <rect x="70" y="320" width="260" height="150" rx="14" fill="#FFFFFF" stroke="#FF7D00" stroke-width="2"/>
+    <circle cx="110" cy="360" r="18" fill="#FF7D00"/><text x="110" y="366" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">4</text>
+    <text x="200" y="362" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">训练模型</text>
+    <text x="200" y="390" text-anchor="middle" font-size="12" fill="#646A73">决策树：99%</text>
+    <text x="200" y="410" text-anchor="middle" font-size="12" fill="#646A73">KNN：83%</text>
+    <text x="200" y="448" text-anchor="middle" font-size="12" fill="#FF7D00">同一份数据比出高下</text>
+
+    <!-- 节点5 -->
+    <rect x="370" y="320" width="260" height="150" rx="14" fill="#FFFFFF" stroke="#FF7D00" stroke-width="2"/>
+    <circle cx="410" cy="360" r="18" fill="#FF7D00"/><text x="410" y="366" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">5</text>
+    <text x="500" y="362" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">评估模型</text>
+    <text x="500" y="390" text-anchor="middle" font-size="12" fill="#646A73">分类报告 + 混淆矩阵</text>
+    <text x="500" y="410" text-anchor="middle" font-size="12" fill="#646A73">50 个正常：1 个误报</text>
+    <text x="500" y="448" text-anchor="middle" font-size="12" fill="#FF7D00">漏检 1 个磨损预警</text>
+
+    <!-- 节点6 -->
+    <rect x="670" y="320" width="260" height="150" rx="14" fill="#FFFFFF" stroke="#34C07C" stroke-width="2"/>
+    <circle cx="710" cy="360" r="18" fill="#34C07C"/><text x="710" y="366" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">6</text>
+    <text x="800" y="362" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">解读特征</text>
+    <text x="800" y="390" text-anchor="middle" font-size="12" fill="#646A73">振动幅值：0.596</text>
+    <text x="800" y="410" text-anchor="middle" font-size="12" fill="#646A73">振动 RMS：0.394</text>
+    <text x="800" y="448" text-anchor="middle" font-size="12" fill="#34C07C">判断主要看振动 → 省钱依据</text>
+  </g>
+
+  <!-- 箭头 -->
+  <path d="M330 195 L370 195" stroke="#94A3B8" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M630 195 L670 195" stroke="#94A3B8" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M200 270 L200 320" stroke="#94A3B8" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M500 270 L500 320" stroke="#94A3B8" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M800 270 L800 320" stroke="#94A3B8" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M330 395 L370 395" stroke="#94A3B8" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M630 395 L670 395" stroke="#94A3B8" stroke-width="3" marker-end="url(#arr)"/>
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#94A3B8"/></marker></defs>
+
+  <!-- 底部闭环说明 + 图注 -->
+  <text x="500" y="530" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F2329">六个步骤 = 机器学习项目的标准流水线，换数据换标签就是另一个项目</text>
+  <text x="500" y="640" text-anchor="middle" font-size="16" fill="#646A73">图 4-7 设备异常分类项目六步流水线（示意）</text>
+</svg>

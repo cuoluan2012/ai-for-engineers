@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <!-- 标题 -->
+  <text x="500" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">写规则 vs 学规则</text>
+
+  <!-- 左：传统编程 -->
+  <g>
+    <rect x="60" y="90" width="420" height="470" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="60" y="90" width="420" height="46" rx="14" fill="#1E293B"/>
+    <text x="270" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">传统编程：人写规则</text>
+    <!-- 流程节点 -->
+    <rect x="120" y="170" width="300" height="56" rx="10" fill="#F1F5F9"/>
+    <text x="270" y="192" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">工程师思考经验</text>
+    <text x="270" y="212" text-anchor="middle" font-size="12" fill="#646A73">"振动大于 4.5 就要报警"</text>
+    <path d="M270 226 L270 240" stroke="#94A3B8" stroke-width="2"/>
+    <rect x="120" y="240" width="300" height="56" rx="10" fill="#EEF2FF"/>
+    <text x="270" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#2B6CB0">手写 if-else 规则</text>
+    <text x="270" y="282" text-anchor="middle" font-size="12" fill="#646A73" font-family="Menlo, monospace">if vib &gt; 4.5 and temp &gt; 60</text>
+    <path d="M270 296 L270 310" stroke="#94A3B8" stroke-width="2"/>
+    <rect x="120" y="310" width="300" height="56" rx="10" fill="#F1F5F9"/>
+    <text x="270" y="332" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">机器执行</text>
+    <text x="270" y="352" text-anchor="middle" font-size="12" fill="#646A73">按固定规则判断，规则写死</text>
+    <!-- 局限 -->
+    <rect x="120" y="400" width="300" height="120" rx="10" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="150" y="428" font-size="14" font-weight="bold" fill="#D9480F">问题来了：</text>
+    <text x="150" y="452" font-size="13" fill="#1F2329">· 阈值 4.5 / 60 定得准吗？</text>
+    <text x="150" y="474" font-size="13" fill="#1F2329">· 不同设备工况不同，规则要</text>
+    <text x="150" y="494" font-size="13" fill="#1F2329">  每台单独调吗？</text>
+    <text x="150" y="514" font-size="13" fill="#1F2329">· 老师傅的"经验"怎么写？</text>
+  </g>
+
+  <!-- 右：机器学习 -->
+  <g>
+    <rect x="520" y="90" width="420" height="470" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="520" y="90" width="420" height="46" rx="14" fill="#2B6CB0"/>
+    <text x="730" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">机器学习：数据产规则</text>
+    <rect x="580" y="170" width="300" height="56" rx="10" fill="#F1F5F9"/>
+    <text x="730" y="192" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">历史数据 + 标签</text>
+    <text x="730" y="212" text-anchor="middle" font-size="12" fill="#646A73">5 年设备记录：振动/温度 + 正常/故障</text>
+    <path d="M730 226 L730 240" stroke="#94A3B8" stroke-width="2"/>
+    <rect x="580" y="240" width="300" height="56" rx="10" fill="#E8F3FF"/>
+    <text x="730" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#2B6CB0">训练（学规律）</text>
+    <text x="730" y="282" text-anchor="middle" font-size="12" fill="#646A73">model.fit(X_train, y_train)</text>
+    <path d="M730 296 L730 310" stroke="#94A3B8" stroke-width="2"/>
+    <rect x="580" y="310" width="300" height="56" rx="10" fill="#E6F7ED"/>
+    <text x="730" y="332" text-anchor="middle" font-size="14" font-weight="bold" fill="#18794E">模型（自动总结的规则）</text>
+    <text x="730" y="352" text-anchor="middle" font-size="12" fill="#646A73">y = f(X)：输入特征 → 输出判断</text>
+    <path d="M730 366 L730 380" stroke="#94A3B8" stroke-width="2"/>
+    <rect x="580" y="380" width="300" height="56" rx="10" fill="#F1F5F9"/>
+    <text x="730" y="402" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">预测新数据</text>
+    <text x="730" y="422" text-anchor="middle" font-size="12" fill="#646A73">model.predict(新记录) → 状态</text>
+    <rect x="580" y="460" width="300" height="60" rx="10" fill="#E6F7ED"/>
+    <text x="730" y="484" text-anchor="middle" font-size="13" font-weight="bold" fill="#18794E">规律从数据里自己长出来</text>
+    <text x="730" y="504" text-anchor="middle" font-size="12" fill="#646A73">阈值、判断规则由数据决定，不是人拍脑袋</text>
+  </g>
+
+  <!-- 中间对比箭头 -->
+  <path d="M480 220 L520 220 M480 360 L520 360" stroke="#94A3B8" stroke-width="3" marker-end="url(#arr)"/>
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#94A3B8"/></marker></defs>
+  <text x="500" y="250" text-anchor="middle" font-size="14" font-weight="bold" fill="#FF7D00">VS</text>
+
+  <!-- 底部图注 -->
+  <text x="500" y="640" text-anchor="middle" font-size="16" fill="#646A73">图 4-1 写规则 vs 学规则：两条路线（示意）</text>
+</svg>

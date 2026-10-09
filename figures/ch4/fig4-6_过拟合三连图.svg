@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <!-- 标题 -->
+  <text x="500" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">过拟合：公差控制的两个极端</text>
+
+  <!-- 左：欠拟合 -->
+  <g>
+    <rect x="60" y="90" width="280" height="400" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="200" y="122" text-anchor="middle" font-size="16" font-weight="bold" fill="#1F2329">欠拟合</text>
+    <!-- 坐标 -->
+    <line x1="100" y1="380" x2="300" y2="380" stroke="#1F2329" stroke-width="1.5"/>
+    <line x1="100" y1="380" x2="100" y2="150" stroke="#1F2329" stroke-width="1.5"/>
+    <circle cx="130" cy="350" r="6" fill="#2B6CB0"/><circle cx="170" cy="330" r="6" fill="#2B6CB0"/><circle cx="210" cy="300" r="6" fill="#2B6CB0"/><circle cx="250" cy="270" r="6" fill="#2B6CB0"/><circle cx="285" cy="240" r="6" fill="#2B6CB0"/>
+    <line x1="100" y1="380" x2="300" y2="200" stroke="#FF7D00" stroke-width="3"/>
+    <text x="200" y="420" text-anchor="middle" font-size="13" fill="#1F2329">一条直线，怎么都贴不紧</text>
+    <text x="200" y="444" text-anchor="middle" font-size="13" fill="#1F2329">训练误差大，规律没学够</text>
+    <rect x="90" y="460" width="220" height="50" rx="10" fill="#FFF4E5"/>
+    <text x="200" y="482" text-anchor="middle" font-size="12" font-weight="bold" fill="#D9480F">公差控制过松</text>
+    <text x="200" y="500" text-anchor="middle" font-size="11" fill="#646A73">东西能用，但精度差</text>
+  </g>
+
+  <!-- 中：合适 -->
+  <g>
+    <rect x="360" y="90" width="280" height="400" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="500" y="122" text-anchor="middle" font-size="16" font-weight="bold" fill="#1F2329">拟合合适</text>
+    <line x1="400" y1="380" x2="600" y2="380" stroke="#1F2329" stroke-width="1.5"/>
+    <line x1="400" y1="380" x2="400" y2="150" stroke="#1F2329" stroke-width="1.5"/>
+    <circle cx="420" cy="350" r="6" fill="#2B6CB0"/><circle cx="450" cy="330" r="6" fill="#2B6CB0"/><circle cx="480" cy="310" r="6" fill="#2B6CB0"/><circle cx="510" cy="290" r="6" fill="#2B6CB0"/><circle cx="540" cy="280" r="6" fill="#2B6CB0"/><circle cx="570" cy="250" r="6" fill="#2B6CB0"/>
+    <path d="M400 380 Q420 350 450 328 Q480 306 510 288 Q540 270 600 230" stroke="#34C07C" stroke-width="3" fill="none"/>
+    <text x="500" y="420" text-anchor="middle" font-size="13" fill="#1F2329">曲线贴合趋势，不过分纠缠噪声</text>
+    <text x="500" y="444" text-anchor="middle" font-size="13" fill="#1F2329">训练、新数据表现都好</text>
+    <rect x="390" y="460" width="220" height="50" rx="10" fill="#E6F7ED"/>
+    <text x="500" y="482" text-anchor="middle" font-size="12" font-weight="bold" fill="#18794E">公差恰到好处</text>
+    <text x="500" y="500" text-anchor="middle" font-size="11" fill="#646A73">样件合格，量产也稳定</text>
+  </g>
+
+  <!-- 右：过拟合 -->
+  <g>
+    <rect x="660" y="90" width="280" height="400" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <text x="800" y="122" text-anchor="middle" font-size="16" font-weight="bold" fill="#1F2329">过拟合</text>
+    <line x1="700" y1="380" x2="900" y2="380" stroke="#1F2329" stroke-width="1.5"/>
+    <line x1="700" y1="380" x2="700" y2="150" stroke="#1F2329" stroke-width="1.5"/>
+    <circle cx="720" cy="350" r="6" fill="#2B6CB0"/><circle cx="750" cy="330" r="6" fill="#2B6CB0"/><circle cx="780" cy="310" r="6" fill="#2B6CB0"/><circle cx="810" cy="290" r="6" fill="#2B6CB0"/><circle cx="840" cy="280" r="6" fill="#2B6CB0"/><circle cx="870" cy="250" r="6" fill="#2B6CB0"/>
+    <path d="M700 380 Q715 345 725 352 Q740 365 750 330 Q765 310 778 318 Q790 300 805 305 Q820 275 835 282 Q855 258 870 250 Q885 245 900 240" stroke="#D32F2F" stroke-width="3" fill="none"/>
+    <text x="800" y="420" text-anchor="middle" font-size="13" fill="#1F2329">曲线穿过每一个点，连噪声都学</text>
+    <text x="800" y="444" text-anchor="middle" font-size="13" fill="#1F2329">训练误差最小，一换数据就崩</text>
+    <rect x="690" y="460" width="220" height="50" rx="10" fill="#FFF4E5"/>
+    <text x="800" y="482" text-anchor="middle" font-size="12" font-weight="bold" fill="#D9480F">公差控制过严</text>
+    <text x="800" y="500" text-anchor="middle" font-size="11" fill="#646A73">样件全合格，量产全报废</text>
+  </g>
+
+  <!-- 底部图注 -->
+  <text x="500" y="556" text-anchor="middle" font-size="13" fill="#1F2329">判断信号：训练误差低、测试误差高 = 过拟合；用更多数据、降复杂度、正则化、交叉验证来防</text>
+  <text x="500" y="640" text-anchor="middle" font-size="16" fill="#646A73">图 4-6 过拟合三连图：欠拟合 / 合适 / 过拟合（示意）</text>
+</svg>
