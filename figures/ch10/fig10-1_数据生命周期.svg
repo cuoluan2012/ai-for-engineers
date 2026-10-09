@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1360" viewBox="0 0 2000 1360">
+<rect width="2000" height="1360" fill="#FFFFFF"/>
+<rect x="60" y="46" width="1880" height="128" rx="24" fill="#2E5E8C"/>
+<text x="1000.0" y="155.9" font-size="54" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">工业数据生命周期</text>
+<text x="1000.0" y="215.5" font-size="30" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">采集 → 清洗 → 标注 → 治理：四道关，缺一不可</text>
+<rect x="90" y="290" width="360" height="420" rx="28" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="90" y="290" width="360" height="84" rx="28" fill="#2E5E8C"/>
+<rect x="90" y="332" width="360" height="42" rx="0" fill="#2E5E8C"/>
+<text x="270.0" y="367.7" font-size="42" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">① 采集</text>
+<text x="120" y="437.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">设备/传感器</text>
+<text x="120" y="480.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">MES·ERP·PLM</text>
+<text x="120" y="523.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">Excel·图纸</text>
+<rect x="120" y="626" width="300" height="40.8" rx="14" fill="#2E5E8C"/>
+<text x="270.0" y="666.8" font-size="24" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">从四处仓库</text>
+<text x="270.0" y="667.4" font-size="24" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">从四处仓库</text>
+<text x="270.0" y="696.4" font-size="24" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">把数据盘出来</text>
+<line x1="450" y1="500.0" x2="545" y2="500.0" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="545,500.0 521.6,511.3 521.6,488.7" fill="#9DB4C6"/>
+<rect x="545" y="290" width="360" height="420" rx="28" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="545" y="290" width="360" height="84" rx="28" fill="#F2A03D"/>
+<rect x="545" y="332" width="360" height="42" rx="0" fill="#F2A03D"/>
+<text x="725.0" y="367.7" font-size="42" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">② 清洗</text>
+<text x="575" y="437.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">缺失 → 填充/删除</text>
+<text x="575" y="480.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">重复 → 去重</text>
+<text x="575" y="523.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">异常 → 标出复核</text>
+<rect x="575" y="626" width="300" height="40.8" rx="14" fill="#F2A03D"/>
+<text x="725.0" y="666.8" font-size="24" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">数据质量决定</text>
+<text x="725.0" y="667.4" font-size="24" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">数据质量决定</text>
+<text x="725.0" y="696.4" font-size="24" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">模型上限</text>
+<line x1="905" y1="500.0" x2="1000" y2="500.0" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="1000,500.0 976.6,511.3 976.6,488.7" fill="#9DB4C6"/>
+<rect x="1000" y="290" width="360" height="420" rx="28" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="1000" y="290" width="360" height="84" rx="28" fill="#5E9E6B"/>
+<rect x="1000" y="332" width="360" height="42" rx="0" fill="#5E9E6B"/>
+<text x="1180.0" y="367.7" font-size="42" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">③ 标注</text>
+<text x="1030" y="437.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">良品/缺陷</text>
+<text x="1030" y="480.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">故障/正常</text>
+<text x="1030" y="523.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">专家抽检</text>
+<rect x="1030" y="626" width="300" height="40.8" rx="14" fill="#5E9E6B"/>
+<text x="1180.0" y="666.8" font-size="24" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">没有答案</text>
+<text x="1180.0" y="667.4" font-size="24" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">没有答案</text>
+<text x="1180.0" y="696.4" font-size="24" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">模型没法学</text>
+<line x1="1360" y1="500.0" x2="1455" y2="500.0" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="1455,500.0 1431.6,511.3 1431.6,488.7" fill="#9DB4C6"/>
+<rect x="1455" y="290" width="360" height="420" rx="28" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="1455" y="290" width="360" height="84" rx="28" fill="#D96C5F"/>
+<rect x="1455" y="332" width="360" height="42" rx="0" fill="#D96C5F"/>
+<text x="1635.0" y="367.7" font-size="42" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">④ 治理</text>
+<text x="1485" y="437.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">定责任人</text>
+<text x="1485" y="480.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">建数据字典</text>
+<text x="1485" y="523.2" font-size="32" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">设访问权限</text>
+<rect x="1485" y="626" width="300" height="40.8" rx="14" fill="#D96C5F"/>
+<text x="1635.0" y="666.8" font-size="24" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">数据是资产</text>
+<text x="1635.0" y="667.4" font-size="24" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">数据是资产</text>
+<text x="1635.0" y="696.4" font-size="24" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">要有人管</text>
+<text x="1000.0" y="1330.1" font-size="26" fill="#8A99A8" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">图 10-1 · 工业数据生命周期</text>
+</svg>

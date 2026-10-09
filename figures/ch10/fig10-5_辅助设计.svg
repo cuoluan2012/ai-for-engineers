@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1360" viewBox="0 0 2000 1360">
+<rect width="2000" height="1360" fill="#FFFFFF"/>
+<rect x="60" y="46" width="1880" height="128" rx="24" fill="#2E5E8C"/>
+<text x="1000.0" y="155.9" font-size="54" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">AI 辅助设计三件事</text>
+<text x="1000.0" y="215.5" font-size="30" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">大模型进入设计环节的正确姿势：AI 是助手，签字的是人</text>
+<rect x="110" y="300" width="560" height="520" rx="28" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="110" y="300" width="560" height="96" rx="28" fill="#5E9E6B"/>
+<rect x="110" y="348" width="560" height="48" rx="0" fill="#5E9E6B"/>
+<text x="390.0" y="380.3" font-size="38" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">图纸知识复用</text>
+<text x="146" y="455.5" font-size="30" fill="#5A6B7B" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">RAG 知识库（第 7 章）</text>
+<text x="146" y="515.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">设计规范 · 历史图纸</text>
+<text x="146" y="555.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">标准件库</text>
+<text x="146" y="595.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">问“公差按哪个标准”秒回</text>
+<text x="146" y="635.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">✅ 离落地最近</text>
+<rect x="146" y="744" width="151.2" height="47.6" rx="16" fill="#5E9E6B"/>
+<text x="221.6" y="791.5999999999999" font-size="28" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">落地最快</text>
+<rect x="720" y="300" width="560" height="520" rx="28" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="720" y="300" width="560" height="96" rx="28" fill="#2E5E8C"/>
+<rect x="720" y="348" width="560" height="48" rx="0" fill="#2E5E8C"/>
+<text x="1000.0" y="380.3" font-size="38" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">标准件选型辅助</text>
+<text x="756" y="455.5" font-size="30" fill="#5A6B7B" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">RAG + 结构化检索</text>
+<text x="756" y="515.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">选型条件 → 候选清单</text>
+<text x="756" y="555.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">大模型排序解释</text>
+<text x="756" y="595.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">人做最终判断</text>
+<text x="756" y="635.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">✅ 需要数据治理跟上</text>
+<rect x="756" y="744" width="151.2" height="47.6" rx="16" fill="#2E5E8C"/>
+<text x="831.6" y="791.5999999999999" font-size="28" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">中期目标</text>
+<rect x="1330" y="300" width="560" height="520" rx="28" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="1330" y="300" width="560" height="96" rx="28" fill="#F2A03D"/>
+<rect x="1330" y="348" width="560" height="48" rx="0" fill="#F2A03D"/>
+<text x="1610.0" y="380.3" font-size="38" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">生成式设计</text>
+<text x="1366" y="455.5" font-size="30" fill="#5A6B7B" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">大模型生成 + CAE 验证</text>
+<text x="1366" y="515.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">功能要求 + 约束</text>
+<text x="1366" y="555.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">生成结构方案草图</text>
+<text x="1366" y="595.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">灵感引擎，不进产线</text>
+<text x="1366" y="635.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">⏳ 前瞻方向</text>
+<rect x="1366" y="744" width="151.2" height="47.6" rx="16" fill="#F2A03D"/>
+<text x="1441.6" y="791.5999999999999" font-size="28" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">远期路线</text>
+<rect x="110" y="880" width="1780" height="120" rx="24" fill="#F9E3DF" stroke="#D96C5F" stroke-width="3"/>
+<text x="1000.0" y="968.9" font-size="34" fill="#D96C5F" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">工业红线：AI 出的设计，最终签字负责的是工程师 —— 永远停在“建议”层</text>
+<text x="1000.0" y="1330.1" font-size="26" fill="#8A99A8" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">图 10-5 · AI 辅助设计三件事</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1360" viewBox="0 0 2000 1360">
+<rect width="2000" height="1360" fill="#FFFFFF"/>
+<rect x="60" y="46" width="1880" height="128" rx="24" fill="#2E5E8C"/>
+<text x="1000.0" y="155.9" font-size="54" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">机器视觉质检：从人眼看 到 算法判</text>
+<text x="1000.0" y="215.5" font-size="30" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">漏检 vs 误报 —— 两类错误代价不对等，阈值按账本定</text>
+<rect x="80" y="300" width="340" height="400" rx="26" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="80" y="300" width="340" height="82" rx="26" fill="#2E5E8C"/>
+<rect x="80" y="341" width="340" height="41" rx="0" fill="#2E5E8C"/>
+<text x="250.0" y="371.6" font-size="36" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">① 打光采集</text>
+<text x="108" y="445.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">相机 + 光源</text>
+<text x="108" y="485.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">工件图像</text>
+<text x="108" y="525.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">产线真实节拍</text>
+<line x1="420" y1="490" x2="480" y2="490" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="480,490 456.6,501.3 456.6,478.7" fill="#9DB4C6"/>
+<rect x="480" y="300" width="340" height="400" rx="26" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="480" y="300" width="340" height="82" rx="26" fill="#F2A03D"/>
+<rect x="480" y="341" width="340" height="41" rx="0" fill="#F2A03D"/>
+<text x="650.0" y="371.6" font-size="36" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">② 缺陷标注</text>
+<text x="508" y="445.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">良品/缺陷</text>
+<text x="508" y="485.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">专家抽检</text>
+<text x="508" y="525.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">几百张起步</text>
+<line x1="820" y1="490" x2="880" y2="490" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="880,490 856.6,501.3 856.6,478.7" fill="#9DB4C6"/>
+<rect x="880" y="300" width="340" height="400" rx="26" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="880" y="300" width="340" height="82" rx="26" fill="#5E9E6B"/>
+<rect x="880" y="341" width="340" height="41" rx="0" fill="#5E9E6B"/>
+<text x="1050.0" y="371.6" font-size="36" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">③ 训练 CNN</text>
+<text x="908" y="445.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">卷积提特征</text>
+<text x="908" y="485.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">第 5 章技术</text>
+<text x="908" y="525.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">迁移+增强</text>
+<line x1="1220" y1="490" x2="1280" y2="490" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="1280,490 1256.6,501.3 1256.6,478.7" fill="#9DB4C6"/>
+<rect x="1280" y="300" width="340" height="400" rx="26" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="1280" y="300" width="340" height="82" rx="26" fill="#2E5E8C"/>
+<rect x="1280" y="341" width="340" height="41" rx="0" fill="#2E5E8C"/>
+<text x="1450.0" y="371.6" font-size="36" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">④ 在线判定</text>
+<text x="1308" y="445.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">输出缺陷概率</text>
+<text x="1308" y="485.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">定判定阈值</text>
+<text x="1308" y="525.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">实时毫秒级</text>
+<line x1="1620" y1="490" x2="1580" y2="490" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="1580,490 1603.4,478.7 1603.4,501.3" fill="#9DB4C6"/>
+<rect x="1580" y="300" width="340" height="400" rx="26" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="1580" y="300" width="340" height="82" rx="26" fill="#D96C5F"/>
+<rect x="1580" y="341" width="340" height="41" rx="0" fill="#D96C5F"/>
+<text x="1750.0" y="371.6" font-size="36" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">⑤ 复检拦截</text>
+<text x="1608" y="445.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">可疑件人工复检</text>
+<text x="1608" y="485.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">误报率有上限</text>
+<text x="1608" y="525.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">不堵产线</text>
+<rect x="140" y="780" width="700" height="250" rx="24" fill="#F9E3DF" stroke="#D96C5F" stroke-width="3"/>
+<text x="490" y="870.6" font-size="36" fill="#D96C5F" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">漏检（假阴性）</text>
+<text x="490" y="925.5" font-size="30" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">缺陷品判成良品流出</text>
+<text x="490" y="980.5" font-size="30" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">→ 客户索赔 · 代价大（100 元/次）</text>
+<rect x="1160" y="780" width="700" height="250" rx="24" fill="#E3F1E6" stroke="#5E9E6B" stroke-width="3"/>
+<text x="1510" y="870.6" font-size="36" fill="#5E9E6B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">误报（假阳性）</text>
+<text x="1510" y="925.5" font-size="30" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">良品判成缺陷拦下</text>
+<text x="1510" y="980.5" font-size="30" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">→ 人工复检 · 代价小（5 元/次）</text>
+<text x="1000.0" y="1330.1" font-size="26" fill="#8A99A8" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">图 10-3 · 机器视觉质检流程</text>
+</svg>

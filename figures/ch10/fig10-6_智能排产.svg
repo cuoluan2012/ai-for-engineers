@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1360" viewBox="0 0 2000 1360">
+<rect width="2000" height="1360" fill="#FFFFFF"/>
+<rect x="60" y="46" width="1880" height="128" rx="24" fill="#2E5E8C"/>
+<text x="1000.0" y="155.9" font-size="54" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">智能排产：在约束里找好解</text>
+<text x="1000.0" y="215.5" font-size="30" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">排产不是“AI 凭空给答案”，而是硬约束里尽量满足软目标</text>
+<rect x="120" y="320" width="380" height="330" rx="26" fill="#D6E6F5" stroke="#2E5E8C" stroke-width="3"/>
+<text x="310" y="404.0" font-size="40" fill="#2E5E8C" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">订单</text>
+<text x="310" y="455.5" font-size="30" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">12 个订单</text>
+<text x="310" y="495.5" font-size="30" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">总工时 70h</text>
+<text x="310" y="535.5" font-size="30" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">交期卡临界</text>
+<rect x="620" y="320" width="500" height="330" rx="26" fill="#E8F0F8" stroke="#9DB4C6" stroke-width="3"/>
+<text x="870" y="397.3" font-size="38" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">约束清单</text>
+<rect x="660" y="415" width="110" height="44.199999999999996" rx="16" fill="#2E5E8C"/>
+<text x="715.0" y="459.20000000000005" font-size="26" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">产能</text>
+<text x="800" y="459.1" font-size="26" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">每天 8 工时</text>
+<rect x="660" y="473" width="110" height="44.199999999999996" rx="16" fill="#2E5E8C"/>
+<text x="715.0" y="517.2" font-size="26" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">交期</text>
+<text x="800" y="517.1" font-size="26" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">第 N 天交付</text>
+<rect x="660" y="531" width="110" height="44.199999999999996" rx="16" fill="#2E5E8C"/>
+<text x="715.0" y="575.2" font-size="26" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">换型</text>
+<text x="800" y="575.1" font-size="26" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">每次 0.5h</text>
+<rect x="660" y="589" width="110" height="44.199999999999996" rx="16" fill="#2E5E8C"/>
+<text x="715.0" y="633.2" font-size="26" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">物料</text>
+<text x="800" y="633.1" font-size="26" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">齐套才能排</text>
+<text x="870" y="628.1" font-size="26" fill="#D96C5F" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">硬约束：不能违反</text>
+<rect x="1230" y="320" width="320" height="330" rx="26" fill="#FDEBD3" stroke="#F2A03D" stroke-width="3"/>
+<text x="1390" y="412.3" font-size="38" fill="#F2A03D" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">排程器</text>
+<text x="1390" y="475.5" font-size="30" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">优先级 → 交期</text>
+<text x="1390" y="515.5" font-size="30" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">启发式排程</text>
+<text x="1390" y="555.5" font-size="30" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">（或运筹求解器）</text>
+<text x="1390" y="612.1" font-size="26" fill="#5E9E6B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">软目标：尽量做好</text>
+<line x1="500" y1="480" x2="620" y2="480" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="620,480 596.6,491.3 596.6,468.7" fill="#9DB4C6"/>
+<line x1="1120" y1="480" x2="1230" y2="480" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="1230,480 1206.6,491.3 1206.6,468.7" fill="#9DB4C6"/>
+<rect x="300" y="760" width="340" height="170" rx="24" fill="#F2F7FB" stroke="#2E5E8C" stroke-width="3"/>
+<text x="470" y="848.9" font-size="34" fill="#2E5E8C" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">车床-1</text>
+<text x="470" y="900.1" font-size="26" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">每天 8 工时</text>
+<rect x="830" y="760" width="340" height="170" rx="24" fill="#F2F7FB" stroke="#2E5E8C" stroke-width="3"/>
+<text x="1000" y="848.9" font-size="34" fill="#2E5E8C" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">车床-2</text>
+<text x="1000" y="900.1" font-size="26" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">每天 8 工时</text>
+<rect x="1360" y="760" width="340" height="170" rx="24" fill="#F2F7FB" stroke="#2E5E8C" stroke-width="3"/>
+<text x="1530" y="848.9" font-size="34" fill="#2E5E8C" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">铣床-1</text>
+<text x="1530" y="900.1" font-size="26" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">每天 8 工时</text>
+<line x1="1390" y1="650" x2="470" y2="760" stroke="#9DB4C6" stroke-width="6" stroke-linecap="round"/>
+<polygon points="470,760 491.9,746.0 494.6,768.4" fill="#9DB4C6"/>
+<line x1="1390" y1="650" x2="1000" y2="760" stroke="#9DB4C6" stroke-width="6" stroke-linecap="round"/>
+<polygon points="1000,760 1019.5,742.8 1025.6,764.5" fill="#9DB4C6"/>
+<line x1="1390" y1="650" x2="1530" y2="760" stroke="#9DB4C6" stroke-width="6" stroke-linecap="round"/>
+<polygon points="1530,760 1504.6,754.4 1518.6,736.6" fill="#9DB4C6"/>
+<rect x="300" y="1000" width="1400" height="110" rx="22" fill="#F9E3DF" stroke="#D96C5F" stroke-width="3"/>
+<text x="1000.0" y="1083.9" font-size="34" fill="#D96C5F" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">坑：约束没说全（漏换型时间）→ 排程再漂亮也执行不了</text>
+<text x="1000.0" y="1330.1" font-size="26" fill="#8A99A8" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">图 10-6 · 智能排产：订单 → 约束 → 排程 → 车间</text>
+</svg>

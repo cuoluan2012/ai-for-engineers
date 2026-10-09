@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1360" viewBox="0 0 2000 1360">
+<rect width="2000" height="1360" fill="#FFFFFF"/>
+<rect x="60" y="46" width="1880" height="128" rx="24" fill="#2E5E8C"/>
+<text x="1000.0" y="155.9" font-size="54" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">POC → 产线四阶段</text>
+<text x="1000.0" y="215.5" font-size="30" fill="#5A6B7B" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">先试点 · 再小批量 · 后扩大 · 终固化 —— 每个阶段都有过关条件</text>
+<rect x="105" y="320" width="400" height="420" rx="26" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="105" y="320" width="400" height="86" rx="26" fill="#5E9E6B"/>
+<rect x="105" y="363" width="400" height="43" rx="0" fill="#5E9E6B"/>
+<text x="305.0" y="395.3" font-size="38" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">① 试点 POC</text>
+<text x="137" y="470.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">一条线/一台设备</text>
+<text x="137" y="510.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">4~6 周</text>
+<text x="137" y="550.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">验证可行性+全流程</text>
+<line x1="505" y1="520" x2="560" y2="520" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="560,520 536.6,531.3 536.6,508.7" fill="#9DB4C6"/>
+<rect x="560" y="320" width="400" height="420" rx="26" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="560" y="320" width="400" height="86" rx="26" fill="#2E5E8C"/>
+<rect x="560" y="363" width="400" height="43" rx="0" fill="#2E5E8C"/>
+<text x="760.0" y="395.3" font-size="38" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">② 小批量</text>
+<text x="592" y="470.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">2~3 条线</text>
+<text x="592" y="510.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">稳定性+运维流程</text>
+<text x="592" y="550.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">模型监控与重训</text>
+<line x1="960" y1="520" x2="1015" y2="520" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="1015,520 991.6,531.3 991.6,508.7" fill="#9DB4C6"/>
+<rect x="1015" y="320" width="400" height="420" rx="26" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="1015" y="320" width="400" height="86" rx="26" fill="#F2A03D"/>
+<rect x="1015" y="363" width="400" height="43" rx="0" fill="#F2A03D"/>
+<text x="1215.0" y="395.3" font-size="38" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">③ 扩大</text>
+<text x="1047" y="470.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">全厂推广</text>
+<text x="1047" y="510.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">接入 MES/ERP</text>
+<text x="1047" y="550.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">定制度</text>
+<line x1="1415" y1="520" x2="1470" y2="520" stroke="#9DB4C6" stroke-width="8" stroke-linecap="round"/>
+<polygon points="1470,520 1446.6,531.3 1446.6,508.7" fill="#9DB4C6"/>
+<rect x="1470" y="320" width="400" height="420" rx="26" fill="#F2F7FB" stroke="#9DB4C6" stroke-width="3"/>
+<rect x="1470" y="320" width="400" height="86" rx="26" fill="#D96C5F"/>
+<rect x="1470" y="363" width="400" height="43" rx="0" fill="#D96C5F"/>
+<text x="1670.0" y="395.3" font-size="38" fill="#FFFFFF" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">④ 固化</text>
+<text x="1502" y="470.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">模型/数据/运维</text>
+<text x="1502" y="510.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">沉淀成制度资产</text>
+<text x="1502" y="550.5" font-size="30" fill="#2B3A4A" text-anchor="start" font-family="PingFang SC,STHeiti,sans-serif">写进岗位职责</text>
+<rect x="105" y="820" width="1765" height="180" rx="26" fill="#FDEBD3" stroke="#F2A03D" stroke-width="3"/>
+<text x="1000.0" y="914.3" font-size="38" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">试点三原则</text>
+<text x="1000.0" y="975.5" font-size="30" fill="#2B3A4A" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">① 设止损线：不达标就停，退回原流程    ② 绑业务指标：省多少/提多少效    ③ 留退出通道：人工复核兜底</text>
+<text x="1000.0" y="1330.1" font-size="26" fill="#8A99A8" text-anchor="middle" font-family="PingFang SC,STHeiti,sans-serif">图 10-8 · POC → 产线四阶段路线图</text>
+</svg>
