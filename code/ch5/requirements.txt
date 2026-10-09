@@ -1,0 +1,6 @@
+# 第 5 章依赖：05-1/05-2 只需 numpy；05-3/05-4 需要 PyTorch（CPU 版即可）
+# CPU 版 PyTorch 安装命令：
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+numpy>=1.24
+matplotlib>=3.7
+torch>=2.0

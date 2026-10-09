@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">训练循环：一圈四步，反复迭代</text>
+  <defs><marker id="arr" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M0 0 L11 5 L0 10 Z" fill="#2B6CB0"/></marker></defs>
+  <rect x="90" y="140" width="190" height="150" rx="14" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="185" y="185" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">① 前向传播</text>
+  <text x="185" y="220" text-anchor="middle" font-size="14" fill="#1F2329">拿当前参数</text>
+  <text x="185" y="245" text-anchor="middle" font-size="14" fill="#1F2329">算一遍预测</text>
+  <text x="185" y="272" text-anchor="middle" font-size="12" fill="#646A73">像按图纸先试装</text>
+  <rect x="405" y="140" width="190" height="150" rx="14" fill="#FFF4E5" stroke="#FF7D00" stroke-width="2"/>
+  <text x="500" y="185" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">② 算损失</text>
+  <text x="500" y="220" text-anchor="middle" font-size="14" fill="#1F2329">预测和真实差多少</text>
+  <text x="500" y="245" text-anchor="middle" font-size="14" fill="#1F2329">量化差距</text>
+  <text x="500" y="272" text-anchor="middle" font-size="12" fill="#646A73">像测量装配偏差</text>
+  <rect x="720" y="140" width="190" height="150" rx="14" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="815" y="185" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">③ 反向传播</text>
+  <text x="815" y="220" text-anchor="middle" font-size="14" fill="#1F2329">误差倒着传回</text>
+  <text x="815" y="245" text-anchor="middle" font-size="14" fill="#1F2329">算每层梯度</text>
+  <text x="815" y="272" text-anchor="middle" font-size="12" fill="#646A73">像倒查每道工序责任</text>
+  <rect x="330" y="380" width="340" height="150" rx="14" fill="#EBFAF0" stroke="#34C07C" stroke-width="2"/>
+  <text x="500" y="425" text-anchor="middle" font-size="17" font-weight="bold" fill="#2F855A">④ 更新参数</text>
+  <text x="500" y="460" text-anchor="middle" font-size="14" fill="#1F2329">沿梯度方向迈一步</text>
+  <text x="500" y="485" text-anchor="middle" font-size="14" fill="#1F2329">调整权重 w 和偏置 b</text>
+  <text x="500" y="512" text-anchor="middle" font-size="12" fill="#646A73">步长 = 学习率，太大震荡、太小太慢</text>
+  <line x1="280" y1="215" x2="405" y2="215" stroke="#2B6CB0" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="595" y1="215" x2="720" y2="215" stroke="#2B6CB0" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="815" y1="290" x2="500" y2="380" stroke="#2B6CB0" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="500" y1="530" x2="185" y2="290" stroke="#2B6CB0" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="350" y="330" text-anchor="middle" font-size="13" font-weight="bold" fill="#2B6CB0">循环：损失不再明显下降就停</text>
+  <rect x="180" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 5-2 训练一圈：算错 → 找方向 → 调参数 → 再算，直到损失走平（示意）</text>
+</svg>

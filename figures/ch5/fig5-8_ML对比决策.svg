@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">传统机器学习 vs 深度学习：怎么选</text>
+  <rect x="100" y="120" width="360" height="55" rx="12" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="280" y="156" text-anchor="middle" font-size="18" font-weight="bold" fill="#2B6CB0">传统机器学习（第 4 章）</text>
+  <rect x="540" y="120" width="360" height="55" rx="12" fill="#FFF4E5" stroke="#FF7D00" stroke-width="2"/>
+  <text x="720" y="156" text-anchor="middle" font-size="18" font-weight="bold" fill="#D9480F">深度学习（本章）</text>
+  <g font-size="15">
+    <text x="130" y="225" fill="#1F2329">数据类型</text>
+    <text x="130" y="295" fill="#1F2329">数据量</text>
+    <text x="130" y="365" fill="#1F2329">可解释性</text>
+    <text x="130" y="435" fill="#1F2329">硬件要求</text>
+    <text x="130" y="505" fill="#1F2329">特征工程</text>
+    <text x="320" y="225" text-anchor="middle" fill="#2B6CB0">表格（行×列）</text>
+    <text x="320" y="295" text-anchor="middle" fill="#2B6CB0">几百~几千条就够</text>
+    <text x="320" y="365" text-anchor="middle" fill="#2B6CB0">高：能讲清为什么</text>
+    <text x="320" y="435" text-anchor="middle" fill="#2B6CB0">普通电脑即可</text>
+    <text x="320" y="505" text-anchor="middle" fill="#2B6CB0">常需人工设计特征</text>
+    <text x="720" y="225" text-anchor="middle" fill="#D9480F">图像 / 序列 / 高维</text>
+    <text x="720" y="295" text-anchor="middle" fill="#D9480F">通常要更多数据</text>
+    <text x="720" y="365" text-anchor="middle" fill="#D9480F">低：黑盒难解释</text>
+    <text x="720" y="435" text-anchor="middle" fill="#D9480F">大模型要 GPU，小模型 CPU 行</text>
+    <text x="720" y="505" text-anchor="middle" fill="#D9480F">网络自动学特征</text>
+  </g>
+  <line x1="100" y1="255" x2="460" y2="255" stroke="#E2E8F0" stroke-width="1.5"/>
+  <line x1="540" y1="255" x2="900" y2="255" stroke="#E2E8F0" stroke-width="1.5"/>
+  <line x1="100" y1="325" x2="460" y2="325" stroke="#E2E8F0" stroke-width="1.5"/>
+  <line x1="540" y1="325" x2="900" y2="325" stroke="#E2E8F0" stroke-width="1.5"/>
+  <line x1="100" y1="395" x2="460" y2="395" stroke="#E2E8F0" stroke-width="1.5"/>
+  <line x1="540" y1="395" x2="900" y2="395" stroke="#E2E8F0" stroke-width="1.5"/>
+  <line x1="100" y1="465" x2="460" y2="465" stroke="#E2E8F0" stroke-width="1.5"/>
+  <line x1="540" y1="465" x2="900" y2="465" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="100" y="545" width="760" height="55" rx="12" fill="#EBFAF0" stroke="#34C07C" stroke-width="2"/>
+  <text x="500" y="578" text-anchor="middle" font-size="15" font-weight="bold" fill="#2F855A">经验法则：表格 + 量小 + 要解释 → 传统 ML；图像/序列/特征设计不出来 → 深度学习</text>
+  <rect x="180" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 5-8 深度学习是"数据 + 算力换能力"，账要算清楚再上（示意）</text>
+</svg>

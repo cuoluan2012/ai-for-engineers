@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">PyTorch 五步模板：训练一个网络</text>
+  <defs><marker id="arr" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto"><path d="M0 0 L11 5 L0 10 Z" fill="#2B6CB0"/></marker></defs>
+  <rect x="55" y="140" width="165" height="220" rx="14" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="137" y="180" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">① 数据加载</text>
+  <text x="137" y="216" text-anchor="middle" font-size="13" fill="#1F2329">把数据装进</text>
+  <text x="137" y="238" text-anchor="middle" font-size="13" fill="#1F2329">张量 Tensor</text>
+  <text x="137" y="268" text-anchor="middle" font-size="12" fill="#94A3B8">换数据：</text>
+  <text x="137" y="288" text-anchor="middle" font-size="12" fill="#94A3B8">改这一行</text>
+  <text x="137" y="330" text-anchor="middle" font-size="12" fill="#2B6CB0">x = torch.arange(...)</text>
+  <rect x="250" y="140" width="165" height="220" rx="14" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="332" y="180" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">② 定义模型</text>
+  <text x="332" y="216" text-anchor="middle" font-size="13" fill="#1F2329">搭网络结构</text>
+  <text x="332" y="238" text-anchor="middle" font-size="13" fill="#1F2329">（层的堆叠）</text>
+  <text x="332" y="268" text-anchor="middle" font-size="12" fill="#94A3B8">换网络：</text>
+  <text x="332" y="288" text-anchor="middle" font-size="12" fill="#94A3B8">改这一行</text>
+  <text x="332" y="330" text-anchor="middle" font-size="12" fill="#2B6CB0">nn.Sequential(...)</text>
+  <rect x="445" y="140" width="165" height="220" rx="14" fill="#FFF4E5" stroke="#FF7D00" stroke-width="2"/>
+  <text x="527" y="180" text-anchor="middle" font-size="16" font-weight="bold" fill="#D9480F">③ 损失+优化器</text>
+  <text x="527" y="216" text-anchor="middle" font-size="13" fill="#1F2329">选损失函数、</text>
+  <text x="527" y="238" text-anchor="middle" font-size="13" fill="#1F2329">选优化器+学习率</text>
+  <text x="527" y="268" text-anchor="middle" font-size="12" fill="#94A3B8">调参：</text>
+  <text x="527" y="288" text-anchor="middle" font-size="12" fill="#94A3B8">Adam / lr</text>
+  <text x="527" y="330" text-anchor="middle" font-size="12" fill="#D9480F">loss_fn / optimizer</text>
+  <rect x="640" y="140" width="165" height="220" rx="14" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="722" y="180" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">④ 训练循环</text>
+  <text x="722" y="216" text-anchor="middle" font-size="13" fill="#1F2329">前向→损失→</text>
+  <text x="722" y="238" text-anchor="middle" font-size="13" fill="#1F2329">反向→更新</text>
+  <text x="722" y="268" text-anchor="middle" font-size="12" fill="#94A3B8">固定骨架：</text>
+  <text x="722" y="288" text-anchor="middle" font-size="12" fill="#94A3B8">每章都一样</text>
+  <text x="722" y="330" text-anchor="middle" font-size="12" fill="#2B6CB0">for step in range(...)</text>
+  <rect x="835" y="140" width="120" height="220" rx="14" fill="#EBFAF0" stroke="#34C07C" stroke-width="2"/>
+  <text x="895" y="180" text-anchor="middle" font-size="16" font-weight="bold" fill="#2F855A">⑤ 保存模型</text>
+  <text x="895" y="216" text-anchor="middle" font-size="13" fill="#1F2329">存成文件</text>
+  <text x="895" y="238" text-anchor="middle" font-size="13" fill="#1F2329">随时加载</text>
+  <text x="895" y="268" text-anchor="middle" font-size="12" fill="#94A3B8">torch.save</text>
+  <text x="895" y="288" text-anchor="middle" font-size="12" fill="#94A3B8">(.pt 文件)</text>
+  <text x="895" y="330" text-anchor="middle" font-size="12" fill="#2F855A">model.pt</text>
+  <line x1="220" y1="250" x2="250" y2="250" stroke="#2B6CB0" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="415" y1="250" x2="445" y2="250" stroke="#2B6CB0" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="610" y1="250" x2="640" y2="250" stroke="#2B6CB0" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="805" y1="250" x2="835" y2="250" stroke="#2B6CB0" stroke-width="3" marker-end="url(#arr)"/>
+  <rect x="120" y="420" width="760" height="90" rx="12" fill="#EBFAF0" stroke="#34C07C" stroke-width="1.5"/>
+  <text x="500" y="455" text-anchor="middle" font-size="15" font-weight="bold" fill="#2F855A">模板的意义：把"训练一个网络"变成填空题</text>
+  <text x="500" y="483" text-anchor="middle" font-size="13" fill="#646A73">换数据、换网络、调学习率，骨架不动——配套项目就是只改前两步跑出来的</text>
+  <rect x="180" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 5-5 PyTorch 五步模板：数据 → 模型 → 损失 → 循环 → 保存（示意）</text>
+</svg>

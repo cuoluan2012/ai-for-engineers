@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">训练曲线四种形态，一眼判状态</text>
+  <rect x="55" y="130" width="440" height="220" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="275" y="162" text-anchor="middle" font-size="16" font-weight="bold" fill="#2F855A">正常收敛</text>
+  <polyline points="90,300 180,275 260,255 330,238 390,228 440,220 470,214" fill="none" stroke="#34C07C" stroke-width="3"/>
+  <text x="275" y="200" text-anchor="middle" font-size="13" fill="#646A73">平滑下降后走平</text>
+  <text x="275" y="226" text-anchor="middle" font-size="13" fill="#646A73">训练 OK，损失不再降就停</text>
+  <text x="275" y="330" text-anchor="middle" font-size="12" fill="#94A3B8">loss</text>
+  <line x1="90" y1="250" x2="90" y2="320" stroke="#E2E8F0" stroke-width="1.5"/>
+  <line x1="90" y1="320" x2="470" y2="320" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="470" y="340" text-anchor="middle" font-size="12" fill="#94A3B8">epoch</text>
+  <rect x="505" y="130" width="440" height="220" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="725" y="162" text-anchor="middle" font-size="16" font-weight="bold" fill="#D9480F">学习率太大：震荡</text>
+  <polyline points="540,260 560,200 580,270 600,210 620,280 640,215 660,285 680,220 700,290 720,225 740,295 760,230 780,300 800,235 820,305 840,240 860,310 880,245 900,315 920,250" fill="none" stroke="#FF7D00" stroke-width="2.5"/>
+  <text x="725" y="200" text-anchor="middle" font-size="13" fill="#646A73">损失忽高忽低、不降</text>
+  <text x="725" y="226" text-anchor="middle" font-size="13" fill="#646A73">调小学习率（0.01 → 0.001）</text>
+  <text x="725" y="330" text-anchor="middle" font-size="12" fill="#94A3B8">loss</text>
+  <line x1="540" y1="250" x2="540" y2="320" stroke="#E2E8F0" stroke-width="1.5"/>
+  <line x1="540" y1="320" x2="920" y2="320" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="920" y="340" text-anchor="middle" font-size="12" fill="#94A3B8">epoch</text>
+  <rect x="55" y="390" width="440" height="220" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="275" y="422" text-anchor="middle" font-size="16" font-weight="bold" fill="#D9480F">过拟合：背答案了</text>
+  <polyline points="90,540 160,510 220,485 275,465 325,450 370,440 410,432 445,426 470,420" fill="none" stroke="#2B6CB0" stroke-width="3"/>
+  <polyline points="90,540 160,535 220,528 275,522 325,515 370,508 410,502 445,495 470,488" fill="none" stroke="#FF7D00" stroke-width="3" stroke-dasharray="6 5"/>
+  <text x="170" y="575" font-size="12" font-weight="bold" fill="#2B6CB0">训练 loss</text>
+  <text x="300" y="575" font-size="12" font-weight="bold" fill="#D9480F">验证 loss 回升</text>
+  <text x="275" y="460" text-anchor="middle" font-size="13" fill="#646A73">加数据 / 减小模型 / 加正则</text>
+  <text x="275" y="590" text-anchor="middle" font-size="12" fill="#94A3B8">loss</text>
+  <line x1="90" y1="510" x2="90" y2="580" stroke="#E2E8F0" stroke-width="1.5"/>
+  <line x1="90" y1="580" x2="470" y2="580" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="470" y="600" text-anchor="middle" font-size="12" fill="#94A3B8">epoch</text>
+  <rect x="505" y="390" width="440" height="220" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="725" y="422" text-anchor="middle" font-size="16" font-weight="bold" fill="#94A3B8">停滞不动</text>
+  <polyline points="540,540 560,537 580,534 600,532 620,530 640,528 660,527 680,526 700,525 720,525 740,525 760,525 780,525 800,525 820,525 840,525 860,525 880,525 900,525 920,525" fill="none" stroke="#94A3B8" stroke-width="3"/>
+  <text x="725" y="460" text-anchor="middle" font-size="13" fill="#646A73">一开始就不动：学习率太小</text>
+  <text x="725" y="486" text-anchor="middle" font-size="13" fill="#646A73">或代码接错（先查数据）</text>
+  <text x="725" y="590" text-anchor="middle" font-size="12" fill="#94A3B8">loss</text>
+  <line x1="540" y1="510" x2="540" y2="580" stroke="#E2E8F0" stroke-width="1.5"/>
+  <line x1="540" y1="580" x2="920" y2="580" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="920" y="600" text-anchor="middle" font-size="12" fill="#94A3B8">epoch</text>
+  <rect x="180" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 5-6 训练日志先看损失曲线：平滑下降正常，震荡/回升/停滞各有对策（示意）</text>
+</svg>
