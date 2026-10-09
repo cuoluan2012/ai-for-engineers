@@ -1,0 +1,2213 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="理工科零基础学习指南 —— 面向"有工作经验、零计算机背景"的理工科工程师">
+      
+      
+      
+        <link rel="canonical" href="https://cuoluan2012.github.io/ai-for-engineers/ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+      
+      
+        <link rel="prev" href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+      
+      
+        <link rel="next" href="../ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第 5 章 深度学习 - AI for Engineers · 从工程师到 AI 工程师</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-header__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI for Engineers · 从工程师到 AI 工程师
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第 5 章 深度学习
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 1 章 为什么工程师要拥抱 AI
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 2 章 计算机通识
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 3 章 Python 第一课
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 4 章 机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 5 章 深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 6 章 大语言模型
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 7 章 RAG 知识库
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 8 章 AI 智能体
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 9 章 微调与私有化部署
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 10 章 工业数据与落地
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 11 章 从学到做
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-tabs__link">
+          
+  
+  
+  附录
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-nav__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI for Engineers · 从工程师到 AI 工程师
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 1 章 为什么工程师要拥抱 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 2 章 计算机通识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 3 章 Python 第一课
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 4 章 机器学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 5 章 深度学习
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 5 章 深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#50" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.0 本章解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 从神经元到神经网络
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 从神经元到神经网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#511" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.1 神经元：一个"加权求和 + 阈值判断"的小单元
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#512" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.2 为什么一层不够
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.3 激活函数：给网络"非线性"的能力
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.4 从"写规则"到"学权重"：参数在哪里
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 训练的本质：损失函数与梯度下降
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 训练的本质：损失函数与梯度下降">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#521" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.1 损失函数：量化"错多少"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#522" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.2 梯度下降：朝误差最小的方向调参
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#523" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.3 反向传播：误差怎么"倒着传"回每一层
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#524" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2.4 一次完整训练循环
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 卷积神经网络 CNN：机器如何"看"图片
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 卷积神经网络 CNN：机器如何&#34;看&#34;图片">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#531" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.1 图像在计算机里是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#532" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.2 卷积核：局部小窗口扫描找特征
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#533" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.3 多层卷积：逐级抽象
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#534" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3.4 零件缺陷检测场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-rnnlstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 序列模型：RNN/LSTM 概念级
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 序列模型：RNN/LSTM 概念级">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#541" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.1 为什么需要"记忆"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#542-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.2 RNN：逐段读、记住前面
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#543-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.3 LSTM：能记住更长的历史
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#544" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4.4 工程师视角：什么时候会用到
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-pytorch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5 训练循环模板：PyTorch 快速上手
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 训练循环模板：PyTorch 快速上手">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#551" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5.1 框架是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#552" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5.2 五步模板
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#553" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5.3 张量：框架里的"数字容器"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#554" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5.4 工程师视角：模板的意义
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6 训练实战要点
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.6 训练实战要点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#561" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6.1 数据划分三件套：训练 / 验证 / 测试
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#562" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6.2 硬件：训练要多大的机器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#563" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6.3 训练日志怎么看：损失曲线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#564" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6.4 常见失败信号排查表
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#57" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7 配套项目：零件表面缺陷图像分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.7 配套项目：零件表面缺陷图像分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#571" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.1 需求拆解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#572" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.2 为什么用合成数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#573" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.3 实现：五步模板套用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#574" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.4 泛理工科替换案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#58-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8 传统机器学习 vs 深度学习：什么时候用哪个
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#59" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.9 常见坑与练习
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 6 章 大语言模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 7 章 RAG 知识库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 8 章 AI 智能体
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 9 章 微调与私有化部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 10 章 工业数据与落地
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 11 章 从学到做
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E7%AB%A0%E8%8A%82%E8%A6%86%E7%9B%96%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表章节覆盖矩阵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="5">第 5 章 深度学习与神经网络：机器如何"看"与"听"</h1>
+<blockquote>
+<p>所属框架层：L2 AI 核心基础
+预计篇幅：约 10,000~12,000 字（含可运行代码；5.1~5.4 为概念课，5.5 为最小示例代码，5.7 为完整配套项目）
+配套文件：示例代码（<code>code/ch5/</code> 目录，全部真实运行过）、本章配图（SVG 源文件见 <code>figures/ch5/</code> 目录）、术语表第 5 章·L2 条目
+版本：v0.1（首稿）</p>
+</blockquote>
+<p><strong>本章验收标准</strong>：学完后能不看资料回答——神经网络凭什么能处理图像和信号？训练一个网络的四步循环是哪四步？CNN 和 RNN 分别解决什么问题？PyTorch 五步模板是哪五步？训练日志怎么判读？什么时候该用深度学习、什么时候不该用？配套项目"零件表面缺陷图像分类"能独立跑通并给出评估指标。</p>
+<hr />
+<blockquote>
+<p><strong>本章配图清单</strong>（图号 / 内容 / 对应小节 / 类型）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>图号</th>
+<th>内容</th>
+<th>对应小节</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图 5-1</td>
+<td>神经元结构：加权求和 + 激活</td>
+<td>5.1</td>
+<td>结构示意图</td>
+</tr>
+<tr>
+<td>图 5-2</td>
+<td>训练循环四步：前向→损失→反向→更新</td>
+<td>5.2</td>
+<td>循环流程图</td>
+</tr>
+<tr>
+<td>图 5-3</td>
+<td>CNN 怎么看图：卷积核扫描 + 池化</td>
+<td>5.3</td>
+<td>扫描示意图</td>
+</tr>
+<tr>
+<td>图 5-4</td>
+<td>RNN/LSTM：逐段读序列、记住前文</td>
+<td>5.4</td>
+<td>序列示意图</td>
+</tr>
+<tr>
+<td>图 5-5</td>
+<td>PyTorch 五步模板</td>
+<td>5.5</td>
+<td>五步流程图</td>
+</tr>
+<tr>
+<td>图 5-6</td>
+<td>训练曲线判读：四种形态</td>
+<td>5.6</td>
+<td>曲线对比图</td>
+</tr>
+<tr>
+<td>图 5-7</td>
+<td>缺陷分类项目流水线</td>
+<td>5.7</td>
+<td>流水线流程图</td>
+</tr>
+<tr>
+<td>图 5-8</td>
+<td>传统 ML vs 深度学习决策表</td>
+<td>5.8</td>
+<td>决策表</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="50">5.0 本章解决什么问题</h2>
+<p>这一章解决你从"机器学习会处理表格"到"机器能看懂图、听懂声音"之间的一串疑问：<strong>图像和信号这些"非表格"数据，凭什么机器也能学会？神经网络到底怎么工作的？我怎么亲手训练一个能检测零件缺陷的小模型？</strong></p>
+<p>老张，40 岁，某机械厂质检科资深工程师。第 4 章里，他用 sklearn 把设备异常分类做出来了，表格数据机器学得会。可他很快发现一个尴尬：<strong>车间里真正的老大难是"看"和"听"</strong>——零件表面有没有划痕、气泡、毛刺，靠质检员肉眼盯着看，一天看几百件，看得眼花；设备有没有异响，靠老师傅耳朵听，听走神就漏掉。</p>
+<p>他问同事："这活儿能不能也交给机器学习？"同事说："能啊，但你得先把'缺陷长什么样'设计成特征——颜色深浅、纹理粗细、面积大小……"老张一听头大：缺陷千奇百怪，特征怎么设计得完？</p>
+<p>这一章要告诉你的是：<strong>深度学习就是为这种"特征太难设计"的问题准备的</strong>。它不要求你人肉设计特征，而是让网络自己在数据里学会"看什么"。学完这章，你会亲手训练一个能区分"正常 / 划痕 / 气泡"的缺陷分类小模型——虽然数据是程序合成的简化版，但训练、评估、排错的全套功夫都是真的。</p>
+<h2 id="51">5.1 从神经元到神经网络</h2>
+<h3 id="511">5.1.1 神经元：一个"加权求和 + 阈值判断"的小单元</h3>
+<p>先看神经网络最小的零件——<strong>神经元（Neuron）</strong>，也叫<strong>感知机（Perceptron）</strong>。它做的事用一句话就能说清：</p>
+<p><strong>把几个输入分别乘上权重，加在一起，再过一个判断，输出一个数。</strong></p>
+<p>写成数学就是一个公式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>输出 = 激活函数( w₁×x₁ + w₂×x₂ + … + b )
+</code></pre></div>
+<ul>
+<li>输入 $x_1, x_2, \dots$：比如"直径 20mm""转速 1500rpm"这类数值；</li>
+<li>权重 $w_1, w_2, \dots$：每个输入的重要程度，<strong>这就是模型要学的参数</strong>；</li>
+<li>偏置 $b$：一个基础分，类似校准时调的零点；</li>
+<li>激活函数：一个"要不要输出"的判断规则，下面马上讲。</li>
+</ul>
+<p>想想车间里的<strong>称重分拣</strong>：传送带上按重量把零件分到合格筐和超重筐，判断规则是"重量 &gt; 阈值 → 超重筐，否则 → 合格筐"。一个神经元干的就是这件事——加权求和相当于把各项指标综合成一个分数，阈值判断相当于"过线就输出 1，不过线输出 0"。神经元是模型里最基本的"小工位"：它只做一个动作，但很多小工位串联起来，就能做很复杂的活。</p>
+<h3 id="512">5.1.2 为什么一层不够</h3>
+<p>一个神经元是一条直线判断（线性分类）。可现实里很多问题不是直线能切开的。经典的例子是<strong>异或（XOR）</strong>问题：输入两个 0/1，相同输出 0、不同输出 1。四个点的分布是"对角两堆"，一条直线怎么摆都切不开。</p>
+<p>图纸上你见过这种尴尬：一个平面上两种孔位，左边一堆、右边一堆，一条中心线就能分开（线性可分）；可如果是"左上和右下是一组、右上和左下是另一组"，就必须画一条折线。<strong>折线 = 两段直线拼起来 = 两个神经元级联</strong>。</p>
+<p>所以网络要有"层"：第一层每个神经元负责一段判断，第二层把第一层的判断再组合。层数越多，能表达的"折线"越复杂。这就是"神经网络"里"网络"的含义——大量简单判断单元分层协作。</p>
+<h3 id="513">5.1.3 激活函数：给网络"非线性"的能力</h3>
+<p>你可能已经注意到：如果每个神经元只是"加权求和"，那不管叠多少层，本质上还是一大串加减乘除，等价于一条直线（线性）。<strong>想让网络能表达折线、曲线，必须在每层输出上加一个"非线性开关"</strong>——这个开关就是<strong>激活函数（Activation Function）</strong>。</p>
+<p>最常用的激活函数叫 ReLU，规则极其简单：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ReLU(x) = x 如果 x &gt; 0，否则 0
+</code></pre></div>
+<p>翻译成车间语言：<strong>"输出为正是多少就多少，输出为负就一律归零"</strong>。就像一个质检判定：读数合格（正）就记录，不合格（负）就记为 0。别看规则简单，正是这个"负数归零"让网络有了弯折能力——每一层都能把输入"掰弯"一下，很多层叠起来就能拟合任何形状的规律。</p>
+<h3 id="514">5.1.4 从"写规则"到"学权重"：参数在哪里</h3>
+<p>回到第 4 章 4.1 的对比：传统编程是<strong>人写规则</strong>（if 直径 &gt; 20 then 不合格），机器学习是<strong>数据教规则</strong>（模型自己找阈值）。在神经网络里，这个"规则"就是成千上万个权重 $w$ 和偏置 $b$。</p>
+<p><strong>训练神经网络 = 调整这几万个权重，让输出和真实答案越来越接近。</strong> 剩下唯一的问题是：怎么调？这就是 5.2 节的内容。</p>
+<h2 id="52">5.2 训练的本质：损失函数与梯度下降</h2>
+<p><img alt="图 5-1 神经元结构：加权求和 + 激活" src="../figures/ch5/fig5-1_%E7%A5%9E%E7%BB%8F%E5%85%83%E7%BB%93%E6%9E%84.png" /></p>
+<h3 id="521">5.2.1 损失函数：量化"错多少"</h3>
+<p>第 4 章 4.6 讲过，<strong>损失函数（Loss Function）</strong> 衡量"预测和真实值差多少"，数值越大错得越多。神经网络训练的第一步就是"打分"：拿当前参数算一遍预测，再和真实答案对比，得一个损失值。</p>
+<p>比如用网络预测"轴的重量 = f(直径)"，真实重量 3.2kg，网络预测 3.5kg，差了 0.3kg。把所有样本的差距平方求平均，就是均方误差（MSE）损失。<strong>损失像装配后的测量偏差</strong>：偏差大，说明参数还没调好。</p>
+<h3 id="522">5.2.2 梯度下降：朝误差最小的方向调参</h3>
+<p>有了"错多少"的分数，下一步就是<strong>怎么改参数让分数变小</strong>。方法叫<strong>梯度下降（Gradient Descent）</strong>，思路和你在山上下坡找谷底一模一样：</p>
+<ul>
+<li>站在这座"误差山"的某个高度（当前损失）；</li>
+<li>往四周试一下哪个方向是下坡（算梯度：误差对每个参数的偏导数）；</li>
+<li>朝下坡方向迈一步（更新参数）；</li>
+<li>重复，直到走到谷底（损失不再明显下降）。</li>
+</ul>
+<p><strong>每步迈多大，由学习率（Learning Rate）决定</strong>——学习率是训练里最重要的旋钮之一：步长太大，会在谷底两边来回震荡、永远到不了底；步长太小，走几百步还在半山腰。后面 5.6 你会亲眼看到这两种失败的样子。</p>
+<h3 id="523">5.2.3 反向传播：误差怎么"倒着传"回每一层</h3>
+<p>神经网络有几层、几十层，参数成千上万。问题是：<strong>输出层的误差，该怪哪一层的哪个权重？</strong> 这靠<strong>反向传播（Backpropagation）</strong>：从输出端开始，把误差沿着网络"往回传"，每经过一层就按链式法则算出"这层权重该往哪调、调多少"。</p>
+<p>你不用推公式——现代框架（5.5 节的 PyTorch）一行 <code>loss.backward()</code> 就把所有梯度算好了。你要建立的是直觉：<strong>误差像不合格品的追溯单，从成品往回倒查每道工序的责任</strong>。这个机制决定了网络每一层都会收到"该你调多少"的指令。</p>
+<h3 id="524">5.2.4 一次完整训练循环</h3>
+<p>把上面串起来，训练一圈就是四步，之后无限重复：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>前向传播（算预测） → 算损失（量差距） → 反向传播（算梯度） → 更新参数（沿梯度走一步）
+</code></pre></div>
+<p>跑一下代码 5-1：一个神经元，不靠任何框架，用 NumPy 把这四步手写出来，亲眼看着损失从 67 降到 0.037、学到的权重逼近真值。这一段是全书理解"训练"最重要的一课，值得逐行读。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="sd">"""</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="sd">05-1 手写一个神经元：用梯度下降学出一条直线</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="sd">------------------------------------------------</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="sd">目标：让一个神经元（y = w*x + b）自己"学会" y ≈ 2x + 1。</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="sd">不依赖任何深度学习框架，只用 NumPy，把</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="sd">"前向 → 算损失 → 求梯度 → 更新参数"四步走一遍，就完成了"训练"。</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="sd">运行：python 05-1_neuron_numpy.py</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="sd">"""</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># 1) 造数据：x 从 0 到 6，y = 2x + 1，加一点噪声模拟测量误差</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>                    <span class="c1"># [0, 1, 2, 3, 4, 5, 6]</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">y_true</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1"># 2) 初始化：权重 w 和偏置 b 从 0 起跑</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">w</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="n">lr</span> <span class="o">=</span> <span class="mf">0.05</span>    <span class="c1"># 学习率：每次参数更新的步长，太大震荡、太小太慢</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="sd">"""前向：算预测值 y_pred = w*x + b"""</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>    <span class="k">return</span> <span class="n">w</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="k">def</span><span class="w"> </span><span class="nf">calc_loss</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">    </span><span class="sd">"""损失：均方误差 MSE，衡量"错多少"（数值越大错得越多）"""</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">y_pred</span> <span class="o">-</span> <span class="n">y_true</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="c1"># 3) 训练循环：前向 → 算损失 → 求梯度 → 更新，共 300 轮</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">300</span><span class="p">):</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">forward</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>                       <span class="c1"># 前向</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    <span class="n">err</span> <span class="o">=</span> <span class="n">y_pred</span> <span class="o">-</span> <span class="n">y_true</span>                           <span class="c1"># 每个点的误差</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    <span class="n">dw</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">err</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>                       <span class="c1"># 损失对 w 的梯度</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>    <span class="n">db</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">err</span><span class="p">)</span>                           <span class="c1"># 损失对 b 的梯度</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>    <span class="n">w</span> <span class="o">-=</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">dw</span>                                    <span class="c1"># 更新：朝损失变小的方向走一步</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>    <span class="n">b</span> <span class="o">-=</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">db</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>    <span class="k">if</span> <span class="n">step</span> <span class="o">%</span> <span class="mi">50</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"step </span><span class="si">{</span><span class="n">step</span><span class="si">:</span><span class="s2">3d</span><span class="si">}</span><span class="s2">  loss=</span><span class="si">{</span><span class="n">calc_loss</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span><span class="w"> </span><span class="n">y_true</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">  w=</span><span class="si">{</span><span class="n">w</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">  b=</span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="c1"># 4) 结果对照：学到的 w、b 应逼近真值 2.0 和 1.0</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"学到的 w = </span><span class="si">{</span><span class="n">w</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">（真值 2.0），b = </span><span class="si">{</span><span class="n">b</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">（真值 1.0）"</span><span class="p">)</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"最终损失 = </span><span class="si">{</span><span class="n">calc_loss</span><span class="p">(</span><span class="n">forward</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">),</span><span class="w"> </span><span class="n">y_true</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>本段做什么：用 NumPy 手写一个神经元，把"前向 → 损失 → 梯度 → 更新"四步训练循环完整走一遍，观察损失逐轮下降。
+运行前要装什么：只需 NumPy（第 3 章已装）。运行：<code>python 05-1_neuron_numpy.py</code></p>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>step   0  loss=67.4808  w=2.950  b=0.721
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>step  50  loss=0.0470  w=2.010  b=1.124
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>step 100  loss=0.0375  w=1.979  b=1.259
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>step 150  loss=0.0370  w=1.971  b=1.290
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>step 200  loss=0.0370  w=1.970  b=1.297
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>step 250  loss=0.0370  w=1.969  b=1.298
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>------------------------------------------
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>学到的 w = 1.969（真值 2.0），b = 1.299（真值 1.0）
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>最终损失 = 0.0370
+</code></pre></div>
+<p>看三件事：<strong>损失</strong>从 67.48 一路降到 0.037；<strong>权重 w</strong> 从 0 逼近 1.969（真值 2.0）；<strong>偏置 b</strong> 逼近 1.299（真值 1.0，因为有噪声，略偏高）。这就是"训练"的全部：不断看差距、找方向、迈一步。代码 5-3 里你会看到，换成 PyTorch 后这四步浓缩成四行，但本质完全一样。</p>
+<h2 id="53-cnn">5.3 卷积神经网络 CNN：机器如何"看"图片</h2>
+<p><img alt="图 5-2 训练循环四步：前向→损失→反向→更新" src="../figures/ch5/fig5-2_%E8%AE%AD%E7%BB%83%E5%BE%AA%E7%8E%AF.png" /></p>
+<h3 id="531">5.3.1 图像在计算机里是什么</h3>
+<p>先解决一个朴素的问题：图像在电脑里长什么样？<strong>一张灰度图就是一个数字矩阵</strong>——每个格子（像素）存一个 0~1（或 0~255）的亮度值。彩色图就是三个这样的矩阵叠在一起（红绿蓝三个通道）。一张 224×224 的灰度图，就是 224×224=50176 个数字。</p>
+<p>麻烦在这：如果把这些数字全部直接当成神经网络的输入（用 5.1 的全连接结构），第一个隐藏层 100 个神经元就要 500 万个权重参数——又慢又容易过拟合。而且，<strong>"像素在哪个位置"这个空间信息会全丢</strong>：把图打乱成一行数，网络看不出来"这块亮斑在左上角还是右下角"。</p>
+<h3 id="532">5.3.2 卷积核：局部小窗口扫描找特征</h3>
+<p>CNN 的解法很朴素：<strong>别一次性看整张图，用一个小的"窗口"（卷积核）在图上滑着看</strong>。<strong>卷积核（Kernel）</strong> 是一个小矩阵，比如 3×3，在图上每个位置和对应的小块做"逐元素相乘再求和"，得到一个新值；滑完一整圈，就得到一张新的"响应图"。</p>
+<p>这像质检员用放大镜看零件：不整张图一起看，而是<strong>一个小窗口一个小窗口地扫</strong>，每个窗口只看局部。核里的数字（权重）决定了"这个窗口在找什么"——如果核的中间列是 0、两边一正一负，它就在找<strong>竖直方向的亮度跳变</strong>，也就是竖直边缘。核扫过一条竖线时，响应最大；扫过纯色背景时，响应为 0。</p>
+<p>跑代码 5-2 亲眼看一下：一张 8×8 的模拟零件图（中间一条竖线、一个亮点），用一个 3×3 边缘检测核扫一遍，输出里"亮点和竖线两侧"响应最强，纯背景响应为 0；再做一次 2×2 最大池化，图缩小一半。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="sd">"""</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="sd">05-2 用 NumPy 手动做一次卷积：让机器"看"出边缘</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="sd">------------------------------------------------</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="sd">一张 8×8 的小图（0~1 灰度，模拟零件表面），中间有一条竖直亮线。</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="sd">用一个 3×3 的"边缘检测核"扫过全图，竖线处响应最强；</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="sd">再做一次 2×2 最大池化，把图缩小一半。</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="sd">运行：python 05-2_conv_kernel.py</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="sd">"""</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1"># 1) 造一张 8×8 的"零件表面图"：背景 0.4，第 5 列一条竖线 0.9，一个亮点 0.9</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="mf">0.4</span><span class="p">)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="n">img</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.9</span>      <span class="c1"># 竖直亮线（模拟划痕）</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="n">img</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.9</span>      <span class="c1"># 一个小亮点（模拟点状缺陷）</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="c1"># 2) 3×3 边缘检测核（Sobel 竖边缘）：左右两侧差得越多，响应越强</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p">])</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="c1"># 3) 卷积：核在图上滑过，每个位置做"逐元素相乘再求和"</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">h</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">w</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">h</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">w</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>        <span class="n">patch</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span><span class="n">j</span> <span class="o">+</span> <span class="mi">3</span><span class="p">]</span>      <span class="c1"># 取 3×3 小窗口</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>        <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">patch</span> <span class="o">*</span> <span class="n">kernel</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="c1"># 4) 2×2 最大池化：每 2×2 块取最大值，图缩小一半</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="n">pool</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>        <span class="n">pool</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">:</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">j</span> <span class="o">*</span> <span class="mi">2</span><span class="p">:</span><span class="n">j</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"原始图（8×8，0~1 灰度）："</span><span class="p">)</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">卷积后（6×6）：竖线所在列响应最强（数值大），背景响应接近 0："</span><span class="p">)</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="nb">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">池化后（3×3）：每块取最大灰度，图缩小一半："</span><span class="p">)</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="nb">print</span><span class="p">(</span><span class="n">pool</span><span class="p">)</span>
+</code></pre></div>
+<p>本段做什么：用 NumPy 手写一次 3×3 卷积 + 2×2 最大池化，看清"卷积核在找亮度跳变"到底是怎么算的。
+运行前要装什么：只需 NumPy。运行：<code>python 05-2_conv_kernel.py</code></p>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>原始图（8×8，0~1 灰度）：
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>[[0.4 0.4 0.4 0.4 0.9 0.4 0.4 0.4]
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a> [0.4 0.4 0.4 0.4 0.9 0.4 0.4 0.4]
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a> [0.4 0.4 0.9 0.4 0.9 0.4 0.4 0.4]
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a> [0.4 0.4 0.4 0.4 0.9 0.4 0.4 0.4]
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a> [0.4 0.4 0.4 0.4 0.9 0.4 0.4 0.4]
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a> [0.4 0.4 0.4 0.4 0.9 0.4 0.4 0.4]
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a> [0.4 0.4 0.4 0.4 0.9 0.4 0.4 0.4]
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a> [0.4 0.4 0.4 0.4 0.9 0.4 0.4 0.4]]
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>卷积后（6×6）：竖线所在列响应最强（数值大），背景响应接近 0：
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>[[ 0.5  0.   1.5  0.  -2.   0. ]
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a> [ 1.   0.   1.   0.  -2.   0. ]
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a> [ 0.5  0.   1.5  0.  -2.   0. ]
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a> [ 0.   0.   2.   0.  -2.   0. ]
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a> [ 0.   0.   2.   0.  -2.   0. ]
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a> [ 0.   0.   2.   0.  -2.   0. ]]
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>池化后（3×3）：每块取最大灰度，图缩小一半：
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>[[0.4 0.4 0.9]
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a> [0.4 0.9 0.9]
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a> [0.4 0.4 0.9]]
+</code></pre></div>
+<p>看卷积后的结果：<strong>凡是窗口跨过"亮→暗"或"暗→亮"跳变的地方，响应都不为 0</strong>（亮点那一带的 1.5、2.0，竖线右侧边缘的 -2.0），而纯背景处响应为 0。这正是"检测边缘"的含义——核在找亮度跳变。池化后图从 8×8 变 3×3（每 2×2 块取最大亮度），尺寸减半、主要特征保留。<strong>卷积负责找特征，池化负责把特征图缩小</strong>，这就是 CNN 最基本的两个零件。</p>
+<h3 id="533">5.3.3 多层卷积：逐级抽象</h3>
+<p>单个卷积核只能找一种特征（竖边、横边、某个纹理）。CNN 的做法是<strong>叠很多层</strong>：</p>
+<ul>
+<li>第一层：找边缘、点、小块（低层特征）；</li>
+<li>第二层：把边缘组合成纹理、角、局部图案（中层特征）；</li>
+<li>更深层：把纹理组合成"部件""缺陷"这类整体概念（高层特征）。</li>
+</ul>
+<p><strong>层数越深，看到的越"整体"。</strong> 这正是它不需要人肉设计特征的原因——每一层的核数字都是训练学出来的，网络自己决定"看什么"。</p>
+<h3 id="534">5.3.4 零件缺陷检测场景</h3>
+<p>为什么 CNN 特别适合缺陷检测？因为<strong>缺陷天然是局部特征</strong>：划痕是一条线，气泡是一个斑，毛刺是一簇凸起——都只占图像的一小块。CNN 的局部窗口结构天生匹配这种问题，而且对"缺陷在图上哪个位置"不敏感（平移一下照样能检出），这正是质检需要的鲁棒性。5.7 的配套项目就是它的最小落地版。</p>
+<h2 id="54-rnnlstm">5.4 序列模型：RNN/LSTM 概念级</h2>
+<p><img alt="图 5-3 CNN 怎么看图：卷积核扫描 + 池化" src="../figures/ch5/fig5-3_CNN%E5%8D%B7%E7%A7%AF%E6%89%AB%E6%8F%8F.png" /></p>
+<h3 id="541">5.4.1 为什么需要"记忆"</h3>
+<p>图像是"一张图"，可很多工业数据是<strong>一串按时间排列的值</strong>：振动信号、温度曲线、刀具磨损趋势、能耗序列。这类数据叫<strong>序列（sequence）</strong>。第 4 章的分类是把每个样本当独立点看；可序列里<strong>前后的关系才是关键</strong>——同一个振动幅值 0.5，前面是平稳段还是上升段，含义完全不同。</p>
+<p>直觉很好建立：<strong>看趋势图时，你一定是结合前一段判断当前点</strong>——"从 0.3 慢慢爬到 0.5"和"从 0.9 掉到 0.5"，后者更像要出问题。序列模型要学的就是这种"结合前文"的能力。</p>
+<h3 id="542-rnn">5.4.2 RNN：逐段读、记住前面</h3>
+<p><strong>循环神经网络（RNN, Recurrent Neural Network）</strong> 的思路很直接：网络在读完每一段后，把"这一段的信息"留一个摘要（隐藏状态），读下一段时<strong>带着前面的摘要一起读</strong>。就像你读振动曲线：不是每次只看一个点，而是脑子里带着"前面走了什么形"往下读。</p>
+<p>关键概念：隐藏状态（Hidden State）——<strong>网络对"到目前为止看到的东西"的压缩记忆</strong>，每读一段更新一次，逐段传递。</p>
+<h3 id="543-lstm">5.4.3 LSTM：能记住更长的历史</h3>
+<p>RNN 有个毛病：记忆"传不了太远"——读了几十段之后，开头的信息基本被冲淡了（梯度消失）。<strong>LSTM（Long Short-Term Memory，长短期记忆网络）</strong> 在 RNN 上加了一套"门"机制，用三个门决定：<strong>这段信息记不记、旧记忆忘不忘、什么时候输出</strong>。</p>
+<p>不用记公式。你只要记住它的角色：<strong>RNN 是"逐段读、会记前文"，LSTM 是"能记更长前文的 RNN 升级版"</strong>。在振动监测、刀具磨损这类需要看长趋势的工业场景，LSTM 比普通 RNN 稳得多。</p>
+<h3 id="544">5.4.4 工程师视角：什么时候会用到</h3>
+<p>序列模型在工业里的典型场景：<strong>设备振动趋势预警</strong>（把一段振动波形喂进去，判断"正常 / 异常前兆"）、<strong>刀具磨损状态估计</strong>（切削力时序 → 磨损等级）、<strong>能耗异常检测</strong>（电耗曲线 → 是否异常）。</p>
+<p>这里要预告一句（第 6 章展开）：处理<strong>语言</strong>这类序列时，现在的主流已经不是 RNN，而是 Transformer（第 6 章的注意力机制）——它更擅长并行处理和长距离记忆。本章只为你建立"序列 → 记忆"的直觉，这个直觉在第 6 章会直接派上用场。</p>
+<h2 id="55-pytorch">5.5 训练循环模板：PyTorch 快速上手</h2>
+<p><img alt="图 5-4 RNN/LSTM：逐段读序列、记住前文" src="../figures/ch5/fig5-4_RNN%E5%BA%8F%E5%88%97.png" /></p>
+<h3 id="551">5.5.1 框架是什么</h3>
+<p>5.2 节你手写了一个神经元——四步循环（前向、损失、反向、更新）完全透明。但真实网络有几万、几百万个参数，手写反向传播会写到怀疑人生。<strong>深度学习框架（Deep Learning Framework）就是别人写好的"神经网络工具箱"</strong>：你只管搭模型、选损失、选优化器，反向传播和梯度计算它全包了。</p>
+<p>PyTorch 是当下最主流、资料最全的框架（第 6 章的大语言模型、第 8 章的智能体生态都围绕它转）。装 CPU 版即可跑通本章所有代码：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pip install torch --index-url https://download.pytorch.org/whl/cpu
+</code></pre></div>
+<h3 id="552">5.5.2 五步模板</h3>
+<p>用 PyTorch 训练网络，永远是这个五步模板，照抄改参数就行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>① 数据加载 → ② 定义模型 → ③ 定义损失与优化器 → ④ 训练循环 → ⑤ 保存模型
+</code></pre></div>
+<p>跑代码 5-3：一个 2 层小网络拟合 y = 2x + 1。注意 5.2 节手写版和这里的对应关系：<code>loss.backward()</code> 就是反向传播，<code>optimizer.step()</code> 就是更新参数——四步循环压缩成了两行，本质没变。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="sd">"""</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="sd">05-3 PyTorch 五步法：把"训练一个网络"变成五步模板</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="sd">------------------------------------------------</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="sd">第 5.5 节的模板：数据 → 模型 → 损失与优化器 → 训练循环 → 保存模型。</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="sd">本例用 2 层小网络拟合 y = 2x + 1。</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="sd">需要先装 PyTorch（CPU 版即可）：</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="sd">    pip install torch --index-url https://download.pytorch.org/whl/cpu</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="sd">运行：python 05-3_pytorch_five_steps.py</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="sd">"""</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="c1"># ① 数据：造 11 个点，y = 2x + 1</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># 列向量 [0..10]</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="n">y_true</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">1.0</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="c1"># ② 模型：输入 1 个数 → 隐层 8 个神经元（ReLU 激活）→ 输出 1 个数</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="p">)</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="c1"># ③ 损失与优化器</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>      <span class="c1"># 均方误差：衡量"错多少"</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="c1"># 为什么用 Adam 而不是 SGD？ReLU 网络对步长很敏感，SGD 容易卡在局部极小</span>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="c1">#（步长太大震荡、太小不动）；Adam 自动调节每一步的步长，省心很多。</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="c1"># ④ 训练循环：前向 → 算损失 → 清梯度 → 反向 → 更新，共 800 轮</span>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a><span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">800</span><span class="p">):</span>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                      <span class="c1"># 前向</span>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">)</span>         <span class="c1"># 损失</span>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>                  <span class="c1"># 清空上一步的梯度</span>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>                        <span class="c1"># 反向传播：自动算每一层梯度</span>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>                       <span class="c1"># 更新参数</span>
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>    <span class="k">if</span> <span class="n">step</span> <span class="o">%</span> <span class="mi">160</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"step </span><span class="si">{</span><span class="n">step</span><span class="si">:</span><span class="s2">3d</span><span class="si">}</span><span class="s2">  loss=</span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a>
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a><span class="c1"># ⑤ 保存模型（之后加载回来就能直接预测）</span>
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a><span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s2">"model_05-3.pt"</span><span class="p">)</span>
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"输入 10 时预测值 = </span><span class="si">{</span><span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">（真值 21.0）"</span><span class="p">)</span>
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"模型参数已保存到 model_05-3.pt"</span><span class="p">)</span>
+</code></pre></div>
+<p>本段做什么：PyTorch 五步法最小示例——2 层网络拟合 y=2x+1，损失从 151 降到 0.003，模型参数保存成文件。
+运行前要装什么：<code>pip install torch --index-url https://download.pytorch.org/whl/cpu</code>。运行：<code>python 05-3_pytorch_five_steps.py</code></p>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>step   0  loss=151.5010
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>step 160  loss=0.0881
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>step 320  loss=0.0145
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>step 480  loss=0.0063
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>step 640  loss=0.0031
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>------------------------------------------
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>输入 10 时预测值 = 20.979（真值 21.0）
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>模型参数已保存到 model_05-3.pt
+</code></pre></div>
+<h3 id="553">5.5.3 张量：框架里的"数字容器"</h3>
+<p>代码里出现的 <code>torch.tensor</code> 叫<strong>张量（Tensor）</strong>——你可以直接把它理解成第 3 章 NumPy 数组的"深度学习版"：长得一样、算得一样，额外好处是能自动记录计算过程（所以 <code>loss.backward()</code> 能自动算梯度）、能在 GPU 上跑得更快。<strong>张量 = 带"梯度记忆"和"GPU 加速"的数组</strong>，这个理解够用一整章。</p>
+<h3 id="554">5.5.4 工程师视角：模板的意义</h3>
+<p>五步模板的价值在于<strong>把"训练一个网络"从科研题变成填空题</strong>：换数据（第 ① 步）、换模型结构（第 ② 步）、调学习率（第 ③ 步），其余骨架不变。第 5.7 节的配套项目就是只改前两步、模板不动跑出来的。这也是你后面读任何深度学习代码时最值得先找的"骨架"。</p>
+<h2 id="56">5.6 训练实战要点</h2>
+<p><img alt="图 5-5 PyTorch 五步模板" src="../figures/ch5/fig5-5_PyTorch%E4%BA%94%E6%AD%A5%E6%A8%A1%E6%9D%BF.png" /></p>
+<h3 id="561">5.6.1 数据划分三件套：训练 / 验证 / 测试</h3>
+<p>第 4 章讲过把数据分成训练集和测试集。深度学习还要加一个：<strong>验证集（Validation Set）</strong>。三者的分工：</p>
+<table>
+<thead>
+<tr>
+<th>集合</th>
+<th>用途</th>
+<th>什么时候用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练集</td>
+<td>模型在上面学（更新参数）</td>
+<td>每轮训练</td>
+</tr>
+<tr>
+<td>验证集</td>
+<td>调超参数（学习率、网络大小）时看效果</td>
+<td>训练过程中反复看</td>
+</tr>
+<tr>
+<td>测试集</td>
+<td>最终验收，衡量模型真实水平</td>
+<td>只允许碰一次</td>
+</tr>
+</tbody>
+</table>
+<p>铁律：<strong>测试集只能碰一次</strong>。如果拿测试集反复调参，模型就"记住了考题"，测试分数虚高。训练和验证之间的比例常见 8:1:1 或 7:2:1。</p>
+<p>配套项目 05-4 里有一个真实的坑：合成数据按类别排列生成，如果切分前不<strong>打乱（shuffle）</strong>，训练集取前 300 张、测试集取后 60 张，结果测试集里只有一类图，准确率假高得离谱（我们实际踩到过：测试集 60 张全是"气泡"，模型全预测成气泡就拿了 98%）。<strong>切分数据前必须先打乱，再按比例切</strong>——代码里那行 <code>np.random.permutation</code> 就是干这个的。</p>
+<h3 id="562">5.6.2 硬件：训练要多大的机器</h3>
+<p>先破除一个误解：不是所有训练都要"大机器"。<strong>CPU 能训练小模型</strong>——本章配套项目的 CNN 在普通笔记本 CPU 上 60 轮只要几秒钟。需要 GPU 的是<strong>大模型 + 大数据</strong>：显存（GPU 内存）用来装模型和数据，装不下就会报"Out of Memory"（显存溢出）。</p>
+<p>你可以这样理解：<strong>显存是模型和数据的"临时工位"</strong>，工位不够就放不下（换小模型、减小批大小 Batch Size、减小图像尺寸都能腾工位）。本章全部代码 CPU 可跑，别被"深度学习=烧显卡"的说法劝退。</p>
+<h3 id="563">5.6.3 训练日志怎么看：损失曲线</h3>
+<p>训练时每轮打印的 <code>loss</code> 就是你最该盯的仪表。常见四种形态：</p>
+<table>
+<thead>
+<tr>
+<th>曲线形态</th>
+<th>含义</th>
+<th>该怎么办</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平滑下降后走平</td>
+<td>正常收敛</td>
+<td>继续或提前停（损失不再降就可以停）</td>
+</tr>
+<tr>
+<td>剧烈震荡、不降</td>
+<td>学习率太大</td>
+<td>调小学习率（0.01 → 0.001）</td>
+</tr>
+<tr>
+<td>训练损失降、验证损失升</td>
+<td>过拟合（背答案了）</td>
+<td>加数据、减小模型、加正则（呼应第 4 章 4.6）</td>
+</tr>
+<tr>
+<td>一开始就几乎不动</td>
+<td>学习率太小或代码 bug</td>
+<td>调大学习率，或检查数据/模型有没有接错</td>
+</tr>
+</tbody>
+</table>
+<h3 id="564">5.6.4 常见失败信号排查表</h3>
+<p>训练失败的信号五花八门，但根因就那么几类，按顺序查：</p>
+<ol>
+<li><strong>损失不降</strong>：先查数据（标签对不对、有没有打乱、有没有归一化），再查学习率（太大震荡、太小不动），最后查代码（模型和损失有没有接错）；</li>
+<li><strong>损失变成 NaN</strong>：学习率太大导致数值爆炸，调小学习率；</li>
+<li><strong>验证集指标明显差于训练集</strong>：过拟合，减小模型或加数据；</li>
+<li><strong>训练极慢</strong>：数据没向量化（逐样本循环）或模型太大，CPU 上把 Batch Size 调小。</li>
+</ol>
+<p><strong>工程师贴士：训练失败先查什么？</strong> 固定顺序——<strong>数据 → 学习率 → 代码</strong>。我们踩过的坑里，十次有八次是数据的问题（没打乱、标签错、单位没统一），只有两次真是模型的问题。先把数据查明白，再动模型。</p>
+<h2 id="57">5.7 配套项目：零件表面缺陷图像分类</h2>
+<p><img alt="图 5-6 训练曲线判读：四种形态" src="../figures/ch5/fig5-6_%E8%AE%AD%E7%BB%83%E6%9B%B2%E7%BA%BF%E5%88%A4%E8%AF%BB.png" /></p>
+<p>把这一章的知识串起来，做本章的完整项目。这是本书第 2 个"能交差"的项目。</p>
+<h3 id="571">5.7.1 需求拆解</h3>
+<p>输入一张 16×16 的灰度"零件图"，输出它的类别：<strong>正常（normal）/ 划痕（scratch）/ 气泡（bubble）</strong>。数据是程序生成的合成图（零下载依赖、完全可复现）：正常类是一张随机灰度图，划痕类中间有一条暗线，气泡类有一个暗圆斑——模拟"表面有缺陷"。</p>
+<h3 id="572">5.7.2 为什么用合成数据</h3>
+<p>真实工业缺陷数据集（如钢铁表面缺陷、PCB 焊点）需要下载和标注，对入门读者有门槛。合成数据把问题简化到"只练深度学习功夫"：你能完整走通"造数据 → 建模型 → 训练 → 评估"全流程，逻辑和真实项目一模一样。进阶时把合成函数换成真实图片目录即可，代码骨架不用改。</p>
+<h3 id="573">5.7.3 实现：五步模板套用</h3>
+<p>模型就是 5.3 节讲的 CNN：两层"卷积 + 池化"，再接全连接输出 3 个类别分数。评估沿用第 4 章 4.5 的指标：准确率 + 混淆矩阵。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="sd">"""</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="sd">05-4 配套项目：零件表面缺陷图像分类（简化版）</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="sd">------------------------------------------------</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="sd">数据：程序生成的 16×16 灰度"零件图"，三类——normal（正常）、</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="sd">scratch（划痕：一条暗线）、bubble（气泡：一个暗圆斑）。</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="sd">模型：一个很小的 CNN（卷积 → 池化 → 卷积 → 全连接）。</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="sd">目标：训练后能在测试集上给出准确率与混淆矩阵。</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="sd">零下载依赖：数据是合成的、可复现。</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="sd">需要先装 PyTorch（CPU 版即可）。</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="sd">运行：python 05-4_defect_cnn.py</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="sd">"""</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="c1"># ---------- 1) 合成数据：三类 16×16 灰度图 ----------</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="k">def</span><span class="w"> </span><span class="nf">make_image</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">    </span><span class="sd">"""生成一张 16×16 图：normal=均匀噪声；scratch=暗线；bubble=暗圆斑"""</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>          <span class="c1"># 背景：随机灰度</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>    <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>                                   <span class="c1"># 划痕：一条暗线</span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>        <span class="n">c</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>        <span class="n">img</span><span class="p">[:,</span> <span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.15</span>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>    <span class="k">elif</span> <span class="n">label</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>                                 <span class="c1"># 气泡：一个暗圆斑</span>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>        <span class="n">cy</span><span class="p">,</span> <span class="n">cx</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>        <span class="n">yy</span><span class="p">,</span> <span class="n">xx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">16</span><span class="p">]</span>
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>        <span class="n">img</span><span class="p">[(</span><span class="n">yy</span> <span class="o">-</span> <span class="n">cy</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">xx</span> <span class="o">-</span> <span class="n">cx</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.15</span>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>    <span class="k">return</span> <span class="n">img</span>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>                               <span class="c1"># 0=正常 1=划痕 2=气泡</span>
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">120</span><span class="p">):</span>                             <span class="c1"># 每类 120 张</span>
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>        <span class="n">xs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">make_image</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">rng</span><span class="p">))</span>
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>        <span class="n">ys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+<a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>   <span class="c1"># N×1×16×16</span>
+<a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a><span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ys</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>
+<a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a><span class="c1"># 切分前必须打乱！否则同类的图挤在一起，测试集可能只剩一类</span>
+<a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a><span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">permutation</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a><span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">Y</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a><span class="n">n_train</span> <span class="o">=</span> <span class="mi">300</span>
+<a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="n">n_train</span><span class="p">]),</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">Y</span><span class="p">[:</span><span class="n">n_train</span><span class="p">])</span>
+<a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">n_train</span><span class="p">:]),</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">n_train</span><span class="p">:])</span>
+<a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"训练集 </span><span class="si">{</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> 张，测试集 </span><span class="si">{</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> 张（正常/划痕/气泡）"</span><span class="p">)</span>
+<a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>
+<a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a><span class="c1"># ---------- 2) 模型：很小的 CNN ----------</span>
+<a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a><span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+<a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>   <span class="c1"># 16→14→7</span>
+<a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>   <span class="c1"># 7→5→2</span>
+<a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+<a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a>    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>                          <span class="c1"># 2×2×8 → 3 类</span>
+<a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a><span class="p">)</span>
+<a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a><span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>                       <span class="c1"># 分类损失</span>
+<a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+<a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>
+<a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a><span class="c1"># ---------- 3) 训练 60 轮 ----------</span>
+<a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">60</span><span class="p">):</span>
+<a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a>    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>    <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+<a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>    <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a>    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<a id="__codelineno-11-67" name="__codelineno-11-67" href="#__codelineno-11-67"></a>    <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<a id="__codelineno-11-68" name="__codelineno-11-68" href="#__codelineno-11-68"></a>    <span class="k">if</span> <span class="n">epoch</span> <span class="o">%</span> <span class="mi">12</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-11-69" name="__codelineno-11-69" href="#__codelineno-11-69"></a>        <span class="n">acc</span> <span class="o">=</span> <span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">Y_train</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+<a id="__codelineno-11-70" name="__codelineno-11-70" href="#__codelineno-11-70"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"epoch </span><span class="si">{</span><span class="n">epoch</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">  loss=</span><span class="si">{</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">  训练准确率=</span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-11-71" name="__codelineno-11-71" href="#__codelineno-11-71"></a>
+<a id="__codelineno-11-72" name="__codelineno-11-72" href="#__codelineno-11-72"></a><span class="c1"># ---------- 4) 测试集评估 ----------</span>
+<a id="__codelineno-11-73" name="__codelineno-11-73" href="#__codelineno-11-73"></a><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<a id="__codelineno-11-74" name="__codelineno-11-74" href="#__codelineno-11-74"></a><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+<a id="__codelineno-11-75" name="__codelineno-11-75" href="#__codelineno-11-75"></a>    <span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-11-76" name="__codelineno-11-76" href="#__codelineno-11-76"></a><span class="n">acc</span> <span class="o">=</span> <span class="p">(</span><span class="n">pred</span> <span class="o">==</span> <span class="n">Y_test</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+<a id="__codelineno-11-77" name="__codelineno-11-77" href="#__codelineno-11-77"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">44</span><span class="p">)</span>
+<a id="__codelineno-11-78" name="__codelineno-11-78" href="#__codelineno-11-78"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"测试集准确率 = </span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-11-79" name="__codelineno-11-79" href="#__codelineno-11-79"></a>
+<a id="__codelineno-11-80" name="__codelineno-11-80" href="#__codelineno-11-80"></a><span class="c1"># 混淆矩阵（行=实际，列=预测）</span>
+<a id="__codelineno-11-81" name="__codelineno-11-81" href="#__codelineno-11-81"></a><span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<a id="__codelineno-11-82" name="__codelineno-11-82" href="#__codelineno-11-82"></a><span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">Y_test</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">pred</span><span class="o">.</span><span class="n">numpy</span><span class="p">()):</span>
+<a id="__codelineno-11-83" name="__codelineno-11-83" href="#__codelineno-11-83"></a>    <span class="n">cm</span><span class="p">[</span><span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-11-84" name="__codelineno-11-84" href="#__codelineno-11-84"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"混淆矩阵（行=实际：正常/划痕/气泡；列=预测）："</span><span class="p">)</span>
+<a id="__codelineno-11-85" name="__codelineno-11-85" href="#__codelineno-11-85"></a><span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+</code></pre></div>
+<p>本段做什么：配套项目完整代码——程序生成三类合成缺陷图，用小型 CNN 训练 60 轮，在测试集上输出准确率与混淆矩阵。
+运行前要装什么：PyTorch（CPU 版即可，安装命令见 5.5 节）。运行：<code>python 05-4_defect_cnn.py</code></p>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>训练集 300 张，测试集 60 张（正常/划痕/气泡）
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>epoch  0  loss=1.1058  训练准确率=34.33%
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>epoch 12  loss=0.9892  训练准确率=80.67%
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>epoch 24  loss=0.7072  训练准确率=91.33%
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>epoch 36  loss=0.5410  训练准确率=92.00%
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>epoch 48  loss=0.4362  训练准确率=95.33%
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>--------------------------------------------
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>测试集准确率 = 95.00%
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>混淆矩阵（行=实际：正常/划痕/气泡；列=预测）：
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>[[18  1  0]
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a> [ 0 15  2]
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a> [ 0  0 24]]
+</code></pre></div>
+<p><strong>读这个结果三件事</strong>：</p>
+<ol>
+<li><strong>训练准确率从 34% 涨到 95%</strong>——随机乱猜是 33%，模型确实在学，而且越来越准；</li>
+<li><strong>测试集准确率 95%</strong>（57/60 张）——不是背答案，没见过的图也能认；</li>
+<li><strong>混淆矩阵</strong>：行是实际、列是预测，对角线上的 18 / 15 / 24 是分对的；正常类有 1 张被判成划痕、划痕类有 2 张被判成气泡——<strong>模型不完美</strong>，这两类缺陷长得像（都是一条暗线/暗斑），容易混淆。这正好呼应第 4 章"误收 / 误判"的评估视角：如果这两类混淆会出事，就要加数据或调模型，让对角线更"满"。</li>
+</ol>
+<h3 id="574">5.7.4 泛理工科替换案例</h3>
+<p>同一套骨架（合成数据 → CNN → 训练 → 评估），换一套"图"和"类别"，就是另一个专业的小工具：</p>
+<table>
+<thead>
+<tr>
+<th>专业</th>
+<th>替换案例</th>
+<th>输入 → 输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>焊接</td>
+<td>焊缝缺陷识别</td>
+<td>焊缝图像 → 气孔 / 夹渣 / 正常</td>
+</tr>
+<tr>
+<td>电子</td>
+<td>PCB 焊点检测</td>
+<td>焊点图像 → 虚焊 / 正常</td>
+</tr>
+<tr>
+<td>农业</td>
+<td>叶片病害识别</td>
+<td>叶片图像 → 病斑 / 正常</td>
+</tr>
+<tr>
+<td>土木</td>
+<td>混凝土裂缝识别</td>
+<td>墙面图像 → 裂缝 / 正常</td>
+</tr>
+</tbody>
+</table>
+<p>做法完全一样：准备图像目录 → 用 PyTorch 的 ImageFolder 读入（真实数据时）→ 套 5.5 五步模板 → 用混淆矩阵验收。</p>
+<h2 id="58-vs">5.8 传统机器学习 vs 深度学习：什么时候用哪个</h2>
+<p><img alt="图 5-7 缺陷分类项目流水线" src="../figures/ch5/fig5-7_%E7%BC%BA%E9%99%B7%E5%88%86%E7%B1%BB%E9%A1%B9%E7%9B%AE.png" /></p>
+<p>学完本章你可能会冲动：以后所有问题都上深度学习！——先别。<strong>能查表、能解释、数据量不大时，传统机器学习往往更好</strong>。决策表：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>传统机器学习（第 4 章）</th>
+<th>深度学习（本章）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据类型</td>
+<td>表格数据（行×列）</td>
+<td>图像、序列、高维数据</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>几百到几千条就够</td>
+<td>通常要更多数据（或靠预训练模型）</td>
+</tr>
+<tr>
+<td>可解释性</td>
+<td>高（决策树能讲清"为什么"）</td>
+<td>低（黑盒，难说清"为什么"）</td>
+</tr>
+<tr>
+<td>硬件要求</td>
+<td>普通电脑即可</td>
+<td>大模型需要 GPU，小模型 CPU 也行</td>
+</tr>
+<tr>
+<td>训练时间</td>
+<td>秒级~分钟级</td>
+<td>分钟级~天级</td>
+</tr>
+<tr>
+<td>特征工程</td>
+<td>常需要人工设计特征</td>
+<td>网络自动学特征</td>
+</tr>
+</tbody>
+</table>
+<p><strong>工程师贴士：什么时候用传统机器学习、什么时候用深度学习？</strong> 三条经验法则：①<strong>数据是表格、量不大、要解释</strong> → 传统机器学习；②<strong>数据是图像 / 信号 / 文本，或特征实在设计不出来</strong> → 深度学习；③<strong>不确定时先跑传统机器学习当基线</strong>——如果传统方法已经够用，没必要上深度学习。深度学习是"数据 + 算力换能力"，账要算清楚再上。</p>
+<h2 id="59">5.9 常见坑与练习</h2>
+<p><img alt="图 5-8 传统 ML vs 深度学习决策表" src="../figures/ch5/fig5-8_ML%E5%AF%B9%E6%AF%94%E5%86%B3%E7%AD%96.png" /></p>
+<p><strong>常见坑</strong>：</p>
+<ul>
+<li><strong>一上来就上深度学习</strong>：数据量不够时效果反而不如第 4 章的传统机器学习（特征设计 + 小数据 = 传统 ML 的舒适区）；</li>
+<li><strong>学习率没调对</strong>：损失不降（太小）或剧烈震荡（太大），先按 5.6.4 顺序查；</li>
+<li><strong>数据没打乱就切分</strong>：测试集只剩一类，指标假高（05-4 我们真实踩过）；</li>
+<li><strong>只训不评</strong>：没有验证集、不画混淆矩阵就说"能用了"；</li>
+<li><strong>忽视硬件</strong>：模型和批大小超出显存直接崩溃，先缩小再谈精度。</li>
+</ul>
+<p><strong>练习与验收标准</strong>：</p>
+<ul>
+<li>练习 1：把 05-1 的学习率从 0.05 改成 1.0 和 0.0001 各跑一次，观察损失曲线的震荡和停滞——两种失败形态亲眼见一次就不怕了；</li>
+<li>练习 2：把 05-4 换成"螺栓螺纹缺陷分类"——把合成函数改成"螺纹局部有缺口 / 正常"，改类别名跑通；</li>
+<li>练习 3：同一份第 4 章的表格数据，用决策树和本章网络各跑一次，对比准确率和"能不能说清为什么"。</li>
+<li>验收标准："能讲清"——向同事解释为什么深度学习适合图像和序列、CNN 和 RNN 各解决什么问题；"能跑通"——独立跑通缺陷分类项目，能讲出训练准确率和混淆矩阵各代表什么。</li>
+</ul>
+<p><strong>本章小结（5 句）</strong>：神经网络是大量"加权求和 + 激活函数"的小单元分层堆叠，训练的本质是"前向 → 损失 → 反向 → 更新"四步循环加梯度下降调参；CNN 用卷积核局部扫描、适合图像缺陷检测，RNN/LSTM 逐段读序列、适合振动信号等时序数据；PyTorch 五步模板（数据 → 模型 → 损失 → 循环 → 保存）把训练变成照抄改参；训练要盯验证集和损失曲线，失败按"数据 → 学习率 → 代码"的顺序排查；数据量不足时传统机器学习更稳，深度学习是"数据 + 算力换能力"。</p>
+<p><strong>延伸阅读</strong>：</p>
+<ul>
+<li>李宏毅《机器学习》深度学习章节（概念讲解首选，B 站免费）</li>
+<li>吴恩达《深度学习专项课程》（体系化入门，Coursera）</li>
+<li>PyTorch 官方 60 分钟入门教程（https://pytorch.org/tutorials/，英文）</li>
+<li>Datawhale 开源教程《深入浅出 PyTorch》（中文，本章对应章节）</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      本作品采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cuoluan2012/ai-for-engineers" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

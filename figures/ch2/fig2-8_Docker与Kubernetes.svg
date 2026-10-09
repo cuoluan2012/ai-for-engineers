@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#2B6CB0"/></marker>
+    <marker id="arrowOr" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#FF7D00"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="620" rx="18" fill="#F7F8FA"/>
+  <text x="500" y="46" font-size="28" font-weight="bold" fill="#1F2329" text-anchor="middle">Docker 与 Kubernetes：容器与编排</text>
+  <text x="500" y="74" font-size="16" fill="#646A73" text-anchor="middle">Docker 解决"一台机器上的环境一致" · K8s 解决"一群容器的调度管理"</text>
+
+  <!-- 上半：Docker -->
+  <g>
+    <rect x="60" y="100" width="440" height="210" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <text x="280" y="130" font-size="17" font-weight="bold" fill="#1F2329" text-anchor="middle">Docker：环境一起打包</text>
+    <!-- 镜像 -->
+    <rect x="80" y="148" width="180" height="100" rx="10" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="170" y="176" font-size="15" font-weight="bold" fill="#2B6CB0" text-anchor="middle">镜像 Image</text>
+    <text x="170" y="200" font-size="13" fill="#646A73" text-anchor="middle">只读模板：软件 + 依赖</text>
+    <text x="170" y="220" font-size="13" fill="#646A73" text-anchor="middle">+ 配置 + 系统文件</text>
+    <text x="170" y="240" font-size="13" fill="#FF7D00" text-anchor="middle">刻好盘的整套设备</text>
+    <line x1="264" y1="198" x2="296" y2="198" stroke="#FF7D00" stroke-width="3" marker-end="url(#arrowOr)"/>
+    <!-- 容器 -->
+    <rect x="300" y="148" width="180" height="100" rx="10" fill="#FFF1E5" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="390" y="176" font-size="15" font-weight="bold" fill="#FF7D00" text-anchor="middle">容器 Container</text>
+    <text x="390" y="200" font-size="13" fill="#646A73" text-anchor="middle">镜像运行起来的实例</text>
+    <text x="390" y="220" font-size="13" fill="#646A73" text-anchor="middle">一个镜像可开多个容器</text>
+    <text x="390" y="240" font-size="13" fill="#2B6CB0" text-anchor="middle">正在运行的一台设备</text>
+    <text x="280" y="290" font-size="13" fill="#646A73" text-anchor="middle">Dockerfile = "怎么打包"的说明书 · Compose = 一次启动多个容器</text>
+  </g>
+
+  <!-- 上半右侧：问题 -->
+  <g>
+    <rect x="530" y="100" width="410" height="96" rx="12" fill="#FFF1E5" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="552" y="128" font-size="15" font-weight="bold" fill="#1F2329">程序员最经典的问题</text>
+    <text x="552" y="152" font-size="13" fill="#646A73">"在我电脑上明明能跑，到你电脑上就报错"</text>
+    <text x="552" y="174" font-size="13" fill="#646A73">原因：环境不一致（依赖库版本 / 系统配置 / 路径）</text>
+    <rect x="530" y="214" width="410" height="96" rx="12" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="552" y="242" font-size="15" font-weight="bold" fill="#1F2329">解决方案：标准集装箱</text>
+    <text x="552" y="266" font-size="13" fill="#646A73">软件 + 运行环境打包运输，到哪个码头都能直接卸下用</text>
+    <text x="552" y="288" font-size="13" fill="#646A73">核心价值 = 环境一致性</text>
+  </g>
+
+  <!-- 下半：Kubernetes -->
+  <g>
+    <rect x="60" y="330" width="880" height="200" rx="14" fill="#FFFFFF" stroke="#34C07C" stroke-width="2"/>
+    <text x="500" y="358" font-size="17" font-weight="bold" fill="#1F2329" text-anchor="middle">Kubernetes（K8s）：容器多了谁来管——容器编排</text>
+
+    <!-- 集群：3 节点 -->
+    <rect x="90" y="380" width="200" height="120" rx="12" fill="#E8F6EF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="190" y="400" font-size="14" font-weight="bold" fill="#34C07C" text-anchor="middle">节点 Node 1</text>
+    <rect x="110" y="412" width="60" height="34" rx="8" fill="#FFFFFF" stroke="#34C07C"/>
+    <text x="140" y="434" font-size="12" fill="#1F2329" text-anchor="middle">Pod</text>
+    <rect x="178" y="412" width="60" height="34" rx="8" fill="#FFFFFF" stroke="#34C07C"/>
+    <text x="208" y="434" font-size="12" fill="#1F2329" text-anchor="middle">Pod</text>
+    <rect x="110" y="454" width="60" height="34" rx="8" fill="#FFFFFF" stroke="#34C07C"/>
+    <text x="140" y="476" font-size="12" fill="#1F2329" text-anchor="middle">Pod</text>
+
+    <rect x="310" y="380" width="200" height="120" rx="12" fill="#E8F6EF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="410" y="400" font-size="14" font-weight="bold" fill="#34C07C" text-anchor="middle">节点 Node 2</text>
+    <rect x="330" y="412" width="60" height="34" rx="8" fill="#FFFFFF" stroke="#34C07C"/>
+    <text x="360" y="434" font-size="12" fill="#1F2329" text-anchor="middle">Pod</text>
+    <rect x="398" y="412" width="60" height="34" rx="8" fill="#FFFFFF" stroke="#34C07C"/>
+    <text x="428" y="434" font-size="12" fill="#1F2329" text-anchor="middle">Pod</text>
+
+    <rect x="530" y="380" width="200" height="120" rx="12" fill="#E8F6EF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="630" y="400" font-size="14" font-weight="bold" fill="#34C07C" text-anchor="middle">节点 Node 3</text>
+    <rect x="550" y="412" width="60" height="34" rx="8" fill="#FFFFFF" stroke="#34C07C"/>
+    <text x="580" y="434" font-size="12" fill="#1F2329" text-anchor="middle">Pod</text>
+
+    <!-- 集群边界与调度 -->
+    <rect x="80" y="368" width="660" height="142" rx="16" fill="none" stroke="#34C07C" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="560" y="512" font-size="13" fill="#34C07C" text-anchor="middle">集群 Cluster：一组节点，对外像一台超级计算机</text>
+
+    <!-- 右侧：Deployment 说明 -->
+    <rect x="760" y="380" width="160" height="120" rx="12" fill="#FFF1E5" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="840" y="404" font-size="14" font-weight="bold" fill="#FF7D00" text-anchor="middle">Deployment</text>
+    <text x="840" y="428" font-size="12" fill="#646A73" text-anchor="middle">声明"我要 3 个 Pod"</text>
+    <text x="840" y="448" font-size="12" fill="#646A73" text-anchor="middle">K8s 自动调度</text>
+    <text x="840" y="468" font-size="12" fill="#646A73" text-anchor="middle">自动重启 / 扩容</text>
+    <text x="840" y="488" font-size="12" fill="#2B6CB0" text-anchor="middle">你下工单，它管排产</text>
+  </g>
+
+  <rect x="60" y="548" width="880" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="500" y="574" font-size="14" fill="#1F2329" text-anchor="middle">记住：容器管一台，K8s 管一群 · 小规模用 Docker 就够，企业级才上 K8s</text>
+  <text x="500" y="606" font-size="13" fill="#646A73" text-anchor="middle">图 2-8 Docker 与 Kubernetes：容器与编排（示意）</text>
+</svg>

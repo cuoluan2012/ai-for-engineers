@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#FF7D00"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="600" rx="18" fill="#F7F8FA"/>
+  <text x="500" y="46" font-size="28" font-weight="bold" fill="#1F2329" text-anchor="middle">Linux 工作台：AI 工程师的日常</text>
+  <text x="500" y="74" font-size="16" fill="#646A73" text-anchor="middle">终端 + Shell 解释命令 · 文件系统是一棵树 · 环境变量是全局参数</text>
+
+  <!-- 左侧：终端窗口 -->
+  <rect x="60" y="110" width="420" height="340" rx="14" fill="#1E293B"/>
+  <rect x="60" y="110" width="420" height="40" rx="14" fill="#334155"/>
+  <circle cx="84" cy="130" r="7" fill="#EF4444"/><circle cx="108" cy="130" r="7" fill="#F59E0B"/><circle cx="132" cy="130" r="7" fill="#22C55E"/>
+  <text x="270" y="136" font-size="15" fill="#E2E8F0" text-anchor="middle">laozhang@server: ~/ai-learning</text>
+  <g font-size="15" fill="#E2E8F0" font-family="'Menlo','Consolas',monospace">
+    <text x="80" y="180">$ pwd</text>
+    <text x="80" y="204" fill="#8B9BB4">/home/laozhang/ai-learning</text>
+    <text x="80" y="228">$ mkdir data</text>
+    <text x="80" y="252">$ ls -la</text>
+    <text x="80" y="276" fill="#8B9BB4">drwxr-xr-x  data  hello.py</text>
+    <text x="80" y="300">$ echo $PATH</text>
+    <text x="80" y="324" fill="#8B9BB4">/usr/local/bin:/usr/bin:/bin:...</text>
+    <text x="80" y="348">$ ps | grep python</text>
+    <text x="80" y="372" fill="#8B9BB4">  4321 ttys000  python3 hello.py</text>
+    <text x="80" y="404" fill="#34C07C">$ python3 hello.py</text>
+    <text x="80" y="428" fill="#8B9BB4">你好，老张——你的 AI 之路，从这一行开始。</text>
+  </g>
+
+  <!-- 中间箭头 -->
+  <line x1="500" y1="280" x2="540" y2="280" stroke="#FF7D00" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <!-- 右侧：三大概念 -->
+  <g font-size="15" fill="#1F2329">
+    <rect x="560" y="110" width="380" height="96" rx="12" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="580" y="140" font-size="16" font-weight="bold">文件系统：一棵树</text>
+    <text x="580" y="164" font-size="13" fill="#646A73">/ = 根目录 · /home = 个人目录 · /etc = 配置</text>
+    <text x="580" y="184" font-size="13" fill="#646A73">/var = 日志缓存 · 绝对路径 vs 相对路径</text>
+    <rect x="560" y="222" width="380" height="96" rx="12" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="580" y="252" font-size="16" font-weight="bold">环境变量与 PATH</text>
+    <text x="580" y="276" font-size="13" fill="#646A73">"名字=值"的全局参数；PATH 是"找程序"的目录列表</text>
+    <text x="580" y="296" font-size="13" fill="#646A73">API 密钥放 .env · 命令找不到先查 PATH</text>
+    <rect x="560" y="334" width="380" height="96" rx="12" fill="#FFFFFF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="580" y="364" font-size="16" font-weight="bold">包管理器：三层分工</text>
+    <text x="580" y="388" font-size="13" fill="#646A73">apt：系统软件（nginx/git）</text>
+    <text x="580" y="408" font-size="13" fill="#646A73">pip：Python 库 · conda：Python 版本 + 隔离环境</text>
+  </g>
+
+  <rect x="60" y="470" width="880" height="62" rx="12" fill="#FFF1E5" stroke="#FF7D00" stroke-width="1.5"/>
+  <text x="90" y="500" font-size="15" font-weight="bold" fill="#1F2329">为什么 AI 的世界几乎都在 Linux 上？</text>
+  <text x="90" y="522" font-size="13" fill="#646A73">服务器 90%+ 跑 Linux · CUDA 工具链与 AI 框架（PyTorch/TensorFlow）第一平台是 Linux · 开源可裁剪</text>
+
+  <text x="500" y="566" font-size="14" fill="#646A73" text-anchor="middle">图 2-2 Linux 工作台：终端、文件系统、环境变量、包管理器（示意）</text>
+</svg>

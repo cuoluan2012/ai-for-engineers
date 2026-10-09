@@ -1,0 +1,2084 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="理工科零基础学习指南 —— 面向"有工作经验、零计算机背景"的理工科工程师">
+      
+      
+      
+        <link rel="canonical" href="https://cuoluan2012.github.io/ai-for-engineers/ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/">
+      
+      
+        <link rel="prev" href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/">
+      
+      
+        <link rel="next" href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第 3 章 Python 第一课 - AI for Engineers · 从工程师到 AI 工程师</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-python" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-header__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI for Engineers · 从工程师到 AI 工程师
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第 3 章 Python 第一课
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 1 章 为什么工程师要拥抱 AI
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 2 章 计算机通识
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 3 章 Python 第一课
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 4 章 机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 5 章 深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 6 章 大语言模型
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 7 章 RAG 知识库
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 8 章 AI 智能体
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 9 章 微调与私有化部署
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 10 章 工业数据与落地
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 11 章 从学到做
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-tabs__link">
+          
+  
+  
+  附录
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-nav__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI for Engineers · 从工程师到 AI 工程师
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 1 章 为什么工程师要拥抱 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 2 章 计算机通识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 3 章 Python 第一课
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 3 章 Python 第一课
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.0 本章解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 搭好工作台：Python、虚拟环境与编辑器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 搭好工作台：Python、虚拟环境与编辑器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.1 Python 是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.2 安装与第一行代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#313" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.3 虚拟环境：每个项目一套独立环境
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#314-vs-code-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1.4 编辑器：VS Code 与 Jupyter Notebook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Python 语法速通：变量、容器、循环与判断
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Python 语法速通：变量、容器、循环与判断">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 变量：给数据贴标签
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-f-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 字符串与 f-string：给文本排版
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.3 容器：把数据装起来
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.4 循环与判断：逐根检验
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 函数与模块：把重复的事打包
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 函数与模块：把重复的事打包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.1 函数：你的"标准件"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.2 模块与 import：你的"标准件图库"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 文件读写与异常处理：让程序"干活"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 文件读写与异常处理：让程序&#34;干活&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1 读 CSV：一行一条记录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.2 异常处理：程序出错，不崩溃
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-numpypandasmatplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 科学计算三件套：NumPy、Pandas、Matplotlib
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 科学计算三件套：NumPy、Pandas、Matplotlib">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-numpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5.1 NumPy：数组与"整批一起算"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352-pandas-excel-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5.2 Pandas：把 Excel 搬进 Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#353-matplotlib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5.3 Matplotlib：把结果画出来
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-ai-vibe-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 用 AI 帮你写代码：Vibe Coding 入门
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 用 AI 帮你写代码：Vibe Coding 入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#361" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.1 为什么工程师学编程可以走"捷径"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#362" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.2 四步法：说清需求 → 生成 → 运行 → 追问
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#363-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6.3 底线：AI 的代码必须"验收"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Git 与协作：代码的版本管理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 Git 与协作：代码的版本管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#371-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.1 Git 是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#372" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.2 最常用的五个命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#373-git-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7.3 Git 与 GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8 配套项目：用 Python 做轴的强度校核
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.8 配套项目：用 Python 做轴的强度校核">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#381" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8.1 需求
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#382" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8.2 完整代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#383" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8.3 读懂这个工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#384" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.8.4 泛理工科替换案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延伸阅读
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 4 章 机器学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 5 章 深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 6 章 大语言模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 7 章 RAG 知识库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 8 章 AI 智能体
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 9 章 微调与私有化部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 10 章 工业数据与落地
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 11 章 从学到做
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E7%AB%A0%E8%8A%82%E8%A6%86%E7%9B%96%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表章节覆盖矩阵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="3-python">第 3 章 编程第一课：像搭积木一样学 Python</h1>
+<blockquote>
+<p>所属框架层：L1 编程与软件工程地基
+预计篇幅：约 10,000 字（含可运行代码；第 3 段为"最小示例代码"，第 3.8 节为完整配套项目）
+配套文件：示例代码（<code>code/ch3/</code> 目录，全部在 Python 3.13 环境真实运行过）、本章配图（SVG 源文件见 <code>figures/ch3/</code> 目录）、术语表第 3 章·L1 条目
+版本：v0.1（首稿）</p>
+</blockquote>
+<p><strong>本章验收标准</strong>：学完后能不看资料回答——Python 的变量、列表、字典、函数各是什么、什么时候用？虚拟环境解决什么问题？怎么让程序读 CSV 且出错不崩溃？NumPy / Pandas / Matplotlib 各自干什么？Git 的 add / commit / push 各是什么？</p>
+<hr />
+<blockquote>
+<p><strong>本章配图清单</strong>（图号 / 内容 / 对应小节 / 类型）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>图号</th>
+<th>内容</th>
+<th>对应小节</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图 3-1</td>
+<td>老张的 Python 工作台：终端 + 虚拟环境 + 编辑器</td>
+<td>3.1</td>
+<td>示意图</td>
+</tr>
+<tr>
+<td>图 3-2</td>
+<td>数据容器：列表 / 元组 / 字典</td>
+<td>3.2</td>
+<td>示意图</td>
+</tr>
+<tr>
+<td>图 3-3</td>
+<td>科学计算三件套：NumPy / Pandas / Matplotlib 的分工</td>
+<td>3.5</td>
+<td>架构图</td>
+</tr>
+<tr>
+<td>图 3-4</td>
+<td>Git 版本管理：像图纸版本一样管理代码</td>
+<td>3.7</td>
+<td>流程图</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="30">3.0 本章解决什么问题</h2>
+<p>这一章解决你学编程时最具体的困境：<strong>教程让你装 Python、跑 hello world，你装好了、跑通了，然后呢？</strong></p>
+<p>老张，40 岁，某机械厂设计部资深工程师。第 2 章学完，他终于搞清楚了终端、Linux、数据库、Docker 都是干什么的。现在他信心满满地打开一本 Python 教程：安装 Python → 打印"Hello World" → 下一页开始讲"类、装饰器、生成器"。他盯着屏幕想：<strong>这些东西我学完，能解决我手头哪件事？</strong> 他手头明明压着一堆活——下周要交 6 根轴的强度校核报告，每根轴要算弯扭合成应力、安全系数，他打算用 Excel 算到半夜。</p>
+<p>这一章不按计算机系的路子讲。我们的目标只有一条：<strong>用最少的语法，把"从数据到结果"的最小闭环跑通</strong>——装好环境 → 用变量和容器装数据 → 用函数打包计算 → 从 CSV 读参数 → 用科学计算三件套算数、出图 → 让 AI 帮你写代码 → 用 Git 管住版本。学完这一章，你交出的不是一个 hello world，而是一个<strong>你自己写的、能出校核报告的工具</strong>。</p>
+<h2 id="31-python">3.1 搭好工作台：Python、虚拟环境与编辑器</h2>
+<h3 id="311-python">3.1.1 Python 是什么</h3>
+<p>Python（读作"派森"）是一门<strong>解释型编程语言</strong>（Interpreted Language）：它由解释器（Interpreter）逐行读取你的代码、翻译成计算机能执行的指令，读一行执行一行。第 2 章我们讲过编译器与解释器的区别——这里的记忆锚点只有一个：<strong>解释器像把图纸逐行翻译成施工单的工艺员，写完一行立刻能看到这一行的结果</strong>。所以 Python 特别适合边写边试。</p>
+<p>它有三个特点，决定它适合你：</p>
+<ul>
+<li><strong>语法简单</strong>：接近自然语言，缩进就是程序块边界，没有大括号、分号这些"噪音"；</li>
+<li><strong>生态庞大</strong>：科学计算、数据处理、AI 领域的主流工具（NumPy、Pandas、PyTorch、LangChain）都是 Python 写的，学 AI 绕不开；</li>
+<li><strong>跨平台</strong>：Windows、macOS、Linux 上跑的是同一套代码。</li>
+</ul>
+<h3 id="312">3.1.2 安装与第一行代码</h3>
+<p>安装有两种主流方式，二选一：</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>适合谁</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anaconda（推荐）</td>
+<td>打算认真学 AI</td>
+<td>自带 Python + 300 多个常用库（含 NumPy / Pandas / Matplotlib），免去逐个安装</td>
+</tr>
+<tr>
+<td>python.org 官方安装包</td>
+<td>只想装个最小环境</td>
+<td>干净，但科学计算库要自己一个个 pip install</td>
+</tr>
+</tbody>
+</table>
+<p>装好后打开终端（不会用终端先回看第 2 章 2.2 节），验证安装：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3<span class="w"> </span>--version
+</code></pre></div>
+<p>如果看到类似 <code>Python 3.13.9</code> 的输出，说明安装成功。接着输入 <code>python3</code> 回车，就进入<strong>交互模式</strong>（提示符变成 <code>&gt;&gt;&gt;</code>），可以直接敲代码：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"我的第一行 Python"</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">我的第一行</span> <span class="n">Python</span>
+</code></pre></div>
+<blockquote>
+<p>交互模式适合试一两行；写正式程序用文件（见 3.1.4）。</p>
+</blockquote>
+<h3 id="313">3.1.3 虚拟环境：每个项目一套独立环境</h3>
+<p><strong>虚拟环境（Virtual Environment）</strong> 解决一个真实痛点：项目 A 要 NumPy 1.26，项目 B 要 NumPy 2.0，装在一个 Python 里会互相打架——你升级了 A 的库，B 就崩了。</p>
+<p>虚拟环境为每个项目建一个<strong>独立的小环境</strong>，每个环境有自己的库清单，互不干扰。你可以把它理解为：<strong>每个项目有自己的工具箱和量具，不混用</strong>。</p>
+<p>创建和使用只要三步（在项目目录下执行）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>myenv<span class="w">          </span><span class="c1"># 1. 创建虚拟环境 myenv（会新建 myenv 文件夹）</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">source</span><span class="w"> </span>myenv/bin/activate<span class="w">      </span><span class="c1"># 2. 激活（Windows 用 myenv\Scripts\activate）</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w">       </span><span class="c1"># 3. 在这个环境里装库，只影响本项目</span>
+</code></pre></div>
+<p>激活后，命令行提示符前面会出现 <code>(myenv)</code>，说明你已经在虚拟环境里了。装库用 <strong>pip</strong>（Python 的包管理器，类比：标准件库 + 自动领料员，第 2 章讲过）。<strong>本书每章项目都建议建一个独立虚拟环境</strong>，这是以后不踩环境坑的最便宜的办法。</p>
+<h3 id="314-vs-code-jupyter-notebook">3.1.4 编辑器：VS Code 与 Jupyter Notebook</h3>
+<p>写代码要有一个趁手的"工作台"，两个选择：</p>
+<ul>
+<li><strong>VS Code</strong>（微软免费编辑器）：写正式程序用。装好 Python 插件后，打开 <code>.py</code> 文件，点右上角"运行"按钮即可执行，出错会红波浪线提示；</li>
+<li><strong>Jupyter Notebook</strong>（Anaconda 自带）：按"格子"组织代码，每个格子可以单独运行、立刻看到结果，特别适合<strong>算数、试错、看数据</strong>——相当于一张带预览的计算纸。</li>
+</ul>
+<p>两者关系：正式的工具脚本放 VS Code，探索性计算放 Jupyter，两不误。图 3-1 是老张的工作台全景。</p>
+<p><img alt="图3-1 老张的 Python 工作台（示意）" src="../figures/ch3/fig3-1_%E8%80%81%E5%BC%A0%E7%9A%84Python%E5%B7%A5%E4%BD%9C%E5%8F%B0.png" /></p>
+<blockquote>
+<p><strong>工程师贴士</strong>：环境出问题（装库失败、版本冲突）时，90% 的解法是"新建一个干净的虚拟环境重来"，而不是在乱掉的环境里继续折腾。这和产线上"工装夹具乱了对不上，先清场复位"是一个道理。</p>
+</blockquote>
+<h2 id="32-python">3.2 Python 语法速通：变量、容器、循环与判断</h2>
+<p>这一节只讲四样东西：变量、容器、循环、判断。它们能覆盖你 80% 的日常写码需求。</p>
+<h3 id="321">3.2.1 变量：给数据贴标签</h3>
+<p><strong>变量（Variable）</strong> 是给数据起的名字。<code>nominal = 40.0</code> 的意思是"把数值 40.0 存起来，以后用 nominal 这个名字引用它"。</p>
+<p>Python 的变量不需要声明类型，类型由赋的值决定：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">axis_name</span> <span class="o">=</span> <span class="s2">"轴-01"</span>   <span class="c1"># 字符串 str：文本</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">nominal</span> <span class="o">=</span> <span class="mf">40.0</span>        <span class="c1"># 浮点数 float：带小数</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">tol</span> <span class="o">=</span> <span class="mf">0.05</span>            <span class="c1"># 浮点数</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">6</span>             <span class="c1"># 整数 int</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">is_ok</span> <span class="o">=</span> <span class="kc">True</span>          <span class="c1"># 布尔 bool：True/False</span>
+</code></pre></div>
+<p>用内置函数 <code>type()</code> 可以随时查一个变量的类型。变量名建议用英文单词或拼音，别用 a、b、c 这种——一个月后你自己都看不懂。</p>
+<h3 id="322-f-string">3.2.2 字符串与 f-string：给文本排版</h3>
+<p>字符串（String）是文本数据。工程师场景里最常用的是 <strong>f-string</strong>（格式化字符串）：在字符串前加 <code>f</code>，用 <code>{}</code> 把变量嵌进去，像给工艺卡片填空：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">d</span> <span class="o">=</span> <span class="mf">40.0</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"轴径 </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2"> mm，公差 ±</span><span class="si">{</span><span class="n">tol</span><span class="si">}</span><span class="s2"> mm"</span><span class="p">)</span>   <span class="c1"># → 轴径 40.0 mm，公差 ±0.05 mm</span>
+</code></pre></div>
+<h3 id="323">3.2.3 容器：把数据装起来</h3>
+<p>程序要处理批量数据，就需要容器。Python 有三个最常用的，记一个场景就够：</p>
+<table>
+<thead>
+<tr>
+<th>容器</th>
+<th>英文</th>
+<th>特点</th>
+<th>一句话场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>列表</td>
+<td>List</td>
+<td>有序、可变（可增删）</td>
+<td>一叠实测直径记录，随测随记</td>
+</tr>
+<tr>
+<td>元组</td>
+<td>Tuple</td>
+<td>有序、不可变（定死）</td>
+<td>一根轴的"装箱单"：材料、直径、热处理，不允许改</td>
+</tr>
+<tr>
+<td>字典</td>
+<td>Dictionary</td>
+<td>键值对，按键取值</td>
+<td>一根轴的技术档案：按"材料""直径"这些名称查值</td>
+</tr>
+</tbody>
+</table>
+<p>字典最像工程师的日常——<strong>按名称查值</strong>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">axis</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"轴号"</span><span class="p">:</span> <span class="s2">"轴-01"</span><span class="p">,</span> <span class="s2">"材料"</span><span class="p">:</span> <span class="s2">"45钢"</span><span class="p">,</span> <span class="s2">"直径"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s2">"热处理"</span><span class="p">:</span> <span class="s2">"调质"</span><span class="p">}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">axis</span><span class="p">[</span><span class="s2">"材料"</span><span class="p">])</span>      <span class="c1"># → 45钢，像翻图册目录按词条取内容</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">axis</span><span class="p">[</span><span class="s2">"表面处理"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"镀铬"</span>  <span class="c1"># 追加一项</span>
+</code></pre></div>
+<p>图 3-2 展示了三种容器的分工。</p>
+<p><img alt="图3-2 数据容器：列表 / 元组 / 字典（示意）" src="../figures/ch3/fig3-2_%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8.png" /></p>
+<h3 id="324">3.2.4 循环与判断：逐根检验</h3>
+<p>有了容器装数据，用<strong>循环</strong>（for）逐条处理，用<strong>判断</strong>（if/else）逐条下结论。下面这段就是老张的直径公差检验——6 根轴，名义直径 40 mm，公差 ±0.05 mm（对应仓库 <code>code/ch3/03-2_syntax.py</code>，代码清单 3-1）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 场景：对 6 根轴做直径公差检验。名义 40 mm，公差 ±0.05 mm。</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">diameters</span> <span class="o">=</span> <span class="p">[</span><span class="mf">40.02</span><span class="p">,</span> <span class="mf">40.01</span><span class="p">,</span> <span class="mf">39.97</span><span class="p">,</span> <span class="mf">40.05</span><span class="p">,</span> <span class="mf">40.08</span><span class="p">,</span> <span class="mf">39.95</span><span class="p">]</span>  <span class="c1"># 实测直径，单位 mm</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">nominal</span> <span class="o">=</span> <span class="mf">40.0</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">tol</span> <span class="o">=</span> <span class="mf">0.05</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">diameters</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>      <span class="c1"># enumerate：循环时同时拿到序号 i 和值 d</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">ok</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="n">nominal</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">tol</span>           <span class="c1"># 偏差绝对值在公差内？</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">status</span> <span class="o">=</span> <span class="s2">"合格"</span> <span class="k">if</span> <span class="n">ok</span> <span class="k">else</span> <span class="s2">"超差"</span>       <span class="c1"># 条件表达式，一行写完 if/else</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"第</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">根轴：实测 </span><span class="si">{</span><span class="n">d</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> mm，偏差 </span><span class="si">{</span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">nominal</span><span class="si">:</span><span class="s2">+.2f</span><span class="si">}</span><span class="s2"> mm → </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>真实运行结果：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>第1根轴：实测 40.02 mm，偏差 +0.02 mm → 合格
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>第2根轴：实测 40.01 mm，偏差 +0.01 mm → 合格
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>第3根轴：实测 39.97 mm，偏差 -0.03 mm → 合格
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>第4根轴：实测 40.05 mm，偏差 +0.05 mm → 合格
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>第5根轴：实测 40.08 mm，偏差 +0.08 mm → 超差
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>第6根轴：实测 39.95 mm，偏差 -0.05 mm → 合格
+</code></pre></div>
+<blockquote>
+<p><strong>工程师贴士</strong>：Python 用<strong>缩进</strong>（4 个空格）表示程序块的边界，不用大括号。同一个块内的代码缩进必须一致，混用 Tab 和空格会直接报错。把它想成图纸上的图层规范——图层乱了，图就乱了。</p>
+</blockquote>
+<h2 id="33">3.3 函数与模块：把重复的事打包</h2>
+<h3 id="331">3.3.1 函数：你的"标准件"</h3>
+<p><strong>函数（Function）</strong> 是一段有名字、可反复调用的代码块。它和标准件是一个逻辑：<strong>把常用的动作定型，需要时直接调用，不用每次重写</strong>。</p>
+<p>老张的轴校核里，弯扭合成应力的公式（第三强度理论：σ_ca = √(σ² + 4τ²)）每根轴都要算。写成函数，一次定型、到处调用（对应 <code>code/ch3/03-3_function.py</code>，代码清单 3-2）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">弯扭合成应力</span><span class="p">(</span><span class="n">直径_mm</span><span class="p">,</span> <span class="n">弯矩_Nmm</span><span class="p">,</span> <span class="n">扭矩_Nmm</span><span class="p">):</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="sd">"""第三强度理论：σ_ca = √(σ² + 4τ²)；σ = 32M/πd³，τ = 16T/πd³"""</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">d3</span> <span class="o">=</span> <span class="n">直径_mm</span> <span class="o">**</span> <span class="mi">3</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">sigma</span> <span class="o">=</span> <span class="mi">32</span> <span class="o">*</span> <span class="n">弯矩_Nmm</span> <span class="o">/</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d3</span><span class="p">)</span>   <span class="c1"># 弯曲应力 MPa</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">tau</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">扭矩_Nmm</span> <span class="o">/</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d3</span><span class="p">)</span>     <span class="c1"># 扭转应力 MPa</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sigma</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">tau</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">安全系数</span><span class="p">(</span><span class="n">材料屈服_MPa</span><span class="p">,</span> <span class="n">直径_mm</span><span class="p">,</span> <span class="n">弯矩_Nmm</span><span class="p">,</span> <span class="n">扭矩_Nmm</span><span class="p">):</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="sd">"""静强度安全系数 = 材料屈服强度 / 计算应力"""</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="k">return</span> <span class="n">材料屈服_MPa</span> <span class="o">/</span> <span class="n">弯扭合成应力</span><span class="p">(</span><span class="n">直径_mm</span><span class="p">,</span> <span class="n">弯矩_Nmm</span><span class="p">,</span> <span class="n">扭矩_Nmm</span><span class="p">)</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="c1"># 轴-01：45钢（屈服 355 MPa），直径 40 mm，弯矩 300 N·m，扭矩 200 N·m</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="n">n</span> <span class="o">=</span> <span class="n">安全系数</span><span class="p">(</span><span class="mi">355</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">300_000</span><span class="p">,</span> <span class="mi">200_000</span><span class="p">)</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"轴-01 安全系数 n = </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">，</span><span class="si">{</span><span class="s1">'合格'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">1.5</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'不合格'</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>真实运行结果：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>轴-01 安全系数 n = 6.19，合格
+</code></pre></div>
+<p>看懂这段的三个要点：</p>
+<ul>
+<li><code>def 函数名(参数):</code> 定义函数；参数是调用时传进去的"输入"；</li>
+<li><code>return</code> 把计算结果"交出来"，函数就有了返回值；</li>
+<li>调用 <code>安全系数(355, 40, 300_000, 200_000)</code> 时，355、40、300000、200000 依次填入参数位置。</li>
+</ul>
+<p>之后任何一根轴，一行调用就能算出安全系数——这就是"标准件"的价值。</p>
+<h3 id="332-import">3.3.2 模块与 import：你的"标准件图库"</h3>
+<p><strong>模块（Module）</strong> 是按用途把函数分门别类存放的文件。<code>import</code> 就是"从图库里领出这个标准件"。</p>
+<ul>
+<li>用别人的：<code>import math</code>、<code>import pandas as pd</code>（<code>as</code> 是起个别名，后面少打字）；</li>
+<li>用你自己的：把函数存进 <code>strength.py</code>，另一处写 <code>from strength import 安全系数</code> 即可复用。</li>
+</ul>
+<p>以后你会发现：<strong>学 Python 很大一部分是学"该 import 哪个库、怎么用"</strong>，而不是从零写算法。这和第 2 章讲的"站在巨人的肩膀上"完全一致。</p>
+<h2 id="34">3.4 文件读写与异常处理：让程序"干活"</h2>
+<p>程序真正的价值，在于读写真实数据。这一节讲两件事：读 CSV 文件、出错不崩溃。</p>
+<h3 id="341-csv">3.4.1 读 CSV：一行一条记录</h3>
+<p><strong>CSV（Comma-Separated Values，逗号分隔值）</strong> 是最通用的数据交换格式——Excel 的"另存为 CSV"就能导出，任何工具都能读。第 3 章的示例数据 <code>code/ch3/axes.csv</code> 长这样：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>轴号,材料,屈服强度MPa,直径mm,弯矩N·m,扭矩N·m
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>轴-01,45钢,355,40,300,200
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>轴-02,45钢,355,30,320,220
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>...
+</code></pre></div>
+<p>Python 标准库自带 <code>csv</code> 模块，<code>csv.DictReader</code> 会<strong>把第一行当表头，每行数据变成一个字典</strong>（对应 <code>code/ch3/03-4_files.py</code>，代码清单 3-3）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">读轴参数表</span><span class="p">(</span><span class="n">路径</span><span class="p">):</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">路径</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="k">return</span> <span class="n">rows</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="n">rows</span> <span class="o">=</span> <span class="n">读轴参数表</span><span class="p">(</span><span class="s2">"axes.csv"</span><span class="p">)</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"成功读入 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span><span class="si">}</span><span class="s2"> 行轴参数，字段：</span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>真实运行结果：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>成功读入 6 行轴参数，字段：['轴号', '材料', '屈服强度MPa', '直径mm', '弯矩N·m', '扭矩N·m']
+</code></pre></div>
+<p><code>with open(...) as f:</code> 这种写法保证文件用完自动关闭——相当于"用完设备随手关电"，不用你手动记。</p>
+<h3 id="342">3.4.2 异常处理：程序出错，不崩溃</h3>
+<p>程序跑起来总会遇到意外：文件不存在、编码不对、某行数据是空的。没有保护的代码遇到这些会<strong>直接崩溃</strong>（抛异常），屏幕上甩一大段红色报错。<strong>异常处理（Exception Handling）</strong> 就是给程序加"报警保护"：识别错误类型，给出人话提示（对应 <code>code/ch3/03-4_files.py</code> 后半段）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="n">rows</span> <span class="o">=</span> <span class="n">读轴参数表</span><span class="p">(</span><span class="s2">"axes.csv"</span><span class="p">)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"成功读入 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span><span class="si">}</span><span class="s2"> 行轴参数"</span><span class="p">)</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"找不到 axes.csv——请确认文件与脚本在同一目录"</span><span class="p">)</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"编码不对——请把 CSV 另存为 UTF-8 编码"</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>try/except</strong> 的读法：先试着（try）执行；如果抛出的是"文件找不到"错误，就进入对应的 except 分支，给用户一句人话，程序继续走。</p>
+<blockquote>
+<p><strong>工程师贴士（编码坑）</strong>：中文 Excel 导出的 CSV 可能是 GBK 编码，Python 按 UTF-8 读会报 <code>UnicodeDecodeError</code>。两个解决办法：Excel 另存时选"CSV UTF-8"，或读文件时把 <code>encoding</code> 换成 <code>"gbk"</code>。导出结果时用 <code>encoding="utf-8-sig"</code>，Excel 打开就不会乱码——第 3.8 节项目里就是这么做的。</p>
+</blockquote>
+<h2 id="35-numpypandasmatplotlib">3.5 科学计算三件套：NumPy、Pandas、Matplotlib</h2>
+<p>数据处理是工程师和 Python 之间最实在的接口。三个库各管一段：<strong>NumPy 负责算，Pandas 负责表，Matplotlib 负责画</strong>（图 3-3）。</p>
+<p><img alt="图3-3 科学计算三件套：NumPy / Pandas / Matplotlib（示意）" src="../figures/ch3/fig3-3_%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E4%B8%89%E4%BB%B6%E5%A5%97.png" /></p>
+<h3 id="351-numpy">3.5.1 NumPy：数组与"整批一起算"</h3>
+<p><strong>NumPy（Numerical Python）</strong> 的核心是<strong>数组（ndarray）</strong>——一种"整批数据装在一起"的结构。它的杀手锏是<strong>向量化计算</strong>：对整批数据一次性做运算，不用写循环。</p>
+<p>对比感受一下：要算 6 根轴的抗弯截面系数 W = πd³/32，用普通 Python 要写 for 循环；用 NumPy 一行搞定，且速度快几十倍：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">28</span><span class="p">])</span>      <span class="c1"># 6 根轴的直径，单位 mm</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">32</span>                       <span class="c1"># 整批一起算，W 也是一个数组</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">W</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>                             <span class="c1"># → [6283.2 2650.7 1534.0 1045.4 12271.8 2155.1]</span>
+</code></pre></div>
+<p><strong>数组的算术运算自动逐元素进行</strong>——这正是"批量加工"的思路：不是一根根轴算，而是整批上产线。</p>
+<h3 id="352-pandas-excel-python">3.5.2 Pandas：把 Excel 搬进 Python</h3>
+<p><strong>Pandas</strong> 的核心是 <strong>DataFrame</strong>——一张带行列索引的表格，可以理解成"Excel 表格搬进了 Python"。读 CSV 只要一行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"axes.csv"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>   <span class="c1"># df 就是一张表</span>
+</code></pre></div>
+<p>然后可以像操作 Excel 一样操作它：看前几行、加计算列、筛选行。下面这段把 3.3 节的校核公式搬到整张表上，一次算出 6 根轴的安全系数，并筛出不合格的（对应 <code>code/ch3/03-5_sci.py</code>，代码清单 3-4 前半部分）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"axes.csv"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1"># NumPy 向量化：整批算弯曲应力、扭转应力、合成应力</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="n">d</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"直径mm"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="n">W</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">32</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="n">Wt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">16</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="n">sigma</span>   <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"弯矩N·m"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">W</span>    <span class="c1"># 弯曲应力 MPa</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="n">tau</span>     <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"扭矩N·m"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">Wt</span>   <span class="c1"># 扭转应力 MPa</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="n">sigma_ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sigma</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">tau</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>    <span class="c1"># 第三强度理论</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="n">df</span><span class="p">[</span><span class="s2">"弯扭合成应力MPa"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">sigma_ca</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="n">df</span><span class="p">[</span><span class="s2">"安全系数"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"屈服强度MPa"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="o">/</span> <span class="n">sigma_ca</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="n">df</span><span class="p">[</span><span class="s2">"结论"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"安全系数"</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">1.5</span><span class="p">,</span> <span class="s2">"合格"</span><span class="p">,</span> <span class="s2">"不合格"</span><span class="p">)</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>          <span class="c1"># 看前 3 行</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="n">bad</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"结论"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"不合格"</span><span class="p">]</span>                   <span class="c1"># 筛选出不合格行</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">bad</span><span class="p">[[</span><span class="s2">"轴号"</span><span class="p">,</span> <span class="s2">"材料"</span><span class="p">,</span> <span class="s2">"弯扭合成应力MPa"</span><span class="p">,</span> <span class="s2">"安全系数"</span><span class="p">]]</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</code></pre></div>
+<p>真实运行结果：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>前 3 行：
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  轴号   材料  屈服强度MPa  直径mm  弯矩N·m  扭矩N·m
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>轴-01  45钢      355    40    300    200
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>轴-02  45钢      355    30    320    220
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>轴-03 Q235      235    25    180    150
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>不合格轴：
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>  轴号   材料  弯扭合成应力MPa  安全系数
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>轴-04 Q235     203.38  1.16
+</code></pre></div>
+<p>注意这一段的几个"工程惯用语"：<code>df["直径mm"]</code> 取一列；<code>df[df["结论"] == "不合格"]</code> 是<strong>条件筛选</strong>（选出满足条件的行）；<code>.to_numpy()</code> 把列变成数组交给 NumPy 计算。三件套在这里配合得严丝合缝——<strong>Pandas 管表格、NumPy 管计算</strong>。</p>
+<h3 id="353-matplotlib">3.5.3 Matplotlib：把结果画出来</h3>
+<p><strong>Matplotlib</strong> 是绘图库。工程师几乎总会要"一张图"：安全系数分布柱状图、载荷-挠度曲线、温升曲线。套路固定：<code>plt.figure()</code> 建画布 → 画图（<code>plt.bar</code> / <code>plt.plot</code>）→ <code>plt.savefig</code> 存图 → 展示。</p>
+<p>对应 <code>code/ch3/03-5_sci.py</code> 后半部分（图已在上一节生成）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"Agg"</span><span class="p">)</span>                       <span class="c1"># 无界面环境（脚本/服务器）用 Agg 后端</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"#2B6CB0"</span> <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s2">"合格"</span> <span class="k">else</span> <span class="s2">"#FF7D00"</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">"结论"</span><span class="p">]]</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"轴号"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"安全系数"</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>   <span class="c1"># 合格蓝、不合格橙</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#D32F2F"</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 合格线</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"安全系数 n"</span><span class="p">)</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"轴静强度校核：各轴安全系数分布"</span><span class="p">)</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"安全系数分布.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+</code></pre></div>
+<p>运行后目录里出现 <code>安全系数分布.png</code>——轴-04 是橙色柱，明晃晃低于红色合格线，比看表格数字直观得多。<strong>中文显示</strong>：macOS 上默认能显示；Linux 服务器上若中文变方块，在脚本开头加两行设置中文字体（见 <code>code/ch3/03-8_project.py</code> 开头）。</p>
+<blockquote>
+<p><strong>工程师贴士</strong>：三件套是"会 import、会查文档、会调参数"就能用，不需要背 API。遇到不会的用法，把问题丢给 AI（3.6 节）或查官方文档，比死记硬背高效得多。</p>
+</blockquote>
+<h2 id="36-ai-vibe-coding">3.6 用 AI 帮你写代码：Vibe Coding 入门</h2>
+<h3 id="361">3.6.1 为什么工程师学编程可以走"捷径"</h3>
+<p>传统的学法是：先背语法、再写练习、最后做项目。但你的目标不是当程序员，而是<strong>用代码解决工程问题</strong>。Vibe Coding（提示式编程，也译"氛围编程"）是另一条路：<strong>用自然语言向 AI 描述需求，AI 生成代码，你来运行、审查、修改</strong>。</p>
+<p>它的分工非常契合工程师：<strong>你懂需求</strong>（物理、公式、单位、约束），<strong>AI 懂语法</strong>。你缺的是"把需求翻译成代码"，这正是 AI 最擅长的。</p>
+<h3 id="362">3.6.2 四步法：说清需求 → 生成 → 运行 → 追问</h3>
+<p>一个高质量提示词的骨架，是把"输入、输出、单位、约束"说清楚。拿第 3.5 节的需求举例：</p>
+<blockquote>
+<p>用 Python 写一个小工具：读入一个 CSV 文件，里面有轴的"直径mm、弯矩N·m、扭矩N·m、屈服强度MPa"四列。请按第三强度理论（σ_ca = √(σ² + 4τ²)，σ = 32M/πd³，τ = 16T/πd³）计算每根轴的弯扭合成应力和安全系数，安全系数小于 1.5 的标为"不合格"。用 Pandas 实现，输出一张包含结果的表，并把结果导出为新 CSV。</p>
+</blockquote>
+<p>AI 会生成一版代码——通常和你看到的 3.5 节代码八九不离十。<strong>关键动作在后面</strong>：</p>
+<ol>
+<li><strong>运行验证</strong>：把代码存成 <code>.py</code> 文件跑一遍，看输出对不对；</li>
+<li><strong>逐行审查</strong>：单位换算对不对（N·m 要 ×1000 变 N·mm）、公式对不对（直径三次方、π/32）、边界条件（空文件、缺列）会不会崩；</li>
+<li><strong>追问修改</strong>："把这个工具改成一个函数，方便我批量调用""加上异常处理，文件找不到时给提示"——AI 会立刻改。</li>
+</ol>
+<h3 id="363-ai">3.6.3 底线：AI 的代码必须"验收"</h3>
+<p>AI 生成的代码可能包含<strong>幻觉（Hallucination）</strong>——一本正经地给出错误公式、错误单位、不存在的函数。所以铁律只有一条：<strong>AI 写的代码，你必须运行验证后才能算数</strong>。</p>
+<p>这和第 2 章建立的概念完全接上了：你学计算机通识、学 Python 语法，不是为了自己从头写一切，而是为了<strong>具备验收 AI 代码的能力</strong>——看得懂它在干什么、判断得了它对不对。AI 是外协供应商，你是验收工程师。</p>
+<blockquote>
+<p><strong>工程师贴士</strong>：想让 AI 少出错，提示词里把"单位、公式、已知条件"原样贴进去（像给外协发图纸：图纸越全，偏差越小）。生成后第一句追问："这段代码有没有单位或公式错误？"——让 AI 自查一遍，能拦住一半幻觉。</p>
+</blockquote>
+<h2 id="37-git">3.7 Git 与协作：代码的版本管理</h2>
+<h3 id="371-git">3.7.1 Git 是什么</h3>
+<p><strong>Git</strong> 是代码的<strong>版本管理</strong>工具。你的代码会一直改：今天加一个功能，明天改一个参数，后天发现改坏了想回到昨天的版本。Git 记录每一次改动，随时可以回退、对比、合并。</p>
+<p>这个逻辑你其实很熟——<strong>图纸版本管理</strong>：A0 版、A1 版、定版。图纸改了要升版、要留痕、错了能找回旧版；代码也一样，Git 就是你的"图纸版本管理系统"（图 3-4）。</p>
+<p><img alt="图3-4 Git 版本管理：像图纸版本一样管理代码（示意）" src="../figures/ch3/fig3-4_Git%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86.png" /></p>
+<h3 id="372">3.7.2 最常用的五个命令</h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>干什么</th>
+<th>图纸类比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git init</code></td>
+<td>把当前目录变成 Git 仓库（一次性）</td>
+<td>给这个项目建一个档案室</td>
+</tr>
+<tr>
+<td><code>git add 文件</code></td>
+<td>把改动放进"待提交区"</td>
+<td>把改好的图纸放进待审阅筐</td>
+</tr>
+<tr>
+<td><code>git commit -m "说明"</code></td>
+<td>把待提交区存成一个版本</td>
+<td>升版：A0 → A1，留个版本说明</td>
+</tr>
+<tr>
+<td><code>git status</code></td>
+<td>看现在有哪些改动没提交</td>
+<td>看档案室台账</td>
+</tr>
+<tr>
+<td><code>git log</code></td>
+<td>看所有提交历史</td>
+<td>翻版本履历</td>
+</tr>
+</tbody>
+</table>
+<p>日常流程只有三步：<strong>改代码 → <code>git add .</code> → <code>git commit -m "做了什么"</code></strong>。改坏了想回退，用 <code>git log</code> 找到好版本，再恢复它。</p>
+<h3 id="373-git-github">3.7.3 Git 与 GitHub</h3>
+<p><strong>GitHub</strong> 是放 Git 仓库的远程服务器（类比：图纸的共享云盘 + 图库）。本地提交之后：</p>
+<ul>
+<li><code>git push</code>：把本地版本推送到 GitHub（你的代码入库归档）；</li>
+<li><code>git pull</code>：把远程最新版本拉回本地（别人改过时）。</li>
+</ul>
+<p>你正在读的这本书的仓库就是这么管理的——每一章的内容都是一个 commit，你可以翻开 <code>git log</code> 看到"第 1 章正文""第 2 章配图"这样一条条记录。<strong>养成习惯：完成一个小成果就 commit 一次</strong>，你的学习历程本身就成了作品集。</p>
+<h2 id="38-python">3.8 配套项目：用 Python 做轴的强度校核</h2>
+<p>把这一章学的所有东西串起来，做第一个完整工具。这是本书第 1 个"能交差"的项目。</p>
+<h3 id="381">3.8.1 需求</h3>
+<p>老张要交付一份轴静强度校核报告：输入是轴参数表（<code>axes.csv</code>，6 根轴），输出是每根轴的弯扭合成应力、安全系数、合格结论，外加一张安全系数分布图，结果导出成新 CSV 给同事看。</p>
+<h3 id="382">3.8.2 完整代码</h3>
+<p>对应仓库 <code>code/ch3/03-8_project.py</code>（代码清单 3-5）。在项目目录建虚拟环境、<code>pip install -r requirements.txt</code>（numpy / pandas / matplotlib）后，<code>python 03-8_project.py</code> 直接运行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># 轴静强度校核工具 v0.1</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1"># 读入轴参数表(CSV)，按第三强度理论计算弯扭合成应力与安全系数，</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="c1"># 输出报告(控制台 + CSV)并生成安全系数图。axes.csv 与本脚本同目录。</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"Agg"</span><span class="p">)</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">"font.sans-serif"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"PingFang SC"</span><span class="p">,</span> <span class="s2">"Heiti SC"</span><span class="p">,</span> <span class="s2">"Arial Unicode MS"</span><span class="p">,</span> <span class="s2">"SimHei"</span><span class="p">]</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">"axes.unicode_minus"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="n">INPUT_CSV</span> <span class="o">=</span> <span class="s2">"axes.csv"</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="n">OUTPUT_CSV</span> <span class="o">=</span> <span class="s2">"校核结果.csv"</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="n">OUTPUT_PNG</span> <span class="o">=</span> <span class="s2">"安全系数分布.png"</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="n">MIN_SAFETY</span> <span class="o">=</span> <span class="mf">1.5</span>  <span class="c1"># 最小许用安全系数</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="k">def</span><span class="w"> </span><span class="nf">校核</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="w">    </span><span class="sd">"""对整批轴做静强度校核，返回带计算列的表"""</span>
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>    <span class="n">d</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"直径mm"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>    <span class="n">W</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">32</span>                       <span class="c1"># 抗弯截面系数 mm³</span>
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>    <span class="n">Wt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">d</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">16</span>                       <span class="c1"># 抗扭截面系数 mm³</span>
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>    <span class="n">sigma</span>   <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"弯矩N·m"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">W</span>   <span class="c1"># 弯曲应力 MPa</span>
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>    <span class="n">tau</span>     <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"扭矩N·m"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">Wt</span>  <span class="c1"># 扭转应力 MPa</span>
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>    <span class="n">sigma_ca</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sigma</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">tau</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># 第三强度理论</span>
+<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>    <span class="n">df</span><span class="p">[</span><span class="s2">"弯扭合成应力MPa"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">sigma_ca</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>    <span class="n">df</span><span class="p">[</span><span class="s2">"安全系数"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"屈服强度MPa"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="o">/</span> <span class="n">sigma_ca</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>    <span class="n">df</span><span class="p">[</span><span class="s2">"结论"</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"安全系数"</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">MIN_SAFETY</span><span class="p">,</span> <span class="s2">"合格"</span><span class="p">,</span> <span class="s2">"不合格"</span><span class="p">)</span>
+<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>    <span class="k">return</span> <span class="n">df</span>
+<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>
+<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a><span class="k">def</span><span class="w"> </span><span class="nf">主程序</span><span class="p">():</span>
+<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">INPUT_CSV</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
+<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">校核</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a>    <span class="c1"># 1) 控制台报告</span>
+<a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"轴静强度校核报告（第三强度理论，最小安全系数 n = 1.5）"</span><span class="p">)</span>
+<a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">"轴号"</span><span class="p">,</span> <span class="s2">"材料"</span><span class="p">,</span> <span class="s2">"弯扭合成应力MPa"</span><span class="p">,</span> <span class="s2">"安全系数"</span><span class="p">,</span> <span class="s2">"结论"</span><span class="p">]]</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a>    <span class="n">bad</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"结论"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"不合格"</span><span class="p">]</span>
+<a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"共校核 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> 根轴；不合格 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">bad</span><span class="p">)</span><span class="si">}</span><span class="s2"> 根；最低安全系数 n = </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="s1">'安全系数'</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a>    <span class="c1"># 2) 导出结果 CSV（utf-8-sig 让 Excel 打开不乱码）</span>
+<a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a>    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">OUTPUT_CSV</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8-sig"</span><span class="p">)</span>
+<a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a>    <span class="c1"># 3) 安全系数分布图</span>
+<a id="__codelineno-19-45" name="__codelineno-19-45" href="#__codelineno-19-45"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<a id="__codelineno-19-46" name="__codelineno-19-46" href="#__codelineno-19-46"></a>    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"#2B6CB0"</span> <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s2">"合格"</span> <span class="k">else</span> <span class="s2">"#FF7D00"</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">"结论"</span><span class="p">]]</span>
+<a id="__codelineno-19-47" name="__codelineno-19-47" href="#__codelineno-19-47"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">"轴号"</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">"安全系数"</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<a id="__codelineno-19-48" name="__codelineno-19-48" href="#__codelineno-19-48"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">MIN_SAFETY</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#D32F2F"</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-19-49" name="__codelineno-19-49" href="#__codelineno-19-49"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">MIN_SAFETY</span> <span class="o">+</span> <span class="mf">0.08</span><span class="p">,</span> <span class="s2">"n=1.5 合格线"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#D32F2F"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<a id="__codelineno-19-50" name="__codelineno-19-50" href="#__codelineno-19-50"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"安全系数 n"</span><span class="p">)</span>
+<a id="__codelineno-19-51" name="__codelineno-19-51" href="#__codelineno-19-51"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"轴静强度校核：各轴安全系数分布"</span><span class="p">)</span>
+<a id="__codelineno-19-52" name="__codelineno-19-52" href="#__codelineno-19-52"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<a id="__codelineno-19-53" name="__codelineno-19-53" href="#__codelineno-19-53"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">OUTPUT_PNG</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<a id="__codelineno-19-54" name="__codelineno-19-54" href="#__codelineno-19-54"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"结果已导出：</span><span class="si">{</span><span class="n">OUTPUT_CSV</span><span class="si">}</span><span class="s2">；图已保存：</span><span class="si">{</span><span class="n">OUTPUT_PNG</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-19-55" name="__codelineno-19-55" href="#__codelineno-19-55"></a>
+<a id="__codelineno-19-56" name="__codelineno-19-56" href="#__codelineno-19-56"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<a id="__codelineno-19-57" name="__codelineno-19-57" href="#__codelineno-19-57"></a>    <span class="n">主程序</span><span class="p">()</span>
+</code></pre></div>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>==================================================
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>轴静强度校核报告（第三强度理论，最小安全系数 n = 1.5）
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>==================================================
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>  轴号   材料  弯扭合成应力MPa  安全系数  结论
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>轴-01  45钢      57.38  6.19  合格
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>轴-02  45钢     146.50  2.42  合格
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>轴-03 Q235     152.74  1.54  合格
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>轴-04 Q235     203.38  1.16 不合格
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>轴-05  45钢      49.73  7.14  合格
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>轴-06  45钢     177.30  2.00  合格
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>--------------------------------------------------
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>共校核 6 根轴；不合格 1 根；最低安全系数 n = 1.16
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>结果已导出：校核结果.csv；图已保存：安全系数分布.png
+</code></pre></div>
+<h3 id="383">3.8.3 读懂这个工具</h3>
+<p>看这个输出，你其实已经掌握了"工程计算程序"的完整套路：</p>
+<ul>
+<li><strong>读数据</strong>：<code>pd.read_csv</code> 一行进表；</li>
+<li><strong>算</strong>：NumPy 向量化，公式写在明处（第三强度理论），单位换算写清（N·m × 1000 → N·mm）；</li>
+<li><strong>出结论</strong>：<code>np.where(安全系数 &gt;= 1.5, "合格", "不合格")</code> 一条规则全表生效；</li>
+<li><strong>出报告</strong>：控制台表格 + 导出 CSV（<code>utf-8-sig</code> 防 Excel 乱码）+ 出图。</li>
+</ul>
+<p>轴-04（Q235、直径 22 mm）应力 203.38 MPa 超过许用范围，安全系数 1.16 不达标——<strong>改设计（加大直径、换材料）→ 改 CSV 里一行 → 重跑脚本</strong>，新报告秒出。这就是程序化计算的威力：参数一变，全流程自动重算。</p>
+<blockquote>
+<p><strong>工程师贴士</strong>：这个"读数据 → 算 → 出报告 → 出图"的闭环，是后续每一章（机器学习、深度学习、RAG、智能体）都会复用的骨架。第 3 章你建的每个习惯——虚拟环境、函数封装、异常处理、Git 提交——后面都会成倍回报。</p>
+</blockquote>
+<h3 id="384">3.8.4 泛理工科替换案例</h3>
+<p>同样的骨架，换一套公式和输入，就是另一个专业的小工具：</p>
+<table>
+<thead>
+<tr>
+<th>专业</th>
+<th>替换案例</th>
+<th>输入 → 输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电气</td>
+<td>电缆截面选择</td>
+<td>负荷电流、敷设条件 → 最小截面、压降</td>
+</tr>
+<tr>
+<td>土木</td>
+<td>简支梁配筋估算</td>
+<td>跨度、荷载 → 弯矩、所需钢筋面积</td>
+</tr>
+<tr>
+<td>化工</td>
+<td>管道压降核算</td>
+<td>管径、流量、介质 → 沿程阻力、泵扬程需求</td>
+</tr>
+</tbody>
+</table>
+<p>做法完全一样：参数表进 CSV → 公式写进函数/向量化计算 → 结果表 + 图 + 报告。第 10 章我们会把同样的思路升级成"带 AI 的工业落地工具"。</p>
+<h2 id="_1">本章小结</h2>
+<ol>
+<li>Python 是解释型语言，装好环境后，第一件事是掌握"运行代码"这个动作——交互模式、脚本文件、虚拟环境三种方式各有用途。</li>
+<li>变量存数据，列表/元组/字典装数据，函数把动作打包成"标准件"，模块把函数归档成"图库"。</li>
+<li>读 CSV 用 Pandas 一行搞定；异常处理让程序在出错时不崩溃、给人话提示。</li>
+<li>三件套分工明确：NumPy 整批算、Pandas 管表格、Matplotlib 画图。</li>
+<li>让 AI 写代码、你用工程知识验收，再用 Git 管住版本——这是工程师学 AI 的最优路径。</li>
+</ol>
+<h2 id="_2">延伸阅读</h2>
+<ul>
+<li>Python 官方教程（英文，适合查语法）：<a href="https://docs.python.org/3/tutorial/">https://docs.python.org/3/tutorial/</a></li>
+<li>Datawhale 开源学习资料：<a href="https://github.com/datawhalechina/vibe-vibe">https://github.com/datawhalechina/vibe-vibe</a> 与 <a href="https://github.com/datawhalechina/easy-vibe">https://github.com/datawhalechina/easy-vibe</a>（面向 AI 学习者的入门路线与工具链，可对照本书第 2、3 章使用）</li>
+<li>Pandas 官方十分钟入门（中文）：<a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/">https://pandas.pydata.org/docs/getting_started/intro_tutorials/</a></li>
+<li>本书配套代码与数据：仓库 <code>code/ch3/</code> 目录（<code>axes.csv</code>、<code>03-2_syntax.py</code> ~ <code>03-8_project.py</code>、<code>requirements.txt</code>）</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      本作品采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cuoluan2012/ai-for-engineers" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2512 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="理工科零基础学习指南 —— 面向"有工作经验、零计算机背景"的理工科工程师">
+      
+      
+      
+        <link rel="canonical" href="https://cuoluan2012.github.io/ai-for-engineers/ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/">
+      
+      
+        <link rel="prev" href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+      
+      
+        <link rel="next" href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第 6 章 大语言模型 - AI for Engineers · 从工程师到 AI 工程师</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#6-ai" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-header__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI for Engineers · 从工程师到 AI 工程师
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第 6 章 大语言模型
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 1 章 为什么工程师要拥抱 AI
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 2 章 计算机通识
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 3 章 Python 第一课
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 4 章 机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 5 章 深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 6 章 大语言模型
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 7 章 RAG 知识库
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 8 章 AI 智能体
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 9 章 微调与私有化部署
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 10 章 工业数据与落地
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 11 章 从学到做
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-tabs__link">
+          
+  
+  
+  附录
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-nav__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI for Engineers · 从工程师到 AI 工程师
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 1 章 为什么工程师要拥抱 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 2 章 计算机通识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 3 章 Python 第一课
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 4 章 机器学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 5 章 深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 6 章 大语言模型
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 6 章 大语言模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#60" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.0 本章解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 大语言模型是什么：从"预测下一个词"说起
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1 大语言模型是什么：从&#34;预测下一个词&#34;说起">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#611" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.1 语言模型的本质：预测下一个词
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#612-token" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.2 Token：模型处理文本的最小单位
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#613" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1.3 大语言模型"大"在哪
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Transformer 与注意力机制（概念级）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 Transformer 与注意力机制（概念级）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#621" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.1 为什么需要注意力机制
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#622" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.2 自注意力：词与词互相"对答案"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#623" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2.3 工程师视角：不用会推公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 从预训练到对话：GPT 是怎么炼成的
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3 从预训练到对话：GPT 是怎么炼成的">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#631" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.1 预训练：读万卷书
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#632" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.2 指令微调：学会听指令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#633-rlhf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.3 RLHF：调教说话方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#634" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.4 知识截止与能力来源
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 上下文窗口与提示词工程入门
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4 上下文窗口与提示词工程入门">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#641" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.1 上下文窗口：会议室的容量
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#642" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.2 提示词四要素：角色、上下文、示例、约束
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#643" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.3 提示词技巧进阶
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5 工程师提示词实战
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5 工程师提示词实战">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#651" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.1 场景一：会议纪要转结构化工单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#652" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.2 场景二：解读标准条款
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#653" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.3 场景三：翻译图纸说明 / 英文手册
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#654" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.4 场景四：生成检验规范初稿
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6 API 调用入门：把大模型接进自己的小工具
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.6 API 调用入门：把大模型接进自己的小工具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#661" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6.1 一个完整请求拆解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#662-mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6.2 最小可运行示例（mock 模式）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#663" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6.3 模型与参数
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#664" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6.4 工程要点：超时、费用、兼容性
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7 幻觉与能力边界
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.7 幻觉与能力边界">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#671-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7.1 幻觉：AI 不懂装懂
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#672" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7.2 什么场景能用、什么不能用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#673" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7.3 防幻觉三板斧
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#674" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7.4 数据安全红线
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#68" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.8 配套项目：标准解读小助手
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.8 配套项目：标准解读小助手">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#681" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.8.1 需求拆解
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#682" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.8.2 完整代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#683" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.8.3 泛理工科替换案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#69" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.9 常见坑、练习与延伸阅读
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.9 常见坑、练习与延伸阅读">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见坑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        练习与检验标准
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章小结（5 句）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延伸阅读
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 7 章 RAG 知识库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 8 章 AI 智能体
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 9 章 微调与私有化部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 10 章 工业数据与落地
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 11 章 从学到做
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E7%AB%A0%E8%8A%82%E8%A6%86%E7%9B%96%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表章节覆盖矩阵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="6-ai">第 6 章 大语言模型：让 AI 听懂工程师的话</h1>
+<blockquote>
+<p>所属框架层：L3 AI 应用工程化
+预计篇幅：约 10,000~12,000 字（含可运行代码；6.1~6.3 为概念课，6.4~6.6 为最小示例代码，6.8 为完整配套项目）
+配套文件：示例代码（<code>code/ch6/</code> 目录，6-1~6-3 已真实运行，6-4/6-5 提供 mock 模式离线验证）、本章配图（SVG 源文件见 <code>figures/ch6/</code> 目录）、术语表第 6 章·L3 条目
+版本：v0.1（首稿）</p>
+</blockquote>
+<p><strong>本章验收标准</strong>：学完后能不看资料回答——大语言模型为什么本质上是"预测下一个词"？Token、上下文窗口、注意力机制各是什么？提示词四要素是哪四个、怎么用？怎么用 API 把大模型接进自己的小工具？幻觉是什么、怎么防？配套项目"标准解读小助手"能独立跑通并给出一次真实解读。</p>
+<hr />
+<blockquote>
+<p><strong>本章配图清单</strong>（图号 / 内容 / 对应小节 / 类型）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>图号</th>
+<th>内容</th>
+<th>对应小节</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图 6-1</td>
+<td>从"预测下一个词"到写报告：AI 逐词接龙</td>
+<td>6.1</td>
+<td>示意图</td>
+</tr>
+<tr>
+<td>图 6-2</td>
+<td>注意力机制：评审会聚焦关键发言人</td>
+<td>6.2</td>
+<td>场景图</td>
+</tr>
+<tr>
+<td>图 6-3</td>
+<td>GPT 三步炼成：预训练→指令微调→RLHF</td>
+<td>6.3</td>
+<td>流程图</td>
+</tr>
+<tr>
+<td>图 6-4</td>
+<td>提示词四要素：角色 / 上下文 / 示例 / 约束</td>
+<td>6.4</td>
+<td>四卡片图</td>
+</tr>
+<tr>
+<td>图 6-5</td>
+<td>上下文窗口：会议室的容量</td>
+<td>6.4</td>
+<td>示意图</td>
+</tr>
+<tr>
+<td>图 6-6</td>
+<td>API 调用流程：请求→鉴权→模型→响应</td>
+<td>6.6</td>
+<td>流程图</td>
+</tr>
+<tr>
+<td>图 6-7</td>
+<td>幻觉与边界：不懂装懂 vs 查手册</td>
+<td>6.7</td>
+<td>对比图</td>
+</tr>
+<tr>
+<td>图 6-8</td>
+<td>标准解读小助手流程</td>
+<td>6.8</td>
+<td>流程图</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="60">6.0 本章解决什么问题</h2>
+<p>这一章解决你从"会用 ChatGPT 聊天"到"能把大模型用在正事上"之间的一串疑问：<strong>大语言模型到底是怎么工作的？怎么让它稳定输出工程师要的东西？它一本正经说错话时怎么办？</strong></p>
+<p>老张，40 岁，某机械厂设备科资深工程师。第 4 章里，他用 sklearn 做了设备异常分类，效果不错。可他很快发现一个尴尬：<strong>机器学得会"表格数据"，学不会"人话"</strong>。厂里的标准条款、图纸说明、设备手册、老师傅口述的经验——这些全是文字，怎么让电脑读得懂？</p>
+<p>同事小李天天用 ChatGPT 聊天、写邮件，很溜。老张问："它能帮我查标准吗？"小李说："你直接问它就行。"老张把一条 GB 条款粘进去，ChatGPT 回答得头头是道。老张差点直接打印出来贴车间，转念一想不对——<strong>它说的到底对不对？错了谁负责？</strong></p>
+<p>这一章回答的就是这些问题。学完它，你会明白：大语言模型不是魔法，它是"<strong>根据前文预测下一个词</strong>"的巨型模型；你知道它的原理、会写提示词、会调 API、知道它的边界在哪，就能把它变成自己手下的"实习生"——干活快，但必须有人把关。</p>
+<h2 id="61">6.1 大语言模型是什么：从"预测下一个词"说起</h2>
+<h3 id="611">6.1.1 语言模型的本质：预测下一个词</h3>
+<p>先忘掉"智能"这个词。大语言模型（Large Language Model，LLM）做的核心事情，用一句话就能说清：<strong>给你一句话的前半截，猜下一个词是什么</strong>。</p>
+<p>车间里你肯定见过这种场景：老师傅听你说"这台泵的声音有点……"，他马上接"闷是吧？轴承缺油了"。老师傅不是读心术，他是根据前半句和几十年经验，<strong>预测了你最可能说的下一个词</strong>。大语言模型干的活一模一样，只不过它读过几万亿个词，接话的本事大了几个数量级。</p>
+<p>但"预测下一个词"和"会聊天"之间差着一层：模型预测完一个词，把这个词接在原文后面，再预测下一个，一个词一个词地往外蹦，直到凑成一段完整的话。这个过程叫<strong>自回归生成（Autoregressive Generation）</strong>——"回归"这个词你在第 4 章见过，这里的意思是"拿前面的输出当后面的输入"，像工人逐段装配：装完一段，下一段在这段的基础上继续装。</p>
+<h3 id="612-token">6.1.2 Token：模型处理文本的最小单位</h3>
+<p>模型读的不是"字"也不是"词"，而是 <strong>Token（词元）</strong>——模型处理文本的最小单位。</p>
+<p>你可以把 Token 理解成<strong>把一页资料切成可以处理的最小字块</strong>：英文按子词切（"spindle"会被切成 "Sp" + "indle"），中文大多按字或词切，数字和标点也会被切成独立的块。模型真正"看到"的，是一串 Token 编号，不是文字本身。</p>
+<p>怎么直观感受？跑一下代码 6-1，用 OpenAI 开源的 tiktoken 工具看真实的切分结果：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="sd">"""代码 6-1：Token 切分演示</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">本段做什么：用 OpenAI 的 tiktoken 工具演示"大语言模型怎么把文字切成最小单位 Token"，</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">并对比同一句话用中文和英文写，各消耗多少 Token（直接关系到费用和上下文窗口占用）。</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">运行前要装什么：pip install tiktoken</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">"""</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tiktoken</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># 用 GPT-3.5/GPT-4 系列的编码方式（cl100k_base）</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">enc</span> <span class="o">=</span> <span class="n">tiktoken</span><span class="o">.</span><span class="n">get_encoding</span><span class="p">(</span><span class="s2">"cl100k_base"</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"示例 1：一句混合了中文、英文和数字的设备检修记录"</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">"设备转速1450rpm，轴承温度62.5°C，建议立即停机检修。The bearing temperature is high."</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">tokens</span> <span class="o">=</span> <span class="n">enc</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"原文：</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Token 数量：</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Token 编号（前 20 个）：</span><span class="si">{</span><span class="n">tokens</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"还原文本（应和原文一致）：</span><span class="si">{</span><span class="n">enc</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"示例 2：同一句话，中文写 vs 英文写，Token 消耗差多少"</span><span class="p">)</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="n">text_cn</span> <span class="o">=</span> <span class="s2">"设备转速1450转每分钟，轴承温度62.5摄氏度，建议立即停机检修。"</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="n">text_en</span> <span class="o">=</span> <span class="s2">"The spindle speed is 1450 rpm and the bearing temperature is 62.5 degrees Celsius. Stop the machine for inspection."</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">n_cn</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">enc</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text_cn</span><span class="p">))</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="n">n_en</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">enc</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text_en</span><span class="p">))</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"中文版（</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">text_cn</span><span class="p">)</span><span class="si">}</span><span class="s2"> 个字符）：</span><span class="si">{</span><span class="n">n_cn</span><span class="si">}</span><span class="s2"> 个 Token"</span><span class="p">)</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"英文版（</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">text_en</span><span class="p">)</span><span class="si">}</span><span class="s2"> 个字符）：</span><span class="si">{</span><span class="n">n_en</span><span class="si">}</span><span class="s2"> 个 Token"</span><span class="p">)</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"中文版 Token 数是英文版的 </span><span class="si">{</span><span class="n">n_cn</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n_en</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> 倍"</span><span class="p">)</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"示例 3：逐 Token 拆开看（用英文演示，Token 更接近完整单词）"</span><span class="p">)</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="n">demo_en</span> <span class="o">=</span> <span class="s2">"Spindle speed 1450 rpm."</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">enc</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">demo_en</span><span class="p">)[:</span><span class="mi">12</span><span class="p">]):</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Token[</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">2d</span><span class="si">}</span><span class="s2">] = </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s2">5d</span><span class="si">}</span><span class="s2">  -&gt;  </span><span class="si">{</span><span class="n">enc</span><span class="o">.</span><span class="n">decode</span><span class="p">([</span><span class="n">t</span><span class="p">])</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>运行结果（真实输出）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>============================================================
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>示例 1：一句混合了中文、英文和数字的设备检修记录
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>原文：设备转速1450rpm，轴承温度62.5°C，建议立即停机检修。The bearing temperature is high.
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Token 数量：35
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Token 编号（前 20 个）：[30735, 57378, 47770, 95399, 9591, 15, 74882, 3922, 15568, 112, 15355, 123, 35086, 102, 27479, 5538, 13, 20, 32037, 3922]
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>还原文本（应和原文一致）：设备转速1450rpm，轴承温度62.5°C，建议立即停机检修。The bearing temperature is high.
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>============================================================
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>示例 2：同一句话，中文写 vs 英文写，Token 消耗差多少
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>中文版（34 个字符）：35 个 Token
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>英文版（115 个字符）：26 个 Token
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>中文版 Token 数是英文版的 1.3 倍
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>============================================================
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>示例 3：逐 Token 拆开看（用英文演示，Token 更接近完整单词）
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>  Token[ 0] =  6540  -&gt;  'Sp'
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>  Token[ 1] = 58863  -&gt;  'indle'
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>  Token[ 2] =  4732  -&gt;  ' speed'
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>  Token[ 3] =   220  -&gt;  ' '
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  Token[ 4] =  9591  -&gt;  '145'
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>  Token[ 5] =    15  -&gt;  '0'
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>  Token[ 6] = 51025  -&gt;  ' rpm'
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>  Token[ 7] =    13  -&gt;  '.'
+</code></pre></div>
+<p>两个工程师必须记住的结论：</p>
+<ol>
+<li><strong>Token 就是"钱"和"窗口"</strong>：大模型按 Token 计费，上下文窗口（6.4 讲）也按 Token 算。你的提示词写得啰嗦，钱包和窗口一起吃亏。</li>
+<li><strong>中英文 Token 消耗不一样</strong>：同一句话，中文版 35 个 Token、英文版 26 个——中文在多数模型的词表里是"按字切"，相对费 Token。写提示词时不必刻意中译英，但心里要有这笔账。</li>
+</ol>
+<h3 id="613">6.1.3 大语言模型"大"在哪</h3>
+<p>"大语言模型"的"大"有两层意思：<strong>参数量大</strong>（几百亿到上万亿个参数，参数≈模型里可调的"旋钮"，见第 4 章梯度下降），<strong>训练数据大</strong>（读过的文本以万亿词计）。两个"大"合起来，模型才能从文字里"悟"出语法、常识、推理能力。</p>
+<p>工程师视角的提醒：<strong>"大"是资源堆出来的，不是算法魔法</strong>。GPT-4 级别的模型训练一次的成本是千万美元级——所以普通人用大模型的正确姿势是"<strong>用现成的，不自己训</strong>"。你想让模型懂你的专业，靠的不是重新训练，而是后面讲的提示词、微调和 RAG（第 7 章）。</p>
+<h2 id="62-transformer">6.2 Transformer 与注意力机制（概念级）</h2>
+<p><img alt="图 6-1 从“预测下一个词”到写报告：AI 逐词接龙" src="../figures/ch6/fig6-1_%E9%A2%84%E6%B5%8B%E4%B8%8B%E4%B8%80%E4%B8%AA%E8%AF%8D.png" /></p>
+<h3 id="621">6.2.1 为什么需要注意力机制</h3>
+<p>你肯定经历过这种评审会：一份 30 页的技术方案，专家不可能逐字念完，他扫一眼目录、翻到关键页，盯着"受力分析""成本预算"几个重点看。<strong>专家不是看得少，是知道哪里重要</strong>。</p>
+<p>大模型处理文字也面临同样的问题：一句话里的几十个词，不是每个都同等重要。翻译"The bearing is hot"时，"bearing"和"hot"是关键；理解"虽然温度高，但转速正常"时，转折关系比字面意思更重要。模型需要一种能力：<strong>在处理每个词时，动态决定把注意力放在其他哪些词上</strong>。</p>
+<p>这个能力就是<strong>注意力机制（Attention）</strong>——模型在处理某个词时，给全句其他词算一个"重要程度"，重要的多看一眼，不重要的略过。类比库里最贴切的说法：<strong>评审会上聚焦关键议题</strong>，而不是把资料从头到尾念一遍。</p>
+<h3 id="622">6.2.2 自注意力：词与词互相"对答案"</h3>
+<p>Transformer 用的叫<strong>自注意力（Self-Attention）</strong>："自"的意思是，句子里的每个词都和<strong>同一句话里其他所有词</strong>互相计算关联度。</p>
+<p>举个例子，"这台设备昨天刚检修过，今天又报警了。"——理解"又"字，需要回头看"昨天刚检修过"；理解"报警了"，需要联系"设备"。自注意力让每个词在处理时都能"看到"全句，动态抓重点。</p>
+<p>Transformer（变换器）是现代大模型的<strong>核心网络结构</strong>。它最革命性的两点：</p>
+<ol>
+<li><strong>并行计算</strong>：第 4 章提过老式序列模型 RNN 要"逐词读、记住前文"，读长句子又慢又容易忘；Transformer 一次把整句话的所有词同时处理，训练速度提升了几个数量级——"大"才训得动。</li>
+<li><strong>长距离依赖</strong>：第 1 句话和第 100 句话之间的关联，自注意力也能直接建立，不用隔着 99 步"传递消息"。</li>
+</ol>
+<h3 id="623">6.2.3 工程师视角：不用会推公式</h3>
+<p>写到这里，我要明确划一条线：<strong>本章不要求你推导注意力公式、不要求你写 Transformer 代码</strong>。对机械工程师，你只需要记住三件事：</p>
+<ul>
+<li>大模型靠注意力机制"抓重点"，所以<strong>你喂给它的材料里，重点内容要写得清楚</strong>（这是提示词设计的底层原因）；</li>
+<li>模型看完整句话才处理，所以<strong>上下文顺序会影响它怎么抓重点</strong>；</li>
+<li>"注意力"是可以被引导的——你明确说"重点看尺寸公差"，它就真的把注意力往那里偏。</li>
+</ul>
+<p>这三条，就是你接下来学提示词工程的"物理基础"。</p>
+<h2 id="63-gpt">6.3 从预训练到对话：GPT 是怎么炼成的</h2>
+<p><img alt="图 6-2 注意力机制：评审会聚焦关键发言人" src="../figures/ch6/fig6-2_%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6.png" /></p>
+<p>你现在用的对话式大模型，不是"生下来就会聊天"的。它经历了三步训练，你可以类比成带徒弟：</p>
+<h3 id="631">6.3.1 预训练：读万卷书</h3>
+<p><strong>预训练（Pre-training）</strong>：把海量互联网文本（网页、书籍、论文、代码……以万亿词计）喂给模型，让它做"预测下一个词"的练习。读得够多，模型就"悟"出了语法规则、世界常识、推理能力——这是模型知识的主要来源。</p>
+<p>类比：<strong>让一个学徒把全厂过去 20 年的图纸、工艺卡、检验报告都读一遍</strong>。他读完之后，你对他说半句话，他能接出专业的下半句——但他"接话"是凭读过的资料，不是真的干过这些活。</p>
+<h3 id="632">6.3.2 指令微调：学会听指令</h3>
+<p>读万卷书的模型只会"接话"，不会"听命令"。你问它"这条标准什么意思"，它可能继续给你接一段标准原文。</p>
+<p><strong>指令微调（Instruction Tuning）</strong>：用大量"指令 → 标准回答"的数据对（人类专家写好的），再训练一轮，让模型学会"用户问什么，我就按指令回答"。类比：<strong>师傅拿着工作手册，一条一条教徒弟"听到'解释这条标准'，你要分三点回答"</strong>。</p>
+<h3 id="633-rlhf">6.3.3 RLHF：调教说话方式</h3>
+<p><strong>RLHF（Reinforcement Learning from Human Feedback，人类反馈强化学习）</strong>：让模型生成多个回答，人类给它们打分排序，模型学着"让人类更满意的回答方式"调整自己——回答更完整、更礼貌、更少胡说八道。类比：<strong>师傅在徒弟出活后点评"这个回答太冲了""那个没给结论"</strong>，徒弟慢慢学会怎么说话让人满意。</p>
+<h3 id="634">6.3.4 知识截止与能力来源</h3>
+<p>三步训练完，你就该明白一个关键事实：<strong>模型知道什么，取决于它训练时见过什么</strong>。2023 年训练的模型，不知道 2024 年的新标准；你厂的内部工艺规程，模型更是听都没听过。</p>
+<p>这解释了工程师最常见的两个困惑：</p>
+<ul>
+<li>"它怎么连我厂里的事都知道？"——多半是你或者别人在对话里告诉它的（它当场记住，但下次对话就忘）；</li>
+<li>"它为什么不知道最新标准？"——因为知识截止（Knowledge Cutoff）在训练数据的时间点。</li>
+</ul>
+<p><strong>结论：大模型是"通用实习生"，不是"厂里老员工"。</strong> 让实习生快速懂你厂的知识，是第 7 章 RAG 的事。</p>
+<h2 id="64">6.4 上下文窗口与提示词工程入门</h2>
+<p><img alt="图 6-3 GPT 三步炼成：预训练→指令微调→RLHF" src="../figures/ch6/fig6-3_GPT%E4%B8%89%E6%AD%A5%E7%82%BC%E6%88%90.png" /></p>
+<h3 id="641">6.4.1 上下文窗口：会议室的容量</h3>
+<p>模型一次对话能"看到"多少内容，有硬上限，这个上限叫<strong>上下文窗口（Context Window）</strong>，按 Token 计。</p>
+<p>类比：<strong>会议室的容量</strong>。会议室坐得下 50 人，你非要塞 200 人进来，要么进不来、要么后面的人被挤出去。模型也一样：你贴的材料总 Token 数超过窗口，超出的部分它根本看不见——而且往往是<strong>最前面的被保留、最后面的被截断</strong>（具体策略因模型而异），回答质量立刻下降。</p>
+<p>所以工程师用大模型的第一条铁律：<strong>喂给模型的材料，先裁剪到窗口能装下</strong>。一份 100 页设备手册，别整本贴进去，先让它看目录和关键章节。</p>
+<h3 id="642">6.4.2 提示词四要素：角色、上下文、示例、约束</h3>
+<p><img alt="图 6-5 上下文窗口：会议室的容量" src="../figures/ch6/fig6-5_%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3.png" /></p>
+<p><strong>提示词（Prompt）</strong>就是你发给模型的指令文字。同样一个模型，提示词写得好不好，输出质量能差出"能用"和"不能用的距离"。</p>
+<p>把提示词拆成四个要素，最容易上手（类比：<strong>给新员工下的工作指令，说清楚才办得好</strong>）：</p>
+<table>
+<thead>
+<tr>
+<th>要素</th>
+<th>作用</th>
+<th>工程例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>角色 Role</strong></td>
+<td>告诉模型"你是谁"</td>
+<td>"你是一名有 20 年经验的机械工程师"</td>
+</tr>
+<tr>
+<td><strong>上下文 Context</strong></td>
+<td>告诉模型"背景是什么"</td>
+<td>"下面是设备图纸上的英文说明，请翻译成中文"</td>
+</tr>
+<tr>
+<td><strong>示例 Example</strong></td>
+<td>给模型一个"照这样干"的样板</td>
+<td>"原文：…译文：…"</td>
+</tr>
+<tr>
+<td><strong>约束 Constraint</strong></td>
+<td>告诉模型"必须/不能怎么做"</td>
+<td>"只输出译文；尺寸单位必须保留；不要解释"</td>
+</tr>
+</tbody>
+</table>
+<p>跑一下代码 6-2，看四个要素怎么拼装成完整提示词：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="sd">"""代码 6-2：提示词四要素模板（角色 / 上下文 / 示例 / 约束）</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">本段做什么：用 Python 字符串模板演示"怎么把提示词工程化"——</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">把角色、上下文、示例、约束四个要素拼装成一段完整提示词，方便批量复用、统一管理。</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">运行前要装什么：无需额外安装（纯 Python 标准库）</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">"""</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">build_prompt</span><span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="n">context</span><span class="p">,</span> <span class="n">example</span><span class="p">,</span> <span class="n">constraint</span><span class="p">):</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="sd">"""把提示词四要素拼装成一段完整提示词。"""</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="k">if</span> <span class="n">role</span><span class="p">:</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"【角色】</span><span class="si">{</span><span class="n">role</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="k">if</span> <span class="n">context</span><span class="p">:</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"【背景】</span><span class="si">{</span><span class="n">context</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="k">if</span> <span class="n">example</span><span class="p">:</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"【示例】</span><span class="si">{</span><span class="n">example</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="k">if</span> <span class="n">constraint</span><span class="p">:</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"【要求】</span><span class="si">{</span><span class="n">constraint</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="k">return</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"场景 A：翻译图纸说明（英文 → 中文，术语保真）"</span><span class="p">)</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="n">prompt_a</span> <span class="o">=</span> <span class="n">build_prompt</span><span class="p">(</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>    <span class="n">role</span><span class="o">=</span><span class="s2">"你是一名有 20 年经验的机械工程师，精通英文图纸和技术手册翻译。"</span><span class="p">,</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>    <span class="n">context</span><span class="o">=</span><span class="s2">"下面是一段设备图纸上的英文说明，请翻译成中文，保留所有尺寸和单位，术语使用国内机械行业通用叫法。"</span><span class="p">,</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>    <span class="n">example</span><span class="o">=</span><span class="s2">"原文：The spindle shall be dynamically balanced to G2.5 grade. 译文：主轴应进行动平衡，等级达到 G2.5 级。"</span><span class="p">,</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    <span class="n">constraint</span><span class="o">=</span><span class="s2">"只输出译文，不要解释；尺寸、公差、单位必须原样保留。"</span><span class="p">,</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="p">)</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="nb">print</span><span class="p">(</span><span class="n">prompt_a</span><span class="p">)</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"场景 B：把会议记录整理成工单（表格输出）"</span><span class="p">)</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="n">prompt_b</span> <span class="o">=</span> <span class="n">build_prompt</span><span class="p">(</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>    <span class="n">role</span><span class="o">=</span><span class="s2">"你是设备科的助理工程师，负责把会议记录整理成可执行工单。"</span><span class="p">,</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>    <span class="n">context</span><span class="o">=</span><span class="s2">"下面是今天设备科会议的口语记录，请整理成表格：任务、负责人、完成期限三列。"</span><span class="p">,</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>    <span class="n">example</span><span class="o">=</span><span class="s2">"记录：小王说下周要换 3 号机的轴承。整理后：| 任务 | 负责人 | 期限 | | 更换 3 号机轴承 | 小王 | 下周 |"</span><span class="p">,</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>    <span class="n">constraint</span><span class="o">=</span><span class="s2">"表格用 Markdown 格式；没提到负责人的写'待定'；不要添加记录里没有的内容。"</span><span class="p">,</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="p">)</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="nb">print</span><span class="p">(</span><span class="n">prompt_b</span><span class="p">)</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"技巧：把模板固化成函数，参数一换就能复用"</span><span class="p">)</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="n">article</span> <span class="o">=</span> <span class="s2">"检验规则：每批抽取 5 件，按 GB/T 2828.1 判定。"</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="n">prompt_c</span> <span class="o">=</span> <span class="n">build_prompt</span><span class="p">(</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>    <span class="n">role</span><span class="o">=</span><span class="s2">"你是机械产品检验工程师。"</span><span class="p">,</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>    <span class="n">context</span><span class="o">=</span><span class="sa">f</span><span class="s2">"请把下面这条检验规则改写成'白话解释 + 检验要点 + 易错点'三部分。</span><span class="se">\n</span><span class="s2">规则原文：</span><span class="si">{</span><span class="n">article</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>    <span class="n">example</span><span class="o">=</span><span class="s2">"规则：外观不得有划伤。白话解释：表面不能有肉眼可见的划痕。检验要点：目视检查全部表面。易错点：忽略端面倒角处。"</span><span class="p">,</span>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>    <span class="n">constraint</span><span class="o">=</span><span class="s2">"三部分都要有，每部分不超过 3 句话。"</span><span class="p">,</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="p">)</span>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="nb">print</span><span class="p">(</span><span class="n">prompt_c</span><span class="p">)</span>
+</code></pre></div>
+<p>运行结果（真实输出，节选场景 A）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>============================================================
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>场景 A：翻译图纸说明（英文 → 中文，术语保真）
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>【角色】你是一名有 20 年经验的机械工程师，精通英文图纸和技术手册翻译。
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>【背景】下面是一段设备图纸上的英文说明，请翻译成中文，保留所有尺寸和单位，术语使用国内机械行业通用叫法。
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>【示例】原文：The spindle shall be dynamically balanced to G2.5 grade. 译文：主轴应进行动平衡，等级达到 G2.5 级。
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>【要求】只输出译文，不要解释；尺寸、公差、单位必须原样保留。
+</code></pre></div>
+<p>注意看"示例"这一行的价值：模型不用猜"什么叫术语保真"，你直接给了样板，它照着做。<strong>给示例永远比讲道理管用</strong>。</p>
+<h3 id="643">6.4.3 提示词技巧进阶</h3>
+<p><img alt="图 6-4 提示词四要素：角色 / 上下文 / 示例 / 约束" src="../figures/ch6/fig6-4_%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%9B%9B%E8%A6%81%E7%B4%A0.png" /></p>
+<p>入门四要素之外，三个高频技巧：</p>
+<ol>
+<li><strong>少样本提示（Few-shot）</strong>：在提示词里放 2~3 个"输入→输出"示例，引导模型按你的格式输出（上面的场景 A 就是）。对应术语 <strong>Few-shot</strong>；一个示例不给叫<strong>零样本（Zero-shot）</strong>。</li>
+<li><strong>思维链（Chain-of-Thought, CoT）</strong>：让模型"一步步想"再给结论。标准："先列出受力分析步骤，再给结论"——模型分步推理时错误率显著下降，像要求徒弟"把计算过程写在报告里，别只报结果"。</li>
+<li><strong>输出格式约束</strong>：要表格就给表格模板、要 JSON 就给 JSON 骨架。模型按格式生成的比率会高很多，方便你后面的程序直接解析。</li>
+</ol>
+<h2 id="65">6.5 工程师提示词实战</h2>
+<p>四要素学会，看四个真场景。每个场景给出可直接改用的提示词骨架。</p>
+<h3 id="651">6.5.1 场景一：会议纪要转结构化工单</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>【角色】你是设备科助理工程师。
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>【背景】下面是设备科会议的口语记录，请整理成表格：任务、负责人、期限三列。
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>【示例】记录：小王说下周要换3号机轴承。整理后：| 任务 | 负责人 | 期限 | | 更换3号机轴承 | 小王 | 下周 |
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>【要求】Markdown 表格；没提负责人的写"待定"；不添加记录里没有的内容。
+</code></pre></div>
+<p>输出是一张可以直接抄进 Excel 的表。<strong>注意约束里的"不添加记录里没有的内容"</strong>——没有这一句，模型很乐意给你"补全"一些会上没说过的事。</p>
+<h3 id="652">6.5.2 场景二：解读标准条款</h3>
+<p>这是本章配套项目（6.8）的核心模板。代码 6-3 演示模板 + 输出检查函数：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="sd">"""代码 6-3：标准解读提示词模板 + 输出格式检查函数</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="sd">本段做什么：① 构造一个"解读标准条款"的提示词模板；② 写一个检查函数，</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="sd">验证模型输出是否包含"白话解释 / 检验要点 / 易错点"三部分、内容是否非空。</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="sd">用一段模拟的模型输出演示检查函数怎么拦下不合格结果。</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="sd">运行前要装什么：无需额外安装（纯 Python 标准库）</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="sd">"""</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># ---------- 提示词模板 ----------</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">TEMPLATE</span> <span class="o">=</span> <span class="s2">"""【角色】你是一名机械行业标准解读专家，熟悉 GB、JB 等国家和行业标准。</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="s2">【任务】请把下面的标准条款改写成三部分：</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="s2">1. 白话解释：用车间工人能听懂的话解释这条规则在说什么</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="s2">2. 检验要点：检查时具体要做什么、看什么、量什么</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="s2">3. 易错点：执行这条规则时最容易忽略或搞错的地方</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="s2">【条款】</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="si">{article}</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="s2">【要求】三部分都要有；每部分不超过 3 句话；不得编造条款里没有的要求。"""</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="k">def</span><span class="w"> </span><span class="nf">build_prompt</span><span class="p">(</span><span class="n">article</span><span class="p">):</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">    </span><span class="sd">"""把标准条款装进模板，返回完整提示词。"""</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    <span class="k">return</span> <span class="n">TEMPLATE</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">article</span><span class="o">=</span><span class="n">article</span><span class="p">)</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="c1"># ---------- 输出格式检查函数 ----------</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="n">REQUIRED_SECTIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"白话解释"</span><span class="p">,</span> <span class="s2">"检验要点"</span><span class="p">,</span> <span class="s2">"易错点"</span><span class="p">]</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="k">def</span><span class="w"> </span><span class="nf">check_output</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">    </span><span class="sd">"""检查模型输出是否结构完整、内容非空。返回 (是否通过, 问题列表)。"""</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>    <span class="n">problems</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>    <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">REQUIRED_SECTIONS</span><span class="p">:</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>        <span class="k">if</span> <span class="n">section</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"缺少「</span><span class="si">{</span><span class="n">section</span><span class="si">}</span><span class="s2">」部分"</span><span class="p">)</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">ln</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">ln</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span> <span class="k">if</span> <span class="n">ln</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">lines</span><span class="p">:</span>
+<a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>        <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"输出为空"</span><span class="p">)</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>        <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"输出过短，疑似没认真回答"</span><span class="p">)</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>    <span class="k">return</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">problems</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">problems</span><span class="p">)</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="c1"># ---------- 演示 ----------</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="n">article</span> <span class="o">=</span> <span class="s2">"示例条款（非标准原文）：焊缝外观不得有裂纹、气孔、咬边等缺陷，重要焊缝应进行无损检测。"</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"渲染后的完整提示词："</span><span class="p">)</span>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="n">prompt</span> <span class="o">=</span> <span class="n">build_prompt</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="nb">print</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"模拟模型输出 1：结构完整（应该通过检查）"</span><span class="p">)</span>
+<a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="n">mock_ok</span> <span class="o">=</span> <span class="s2">"""白话解释：焊完之后表面不能有裂纹、气孔、咬边这类毛病，重要的焊缝还要用仪器探伤。</span>
+<a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a><span class="s2">检验要点：先目视检查全部焊缝表面，再对重要焊缝安排无损检测并记录结果。</span>
+<a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a><span class="s2">易错点：气孔很小容易被忽略，咬边在接头转角处最常出现。"""</span>
+<a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="n">passed</span><span class="p">,</span> <span class="n">problems</span> <span class="o">=</span> <span class="n">check_output</span><span class="p">(</span><span class="n">mock_ok</span><span class="p">)</span>
+<a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"检查结果：通过=</span><span class="si">{</span><span class="n">passed</span><span class="si">}</span><span class="s2">，问题=</span><span class="si">{</span><span class="n">problems</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a><span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a>
+<a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"模拟模型输出 2：漏掉一个部分（应该被拦下）"</span><span class="p">)</span>
+<a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a><span class="n">mock_bad</span> <span class="o">=</span> <span class="s2">"""白话解释：焊缝表面要光滑。</span>
+<a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a><span class="s2">检验要点：目视检查。"""</span>
+<a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="n">passed</span><span class="p">,</span> <span class="n">problems</span> <span class="o">=</span> <span class="n">check_output</span><span class="p">(</span><span class="n">mock_bad</span><span class="p">)</span>
+<a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"检查结果：通过=</span><span class="si">{</span><span class="n">passed</span><span class="si">}</span><span class="s2">，问题=</span><span class="si">{</span><span class="n">problems</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>运行结果（真实输出，节选）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>============================================================
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>渲染后的完整提示词：
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>【角色】你是一名机械行业标准解读专家，熟悉 GB、JB 等国家和行业标准。
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>【任务】请把下面的标准条款改写成三部分：
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>1. 白话解释：用车间工人能听懂的话解释这条规则在说什么
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>2. 检验要点：检查时具体要做什么、看什么、量什么
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>3. 易错点：执行这条规则时最容易忽略或搞错的地方
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>【条款】
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>示例条款（非标准原文）：焊缝外观不得有裂纹、气孔、咬边等缺陷，重要焊缝应进行无损检测。
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>【要求】三部分都要有；每部分不超过 3 句话；不得编造条款里没有的要求。
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>============================================================
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>模拟模型输出 1：结构完整（应该通过检查）
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>检查结果：通过=True，问题=[]
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>============================================================
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>模拟模型输出 2：漏掉一个部分（应该被拦下）
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>检查结果：通过=False，问题=['缺少「易错点」部分']
+</code></pre></div>
+<p><strong>看到重点了吗</strong>：模型输出不可控，所以你要写代码"检查"它的输出——漏了「易错点」就拦下来。<strong>把"相信模型"换成"检查模型"</strong>，是大模型应用从玩具走向工具的转折点。</p>
+<h3 id="653">6.5.3 场景三：翻译图纸说明 / 英文手册</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>【角色】你是一名有 20 年经验的机械工程师，精通英文图纸翻译。
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>【背景】翻译下面的英文设备说明为中文，保留所有尺寸和单位。
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>【示例】原文：The spindle shall be dynamically balanced to G2.5 grade. 译文：主轴应进行动平衡，等级达到 G2.5 级。
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>【要求】只输出译文；尺寸、公差、单位原样保留；专业术语用国内通用叫法；不确定的术语用"（）"标注原文。
+</code></pre></div>
+<h3 id="654">6.5.4 场景四：生成检验规范初稿</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>【角色】你是质检科工艺工程师。
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>【背景】为"外协加工的回转轴"起草一份进厂检验规范初稿，检验项参照常规轴类零件。
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>【要求】输出表格：检验项目 / 检验方法 / 抽样比例 / 判定标准；标准号写"待定"，不得编造具体数值；只做初稿，供工程师复核。
+</code></pre></div>
+<p><strong>"标准号写待定，不得编造具体数值"</strong>——这条约束是防幻觉的关键，下一节展开。</p>
+<h2 id="66-api">6.6 API 调用入门：把大模型接进自己的小工具</h2>
+<p>网页聊天人人会，但工程师要的是<strong>把模型接进自己的程序</strong>——批量解读 100 条标准、把模型输出喂给 Excel、集成进设备管理系统。这就要用到 <strong>API（Application Programming Interface，应用程序接口）</strong>。第 2 章我们用"法兰"打过比方：<strong>API 是程序之间对接的标准接口，像法兰把两段管路接起来</strong>。</p>
+<h3 id="661">6.6.1 一个完整请求拆解</h3>
+<p>大模型 API 的调用套路全球统一（OpenAI 兼容格式），一个请求包含四件事：</p>
+<ol>
+<li><strong>接口地址（URL）</strong>：形如 <code>https://xxx/api/v1/chat/completions</code>；</li>
+<li><strong>鉴权（API Key）</strong>：一个像密码一样的字符串，放在请求头里证明"你是谁、谁付费"。<strong>Key 必须从环境变量读取，绝不写进代码、绝不提交进 git 仓库</strong>；</li>
+<li><strong>请求体（JSON）</strong>：模型名、消息列表（system 角色 + user 消息）、参数（temperature、max_tokens）；</li>
+<li><strong>响应体（JSON）</strong>：模型生成的内容 + token 用量统计。</li>
+</ol>
+<h3 id="662-mock">6.6.2 最小可运行示例（mock 模式）</h3>
+<p><img alt="图 6-6 API 调用流程：请求→鉴权→模型→响应" src="../figures/ch6/fig6-6_API%E8%B0%83%E7%94%A8%E6%B5%81%E7%A8%8B.png" /></p>
+<p>代码 6-4 是完整可运行示例。<strong>设计要点：没设 Key 时自动进入 mock 模式</strong>——打印请求/响应结构、返回模拟输出，让你在没花钱的情况下验证"代码本身没问题"；设了 <code>LLM_API_KEY</code> 环境变量后自动真实调用：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="sd">"""代码 6-4：LLM API 调用完整示例（OpenAI 兼容格式）</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="sd">本段做什么：演示"程序怎么调用大模型 API"——构造请求、发送、拿到响应。</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="sd">安全要点：API Key 从环境变量读取，绝不写进代码。</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="sd">两种模式：</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="sd">  有 Key（设置了环境变量 LLM_API_KEY）：真实调用接口；</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="sd">  无 Key：mock 模式，打印完整请求结构 + 模拟响应，用于本地验证代码本身没问题。</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="sd">运行前要装什么：pip install requests python-dotenv</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="sd">"""</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="n">load_dotenv</span><span class="p">()</span>  <span class="c1"># 从 .env 文件读环境变量（可选）</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="n">API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"LLM_API_KEY"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="n">BASE_URL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"LLM_BASE_URL"</span><span class="p">,</span> <span class="s2">"https://api.openai.com/v1"</span><span class="p">)</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="n">MODEL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"LLM_MODEL"</span><span class="p">,</span> <span class="s2">"gpt-4o-mini"</span><span class="p">)</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="k">def</span><span class="w"> </span><span class="nf">build_messages</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">system</span><span class="o">=</span><span class="s2">"你是一名机械工程师助理。"</span><span class="p">):</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">    </span><span class="sd">"""构造对话消息：系统角色 + 用户提问。"""</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    <span class="k">return</span> <span class="p">[</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>        <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">system</span><span class="p">},</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>        <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">prompt</span><span class="p">},</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>    <span class="p">]</span>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a><span class="k">def</span><span class="w"> </span><span class="nf">build_payload</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">max_tokens</span><span class="o">=</span><span class="mi">500</span><span class="p">):</span>
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a><span class="w">    </span><span class="sd">"""构造请求体：消息、随机性参数、输出长度上限。"""</span>
+<a id="__codelineno-9-32" name="__codelineno-9-32" href="#__codelineno-9-32"></a>    <span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-9-33" name="__codelineno-9-33" href="#__codelineno-9-33"></a>        <span class="s2">"model"</span><span class="p">:</span> <span class="n">MODEL</span><span class="p">,</span>
+<a id="__codelineno-9-34" name="__codelineno-9-34" href="#__codelineno-9-34"></a>        <span class="s2">"messages"</span><span class="p">:</span> <span class="n">messages</span><span class="p">,</span>
+<a id="__codelineno-9-35" name="__codelineno-9-35" href="#__codelineno-9-35"></a>        <span class="s2">"temperature"</span><span class="p">:</span> <span class="n">temperature</span><span class="p">,</span>
+<a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>        <span class="s2">"max_tokens"</span><span class="p">:</span> <span class="n">max_tokens</span><span class="p">,</span>
+<a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>    <span class="p">}</span>
+<a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>
+<a id="__codelineno-9-39" name="__codelineno-9-39" href="#__codelineno-9-39"></a>
+<a id="__codelineno-9-40" name="__codelineno-9-40" href="#__codelineno-9-40"></a><span class="k">def</span><span class="w"> </span><span class="nf">mock_response</span><span class="p">(</span><span class="n">payload</span><span class="p">):</span>
+<a id="__codelineno-9-41" name="__codelineno-9-41" href="#__codelineno-9-41"></a><span class="w">    </span><span class="sd">"""无 Key 时的模拟响应：展示真实的响应结构长什么样。"""</span>
+<a id="__codelineno-9-42" name="__codelineno-9-42" href="#__codelineno-9-42"></a>    <span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-9-43" name="__codelineno-9-43" href="#__codelineno-9-43"></a>        <span class="s2">"id"</span><span class="p">:</span> <span class="s2">"chatcmpl-mock-0001"</span><span class="p">,</span>
+<a id="__codelineno-9-44" name="__codelineno-9-44" href="#__codelineno-9-44"></a>        <span class="s2">"object"</span><span class="p">:</span> <span class="s2">"chat.completion"</span><span class="p">,</span>
+<a id="__codelineno-9-45" name="__codelineno-9-45" href="#__codelineno-9-45"></a>        <span class="s2">"choices"</span><span class="p">:</span> <span class="p">[</span>
+<a id="__codelineno-9-46" name="__codelineno-9-46" href="#__codelineno-9-46"></a>            <span class="p">{</span>
+<a id="__codelineno-9-47" name="__codelineno-9-47" href="#__codelineno-9-47"></a>                <span class="s2">"index"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-9-48" name="__codelineno-9-48" href="#__codelineno-9-48"></a>                <span class="s2">"message"</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a>                    <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"assistant"</span><span class="p">,</span>
+<a id="__codelineno-9-50" name="__codelineno-9-50" href="#__codelineno-9-50"></a>                    <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"【模拟输出】主轴转速 1450rpm、温度 62.5°C 属正常范围。"</span>
+<a id="__codelineno-9-51" name="__codelineno-9-51" href="#__codelineno-9-51"></a>                    <span class="s2">"若温度持续超过 75°C，应停机检查轴承润滑。"</span><span class="p">,</span>
+<a id="__codelineno-9-52" name="__codelineno-9-52" href="#__codelineno-9-52"></a>                <span class="p">},</span>
+<a id="__codelineno-9-53" name="__codelineno-9-53" href="#__codelineno-9-53"></a>                <span class="s2">"finish_reason"</span><span class="p">:</span> <span class="s2">"stop"</span><span class="p">,</span>
+<a id="__codelineno-9-54" name="__codelineno-9-54" href="#__codelineno-9-54"></a>            <span class="p">}</span>
+<a id="__codelineno-9-55" name="__codelineno-9-55" href="#__codelineno-9-55"></a>        <span class="p">],</span>
+<a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a>        <span class="s2">"usage"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"prompt_tokens"</span><span class="p">:</span> <span class="mi">210</span><span class="p">,</span> <span class="s2">"completion_tokens"</span><span class="p">:</span> <span class="mi">42</span><span class="p">,</span> <span class="s2">"total_tokens"</span><span class="p">:</span> <span class="mi">252</span><span class="p">},</span>
+<a id="__codelineno-9-57" name="__codelineno-9-57" href="#__codelineno-9-57"></a>    <span class="p">}</span>
+<a id="__codelineno-9-58" name="__codelineno-9-58" href="#__codelineno-9-58"></a>
+<a id="__codelineno-9-59" name="__codelineno-9-59" href="#__codelineno-9-59"></a>
+<a id="__codelineno-9-60" name="__codelineno-9-60" href="#__codelineno-9-60"></a><span class="k">def</span><span class="w"> </span><span class="nf">call_llm</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+<a id="__codelineno-9-61" name="__codelineno-9-61" href="#__codelineno-9-61"></a><span class="w">    </span><span class="sd">"""调用大模型 API，返回 (是否真实调用, 文本输出)。"""</span>
+<a id="__codelineno-9-62" name="__codelineno-9-62" href="#__codelineno-9-62"></a>    <span class="n">messages</span> <span class="o">=</span> <span class="n">build_messages</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a id="__codelineno-9-63" name="__codelineno-9-63" href="#__codelineno-9-63"></a>    <span class="n">payload</span> <span class="o">=</span> <span class="n">build_payload</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+<a id="__codelineno-9-64" name="__codelineno-9-64" href="#__codelineno-9-64"></a>
+<a id="__codelineno-9-65" name="__codelineno-9-65" href="#__codelineno-9-65"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">API_KEY</span><span class="p">:</span>
+<a id="__codelineno-9-66" name="__codelineno-9-66" href="#__codelineno-9-66"></a>        <span class="c1"># mock 模式：打印请求结构，返回模拟响应</span>
+<a id="__codelineno-9-67" name="__codelineno-9-67" href="#__codelineno-9-67"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"（未设置 LLM_API_KEY，进入 mock 模式，不发起真实请求）"</span><span class="p">)</span>
+<a id="__codelineno-9-68" name="__codelineno-9-68" href="#__codelineno-9-68"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"请求地址：POST </span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/chat/completions"</span><span class="p">)</span>
+<a id="__codelineno-9-69" name="__codelineno-9-69" href="#__codelineno-9-69"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"请求头：Authorization: Bearer &lt;你的API_KEY&gt;（脱敏显示）"</span><span class="p">)</span>
+<a id="__codelineno-9-70" name="__codelineno-9-70" href="#__codelineno-9-70"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"请求体：</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span><span class="w"> </span><span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="w"> </span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-9-71" name="__codelineno-9-71" href="#__codelineno-9-71"></a>        <span class="n">resp</span> <span class="o">=</span> <span class="n">mock_response</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+<a id="__codelineno-9-72" name="__codelineno-9-72" href="#__codelineno-9-72"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"响应体：</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">resp</span><span class="p">,</span><span class="w"> </span><span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="w"> </span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-9-73" name="__codelineno-9-73" href="#__codelineno-9-73"></a>        <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">resp</span><span class="p">[</span><span class="s2">"choices"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"message"</span><span class="p">][</span><span class="s2">"content"</span><span class="p">]</span>
+<a id="__codelineno-9-74" name="__codelineno-9-74" href="#__codelineno-9-74"></a>
+<a id="__codelineno-9-75" name="__codelineno-9-75" href="#__codelineno-9-75"></a>    <span class="c1"># 真实模式</span>
+<a id="__codelineno-9-76" name="__codelineno-9-76" href="#__codelineno-9-76"></a>    <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+<a id="__codelineno-9-77" name="__codelineno-9-77" href="#__codelineno-9-77"></a>        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/chat/completions"</span><span class="p">,</span>
+<a id="__codelineno-9-78" name="__codelineno-9-78" href="#__codelineno-9-78"></a>        <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-9-79" name="__codelineno-9-79" href="#__codelineno-9-79"></a>            <span class="s2">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Bearer </span><span class="si">{</span><span class="n">API_KEY</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+<a id="__codelineno-9-80" name="__codelineno-9-80" href="#__codelineno-9-80"></a>            <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+<a id="__codelineno-9-81" name="__codelineno-9-81" href="#__codelineno-9-81"></a>        <span class="p">},</span>
+<a id="__codelineno-9-82" name="__codelineno-9-82" href="#__codelineno-9-82"></a>        <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span>
+<a id="__codelineno-9-83" name="__codelineno-9-83" href="#__codelineno-9-83"></a>        <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<a id="__codelineno-9-84" name="__codelineno-9-84" href="#__codelineno-9-84"></a>    <span class="p">)</span>
+<a id="__codelineno-9-85" name="__codelineno-9-85" href="#__codelineno-9-85"></a>    <span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-9-86" name="__codelineno-9-86" href="#__codelineno-9-86"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-9-87" name="__codelineno-9-87" href="#__codelineno-9-87"></a>    <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s2">"choices"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"message"</span><span class="p">][</span><span class="s2">"content"</span><span class="p">]</span>
+<a id="__codelineno-9-88" name="__codelineno-9-88" href="#__codelineno-9-88"></a>
+<a id="__codelineno-9-89" name="__codelineno-9-89" href="#__codelineno-9-89"></a>
+<a id="__codelineno-9-90" name="__codelineno-9-90" href="#__codelineno-9-90"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<a id="__codelineno-9-91" name="__codelineno-9-91" href="#__codelineno-9-91"></a>    <span class="n">prompt</span> <span class="o">=</span> <span class="s2">"主轴转速1450rpm，轴承温度62.5°C。请问这个状态正常吗？需要注意什么？"</span>
+<a id="__codelineno-9-92" name="__codelineno-9-92" href="#__codelineno-9-92"></a>    <span class="n">real</span><span class="p">,</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">call_llm</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a id="__codelineno-9-93" name="__codelineno-9-93" href="#__codelineno-9-93"></a>    <span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-9-94" name="__codelineno-9-94" href="#__codelineno-9-94"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-9-95" name="__codelineno-9-95" href="#__codelineno-9-95"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"调用方式：</span><span class="si">{</span><span class="s1">'真实 API 调用'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">real</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'mock 模式（未真实调用）'</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-9-96" name="__codelineno-9-96" href="#__codelineno-9-96"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"模型返回：</span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>无 Key 时的运行输出（真实输出）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>（未设置 LLM_API_KEY，进入 mock 模式，不发起真实请求）
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>请求地址：POST https://api.openai.com/v1/chat/completions
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>请求头：Authorization: Bearer &lt;你的API_KEY&gt;（脱敏显示）
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>请求体：{
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>  "model": "gpt-4o-mini",
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>  "messages": [
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    {
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>      "role": "system",
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>      "content": "你是一名机械工程师助理。"
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    },
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    {
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>      "role": "user",
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>      "content": "主轴转速1450rpm，轴承温度62.5°C。请问这个状态正常吗？需要注意什么？"
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    }
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>  ],
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>  "temperature": 0.3,
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>  "max_tokens": 500
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>}
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>响应体：{
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>  "id": "chatcmpl-mock-0001",
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>  "object": "chat.completion",
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>  "choices": [
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>    {
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>      "index": 0,
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>      "message": {
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>        "role": "assistant",
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>        "content": "【模拟输出】主轴转速 1450rpm、温度 62.5°C 属正常范围。若温度持续超过 75°C，应停机检查轴承润滑。"
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>      },
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>      "finish_reason": "stop"
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a>    }
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a>  ],
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>  "usage": {
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a>    "prompt_tokens": 210,
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a>    "completion_tokens": 42,
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>    "total_tokens": 252
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a>  }
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a>}
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a>============================================================
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a>调用方式：mock 模式（未真实调用）
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a>模型返回：【模拟输出】主轴转速 1450rpm、温度 62.5°C 属正常范围。若温度持续超过 75°C，应停机检查轴承润滑。
+</code></pre></div>
+<p>配置好 Key 后，把以下内容写进项目根目录的 <code>.env</code> 文件（<strong>这个文件要加进 <code>.gitignore</code>，防止 Key 泄露到仓库</strong>）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">LLM_API_KEY</span><span class="o">=</span>sk-你的密钥
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nv">LLM_BASE_URL</span><span class="o">=</span>https://api.openai.com/v1
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nv">LLM_MODEL</span><span class="o">=</span>gpt-4o-mini
+</code></pre></div>
+<h3 id="663">6.6.3 模型与参数</h3>
+<p>请求体里有两个参数决定输出风格，工程师必须会调：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+<th>什么时候调</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>temperature</strong>（温度）</td>
+<td>输出随机性：0 接近"每次都一样"，1 以上天马行空</td>
+<td>解读标准、翻译、抽取数据→设 0~0.3（要稳定）；头脑风暴、起名字→0.7~1.0（要发散）</td>
+</tr>
+<tr>
+<td><strong>max_tokens</strong></td>
+<td>输出长度上限（Token 数）</td>
+<td>设得够用即可，太长费钱且容易"车轱辘话"</td>
+</tr>
+</tbody>
+</table>
+<p>关于 <strong>max_tokens 与 top_p</strong>：<code>max_tokens</code> 直接限制输出长度；<code>top_p</code> 是另一种随机性旋钮（按概率截断候选词），日常用 <code>temperature</code> 一个就够，两个同时调容易互相打架，新手建议只动 <code>temperature</code>。</p>
+<h3 id="664">6.6.4 工程要点：超时、费用、兼容性</h3>
+<p>四个工程要点，都是踩坑换来的：</p>
+<ol>
+<li><strong>超时与重试</strong>：模型服务偶发慢响应，请求要设 <code>timeout</code>（代码里给了 60 秒）；失败重试 2~3 次（退避重试），但<strong>别无限重试</strong>——那是费用失控的开始。</li>
+<li><strong>费用按 Token 算</strong>：响应体 <code>usage</code> 字段会告诉你每次调用的 token 数；长文档别反复整段喂，先裁剪。</li>
+<li><strong>错误处理</strong>：HTTP 429 是限流（等一会儿重试）、401 是 Key 错了、400 是参数或内容不合规——先看状态码再动手，别盲目重试。</li>
+<li><strong>模型兼容性</strong>：主流模型的 API 基本都兼容 OpenAI 格式，切换供应商只需要改三个环境变量：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>供应商</th>
+<th>改 <code>LLM_BASE_URL</code> 为</th>
+<th>模型示例（<code>LLM_MODEL</code>）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI</td>
+<td><code>https://api.openai.com/v1</code></td>
+<td><code>gpt-4o-mini</code></td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><code>https://api.deepseek.com/v1</code></td>
+<td><code>deepseek-chat</code></td>
+</tr>
+<tr>
+<td>阿里云通义千问</td>
+<td><code>https://dashscope.aliyuncs.com/compatible-mode/v1</code></td>
+<td><code>qwen-plus</code></td>
+</tr>
+<tr>
+<td>火山引擎（豆包）</td>
+<td><code>https://ark.cn-beijing.volces.com/api/v3</code></td>
+<td>接入点 ID（如 <code>ep-xxxx</code>）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>具体接入点和价格以各家官网最新文档为准，接口格式均为 OpenAI 兼容。<strong>同一段代码，换三个环境变量就能换一家模型</strong>——这就是"API 标准化"给工程师的便利。</p>
+</blockquote>
+<h2 id="67">6.7 幻觉与能力边界</h2>
+<h3 id="671-ai">6.7.1 幻觉：AI 不懂装懂</h3>
+<p><strong>幻觉（Hallucination）</strong>：模型生成<strong>无中生有、看起来却非常合理</strong>的内容。它不是在"骗你"——它本质是"预测下一个词"，遇到没学过的知识，它不会说"我不知道"，而是<strong>基于上下文编一段最像样的</strong>。</p>
+<p>类比：<strong>不懂装懂的新员工</strong>。你问实习生"这个材料屈服强度多少"，他明明不知道，但为了不丢脸，给你编了个"大概 355MPa 吧"，还说得一本正经。模型也一样——<strong>它不是故意撒谎，是"不知道"这个选项在它那里不存在</strong>。</p>
+<h3 id="672">6.7.2 什么场景能用、什么不能用</h3>
+<p><img alt="图 6-7 幻觉与边界：不懂装懂 vs 查手册" src="../figures/ch6/fig6-7_%E5%B9%BB%E8%A7%89%E4%B8%8E%E8%BE%B9%E7%95%8C.png" /></p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>风险</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>翻译、润色、改写</td>
+<td>低（错了看得见）</td>
+<td>✅ 放心用</td>
+</tr>
+<tr>
+<td>总结、提取要点</td>
+<td>低~中（对照原文可查）</td>
+<td>✅ 用，但保留原文可查</td>
+</tr>
+<tr>
+<td>起草初稿（工艺卡、检验规范）</td>
+<td>中（需要人复核）</td>
+<td>✅ 用，必须复核数值与条款</td>
+</tr>
+<tr>
+<td>解读标准/法规条款</td>
+<td><strong>高（错一个字就是事故）</strong></td>
+<td>⚠️ 只当"参考解读"，必须核对原文</td>
+</tr>
+<tr>
+<td>精确计算、安全结论、放行判定</td>
+<td><strong>极高</strong></td>
+<td>❌ 别让模型做最后决定</td>
+</tr>
+<tr>
+<td>编代码、改代码</td>
+<td>中（跑不起来/有漏洞）</td>
+<td>⚠️ 当"结对程序员"用，代码要自己看</td>
+</tr>
+</tbody>
+</table>
+<p>一句话决策原则：<strong>错了会造成什么后果？</strong> 后果小，放手用；后果大，模型只能当"第一稿"，人必须当"终审"。</p>
+<h3 id="673">6.7.3 防幻觉三板斧</h3>
+<ol>
+<li><strong>让它给出来源</strong>：要求"引用条款编号、给出处"——给不出出处的内容天然可疑；</li>
+<li><strong>交叉验证</strong>：同一个问题换说法问两遍，回答不一致就是可疑信号；</li>
+<li><strong>人工抽查</strong>：抽样核对关键数值和条款（标准解读项目里，检查清单函数就是自动化的"抽查"）。</li>
+</ol>
+<h3 id="674">6.7.4 数据安全红线</h3>
+<p>工程师用大模型，还有一条红线：<strong>图纸、工艺参数、客户数据、涉密文件，未经审批不得发给外部模型服务</strong>。你在网页聊天框里贴进一张图纸，它就进了别人的服务器。</p>
+<p>对策三选一：用有保密协议的企业版服务、用私有化部署（自己机房里跑开源模型，第 11 章涉及）、或者<strong>先脱敏再问</strong>（把具体数值换成"XX MPa"）。<strong>这条红线没有例外</strong>——成本最低的合规动作，是先问自己一句：这段文字出去，出事了谁负责？</p>
+<blockquote>
+<p><strong>工程师贴士：LLM 应用的"质量红线清单"</strong>
+每次要把模型输出用于正式场合前，问三句话：① 错了会怎样（后果等级）；② 谁来复核（明确责任人）；③ 数据能不能出去（合规检查）。三关都过，才允许进正式流程。</p>
+</blockquote>
+<h2 id="68">6.8 配套项目：标准解读小助手</h2>
+<p>把本章所有知识串起来：<strong>输入一条标准条款，输出"白话解释 + 检验要点 + 易错点"，并对输出做结构检查</strong>——配套项目"标准解读小助手"（<code>code/ch6/06-5_standard_helper.py</code>，约 100 行）。</p>
+<h3 id="681">6.8.1 需求拆解</h3>
+<ul>
+<li>输入：一段标准条款文字；</li>
+<li>输出：三部分解读（白话解释 / 检验要点 / 易错点）；</li>
+<li>保障：检查清单函数确认三部分齐全，mock 模式明确标注"非真实结果"。</li>
+</ul>
+<h3 id="682">6.8.2 完整代码</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="sd">"""代码 6-5：标准解读小助手（第 6 章配套项目，约 100 行）</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="sd">本段做什么：输入一段标准条款，输出"白话解释 + 检验要点 + 易错点"，</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="sd">并对输出做结构检查（缺部分就提示），防止把模型"编的内容"直接当结论用。</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="sd">运行前要装什么：pip install requests python-dotenv</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="sd">    （可选）设置环境变量 LLM_API_KEY 后为真实调用；未设置则用 mock 输出演示全流程。</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="sd">"""</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="n">load_dotenv</span><span class="p">()</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="n">API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"LLM_API_KEY"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="n">BASE_URL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"LLM_BASE_URL"</span><span class="p">,</span> <span class="s2">"https://api.openai.com/v1"</span><span class="p">)</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="n">MODEL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"LLM_MODEL"</span><span class="p">,</span> <span class="s2">"gpt-4o-mini"</span><span class="p">)</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="n">TEMPLATE</span> <span class="o">=</span> <span class="s2">"""【角色】你是一名机械行业标准解读专家。</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="s2">【任务】把下面条款改写成三部分：</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="s2">1. 白话解释：用车间工人能听懂的话解释</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="s2">2. 检验要点：检查时具体做什么</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="s2">3. 易错点：最容易忽略或搞错的地方</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="s2">【条款】</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="si">{article}</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="s2">【要求】三部分都要有；每部分不超过 3 句话；不得编造条款里没有的要求。"""</span>
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="n">REQUIRED_SECTIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"白话解释"</span><span class="p">,</span> <span class="s2">"检验要点"</span><span class="p">,</span> <span class="s2">"易错点"</span><span class="p">]</span>
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a>
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>
+<a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a><span class="k">def</span><span class="w"> </span><span class="nf">build_prompt</span><span class="p">(</span><span class="n">article</span><span class="p">):</span>
+<a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a>    <span class="k">return</span> <span class="n">TEMPLATE</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">article</span><span class="o">=</span><span class="n">article</span><span class="p">)</span>
+<a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>
+<a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>
+<a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a><span class="k">def</span><span class="w"> </span><span class="nf">call_llm</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+<a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a><span class="w">    </span><span class="sd">"""调用大模型；无 Key 时返回一段标注清楚的模拟输出。"""</span>
+<a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a>    <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a>        <span class="s2">"model"</span><span class="p">:</span> <span class="n">MODEL</span><span class="p">,</span>
+<a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a>        <span class="s2">"messages"</span><span class="p">:</span> <span class="p">[</span>
+<a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a>            <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"你是一名机械行业标准解读专家。"</span><span class="p">},</span>
+<a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a>            <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">prompt</span><span class="p">},</span>
+<a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a>        <span class="p">],</span>
+<a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a>        <span class="s2">"temperature"</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+<a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a>        <span class="s2">"max_tokens"</span><span class="p">:</span> <span class="mi">600</span><span class="p">,</span>
+<a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a>    <span class="p">}</span>
+<a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">API_KEY</span><span class="p">:</span>
+<a id="__codelineno-12-49" name="__codelineno-12-49" href="#__codelineno-12-49"></a>        <span class="k">return</span> <span class="s2">"【mock 输出，非真实模型结果】</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="s2">"白话解释：条款要求焊缝表面不得有裂纹、气孔、咬边等缺陷，重要焊缝还需无损检测。</span><span class="se">\n</span><span class="s2">检验要点：目视检查全部焊缝表面，重要焊缝安排无损检测并留记录。</span><span class="se">\n</span><span class="s2">易错点：气孔小易漏检；咬边在转角处最常出现。"</span>
+<a id="__codelineno-12-50" name="__codelineno-12-50" href="#__codelineno-12-50"></a>    <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+<a id="__codelineno-12-51" name="__codelineno-12-51" href="#__codelineno-12-51"></a>        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/chat/completions"</span><span class="p">,</span>
+<a id="__codelineno-12-52" name="__codelineno-12-52" href="#__codelineno-12-52"></a>        <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">"Authorization"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Bearer </span><span class="si">{</span><span class="n">API_KEY</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">},</span>
+<a id="__codelineno-12-53" name="__codelineno-12-53" href="#__codelineno-12-53"></a>        <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span>
+<a id="__codelineno-12-54" name="__codelineno-12-54" href="#__codelineno-12-54"></a>        <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<a id="__codelineno-12-55" name="__codelineno-12-55" href="#__codelineno-12-55"></a>    <span class="p">)</span>
+<a id="__codelineno-12-56" name="__codelineno-12-56" href="#__codelineno-12-56"></a>    <span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-12-57" name="__codelineno-12-57" href="#__codelineno-12-57"></a>    <span class="k">return</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">"choices"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"message"</span><span class="p">][</span><span class="s2">"content"</span><span class="p">]</span>
+<a id="__codelineno-12-58" name="__codelineno-12-58" href="#__codelineno-12-58"></a>
+<a id="__codelineno-12-59" name="__codelineno-12-59" href="#__codelineno-12-59"></a>
+<a id="__codelineno-12-60" name="__codelineno-12-60" href="#__codelineno-12-60"></a><span class="k">def</span><span class="w"> </span><span class="nf">check_output</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+<a id="__codelineno-12-61" name="__codelineno-12-61" href="#__codelineno-12-61"></a><span class="w">    </span><span class="sd">"""结果检查清单：结构是否完整、内容是否非空。返回 (通过, 问题列表)。"""</span>
+<a id="__codelineno-12-62" name="__codelineno-12-62" href="#__codelineno-12-62"></a>    <span class="n">problems</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-12-63" name="__codelineno-12-63" href="#__codelineno-12-63"></a>    <span class="k">for</span> <span class="n">section</span> <span class="ow">in</span> <span class="n">REQUIRED_SECTIONS</span><span class="p">:</span>
+<a id="__codelineno-12-64" name="__codelineno-12-64" href="#__codelineno-12-64"></a>        <span class="k">if</span> <span class="n">section</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+<a id="__codelineno-12-65" name="__codelineno-12-65" href="#__codelineno-12-65"></a>            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"缺少「</span><span class="si">{</span><span class="n">section</span><span class="si">}</span><span class="s2">」部分"</span><span class="p">)</span>
+<a id="__codelineno-12-66" name="__codelineno-12-66" href="#__codelineno-12-66"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+<a id="__codelineno-12-67" name="__codelineno-12-67" href="#__codelineno-12-67"></a>        <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"输出过短"</span><span class="p">)</span>
+<a id="__codelineno-12-68" name="__codelineno-12-68" href="#__codelineno-12-68"></a>    <span class="k">if</span> <span class="s2">"mock"</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+<a id="__codelineno-12-69" name="__codelineno-12-69" href="#__codelineno-12-69"></a>        <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"当前为 mock 输出，配置 API Key 后才是真实结果"</span><span class="p">)</span>
+<a id="__codelineno-12-70" name="__codelineno-12-70" href="#__codelineno-12-70"></a>    <span class="k">return</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">problems</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">problems</span><span class="p">)</span>
+<a id="__codelineno-12-71" name="__codelineno-12-71" href="#__codelineno-12-71"></a>
+<a id="__codelineno-12-72" name="__codelineno-12-72" href="#__codelineno-12-72"></a>
+<a id="__codelineno-12-73" name="__codelineno-12-73" href="#__codelineno-12-73"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-12-74" name="__codelineno-12-74" href="#__codelineno-12-74"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"标准解读小助手 v0.1（第 6 章配套项目）"</span><span class="p">)</span>
+<a id="__codelineno-12-75" name="__codelineno-12-75" href="#__codelineno-12-75"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"-"</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-12-76" name="__codelineno-12-76" href="#__codelineno-12-76"></a>    <span class="n">article</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"请粘贴一条标准条款（回车使用示例条款）：</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<a id="__codelineno-12-77" name="__codelineno-12-77" href="#__codelineno-12-77"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">article</span><span class="p">:</span>
+<a id="__codelineno-12-78" name="__codelineno-12-78" href="#__codelineno-12-78"></a>        <span class="n">article</span> <span class="o">=</span> <span class="s2">"示例条款（非标准原文）：焊缝外观不得有裂纹、气孔、咬边等缺陷，重要焊缝应进行无损检测。"</span>
+<a id="__codelineno-12-79" name="__codelineno-12-79" href="#__codelineno-12-79"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"使用示例条款：</span><span class="si">{</span><span class="n">article</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-12-80" name="__codelineno-12-80" href="#__codelineno-12-80"></a>
+<a id="__codelineno-12-81" name="__codelineno-12-81" href="#__codelineno-12-81"></a>    <span class="n">prompt</span> <span class="o">=</span> <span class="n">build_prompt</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
+<a id="__codelineno-12-82" name="__codelineno-12-82" href="#__codelineno-12-82"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">[1/3] 提示词已构造（</span><span class="si">%d</span><span class="s2"> 字符）"</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
+<a id="__codelineno-12-83" name="__codelineno-12-83" href="#__codelineno-12-83"></a>
+<a id="__codelineno-12-84" name="__codelineno-12-84" href="#__codelineno-12-84"></a>    <span class="n">answer</span> <span class="o">=</span> <span class="n">call_llm</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<a id="__codelineno-12-85" name="__codelineno-12-85" href="#__codelineno-12-85"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">[2/3] 模型输出：</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">answer</span><span class="p">)</span>
+<a id="__codelineno-12-86" name="__codelineno-12-86" href="#__codelineno-12-86"></a>
+<a id="__codelineno-12-87" name="__codelineno-12-87" href="#__codelineno-12-87"></a>    <span class="n">passed</span><span class="p">,</span> <span class="n">problems</span> <span class="o">=</span> <span class="n">check_output</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+<a id="__codelineno-12-88" name="__codelineno-12-88" href="#__codelineno-12-88"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">[3/3] 检查清单："</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"通过 ✔"</span> <span class="k">if</span> <span class="n">passed</span> <span class="k">else</span> <span class="s2">"发现问题 ✘"</span><span class="p">))</span>
+<a id="__codelineno-12-89" name="__codelineno-12-89" href="#__codelineno-12-89"></a>    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">problems</span><span class="p">:</span>
+<a id="__codelineno-12-90" name="__codelineno-12-90" href="#__codelineno-12-90"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"  - "</span> <span class="o">+</span> <span class="n">p</span><span class="p">)</span>
+<a id="__codelineno-12-91" name="__codelineno-12-91" href="#__codelineno-12-91"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">passed</span><span class="p">:</span>
+<a id="__codelineno-12-92" name="__codelineno-12-92" href="#__codelineno-12-92"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"提示：不要把上面的输出直接当结论，先修正问题或人工复核。"</span><span class="p">)</span>
+<a id="__codelineno-12-93" name="__codelineno-12-93" href="#__codelineno-12-93"></a>
+<a id="__codelineno-12-94" name="__codelineno-12-94" href="#__codelineno-12-94"></a>
+<a id="__codelineno-12-95" name="__codelineno-12-95" href="#__codelineno-12-95"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<a id="__codelineno-12-96" name="__codelineno-12-96" href="#__codelineno-12-96"></a>    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>运行结果（mock 模式，真实输出）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>标准解读小助手 v0.1（第 6 章配套项目）
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>------------------------------------------------------------
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>请粘贴一条标准条款（回车使用示例条款）：
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>使用示例条款：示例条款（非标准原文）：焊缝外观不得有裂纹、气孔、咬边等缺陷，重要焊缝应进行无损检测。
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>[1/3] 提示词已构造（182 字符）
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>[2/3] 模型输出：
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>【mock 输出，非真实模型结果】
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>白话解释：条款要求焊缝表面不得有裂纹、气孔、咬边等缺陷，重要焊缝还需无损检测。
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>检验要点：目视检查全部焊缝表面，重要焊缝安排无损检测并留记录。
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>易错点：气孔小易漏检；咬边在转角处最常出现。
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>[3/3] 检查清单：发现问题 ✘
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>  - 当前为 mock 输出，配置 API Key 后才是真实结果
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>提示：不要把上面的输出直接当结论，先修正问题或人工复核。
+</code></pre></div>
+<p>注意 <code>[3/3]</code> 的检查清单：<strong>mock 模式被明确拦下</strong>（"当前为 mock 输出，配置 API Key 后才是真实结果"）——项目宁可"报问题"，也不让你把模拟结果当真的用。配置好 <code>.env</code> 后重跑，就是真实解读了。<strong>真实输出因模型而异，正文不再贴固定样例</strong>。</p>
+<h3 id="683">6.8.3 泛理工科替换案例</h3>
+<p><img alt="图 6-8 标准解读小助手流程" src="../figures/ch6/fig6-8_%E6%A0%87%E5%87%86%E8%A7%A3%E8%AF%BB%E5%B0%8F%E5%8A%A9%E6%89%8B.png" /></p>
+<p>"标准解读"这个模式可以平移到你所在的任何领域——<strong>规则文本 → 白话解释 + 执行要点</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>领域</th>
+<th>输入</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>化工</td>
+<td>安全操作规程条款</td>
+<td>白话解释 + 操作要点 + 易错点</td>
+</tr>
+<tr>
+<td>电气</td>
+<td>接线说明/检验规程</td>
+<td>白话解释 + 检验要点 + 易错点</td>
+</tr>
+<tr>
+<td>设备管理</td>
+<td>设备手册维护章节</td>
+<td>保养要点 + 周期表 + 常见误区</td>
+</tr>
+<tr>
+<td>采购/合同</td>
+<td>技术协议条款</td>
+<td>权责解读 + 验收要点 + 风险点</td>
+</tr>
+</tbody>
+</table>
+<h2 id="69">6.9 常见坑、练习与延伸阅读</h2>
+<h3 id="_1">常见坑</h3>
+<ol>
+<li><strong>幻觉当事实</strong>：最危险。标准解读错一个字就是事故——模型输出必须带出处、人工复核，配套项目的检查清单就是干这个的。</li>
+<li><strong>上下文超限</strong>：材料太长被截断，模型"没看见"关键内容还硬答。先裁剪再提问。</li>
+<li><strong>提示词无效</strong>：没说角色/约束，输出泛泛而谈。回到四要素逐项检查。</li>
+<li><strong>API Key 泄露</strong>：Key 写进代码、提交进 git 仓库，被公开后被人盗刷。Key 只放环境变量/<code>.env</code>，<code>.env</code> 加进 <code>.gitignore</code>。</li>
+<li><strong>费用失控</strong>：长文档反复整段喂、无限重试、max_tokens 开太大。先裁剪、设超时、看 <code>usage</code> 字段。</li>
+<li><strong>安全结论无人复核</strong>：把模型输出直接用于放行/判定。红线清单三问：错了会怎样、谁来复核、数据能不能出去。</li>
+<li><strong>模型切换后行为不一致</strong>：同一提示词在不同模型/版本上输出风格不同。切换后先跑一遍回归测试（用固定输入对比输出结构）。</li>
+</ol>
+<h3 id="_2">练习与检验标准</h3>
+<ul>
+<li><strong>练习 1</strong>：用四要素重写一个"翻译图纸说明"的提示词（加"示例"要素 vs 不加），用任意可访问的对话式 AI 对比两组输出质量差异。</li>
+<li><strong>练习 2</strong>：把配套项目的模板换成"设备手册问答"（输入：手册段落，输出：要点 + 注意事项），改模板后跑通。</li>
+<li><strong>练习 3</strong>：设计一个对抗幻觉的检查清单（例如要求"给出处""交叉问两遍"），用模型故意"编造"一条标准条款，验证你的清单能否拦下。</li>
+<li><strong>验收标准</strong>："能讲清"——向同事解释大模型为什么本质是"预测下一个词"、为什么会有幻觉；"能跑通"——配好 API Key 独立跑通标准解读小助手，并给出一次真实解读输出（三部分齐全、经检查清单通过）。</li>
+</ul>
+<h3 id="5">本章小结（5 句）</h3>
+<p>大语言模型本质是"根据前文预测下一个词"，Token 是它处理文本的最小单位，直接决定费用和上下文窗口；Transformer 的注意力机制让它能并行抓重点，预训练→指令微调→RLHF 三步炼成会对话的 GPT；提示词四要素（角色、上下文、示例、约束）是让模型稳定输出的基本功，上下文窗口就是它的"会议室容量"；API 调用把模型接进自己的工具，Key 必须放环境变量，同一段代码换环境变量就能切换模型；幻觉是模型固有的边界，防幻觉三板斧是给出处、交叉验证、人工抽查——安全结论必须人终审，RAG 与智能体是后面两章的事。</p>
+<h3 id="_3">延伸阅读</h3>
+<ul>
+<li>吴恩达《ChatGPT Prompt Engineering for Developers》（免费短课，提示词工程最简入门）</li>
+<li>OpenAI / Anthropic 官方提示词工程文档（中英对照，进阶参考）</li>
+<li>Datawhale 开源教程（本书同系列配套章节）</li>
+<li>李宏毅《机器学习》大语言模型系列视频（概念深度补充，免费）</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      本作品采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cuoluan2012/ai-for-engineers" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

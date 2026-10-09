@@ -1,0 +1,2256 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="理工科零基础学习指南 —— 面向"有工作经验、零计算机背景"的理工科工程师">
+      
+      
+      
+        <link rel="canonical" href="https://cuoluan2012.github.io/ai-for-engineers/ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+      
+      
+        <link rel="prev" href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/">
+      
+      
+        <link rel="next" href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第 4 章 机器学习 - AI for Engineers · 从工程师到 AI 工程师</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-header__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI for Engineers · 从工程师到 AI 工程师
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第 4 章 机器学习
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 1 章 为什么工程师要拥抱 AI
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 2 章 计算机通识
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 3 章 Python 第一课
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 4 章 机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 5 章 深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 6 章 大语言模型
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 7 章 RAG 知识库
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 8 章 AI 智能体
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 9 章 微调与私有化部署
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 10 章 工业数据与落地
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 11 章 从学到做
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-tabs__link">
+          
+  
+  
+  附录
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-nav__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI for Engineers · 从工程师到 AI 工程师
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 1 章 为什么工程师要拥抱 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 2 章 计算机通识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 3 章 Python 第一课
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 4 章 机器学习
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 4 章 机器学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#40" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.0 本章解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 什么是机器学习：从"写规则"到"学规则"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 什么是机器学习：从&#34;写规则&#34;到&#34;学规则&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.1 传统编程：人把规则写给机器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.2 机器学习：机器从数据里自己学规则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1.3 三大范式：监督学习、无监督学习、强化学习
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 数据语言：特征、标签、训练集与测试集
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 数据语言：特征、标签、训练集与测试集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-x-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.1 特征与标签：X 和 y
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.2 训练集、验证集、测试集：三场考试
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 线性回归：预测一个连续的数
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 线性回归：预测一个连续的数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#431" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.1 场景：刀具磨损曲线
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#432-codech404-3_regressionpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.2 最小示例代码（对应 code/ch4/04-3_regression.py）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#433" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3.3 两个核心概念：损失函数与梯度下降
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 分类：判断它是哪一类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 分类：判断它是哪一类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#441" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.1 场景：轴承故障诊断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#442" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.2 三个最常用的分类器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#443-codech404-4_classifierspy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4.3 最小示例代码（对应 code/ch4/04-4_classifiers.py）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 模型评估：不能只看准确率
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 模型评估：不能只看准确率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#451-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5.1 准确率会骗人：故障只占 25% 的场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#452" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5.2 混淆矩阵：质检的"误收 / 误判"四格
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#453-vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5.3 精确率与召回率：漏检 vs 误报的权衡
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 过拟合与正则化：公差控制的两个极端
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.6 过拟合与正则化：公差控制的两个极端">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#461" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.1 公差控制过严 → 量产崩盘
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#462-codech404-6_overfitpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.2 代码演示：多项式次数越高越容易过拟合（对应 code/ch4/04-6_overfit.py）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#463" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6.3 防过拟合的三板斧与交叉验证
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7 特征工程：选对测量基准与检具
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.7 特征工程：选对测量基准与检具">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#471" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7.1 归一化：把不同量纲拉到同一尺度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#472" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7.2 独热编码：类别不能当数字比大小
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#473" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7.3 从原始信号里"提炼"特征
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.8 配套项目：设备异常分类（完整流程）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.8 配套项目：设备异常分类（完整流程）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#481" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.8.1 需求
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#482" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.8.2 完整代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#483" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.8.3 读懂这个项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#484" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.8.4 泛理工科替换案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.9 常见坑（工程师视角）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#410" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.10 练习与检验
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延伸阅读
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 5 章 深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 6 章 大语言模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 7 章 RAG 知识库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 8 章 AI 智能体
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 9 章 微调与私有化部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 10 章 工业数据与落地
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 11 章 从学到做
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E7%AB%A0%E8%8A%82%E8%A6%86%E7%9B%96%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表章节覆盖矩阵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="4">第 4 章 机器学习：让机器从数据里找规律</h1>
+<blockquote>
+<p>所属框架层：L2 机器学习基础
+预计篇幅：约 12,000 字（含可运行代码；4.3~4.7 为概念 + 最小示例代码，4.8 为完整配套项目）
+配套文件：示例代码（<code>code/ch4/</code> 目录，全部在 Python 3.13 + scikit-learn 1.6.1 环境真实运行过）、本章配图（SVG 源文件见 <code>figures/ch4/</code> 目录）、术语表第 4 章·L2 条目
+版本：v0.1（首稿）</p>
+</blockquote>
+<p><strong>本章验收标准</strong>：学完后能不看资料回答——机器学习与"写规则"的程序本质区别是什么？特征、标签、训练集、测试集各是什么？回归和分类分别解决什么问题？为什么不能只看准确率？过拟合是怎么回事、怎么防？一个 sklearn 分类项目从数据到评估的完整流程怎么走？</p>
+<hr />
+<blockquote>
+<p><strong>本章配图清单</strong>（图号 / 内容 / 对应小节 / 类型）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>图号</th>
+<th>内容</th>
+<th>对应小节</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图 4-1</td>
+<td>写规则 vs 学规则：两条路线的流程图</td>
+<td>4.1</td>
+<td>流程图</td>
+</tr>
+<tr>
+<td>图 4-2</td>
+<td>数据四件套：特征 / 标签 / 训练集 / 测试集</td>
+<td>4.2</td>
+<td>示意图</td>
+</tr>
+<tr>
+<td>图 4-3</td>
+<td>线性回归：散点 + 拟合直线 + 换刀线</td>
+<td>4.3</td>
+<td>数据图</td>
+</tr>
+<tr>
+<td>图 4-4</td>
+<td>三种分类器：KNN / 决策树 / 逻辑回归的决策边界</td>
+<td>4.4</td>
+<td>示意图</td>
+</tr>
+<tr>
+<td>图 4-5</td>
+<td>混淆矩阵 2×2：质检的"误收 / 误判"四格</td>
+<td>4.5</td>
+<td>示意图</td>
+</tr>
+<tr>
+<td>图 4-6</td>
+<td>过拟合三连图：欠拟合 / 合适 / 过拟合</td>
+<td>4.6</td>
+<td>对比图</td>
+</tr>
+<tr>
+<td>图 4-7</td>
+<td>设备异常分类项目六步流水线</td>
+<td>4.8</td>
+<td>流程图</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="40">4.0 本章解决什么问题</h2>
+<p>这一章解决你学 AI 路上最核心的一个困惑：<strong>"机器学习"到底是怎么让机器学会东西的？它和传统的编程有什么本质区别？</strong></p>
+<p>老张，40 岁，某机械厂设备科资深工程师。他负责全厂 40 台关键设备。每天早上一进车间，先围着几台"重点设备"转一圈：听声音、摸温度、看油位。车间里最有经验的老师傅能从轴承的"嗡嗡"声里听出毛病——"这台主轴轴承要换了，再撑一个月没问题"。老张很佩服，但老师傅总有退休的一天，他的经验怎么留下来？</p>
+<p>厂里其实有数据。每台设备装了传感器，振动、温度、电流记录了一堆。老张看着监控屏上的曲线想：<strong>数据就在这儿，但我只会"看趋势"，曲线一陡我就知道出事了。有没有办法让电脑自己从这些数据里找规律，替我把"老师傅的耳朵"学下来？</strong></p>
+<p>这一章就是回答这个问题的第一课。学完它，你会明白：机器学习不是魔法，它是"<strong>让程序从数据里自己总结规律</strong>"的一套方法。我们用轴承、刀具、泵这些你熟悉的设备做例子，从最简单的线性回归讲到完整的一个分类项目，全程代码可运行、可改、可复用。</p>
+<h2 id="41">4.1 什么是机器学习：从"写规则"到"学规则"</h2>
+<h3 id="411">4.1.1 传统编程：人把规则写给机器</h3>
+<p>你过去写的所有程序（包括第 3 章的轴校核工具）都是同一个套路：<strong>人把规则写好，机器照着执行</strong>。</p>
+<p>比如一个最简单的设备报警程序：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">if</span> <span class="n">振动幅值</span> <span class="o">&gt;</span> <span class="mf">4.5</span> <span class="ow">and</span> <span class="n">温度</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>      <span class="c1"># 规则是人定的</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"设备异常，请检查"</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"设备正常"</span><span class="p">)</span>
+</code></pre></div>
+<p>规则很清楚：振动超过 4.5 mm/s、温度超过 60°C 就报警。这套规则怎么来的？人定的——工程师看了大量历史数据，拍脑袋定下来的阈值。</p>
+<p>问题来了：</p>
+<ul>
+<li>阈值 4.5 和 60 定得准吗？为什么不是 5.0 和 55？</li>
+<li>不同设备工况不同，规则要不要每台设备单独调？</li>
+<li>故障模式有几十种，靠几条 if-else 能覆盖吗？</li>
+<li>老师傅的"声音有点闷，像轴承保持架的问题"——这种经验怎么写成 if-else？</li>
+</ul>
+<h3 id="412">4.1.2 机器学习：机器从数据里自己学规则</h3>
+<p><strong>机器学习（Machine Learning，ML）</strong> 换了一条路：<strong>不给机器写规则，给它看大量"输入 → 结果"的例子，让它自己总结出规律</strong>（图 4-1）。</p>
+<p><img alt="图4-1 写规则 vs 学规则：两条路线（示意）" src="../figures/ch4/fig4-1_%E5%86%99%E8%A7%84%E5%88%99vs%E5%AD%A6%E8%A7%84%E5%88%99.png" /></p>
+<p>同样做设备报警，机器学习的方式是：</p>
+<ol>
+<li>把过去 5 年的设备记录整理成表格：每一行是某台设备某一天的状态，列是"振动幅值、温度、转速……"以及最后的结果"正常 / 故障"；</li>
+<li>把这张表喂给程序；</li>
+<li>程序自己找出"什么样的数据组合 → 对应什么结果"的规律；</li>
+<li>以后来一条新数据，程序按学到的规律自动判断。</li>
+</ol>
+<p>用一句话概括：<strong>传统编程是人写规则，机器学习是数据产规则</strong>。机器学习的"学习"（Training，训练），就是"从数据里把规律找出来"这个过程；找出来的规律在机器学习里叫<strong>模型（Model）</strong>——你可以把它理解成"一套自动总结好的、可对新数据做判断的规则"。</p>
+<h3 id="413">4.1.3 三大范式：监督学习、无监督学习、强化学习</h3>
+<p>机器学习大致分三大类，先用一张表建立全局观（细节后面章节展开）：</p>
+<table>
+<thead>
+<tr>
+<th>范式</th>
+<th>训练数据长什么样</th>
+<th>要解决的事</th>
+<th>工程类比</th>
+<th>典型场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>监督学习</strong>（Supervised Learning）</td>
+<td>每个样本都带"标准答案"（标签）</td>
+<td>学"输入 → 答案"的映射</td>
+<td>师傅带徒弟：每个工件都告诉徒弟"这个对、那个错"</td>
+<td>故障分类、寿命预测、尺寸检测</td>
+</tr>
+<tr>
+<td><strong>无监督学习</strong>（Unsupervised Learning）</td>
+<td>只有数据，没有标签</td>
+<td>自己找数据里的结构</td>
+<td>自己看一堆零件，没人告诉你类别，自己归类</td>
+<td>设备工况聚类、异常点发现</td>
+</tr>
+<tr>
+<td><strong>强化学习</strong>（Reinforcement Learning）</td>
+<td>没有答案，只有"奖励/惩罚"</td>
+<td>通过试错学出一套策略</td>
+<td>新员工上手操作，干得好得奖励、干砸了挨批评，慢慢学会最优操作</td>
+<td>机器人路径规划、生产排程</td>
+</tr>
+</tbody>
+</table>
+<p>本章只讲<strong>监督学习</strong>里的两个最基础问题——<strong>回归</strong>和<strong>分类</strong>，它们覆盖了制造业 80% 的机器学习场景：要么预测一个数（还剩多少寿命），要么判断一个类别（正常还是故障）。</p>
+<blockquote>
+<p><strong>工程师贴士</strong>：把"训练"想成"对师傅经验的数字化复制"——师傅带徒弟靠的是"看大量例子 + 纠正"，机器学习本质相同，只是把"例子"换成数据、"纠正"换成数学上的误差调整。这样想，后面所有概念都不会悬空。</p>
+</blockquote>
+<h2 id="42">4.2 数据语言：特征、标签、训练集与测试集</h2>
+<p>机器学习的原料是数据，但数据要先翻译成机器能"学习"的形式。这一节把数据语言的四件套讲透（图 4-2）。</p>
+<p><img alt="图4-2 数据四件套：特征 / 标签 / 训练集 / 测试集（示意）" src="../figures/ch4/fig4-2_%E6%95%B0%E6%8D%AE%E5%9B%9B%E4%BB%B6%E5%A5%97.png" /></p>
+<h3 id="421-x-y">4.2.1 特征与标签：X 和 y</h3>
+<p>把设备数据整理成一张表，每一行是一条<strong>样本（Sample）</strong>——某台设备某一次的运行记录；每一列是一个<strong>特征（Feature）</strong>——影响判断的一个测量值。</p>
+<table>
+<thead>
+<tr>
+<th>样本（行）</th>
+<th>振动幅值（特征1）</th>
+<th>温度（特征2）</th>
+<th>转速（特征3）</th>
+<th>状态（标签）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 号泵 3月5日</td>
+<td>2.1 mm/s</td>
+<td>41°C</td>
+<td>1452 r/min</td>
+<td>正常</td>
+</tr>
+<tr>
+<td>1 号泵 4月2日</td>
+<td>6.3 mm/s</td>
+<td>72°C</td>
+<td>1398 r/min</td>
+<td>故障</td>
+</tr>
+<tr>
+<td>2 号泵 3月5日</td>
+<td>3.4 mm/s</td>
+<td>52°C</td>
+<td>1440 r/min</td>
+<td>磨损预警</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>特征（Feature，记作 X）</strong>：用来做判断的输入量。类比：质检时你要量哪些尺寸——选的量越多越准，但也不是越多越好；</li>
+<li><strong>标签（Label，记作 y）</strong>：标准答案。监督学习里，训练数据必须带标签。类比：老师傅告诉你这个轴承"正常/故障"，这就是标签。</li>
+</ul>
+<p>一个朴素但关键的观点：<strong>机器学习的本质，是找一个函数，能把特征 X 映射到标签 y——y = f(X)</strong>。后面所有模型，线性回归、决策树、神经网络，都是不同形式的"这个函数长什么样"。</p>
+<h3 id="422">4.2.2 训练集、验证集、测试集：三场考试</h3>
+<p>有了带标签的数据，不能全拿去"学"，要分成三份，各有分工（这是全书反复使用的官方类比）：</p>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>干什么用</th>
+<th>工程类比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>训练集</strong>（Training Set）</td>
+<td>让模型从这份数据里学规律</td>
+<td>设计校核：用已知工况反复核算设计</td>
+</tr>
+<tr>
+<td><strong>验证集</strong>（Validation Set）</td>
+<td>调模型参数时用来"试考"</td>
+<td>样机试验：边改边试，验证机调到位</td>
+</tr>
+<tr>
+<td><strong>测试集</strong>（Test Set）</td>
+<td>全部训练完成后，最后考一次</td>
+<td>交付验收：用客户现场工况验收，一次定论</td>
+</tr>
+</tbody>
+</table>
+<p>三个集合的数据<strong>不能混</strong>，尤其是测试集：模型如果"见过"测试题的答案，验收就没有意义了。第 4.6 节我们会看到"拿测试集调参"是新手最容易踩的坑。</p>
+<p>用代码切分只一行（对应 <code>code/ch4/04-8_project.py</code>）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+<p><code>test_size=0.25</code> 表示拿 25% 的数据做测试；<code>stratify=y</code> 表示按类别比例分层切分（故障样本本来就少，不能全被切进测试集）；<code>random_state=42</code> 是随机种子——固定它，每次运行切分结果都一样，方便复现（类比：图纸上的版本号，固定了才能对得上）。</p>
+<blockquote>
+<p><strong>工程师贴士</strong>：数据切分记住一句口诀——<strong>"训练喂饱，测试封存"</strong>。训练集像老师傅带徒弟反复看的工件，测试集像客户验收的样件：徒弟再熟，验收件也得是没见过的。</p>
+</blockquote>
+<h2 id="43">4.3 线性回归：预测一个连续的数</h2>
+<p>从最简单的模型开始。<strong>回归（Regression）</strong> 解决"预测一个连续数值"的问题：刀具还剩多少寿命、设备温度会升到多少、混凝土 28 天强度大概是多少。</p>
+<h3 id="431">4.3.1 场景：刀具磨损曲线</h3>
+<p>车间的刀具管理有个经典问题：一把刀具用多久该换？换早了浪费，换晚了崩刀伤工件。老师傅的经验是"看加工件数，200 件以内放心用，超过 300 件开始勤检查"。</p>
+<p>如果我们把每次换刀前的记录整理出来——累计切削件数和对应磨损量——就能画出一张散点图（图 4-3）。散点大致沿一条直线上升。<strong>线性回归（Linear Regression）</strong> 就是"在这些散点里找一条最合适的直线"，让它尽量贴合所有点。找到直线后，新来一个件数，往直线上一投影，就得到预测的磨损量。</p>
+<p><img alt="图4-3 刀具磨损线性回归：散点、拟合直线与换刀线（示意）" src="../figures/ch4/fig4-3_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.png" /></p>
+<p>直线方程就是模型：<strong>磨损量 = 斜率 × 件数 + 截距</strong>。斜率物理意义明确：每加工 100 件，磨损多少毫米。</p>
+<h3 id="432-codech404-3_regressionpy">4.3.2 最小示例代码（对应 <code>code/ch4/04-3_regression.py</code>）</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># 合成示例数据：累计切削件数（100~500 件），磨损量随件数增长并带波动</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">cuts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">501</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">wear</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="o">*</span> <span class="n">cuts</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cuts</span><span class="p">))</span>   <span class="c1"># 磨损量（mm）</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">X</span> <span class="o">=</span> <span class="n">cuts</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>                        <span class="c1"># 特征：切削件数</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">wear</span><span class="p">)</span>        <span class="c1"># 训练：找最合适的直线</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"斜率：每加工 100 件，刀具磨损 </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mm"</span><span class="p">)</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"预测第 600 件的磨损量：</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">600</span><span class="p">]])[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> mm"</span><span class="p">)</span>
+</code></pre></div>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>斜率：每加工 100 件，刀具磨损 0.018 mm
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>截距：初始磨损量 -0.0004 mm
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>预测第 600 件的磨损量：0.109 mm
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>判断：超过 0.60 mm 即到换刀线 → 第 600 件尚不需换刀
+</code></pre></div>
+<p>三行代码，机器就从数据里学到了"每加工 100 件磨损约 0.018 mm"这条规律，还能外推到没见过的第 600 件。注意一个细节：<strong><code>fit</code> 就是"训练"</strong>——scikit-learn 里所有模型的训练动作都叫 <code>fit</code>，预测动作都叫 <code>predict</code>，记住了这个，后面所有模型的操作都是一样的。</p>
+<h3 id="433">4.3.3 两个核心概念：损失函数与梯度下降</h3>
+<p>"找一条最合适的直线"在数学上怎么做？两个概念必须懂，因为它们是所有机器学习模型的共同地基。</p>
+<p><strong>损失函数（Loss Function）</strong> 度量"这条直线有多不合适"。具体做法：对每个数据点，算"预测值 − 实际值"的差，平方后加起来取平均——这个值叫<strong>均方误差（Mean Squared Error，MSE）</strong>。损失函数就是"总偏差量"。类比：装配调试时，你要控制每个配合面的间隙偏差；MSE 就是"所有配合面的偏差平方和"——越小，装配越到位。</p>
+<p><strong>梯度下降（Gradient Descent）</strong> 是"怎么把损失函数调小"的算法。思路朴素：先随便画一条线，算损失；然后看"斜率往哪边动，损失会变小"，朝那个方向挪一点点；反复做，直到损失不再明显下降。</p>
+<p>类比：调整装配间隙时，你不会一次拧到位，而是"松一点 → 看配合 → 再松一点 → 再看"——每次都朝"偏差变小"的方向微调。梯度下降就是把这个动作自动化、数学化：它告诉你每一步往哪个方向调、调多少。</p>
+<blockquote>
+<p><strong>工程师贴士</strong>：不用背梯度下降的公式。你只需要记住三个词的关系——<strong>损失函数告诉我们"现在差多少"，梯度下降告诉"下一步往哪调"</strong>。后面深度学习里的"反向传播"是它的进阶版，原理同一棵树。</p>
+</blockquote>
+<h2 id="44">4.4 分类：判断它是哪一类</h2>
+<p>回归预测连续数值，<strong>分类（Classification）</strong> 判断离散类别：这台设备正常还是故障、这个零件合格还是不合格、这批板材是哪种材料。</p>
+<h3 id="441">4.4.1 场景：轴承故障诊断</h3>
+<p>给轴承装传感器，采两个特征——振动幅值和温度。历史数据告诉我们：正常轴承"低温、低振动"，故障轴承"高温、高振动"。分类要做的，就是画出一条<strong>决策边界（Decision Boundary）</strong>，把两类样本分开（图 4-4）。新样本落在边界哪一侧，就判成哪一类。</p>
+<p><img alt="图4-4 三种分类器的决策边界（示意）" src="../figures/ch4/fig4-4_%E4%B8%89%E7%A7%8D%E5%88%86%E7%B1%BB%E5%99%A8.png" /></p>
+<h3 id="442">4.4.2 三个最常用的分类器</h3>
+<table>
+<thead>
+<tr>
+<th>分类器</th>
+<th>思路</th>
+<th>工程类比</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KNN（K-近邻）</strong></td>
+<td>看新样本周围最近的 K 个"老样本"多数是哪类，就判哪类</td>
+<td>新员工拿不准，问身边 K 个老师傅，听多数意见</td>
+<td>简单直观，但数据量大时预测慢</td>
+</tr>
+<tr>
+<td><strong>决策树</strong>（Decision Tree）</td>
+<td>一连串 if-else：先问振动 &gt; 4？再问温度 &gt; 60？逐层判断到叶子</td>
+<td>老师傅的判断树："先听声，声大再看温度，温度也高就是轴承问题"</td>
+<td>可解释性最强，人看得懂</td>
+</tr>
+<tr>
+<td><strong>逻辑回归</strong>（Logistic Regression）</td>
+<td>算出"属于故障的概率"，超过 0.5 判故障</td>
+<td>按经验打"故障可能性分"，过了及格线就报</td>
+<td>输出的是概率，适合做风险排序</td>
+</tr>
+</tbody>
+</table>
+<h3 id="443-codech404-4_classifierspy">4.4.3 最小示例代码（对应 <code>code/ch4/04-4_classifiers.py</code>）</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># 合成示例数据：正常（低温低振动）与故障（高温高振动）两簇</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">normal</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">fault</span>  <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">([</span><span class="mf">6.0</span><span class="p">,</span> <span class="mi">75</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">normal</span><span class="p">,</span> <span class="n">fault</span><span class="p">])</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">150</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>             <span class="c1"># 0=正常，1=故障</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="s2">"KNN（看邻居，k=5）"</span><span class="p">:</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    <span class="s2">"决策树（一连串 if-else）"</span><span class="p">:</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    <span class="s2">"逻辑回归（输出故障概率）"</span><span class="p">:</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">),</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="p">}</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;24</span><span class="si">}</span><span class="s2"> 测试集准确率：</span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>KNN（看邻居，k=5）             测试集准确率：100.00%
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>决策树（一连串 if-else）         测试集准确率：100.00%
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>逻辑回归（输出故障概率）             测试集准确率：100.00%
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>决策树对前 3 个测试样本的预测： [1, 1, 0] （1=故障）
+</code></pre></div>
+<p>三个模型全 100%——因为示例数据两类分得很开。这恰恰说明一个道理：<strong>模型先不急着比好坏，先把数据备好</strong>。数据干净可分时，哪个模型都学得会；模型之间的差距，要在数据有噪声、类别不平衡时才显出来——这正是下一节的内容。</p>
+<h2 id="45">4.5 模型评估：不能只看准确率</h2>
+<p>模型训练完了，怎么知道它好不好？新手的第一反应是看<strong>准确率（Accuracy）</strong>："测试集上 98% 正确，模型很棒！"——这一节要打破这个错觉。</p>
+<h3 id="451-25">4.5.1 准确率会骗人：故障只占 25% 的场景</h3>
+<p>回到轴承诊断。假设故障样本只占全部数据的 25%（现实中故障就是少数）。这时一个"无脑模型"——把所有样本都判为正常——准确率也有 75%。你训练了半天，准确率 78%，比无脑模型只高 3 个百分点，能说它好吗？</p>
+<p>更危险的场景：<strong>漏检</strong>。把故障判成正常，设备带病运转，轻则停机、重则事故。准确率指标完全看不出这个问题。</p>
+<h3 id="452">4.5.2 混淆矩阵：质检的"误收 / 误判"四格</h3>
+<p>评估分类模型的标准工具是<strong>混淆矩阵（Confusion Matrix）</strong>——一张 2×2 表，行是实际类别，列是预测类别。这四格恰好对应质检环节的四个结果（图 4-5）：</p>
+<p><img alt="图4-5 混淆矩阵 2×2：质检的四个结果（示意）" src="../figures/ch4/fig4-5_%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5.png" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>预测"正常"</th>
+<th>预测"故障"</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>实际正常</strong></td>
+<td>正确放行（真阴性）</td>
+<td><strong>误报</strong>（假阳性）：好设备被冤枉</td>
+</tr>
+<tr>
+<td><strong>实际故障</strong></td>
+<td><strong>漏检</strong>（假阴性）：坏设备溜过去</td>
+<td>正确拦截（真阳性）</td>
+</tr>
+</tbody>
+</table>
+<p>质检语境下这两个错误后果完全不同：<strong>误报</strong>浪费一次停机检查；<strong>漏检</strong>可能酿成事故。所以评估模型不能只问"总的对不对"，要问"漏检了几个、误报了几个"。</p>
+<h3 id="453-vs">4.5.3 精确率与召回率：漏检 vs 误报的权衡</h3>
+<p>从混淆矩阵可以算出两个更细的指标（对应 <code>code/ch4/04-5_evaluation.py</code>，为演示我们把两类数据调得略有重叠，更接近真实车间）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">classification_report</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"混淆矩阵（行=实际，列=预测）："</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  正常判正常（正确放行）: </span><span class="si">{</span><span class="n">cm</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  正常判故障（误报）    : </span><span class="si">{</span><span class="n">cm</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  故障判正常（漏检）    : </span><span class="si">{</span><span class="n">cm</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  故障判故障（正确拦截）: </span><span class="si">{</span><span class="n">cm</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">准确率 = </span><span class="si">{</span><span class="p">(</span><span class="n">cm</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cm</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">cm</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2"> —— 但故障只占 25%，全判正常也能有 75%"</span><span class="p">)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"正常"</span><span class="p">,</span> <span class="s2">"故障"</span><span class="p">]))</span>
+</code></pre></div>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>混淆矩阵（行=实际，列=预测）：
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  正常判正常（正确放行）: 44
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  正常判故障（误报）    : 1
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  故障判正常（漏检）    : 0
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  故障判故障（正确拦截）: 15
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>准确率 = 98.33% —— 但故障只占 25%，全判正常也能有 75%
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>分类报告（precision 精确率 / recall 召回率 / f1）：
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>              precision    recall  f1-score   support
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>          正常       1.00      0.98      0.99        45
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>          故障       0.94      1.00      0.97        15
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    accuracy                           0.98        60
+</code></pre></div>
+<ul>
+<li><strong>精确率（Precision）</strong>：报"故障"的里面，真故障占多少。本例 0.94——报 10 次故障，约 9 次真有问题。精确率低 = <strong>误报多</strong>。</li>
+<li><strong>召回率（Recall）</strong>：真故障里面，被抓住的占多少。本例 1.00——15 个真故障全抓住了。召回率低 = <strong>漏检多</strong>。</li>
+</ul>
+<p>这两个指标天然互相拉扯：把报警阈值调松，抓得全（召回率高）但误报多（精确率低）；调严则反过来。<strong>选哪个优先，取决于业务代价</strong>——设备安全场景宁肯误报也要先抓漏检（召回率优先）；质量终检场景误报意味着合格品被报废，要平衡。<strong>F1 分数</strong>是两个指标的调和平均，用来给模型排一个综合名次。</p>
+<blockquote>
+<p><strong>工程师贴士</strong>：把精确率和召回率翻译回质检语言——<strong>"报出来的都要查，查了的不能漏"</strong>。报得多查得勤（召回率），前提是别冤枉合格品（精确率）。两个数都看，别只看准确率。</p>
+</blockquote>
+<h2 id="46">4.6 过拟合与正则化：公差控制的两个极端</h2>
+<h3 id="461">4.6.1 公差控制过严 → 量产崩盘</h3>
+<p>机械工程师对"公差"再熟悉不过。第 4 章开篇的官方类比在这里正式登场：</p>
+<ul>
+<li><strong>公差控制过松</strong>：尺寸要求放太宽，样件粗制滥造也能"合格"——东西能用，但精度差。对应机器学习的<strong>欠拟合（Underfitting）</strong>：模型太简单，规律没学够；</li>
+<li><strong>公差控制过严</strong>：样件逐件精雕细琢，全合格；可一上量产线，毛坯、设备、人员稍有波动就全报废——因为标准是"照着样件本身"定的，把样件的偶然波动也当成了必须满足的要求。对应机器学习的<strong>过拟合（Overfitting）</strong>：模型太复杂，把数据里的噪声也当成规律学了。</li>
+</ul>
+<p>过拟合的典型症状：<strong>训练集上几乎零误差，一到新数据（测试集）就原形毕露</strong>。因为模型记住的不是"规律"，而是"训练数据本身"。</p>
+<h3 id="462-codech404-6_overfitpy">4.6.2 代码演示：多项式次数越高越容易过拟合（对应 <code>code/ch4/04-6_overfit.py</code>）</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearRegression</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_pipeline</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">cross_val_score</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># 用三个"模型复杂度"拟合：次数 1（太简单）/ 3（合适）/ 15（过拟合）</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">for</span> <span class="n">degree</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">):</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="p">),</span> <span class="n">LinearRegression</span><span class="p">())</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="n">mse_train</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>       <span class="c1"># 训练误差</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">"neg_mean_squared_error"</span><span class="p">)</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"次数 </span><span class="si">{</span><span class="n">degree</span><span class="si">:</span><span class="s2">&gt;2</span><span class="si">}</span><span class="s2">：训练误差 </span><span class="si">{</span><span class="n">mse_train</span><span class="si">:</span><span class="s2">6.2f</span><span class="si">}</span><span class="s2">，5 折交叉验证平均误差 </span><span class="si">{</span><span class="o">-</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">6.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>次数  1：训练误差   3.22，5 折交叉验证平均误差   8.17
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>次数  3：训练误差   1.38，5 折交叉验证平均误差   6.14
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>次数 15：训练误差   1.10，5 折交叉验证平均误差 45376090651.97
+</code></pre></div>
+<p>看最后一行的数字：次数 15 的模型训练误差最小（1.10），但交叉验证误差暴涨到 453 亿——它在训练数据上"背题"背得滚瓜烂熟，一换题目就彻底崩溃（图 4-6）。</p>
+<p><img alt="图4-6 过拟合三连图：欠拟合 / 合适 / 过拟合（示意）" src="../figures/ch4/fig4-6_%E8%BF%87%E6%8B%9F%E5%90%88%E4%B8%89%E8%BF%9E%E5%9B%BE.png" /></p>
+<h3 id="463">4.6.3 防过拟合的三板斧与交叉验证</h3>
+<ol>
+<li><strong>更多数据</strong>：样本多了，噪声会被"平均"掉，模型很难死记硬背；</li>
+<li><strong>降低模型复杂度</strong>：决策树限制深度（<code>max_depth</code>）、多项式降低次数——相当于收窄公差；</li>
+<li><strong>正则化（Regularization）</strong>：给损失函数加一条"惩罚项"，让模型不敢把参数调得太大——类比：给装配加"扭力限制"，拧太紧会报警。</li>
+</ol>
+<p>还有一个评估手段叫<strong>交叉验证（Cross Validation）</strong>：把数据切成 K 份，轮流拿 1 份当测试、其余当训练，K 次结果取平均。类比：考核老师傅的水平，不让他只考一张卷子，而是换 5 套卷子轮流考，取平均分——单次考试有运气，交叉验证更可信。</p>
+<h2 id="47">4.7 特征工程：选对测量基准与检具</h2>
+<p>模型吃数据，数据好不好直接决定模型上限。<strong>特征工程（Feature Engineering）</strong> 是"把原始测量变成模型爱吃的样子"——官方类比：<strong>选择合适的测量基准与检具</strong>。基准选错了，再好的量具也白搭。</p>
+<h3 id="471">4.7.1 归一化：把不同量纲拉到同一尺度</h3>
+<p>振动幅值（2~8 mm/s）和温度（40~80°C）量纲不同、数值范围不同。很多模型对"数值大小"敏感：振动幅值最大 8，温度最大 80，模型会误以为温度更重要。</p>
+<p><strong>归一化（Normalization / StandardScaler）</strong> 把每个特征都变成"均值 0、标准差 1"，让所有特征在同一个尺度上比较（对应 <code>code/ch4/04-7_features.py</code>）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">"振动幅值"</span><span class="p">,</span> <span class="s2">"直径"</span><span class="p">]])</span>   <span class="c1"># mm/s 和 mm 拉到同一尺度</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">scaled</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</code></pre></div>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>归一化后（振动幅值、直径都在 0 附近波动）：
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>[[-1.087  0.162]
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a> [ 1.327 -1.298]
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a> [-0.239  1.136]]
+</code></pre></div>
+<p>类比：把不同单位的尺寸全部换算成"偏差多少个标准差"——就像把公制和英制图纸统一换算成同一套基准，才能放在一起比较。</p>
+<h3 id="472">4.7.2 独热编码：类别不能当数字比大小</h3>
+<p>材料是"45钢、Q235、304不锈钢"——这是<strong>类别（Category）</strong>，不是数值。如果硬编码成 1、2、3，模型会以为"304 是 45钢 的 3 倍"，这是错的。<strong>独热编码（One-Hot Encoding）</strong> 把每个类别拆成一列 0/1：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">OneHotEncoder</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">enc</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">mat</span> <span class="o">=</span> <span class="n">enc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">"材料"</span><span class="p">]])</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">enc</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">([</span><span class="s2">"材料"</span><span class="p">])))</span>
+</code></pre></div>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>独热编码后（材料 → 三列 0/1）：
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   材料_304不锈钢  材料_45钢  材料_Q235
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>0        0.0     1.0      0.0
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>1        0.0     0.0      1.0
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>2        1.0     0.0      0.0
+</code></pre></div>
+<h3 id="473">4.7.3 从原始信号里"提炼"特征</h3>
+<p>特征工程更常见的工作是从原始数据里<strong>算新特征</strong>。比如轴承振动信号，原始是一长串波形，直接丢给模型效果很差；但从中算出几个统计量就非常有用：</p>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>含义</th>
+<th>工程价值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RMS（均方根值）</td>
+<td>振动的"有效值"，衡量总体能量</td>
+<td>磨损加剧时 RMS 明显上升</td>
+</tr>
+<tr>
+<td>峰值</td>
+<td>最大瞬时冲击</td>
+<td>轴承点蚀时出现尖峰</td>
+</tr>
+<tr>
+<td>峭度（Kurtosis）</td>
+<td>波形"尖不尖"</td>
+<td>早期故障的敏感指标</td>
+</tr>
+</tbody>
+</table>
+<p>这就是老师傅经验的数字化：他知道"声音发闷、振动发飘"，特征工程就是把这些经验翻译成可计算的量。</p>
+<blockquote>
+<p><strong>工程师贴士</strong>：特征工程是工程师最容易发挥优势的地方——你懂设备、懂工艺，知道哪个量该测、哪个量有物理意义。模型算法是通用的，但对业务的理解是你的护城河。</p>
+</blockquote>
+<h2 id="48">4.8 配套项目：设备异常分类（完整流程）</h2>
+<p>把这一章学的东西串起来，做一个完整的分类项目。这是本书第 2 个"能交差"的项目，对应仓库 <code>code/ch4/04-8_project.py</code>。</p>
+<h3 id="481">4.8.1 需求</h3>
+<p>6 台泵类设备装传感器，采集振动幅值、温度、转速、振动 RMS 四项数据。历史记录标注了三种状态：正常、磨损预警、故障。要求：训练一个分类模型，来一条新记录能自动判状态；输出分类报告、混淆矩阵图、特征重要性。</p>
+<h3 id="482">4.8.2 完整代码</h3>
+<p>建虚拟环境、<code>pip install -r requirements.txt</code> 后直接运行（数据为合成示例，注释中说明了如何替换为现场数据）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># 配套项目：设备异常分类（sklearn 全流程）</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1"># 本段做什么：从"数据采集 → 清洗 → 特征 → 训练 → 评估"跑通一个设备状态分类项目</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1"># 运行前要装什么：scikit-learn、numpy、pandas、matplotlib（见 requirements.txt）</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># 数据说明：合成示例数据，模拟 6 台泵类设备的运行记录，</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1">#           特征为振动幅值、温度、转速、振动 RMS；标签为 正常/磨损预警/故障 三类。</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="c1">#           真实项目中用现场传感器数据替换即可（字段结构不变）。</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">"Agg"</span><span class="p">)</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="c1"># 中文字体（macOS/Windows/Linux 各留一个候选）</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">"font.sans-serif"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"PingFang SC"</span><span class="p">,</span> <span class="s2">"Heiti SC"</span><span class="p">,</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>                                          <span class="s2">"Arial Unicode MS"</span><span class="p">,</span> <span class="s2">"SimHei"</span><span class="p">]</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">"axes.unicode_minus"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="c1"># ---------- 1. 数据采集：生成合成示例数据 ----------</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="n">n_normal</span><span class="p">,</span> <span class="n">n_wear</span><span class="p">,</span> <span class="n">n_fault</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">80</span>          <span class="c1"># 三类样本数（故障最少，接近实际）</span>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="n">normal</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">1450</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span> <span class="p">(</span><span class="n">n_normal</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="n">wear</span>   <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">([</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">1440</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">(</span><span class="n">n_wear</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="n">fault</span>  <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">([</span><span class="mf">7.5</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">1400</span><span class="p">,</span> <span class="mf">6.8</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">],</span> <span class="p">(</span><span class="n">n_fault</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">normal</span><span class="p">,</span> <span class="n">wear</span><span class="p">,</span> <span class="n">fault</span><span class="p">])</span>
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_normal</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_wear</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_fault</span><span class="p">)</span>
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"振动幅值"</span><span class="p">,</span> <span class="s2">"温度"</span><span class="p">,</span> <span class="s2">"转速"</span><span class="p">,</span> <span class="s2">"振动RMS"</span><span class="p">])</span>
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a><span class="n">df</span><span class="p">[</span><span class="s2">"状态"</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span>
+<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a><span class="n">df</span><span class="p">[</span><span class="s2">"状态名"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"状态"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="s2">"正常"</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">"磨损预警"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">"故障"</span><span class="p">})</span>
+<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>
+<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a><span class="c1"># ---------- 2. 数据检查（清洗的第一步：看有没有缺失、量纲如何）----------</span>
+<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"=== 数据概览（400 条运行记录）==="</span><span class="p">)</span>
+<a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">"mean"</span><span class="p">,</span> <span class="s2">"std"</span><span class="p">,</span> <span class="s2">"min"</span><span class="p">,</span> <span class="s2">"max"</span><span class="p">]])</span>
+<a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">各状态数量：</span><span class="se">\n</span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="s1">'状态名'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a>
+<a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a><span class="c1"># ---------- 3. 特征与标签 ----------</span>
+<a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">"振动幅值"</span><span class="p">,</span> <span class="s2">"温度"</span><span class="p">,</span> <span class="s2">"转速"</span><span class="p">,</span> <span class="s2">"振动RMS"</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"状态"</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<a id="__codelineno-14-42" name="__codelineno-14-42" href="#__codelineno-14-42"></a>
+<a id="__codelineno-14-43" name="__codelineno-14-43" href="#__codelineno-14-43"></a><span class="c1"># ---------- 4. 训练/测试切分（测试集 25%，按类别比例分层）----------</span>
+<a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+<a id="__codelineno-14-45" name="__codelineno-14-45" href="#__codelineno-14-45"></a>    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-14-46" name="__codelineno-14-46" href="#__codelineno-14-46"></a>
+<a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a><span class="c1"># ---------- 5. 训练两个模型 ----------</span>
+<a id="__codelineno-14-48" name="__codelineno-14-48" href="#__codelineno-14-48"></a><span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-14-49" name="__codelineno-14-49" href="#__codelineno-14-49"></a>    <span class="s2">"决策树"</span><span class="p">:</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">),</span>
+<a id="__codelineno-14-50" name="__codelineno-14-50" href="#__codelineno-14-50"></a>    <span class="s2">"KNN(k=5)"</span><span class="p">:</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-14-51" name="__codelineno-14-51" href="#__codelineno-14-51"></a><span class="p">}</span>
+<a id="__codelineno-14-52" name="__codelineno-14-52" href="#__codelineno-14-52"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<a id="__codelineno-14-53" name="__codelineno-14-53" href="#__codelineno-14-53"></a>    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<a id="__codelineno-14-54" name="__codelineno-14-54" href="#__codelineno-14-54"></a>    <span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
+<a id="__codelineno-14-55" name="__codelineno-14-55" href="#__codelineno-14-55"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> 测试集准确率：</span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-14-56" name="__codelineno-14-56" href="#__codelineno-14-56"></a>
+<a id="__codelineno-14-57" name="__codelineno-14-57" href="#__codelineno-14-57"></a><span class="c1"># ---------- 6. 评估：分类报告 + 混淆矩阵 ----------</span>
+<a id="__codelineno-14-58" name="__codelineno-14-58" href="#__codelineno-14-58"></a><span class="n">best</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<a id="__codelineno-14-59" name="__codelineno-14-59" href="#__codelineno-14-59"></a><span class="n">y_pred</span> <span class="o">=</span> <span class="n">best</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<a id="__codelineno-14-60" name="__codelineno-14-60" href="#__codelineno-14-60"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">=== 决策树分类报告 ==="</span><span class="p">)</span>
+<a id="__codelineno-14-61" name="__codelineno-14-61" href="#__codelineno-14-61"></a><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"正常"</span><span class="p">,</span> <span class="s2">"磨损预警"</span><span class="p">,</span> <span class="s2">"故障"</span><span class="p">]))</span>
+<a id="__codelineno-14-62" name="__codelineno-14-62" href="#__codelineno-14-62"></a><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<a id="__codelineno-14-63" name="__codelineno-14-63" href="#__codelineno-14-63"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"混淆矩阵（行=实际，列=预测）："</span><span class="p">)</span>
+<a id="__codelineno-14-64" name="__codelineno-14-64" href="#__codelineno-14-64"></a><span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+<a id="__codelineno-14-65" name="__codelineno-14-65" href="#__codelineno-14-65"></a>
+<a id="__codelineno-14-66" name="__codelineno-14-66" href="#__codelineno-14-66"></a><span class="c1"># ---------- 7. 混淆矩阵可视化 ----------</span>
+<a id="__codelineno-14-67" name="__codelineno-14-67" href="#__codelineno-14-67"></a><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<a id="__codelineno-14-68" name="__codelineno-14-68" href="#__codelineno-14-68"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"Blues"</span><span class="p">)</span>
+<a id="__codelineno-14-69" name="__codelineno-14-69" href="#__codelineno-14-69"></a><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<a id="__codelineno-14-70" name="__codelineno-14-70" href="#__codelineno-14-70"></a><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">"正常"</span><span class="p">,</span> <span class="s2">"磨损预警"</span><span class="p">,</span> <span class="s2">"故障"</span><span class="p">])</span>
+<a id="__codelineno-14-71" name="__codelineno-14-71" href="#__codelineno-14-71"></a><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">"正常"</span><span class="p">,</span> <span class="s2">"磨损预警"</span><span class="p">,</span> <span class="s2">"故障"</span><span class="p">])</span>
+<a id="__codelineno-14-72" name="__codelineno-14-72" href="#__codelineno-14-72"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"预测状态"</span><span class="p">)</span>
+<a id="__codelineno-14-73" name="__codelineno-14-73" href="#__codelineno-14-73"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"实际状态"</span><span class="p">)</span>
+<a id="__codelineno-14-74" name="__codelineno-14-74" href="#__codelineno-14-74"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<a id="__codelineno-14-75" name="__codelineno-14-75" href="#__codelineno-14-75"></a>    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<a id="__codelineno-14-76" name="__codelineno-14-76" href="#__codelineno-14-76"></a>        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">cm</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">ha</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">"center"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<a id="__codelineno-14-77" name="__codelineno-14-77" href="#__codelineno-14-77"></a><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"设备异常分类 · 混淆矩阵"</span><span class="p">)</span>
+<a id="__codelineno-14-78" name="__codelineno-14-78" href="#__codelineno-14-78"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<a id="__codelineno-14-79" name="__codelineno-14-79" href="#__codelineno-14-79"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"设备异常分类-混淆矩阵.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
+<a id="__codelineno-14-80" name="__codelineno-14-80" href="#__codelineno-14-80"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">已保存图示：设备异常分类-混淆矩阵.png"</span><span class="p">)</span>
+<a id="__codelineno-14-81" name="__codelineno-14-81" href="#__codelineno-14-81"></a>
+<a id="__codelineno-14-82" name="__codelineno-14-82" href="#__codelineno-14-82"></a><span class="c1"># ---------- 8. 特征重要性：哪个特征最管用 ----------</span>
+<a id="__codelineno-14-83" name="__codelineno-14-83" href="#__codelineno-14-83"></a><span class="n">importances</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">best</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span>
+<a id="__codelineno-14-84" name="__codelineno-14-84" href="#__codelineno-14-84"></a>                        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"振动幅值"</span><span class="p">,</span> <span class="s2">"温度"</span><span class="p">,</span> <span class="s2">"转速"</span><span class="p">,</span> <span class="s2">"振动RMS"</span><span class="p">])</span>
+<a id="__codelineno-14-85" name="__codelineno-14-85" href="#__codelineno-14-85"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">特征重要性（越大越能区分状态）："</span><span class="p">)</span>
+<a id="__codelineno-14-86" name="__codelineno-14-86" href="#__codelineno-14-86"></a><span class="nb">print</span><span class="p">(</span><span class="n">importances</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+</code></pre></div>
+<p>真实运行输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>=== 数据概览（400 条运行记录）===
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>      振动幅值     温度       转速  振动RMS    状态
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>mean  3.84  52.36  1434.55   3.67  0.70
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>std   2.23  15.80    49.68   1.85  0.78
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>min   0.52  24.60  1259.34   1.27  0.00
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>max   9.57  98.79  1567.15   8.36  2.00
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>各状态数量：
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>状态名
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>正常      200
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>磨损预警    120
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>故障       80
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>决策树 测试集准确率：99.00%
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>KNN(k=5) 测试集准确率：83.00%
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>=== 决策树分类报告 ===
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>              precision    recall  f1-score   support
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>          正常       0.98      1.00      0.99        50
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>        磨损预警       1.00      0.97      0.98        30
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>          故障       1.00      1.00      1.00        20
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>    accuracy                           0.99       100
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>   macro avg       0.99      0.99      0.99       100
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>weighted avg       0.99      0.99      0.99       100
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>混淆矩阵（行=实际，列=预测）：
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>[[50  0  0]
+<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a> [ 1 29  0]
+<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a> [ 0  0 20]]
+<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>
+<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>已保存图示：设备异常分类-混淆矩阵.png
+<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>
+<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a>特征重要性（越大越能区分状态）：
+<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a>振动幅值     0.596
+<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>温度       0.011
+<a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a>转速       0.000
+<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a>振动RMS    0.394
+</code></pre></div>
+<h3 id="483">4.8.3 读懂这个项目</h3>
+<p>这个项目完整走完了机器学习的标准六步（图 4-7），也复用了第 3 章的工程习惯：</p>
+<p><img alt="图4-7 设备异常分类项目六步流水线（示意）" src="../figures/ch4/fig4-7_%E9%A1%B9%E7%9B%AE%E5%85%AD%E6%AD%A5%E6%B5%81%E6%B0%B4%E7%BA%BF.png" /></p>
+<ul>
+<li><strong>第 1~2 步（数据）</strong>：先看概览、看类别数量——这和第 3 章"读 CSV 先看表头"是同一个习惯：<strong>动手建模前先认识数据</strong>；</li>
+<li><strong>第 3~4 步（切分）</strong>：特征与标签分离，25% 留作测试，<code>stratify</code> 保证三类比例在测试集里不变形；</li>
+<li><strong>第 5 步（训练）</strong>：同一份数据试两个模型——决策树 99%、KNN 83%，决策树胜出（这里就能看到模型差异了，对比 4.4 节两类分开时全是 100%）；</li>
+<li><strong>第 6 步（评估）</strong>：分类报告 + 混淆矩阵。看混淆矩阵：50 个正常样本里 1 个被误判成磨损预警（误报），30 个磨损预警里 29 个抓住、1 个漏成正常（漏检），20 个故障全部抓住。对于"设备安全"场景，这个结果是可接受的；</li>
+<li><strong>第 8 步（特征重要性）</strong>：决策树自带"哪个特征最管用"的答案——振动幅值贡献 0.596、振动 RMS 贡献 0.394，温度和转速几乎不贡献。<strong>这个输出本身就是给设备科的报告素材</strong>：说明判断设备状态主要看振动，温度转速帮助不大——省传感器的钱，就从这里来。</li>
+</ul>
+<h3 id="484">4.8.4 泛理工科替换案例</h3>
+<p>同样的六步流水线，换数据、换标签，就是另一个专业的机器学习项目：</p>
+<table>
+<thead>
+<tr>
+<th>专业</th>
+<th>替换案例</th>
+<th>特征 → 标签</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>土木</td>
+<td>混凝土 28 天强度预测</td>
+<td>水灰比、砂率、养护温度 → 强度（回归）</td>
+</tr>
+<tr>
+<td>化工</td>
+<td>反应收率预测与异常判别</td>
+<td>温度、压力、投料比、停留时间 → 收率（回归）/ 是否异常（分类）</td>
+</tr>
+<tr>
+<td>电气</td>
+<td>变压器状态评估</td>
+<td>油温、油中气体含量、负载率 → 正常/预警/故障（分类）</td>
+</tr>
+<tr>
+<td>工艺</td>
+<td>焊接质量预测</td>
+<td>电流、电压、送丝速度、母材厚度 → 合格/不合格（分类）</td>
+</tr>
+</tbody>
+</table>
+<p>做法完全一样：整理带标签的历史数据 → 切分 → 选模型训练 → 评估 → 看特征重要性。第 6 章讲完大语言模型后，我们会把同样的项目升级成"AI 自动读设备记录、直接给维护建议"的智能体。</p>
+<h2 id="49">4.9 常见坑（工程师视角）</h2>
+<ol>
+<li><strong>数据泄漏（Data Leakage）</strong>：测试集信息混进训练过程——比如先对整个数据集做归一化，再切分。正确顺序：<strong>先切分，再对训练集拟合缩放器</strong>（<code>scaler.fit(X_train)</code>），测试集只 <code>transform</code>。类比：验收用的样件不能提前让徒弟练手。</li>
+<li><strong>类别不平衡</strong>：故障只占 1%，模型学成了"全判正常"，准确率 99% 却毫无用处。对策：<code>stratify</code> 分层切分、<code>class_weight</code> 给少数类加权、或对少数类过采样。判定标准是<strong>召回率</strong>，不是准确率。</li>
+<li><strong>拿测试集调参</strong>：反复用测试集试参数，测试集实际上变成了训练集的一部分，验收成绩虚高。正确做法：训练集 / 验证集 / 测试集三分，参数在验证集上调，测试集只最后考一次。</li>
+<li><strong>特征量纲不一致</strong>：温度（几十）和振动（个位数）直接拼在一起喂给 KNN，距离计算会被温度主导。先归一化。</li>
+<li><strong>过拟合误判为"模型很强"</strong>：训练集 100%、测试集 60%，不是模型强，是过拟合。先看交叉验证分数。</li>
+<li><strong>sklearn 版本差异</strong>：不同版本 API 有变动（如 <code>OneHotEncoder</code> 的 <code>sparse_output</code> 参数在旧版叫 <code>sparse</code>）。运行前 <code>pip install -r requirements.txt</code> 锁定本书验证过的版本；报错先看参数名是否过时。</li>
+</ol>
+<blockquote>
+<p><strong>工程师贴士</strong>：踩坑不可怕，可怕的是不知道坑长什么样。第 2 章我们说过"验收是工程师的本能"，机器学习里这条同样成立——<strong>模型的每一个数字，都要能说清它怎么来的、代表什么</strong>，说不清，先别上线。</p>
+</blockquote>
+<h2 id="410">4.10 练习与检验</h2>
+<p>动手做，才算学会：</p>
+<ol>
+<li><strong>改数据看效果</strong>：把 04-4 的故障簇中心从 <code>[6.0, 75]</code> 改成 <code>[3.0, 50]</code>（两类更接近），重跑，看三种模型准确率怎么变。想一想：为什么准确率降了？哪个模型最抗造？</li>
+<li><strong>读混淆矩阵</strong>：跑 04-5，把输出四格翻译成一句话："这批测试样本里，误报几个、漏检几个？如果漏检一次代价是 10 万停机损失，误报一次是 5 千检查费，这个模型划算吗？"</li>
+<li><strong>亲手做过拟合</strong>：跑 04-6，把次数 15 换成次数 30，观察交叉验证误差怎么变。再把样本数从 40 加到 400，重跑，看次数 15 还过拟合吗？——这就是"更多数据治过拟合"的直观证据。</li>
+<li><strong>小项目</strong>：用 04-8 的骨架，把你手头一个"有历史记录、有结论标注"的小场景（某设备、某工艺参数）整理成 CSV，跑一遍分类或回归，写下你得到的最重要发现。</li>
+</ol>
+<h2 id="_1">本章小结</h2>
+<ol>
+<li>机器学习的本质是"数据产规则"：不写 if-else，让模型从带标签的例子里自己总结规律（y = f(X)）。</li>
+<li>数据四件套要分清：特征 X、标签 y、训练集（喂饱）、测试集（封存）；回归预测连续数值，分类判断离散类别。</li>
+<li>评估不能只看准确率：混淆矩阵看四格，精确率管误报、召回率管漏检，业务代价决定优先谁。</li>
+<li>过拟合是"把噪声当规律"：训练误差低、测试误差高就是信号；用更多数据、降复杂度、正则化、交叉验证来防。</li>
+<li>一个 sklearn 项目就是六步：数据 → 检查 → 切分 → 训练 → 评估 → 解读；特征工程是你的护城河。</li>
+</ol>
+<h2 id="_2">延伸阅读</h2>
+<ul>
+<li>scikit-learn 官方教程（英文，动手型）：<a href="https://scikit-learn.org/stable/tutorial/index.html">https://scikit-learn.org/stable/tutorial/index.html</a></li>
+<li>周志华《机器学习》（"西瓜书"，中文经典教材，第 4 章后可对照阅读回归/分类章节）：机械工业出版社</li>
+<li>Datawhale 开源学习资料：<a href="https://github.com/datawhalechina/vibe-vibe">https://github.com/datawhalechina/vibe-vibe</a>（机器学习入门路线可对照本书第 4 章使用）</li>
+<li>本书配套代码与数据：仓库 <code>code/ch4/</code> 目录（<code>04-3_regression.py</code> ~ <code>04-8_project.py</code>、<code>requirements.txt</code>）</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      本作品采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cuoluan2012/ai-for-engineers" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

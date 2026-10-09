@@ -1,0 +1,2554 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="理工科零基础学习指南 —— 面向"有工作经验、零计算机背景"的理工科工程师">
+      
+      
+      
+        <link rel="canonical" href="https://cuoluan2012.github.io/ai-for-engineers/ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/">
+      
+      
+        <link rel="prev" href="../ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/">
+      
+      
+        <link rel="next" href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第 2 章 计算机通识 - AI for Engineers · 从工程师到 AI 工程师</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-ai-l1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-header__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI for Engineers · 从工程师到 AI 工程师
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第 2 章 计算机通识
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 1 章 为什么工程师要拥抱 AI
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 2 章 计算机通识
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 3 章 Python 第一课
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 4 章 机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 5 章 深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 6 章 大语言模型
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 7 章 RAG 知识库
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 8 章 AI 智能体
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 9 章 微调与私有化部署
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 10 章 工业数据与落地
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 11 章 从学到做
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-tabs__link">
+          
+  
+  
+  附录
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-nav__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI for Engineers · 从工程师到 AI 工程师
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 1 章 为什么工程师要拥抱 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 2 章 计算机通识
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 2 章 计算机通识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.0 本章解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 计算机是怎么工作的：硬件与软件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 计算机是怎么工作的：硬件与软件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1 CPU 到底在干什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.2 内存与硬盘：两种存储的分工
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-gpu-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.3 GPU 与 AI：为什么训练模型离不开它
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.4 操作系统：硬件之上的"管理者"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.5 数据在电脑里怎么存：二进制与编码
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-linux-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Linux 系统与命令行：AI 工程师的工作台
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Linux 系统与命令行：AI 工程师的工作台">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-ai-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.1 为什么 AI 的世界几乎都在 Linux 上
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-linux-windowsmacos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.2 Linux 与 Windows/macOS 有什么不同
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.3 终端与 Shell：命令行的两个概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.4 Linux 文件系统：先看懂树状结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#225" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.5 工程师命令集（先会用，再理解）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#226-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.6 环境变量与 PATH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#227-aptpipconda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.7 包管理器：apt、pip、conda 的分工
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 服务器与网络
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 服务器与网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.1 服务器是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-ipdns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.2 IP、端口、域名、DNS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-httphttps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.3 HTTP/HTTPS：请求与响应
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.4 一次网页请求的旅程
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#235-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.5 SSH：远程操作服务器的标准方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 前端与后端：软件的一体两面
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 前端与后端：软件的一体两面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4.1 浏览器如何工作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-htmlcssjavascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4.2 HTML、CSS、JavaScript：网页的三层
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-api-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4.3 API 与 JSON：前端怎么向后端要数据
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#244-qt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4.4 Qt 是什么（工业软件里的"前端"）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-ui-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 UI 与 UX：好看与好用
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6 数据库：软件的记忆库
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 数据库：软件的记忆库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6.1 关系型数据库与 SQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6.2 事务与索引：数据库为什么可靠又快速
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#263" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6.3 非关系型数据库与向量数据库
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7 架构：把系统搭得像车间产线
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.7 架构：把系统搭得像车间产线">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7.1 架构是什么，为什么要先规划
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#272" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7.2 怎么看一张架构图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#273" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7.3 分层架构与单体/微服务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#274" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7.4 高可用与负载均衡（概念级）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8 容器与部署：从"自己电脑能跑"到"全世界能用"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.8 容器与部署：从&#34;自己电脑能跑&#34;到&#34;全世界能用&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#281" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8.1 部署是什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#282-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8.2 Docker：把环境一起打包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#283-kubernetesk8s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8.3 Kubernetes（K8s）：容器多了谁来管
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#284-cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8.4 CI/CD：自动化的交付流水线
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9 软件是怎么造出来的：工程流程全景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.9 软件是怎么造出来的：工程流程全景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#291" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9.1 六个阶段
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#292" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9.2 三个必须认识的工程概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#210" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10 本章地图与练习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.10 本章地图与练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2101-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10.1 一张"学 AI 前的计算机世界地图"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2102-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10.2 最小实操示例：30 分钟在命令行里走通一圈
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2103" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10.3 练习与检验标准
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#211" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11 常见坑与工程师贴士
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.11 常见坑与工程师贴士">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见坑（本章高频翻车点）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        工程师贴士：把电脑当成一台你要管理的设备
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延伸阅读
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 3 章 Python 第一课
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 4 章 机器学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 5 章 深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 6 章 大语言模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 7 章 RAG 知识库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 8 章 AI 智能体
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 9 章 微调与私有化部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 10 章 工业数据与落地
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 11 章 从学到做
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E7%AB%A0%E8%8A%82%E8%A6%86%E7%9B%96%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表章节覆盖矩阵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="2-ai-l1">第 2 章 计算机通识：学 AI 前必懂的基础课（L1 计算机世界地图）</h1>
+<blockquote>
+<p>所属框架层：L1 编程与软件工程地基
+预计篇幅：约 11,000 字（本章无代码门槛，第 3 段为"最小实操示例"）
+配套文件：本章配图（SVG 源文件见 <code>figures/ch2/</code> 目录）、术语表第 2 章·L1 条目
+v1.1 修订：类比降密（只保留少量记忆锚点，以准确语言讲清定义与机制）；内容加深加广（新增 Linux、服务器、GPU 机制、Docker/Kubernetes、环境变量、端口、HTTP 状态码、JSON 等）
+本章验收附加：学完后能不看资料回答——命令行是什么？前端和后端各干什么？数据库存什么？部署是做什么的？为什么 AI 训练离不开 GPU 和 Linux？</p>
+</blockquote>
+<hr />
+<h2 id="20">2.0 本章解决什么问题</h2>
+<p>这一章解决你的一个具体困境：你打开任何一份 AI 教程，前 20 分钟就会被"打开终端配置环境""装 NVIDIA 驱动""部署到服务器""用 Docker 打包"这些词劝退——不是你不会编程，而是没人给你讲过电脑这台"机器"是怎么运转的，更没人告诉你：<strong>AI 的世界里，Linux、GPU、服务器、容器是默认的工作语言</strong>。</p>
+<p>老张，40 岁，某机械厂的资深工艺工程师。去年他下定决心学 AI，第一周就受了挫：教程让他"用 ssh 连上服务器跑训练"，他不知道服务器在哪、为什么要连；教程说"训练要用 GPU"，他以为 GPU 就是好一点的显卡；让他"把代码打包成 Docker 镜像部署"，他完全不知道镜像是什么。他不是不聪明——他闭着眼睛都能说出车床主轴的三种润滑方式——但计算机世界的名词，对他来说就像一台没有图纸、没有铭牌的陌生设备。</p>
+<p>这一章就是那份"设备说明书"。我们不追求让你成为计算机专家，而是用<strong>准确的语言</strong>把电脑、Linux、网络、服务器、软件这几样东西讲清楚，让你建立"原生计算机素养"：知道每个概念是什么、为什么存在、解决什么问题。学完这一章，后面每一章提到 GPU、Linux、命令行、数据库、Docker、部署时，你都不会再犯怵。</p>
+<blockquote>
+<p><strong>本章配图清单</strong>（图号 / 内容 / 对应小节 / 类型）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>图号</th>
+<th>内容</th>
+<th>对应小节</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图 2-1</td>
+<td>计算机世界地图（六层总览）</td>
+<td>2.1 / 2.10</td>
+<td>架构图</td>
+</tr>
+<tr>
+<td>图 2-2</td>
+<td>Linux 工作台：文件系统与命令</td>
+<td>2.2</td>
+<td>示意图</td>
+</tr>
+<tr>
+<td>图 2-3</td>
+<td>CPU vs GPU：串行 vs 并行</td>
+<td>2.1</td>
+<td>对比图</td>
+</tr>
+<tr>
+<td>图 2-4</td>
+<td>网页请求旅程（浏览器→DNS→服务器→数据库→返回）</td>
+<td>2.3</td>
+<td>流程图</td>
+</tr>
+<tr>
+<td>图 2-5</td>
+<td>前端与后端（含 API 与 JSON）</td>
+<td>2.4</td>
+<td>架构图</td>
+</tr>
+<tr>
+<td>图 2-6</td>
+<td>UI 与 UX 的关系</td>
+<td>2.5</td>
+<td>示意图</td>
+</tr>
+<tr>
+<td>图 2-7</td>
+<td>数据库：表、索引、事务</td>
+<td>2.6</td>
+<td>示意图</td>
+</tr>
+<tr>
+<td>图 2-8</td>
+<td>Docker 与 Kubernetes：容器与编排</td>
+<td>2.8</td>
+<td>架构图</td>
+</tr>
+<tr>
+<td>图 2-9</td>
+<td>软件工程流程全景</td>
+<td>2.9</td>
+<td>流程图</td>
+</tr>
+<tr>
+<td>图 2-10</td>
+<td>部署：本地 → 云服务器 → 容器化集群</td>
+<td>2.8</td>
+<td>示意图</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="21">2.1 计算机是怎么工作的：硬件与软件</h2>
+<h3 id="211-cpu">2.1.1 CPU 到底在干什么</h3>
+<p>中央处理器（Central Processing Unit，CPU）是计算机的运算核心。它做的事情极其简单，但速度极快：<strong>读取一条指令 → 执行它 → 读取下一条</strong>，如此循环。指令是"把这两个数相加""把这块数据搬到那里"这类最基础的操作。</p>
+<p>三个关键概念，先建立"原生认知"：</p>
+<ul>
+<li><strong>时钟（Clock）</strong>：CPU 内部有一个节拍器，每"滴答"一次执行一步。3.0 GHz 的意思就是每秒滴答 30 亿次。频率越高，同样时间内能执行的指令越多。</li>
+<li><strong>寄存器（Register）</strong>：CPU 内部的一小块超高速存储，存放正在处理的数。它比内存快得多，但容量极小。</li>
+<li><strong>指令集（Instruction Set）</strong>：CPU 认识的全部"动作清单"。不同品牌（Intel、AMD、ARM）的 CPU 各有各的清单，就像不同系统的数控机床指令格式不同。</li>
+</ul>
+<p>你不需要会写汇编，但知道"CPU = 按节拍逐条执行指令的部件"，后面理解"为什么代码要经过编译/解释"就顺理成章了（见 2.9 节）。</p>
+<h3 id="212">2.1.2 内存与硬盘：两种存储的分工</h3>
+<p>计算机有两类存储，初学者最容易混：</p>
+<ul>
+<li><strong>内存（Memory，RAM）</strong>：与 CPU 直接交换数据的存储，速度快、容量小、<strong>断电即失</strong>。它保存的是"正在处理的"数据。</li>
+<li><strong>硬盘（Disk，存储）</strong>：长期保存数据，速度慢、容量大、<strong>断电不丢</strong>。它保存的是"要长期留着的"数据。</li>
+</ul>
+<p>两者关系用一句话讲清楚：<strong>CPU 只跟内存打交道，硬盘里的数据要先"搬到"内存才能被 CPU 处理</strong>。你打开一个 1 万行的 Excel 表格，Excel 把它从硬盘读进内存，然后你的一切操作都在内存里进行——没保存就断电，等于白干。所以"保存"这个动作的本质是：把内存里的最新数据写回硬盘。</p>
+<p>如果需要一个记忆锚点：内存像工作台，硬盘像仓库。工作台的东西关机就清空，仓库的东西断电还在。</p>
+<h3 id="213-gpu-ai">2.1.3 GPU 与 AI：为什么训练模型离不开它</h3>
+<p>图形处理器（Graphics Processing Unit，GPU）最初是为了渲染 3D 画面设计的，但 AI 行业发现它是训练神经网络的最佳工具。原因在<strong>并行计算</strong>：</p>
+<ul>
+<li>CPU 有 8 核、16 核，每个核很强，适合"串行"地逐条处理复杂任务——像一个全能老师傅，一次专心干一件事，干得又快又好。</li>
+<li>GPU 有数千个计算单元，单个单元很弱，但可以<strong>同时</strong>做海量简单计算——像一条有几千个工位的流水线，每个工位只做一步简单操作，但整条线同时产出大量结果。</li>
+</ul>
+<p>神经网络训练的本质是大量矩阵乘法：几百万个数字成批相乘相加。这种运算"简单但量极大"，天生适合 GPU 的并行结构。一个直观数据：一块消费级 GPU 的浮点算力通常是同期 CPU 的几十倍。</p>
+<p>另一个必须知道的概念是<strong>显存（VRAM）</strong>：GPU 自带的高速内存。模型参数、训练数据都要装进显存才能被 GPU 计算。<strong>显存容量决定了你能训练多大的模型</strong>——这也是为什么大模型训练要用多张 GPU 组成集群（见 2.3 节）。</p>
+<p>AI 实践中最常见的 GPU 名词：NVIDIA 的 CUDA（GPU 的编程接口）、显存 8G/24G/80G（决定模型规模）、GPU 服务器（多卡集群，按小时租赁）。第 9 章讲私有化部署时会再算这笔账。</p>
+<p><img alt="图 2-3 CPU vs GPU：串行 vs 并行" src="../figures/ch2/fig2-3_CPUvsGPU.png" /></p>
+<h3 id="214">2.1.4 操作系统：硬件之上的"管理者"</h3>
+<p>操作系统（Operating System，OS）是运行在硬件之上的基础软件，管理所有硬件资源并为应用程序提供服务。它干四类活：</p>
+<ul>
+<li><strong>进程与线程管理</strong>：进程（Process）是一个正在运行的程序（如"你打开的 Excel"），线程（Thread）是进程内的执行单元（如"Excel 同时做计算和界面刷新"）。操作系统负责给每个进程分配 CPU 时间、内存空间，并保证它们互不干扰。</li>
+<li><strong>内存管理</strong>：给每个进程划分独立的内存区域，防止一个程序崩溃拖垮整个系统。</li>
+<li><strong>文件系统</strong>：把硬盘组织成"目录（文件夹）+ 文件"的层级结构，并记录每个文件在哪。文件系统结构是理解路径的前提（见 2.2 节）。</li>
+<li><strong>权限管理</strong>：规定谁能读、谁能在哪个目录写、谁能安装软件。工业场景里"操作工只能动自己工位、车间主任才能改排产"就是权限的日常版。</li>
+</ul>
+<p>Windows、macOS、Linux 都是操作系统。你在个人电脑上用 Windows 或 macOS，但学 AI 时你会频繁接触 Linux——原因见下一节。</p>
+<h3 id="215">2.1.5 数据在电脑里怎么存：二进制与编码</h3>
+<p>电脑里一切数据最终都是二进制（0 和 1）。一个 0 或 1 叫一个比特（bit），8 个比特组成一个字节（Byte），是存储的基本单位（1KB = 1024 字节，一张照片约 2–5MB）。</p>
+<p>文本是怎么变成 0/1 的？靠<strong>字符编码</strong>：每个字符对应一个编号。现代世界统一的编码是 UTF-8——它兼容 ASCII（英文/数字/符号），又能表示全世界所有文字（包括中文）。"机械"两个字在 UTF-8 下各占 3 个字节。为什么工程师要知道这个？因为 AI 处理文本、代码文件乱码、数据库存储中文字段，都跟编码有关——遇到"打开文件全是乱码"时，先查编码。</p>
+<p>另一种必须认识的数据格式是 <strong>JSON</strong>（JavaScript Object Notation，一种轻量级数据交换格式）：用"键: 值"的文本方式表示结构化数据。它几乎成了程序之间传数据的"普通话"：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">"设备编号"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MC-003"</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">"状态"</span><span class="p">:</span><span class="w"> </span><span class="s2">"运行中"</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">"主轴转速"</span><span class="p">:</span><span class="w"> </span><span class="mi">1200</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">"报警"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>JSON 是人类可读的，机器也好解析。2.4 节讲 API 时会频繁见到它。</p>
+<hr />
+<h2 id="22-linux-ai">2.2 Linux 系统与命令行：AI 工程师的工作台</h2>
+<h3 id="221-ai-linux">2.2.1 为什么 AI 的世界几乎都在 Linux 上</h3>
+<p>这是本章最重要的"为什么"。原因有三个：</p>
+<ol>
+<li><strong>服务器生态</strong>：AI 训练和推理跑在服务器上，而互联网服务器 90% 以上运行 Linux。你租的云服务器、企业的 GPU 服务器，几乎都是 Linux。</li>
+<li><strong>GPU 驱动与工具链</strong>：NVIDIA 的 CUDA 工具链、PyTorch、TensorFlow 等 AI 框架，最先、最完整支持的平台就是 Linux。</li>
+<li><strong>开源与可定制</strong>：Linux 完全开源，可裁剪、可定制，适合构建从嵌入式到超算的各种环境。</li>
+</ol>
+<p>一句话：<strong>你不一定要在个人电脑上装 Linux，但你学的 AI 知识最终都要跑在 Linux 服务器上</strong>。所以至少要会用 Linux 的命令行——这不是"程序员的高深爱好"，而是 AI 实践的基本功。</p>
+<h3 id="222-linux-windowsmacos">2.2.2 Linux 与 Windows/macOS 有什么不同</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Windows / macOS</th>
+<th>Linux</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发来源</td>
+<td>商业公司闭源开发</td>
+<td>开源社区协作开发</td>
+</tr>
+<tr>
+<td>操作方式</td>
+<td>图形界面为主，命令行为辅</td>
+<td>命令行为主（服务器版甚至没有图形界面）</td>
+</tr>
+<tr>
+<td>常见发行版</td>
+<td>—</td>
+<td>Ubuntu、Debian、CentOS、Rocky Linux 等</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>个人办公、日常使用</td>
+<td>服务器、云计算、AI 训练、嵌入式</td>
+</tr>
+<tr>
+<td>文件路径写法</td>
+<td><code>C:\Users\...</code> / <code>/Users/...</code></td>
+<td><code>/home/用户名/...</code>（一切从根目录 <code>/</code> 开始）</td>
+</tr>
+</tbody>
+</table>
+<p>macOS 的底层也是类 Unix 系统，所以你在 macOS 的"终端"里学的命令，在 Linux 上几乎完全通用——这对你来说是个好消息。</p>
+<h3 id="223-shell">2.2.3 终端与 Shell：命令行的两个概念</h3>
+<ul>
+<li><strong>终端（Terminal）</strong>：一个窗口程序，让你输入命令并看到输出。它本身不执行命令，只是"显示器 + 键盘"。</li>
+<li><strong>Shell</strong>：真正解释和执行命令的程序。常见的有 bash、zsh。你输入 <code>ls</code>，Shell 找到并执行 <code>ls</code> 这个程序，把结果交给终端显示。</li>
+</ul>
+<p>命令行（Command Line Interface，CLI）就是用文本命令操作电脑的方式。为什么程序员爱用它？三个实际理由：<strong>可复制</strong>（一条命令发给同事就能复现）、<strong>可组合</strong>（命令可以管道连接，如 <code>ps | grep python</code> 表示"列出进程，筛出 python"）、<strong>可脚本化</strong>（把多条命令写进文件自动执行）。</p>
+<h3 id="224-linux">2.2.4 Linux 文件系统：先看懂树状结构</h3>
+<p>Linux 的一切文件都从根目录 <code>/</code> 开始，是一棵倒挂的树。几个你必须知道的目录：</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>存什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td>根目录，树的起点</td>
+</tr>
+<tr>
+<td><code>/home/用户名</code></td>
+<td>你的个人目录（相当于 Windows 的用户文件夹）</td>
+</tr>
+<tr>
+<td><code>/etc</code></td>
+<td>系统配置文件（相当于"设备参数表"）</td>
+</tr>
+<tr>
+<td><code>/var</code></td>
+<td>经常变化的文件：日志、缓存（相当于"运行记录"）</td>
+</tr>
+<tr>
+<td><code>/tmp</code></td>
+<td>临时文件</td>
+</tr>
+<tr>
+<td><code>/usr</code></td>
+<td>系统安装的软件</td>
+</tr>
+</tbody>
+</table>
+<p>路径就是"从根到目标的路线"：绝对路径从 <code>/</code> 开始（<code>/home/laozhang/projects</code>），相对路径从当前位置开始（<code>projects/</code>，前面没有斜杠）。终端里 <code>~</code> 是"我的个人目录"的缩写，<code>.</code> 是当前目录，<code>..</code> 是上一级目录。</p>
+<h3 id="225">2.2.5 工程师命令集（先会用，再理解）</h3>
+<p>下面的命令是 AI 实践中最高频的，每个后面都说明它实际干什么：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>干什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pwd</code></td>
+<td>显示当前所在目录</td>
+</tr>
+<tr>
+<td><code>ls</code> / <code>ls -la</code></td>
+<td>列出当前目录内容 / 列出详细信息（含权限、大小）</td>
+</tr>
+<tr>
+<td><code>cd 目录</code></td>
+<td>进入某个目录</td>
+</tr>
+<tr>
+<td><code>mkdir 名称</code></td>
+<td>新建目录</td>
+</tr>
+<tr>
+<td><code>cp 源 目标</code> / <code>mv 源 目标</code></td>
+<td>复制 / 移动或重命名</td>
+</tr>
+<tr>
+<td><code>cat 文件</code></td>
+<td>把文件内容打印到终端</td>
+</tr>
+<tr>
+<td><code>chmod 权限 文件</code></td>
+<td>修改文件权限（如 <code>chmod +x run.sh</code> 给脚本加执行权限）</td>
+</tr>
+<tr>
+<td><code>ps</code> / <code>top</code></td>
+<td>查看正在运行的进程 / 实时查看资源占用</td>
+</tr>
+<tr>
+<td><code>curl 网址</code></td>
+<td>向网址发送网络请求（2.3 节会实测）</td>
+</tr>
+<tr>
+<td><code>ssh 用户@主机</code></td>
+<td>远程登录另一台电脑（2.3 节讲）</td>
+</tr>
+<tr>
+<td><code>git clone 网址</code></td>
+<td>把网上的代码仓库复制到本地</td>
+</tr>
+<tr>
+<td><code>pip install 包名</code></td>
+<td>安装 Python 库</td>
+</tr>
+<tr>
+<td><code>sudo 命令</code></td>
+<td>以管理员权限执行命令（类比：需要车间主任签字）</td>
+</tr>
+</tbody>
+</table>
+<p>命令记不住很正常，你不需要背——<strong>理解每个命令在"电脑里实际做什么"，比背命令本身重要</strong>。后面所有章节用到时都会再出现。</p>
+<h3 id="226-path">2.2.6 环境变量与 PATH</h3>
+<p>环境变量（Environment Variable）是操作系统和程序共享的一组"全局参数"，每个变量是一个"名字=值"的键值对。最常见的 PATH 变量存的是"可执行程序所在的目录列表"：你输入 <code>python3</code>，系统按 PATH 里的目录顺序去找名为 <code>python3</code> 的程序，找到就执行。</p>
+<p>为什么工程师必须懂环境变量？三个实际场景：</p>
+<ol>
+<li>安装软件后提示"命令找不到"——通常是该软件的目录没加进 PATH。</li>
+<li>AI 项目里，API 密钥、数据库地址等敏感配置通常放在 <code>.env</code> 文件里，程序启动时读为环境变量（比写死在代码里安全）。</li>
+<li>切换 Python 版本、配置 CUDA 路径，本质都是在改环境变量。</li>
+</ol>
+<p>查看环境变量的命令是 <code>echo $PATH</code>（输出 PATH 的值）。第 3 章配置 Python 环境时会实际用到。</p>
+<h3 id="227-aptpipconda">2.2.7 包管理器：apt、pip、conda 的分工</h3>
+<p>包管理器（Package Manager）是自动下载、安装、管理软件依赖的工具。Linux 生态有三个层次，分工不同：</p>
+<ul>
+<li><strong>apt</strong>（Ubuntu 等发行版自带）：管理系统级软件（如安装 nginx、git）。类比：从"系统标准件库"领件。</li>
+<li><strong>pip</strong>：安装 Python 库（如 <code>pip install pandas</code>）。类比：从"Python 专用零件库"领件。</li>
+<li><strong>conda</strong>：同时管理 Python 版本和库，且能创建互相隔离的"环境"（Environment）——每个环境有自己的 Python 和依赖版本。类比：为不同项目各配一套独立的工具箱。</li>
+</ul>
+<p><strong>为什么需要隔离环境？</strong> 项目 A 需要 pandas 2.0，项目 B 需要 pandas 1.5——如果装在一个环境里会互相打架。conda 虚拟环境让每个项目有自己的工具箱，互不干扰。第 3 章你会亲手创建第一个虚拟环境。</p>
+<hr />
+<p><img alt="图 2-2 Linux 工作台：文件系统与命令" src="../figures/ch2/fig2-2_Linux%E5%B7%A5%E4%BD%9C%E5%8F%B0.png" /></p>
+<h2 id="23">2.3 服务器与网络</h2>
+<h3 id="231">2.3.1 服务器是什么</h3>
+<p>服务器（Server）本质是一台电脑，但它与个人电脑有三点不同：</p>
+<ol>
+<li><strong>7×24 小时运行</strong>：设计上就是不停机的（冗余电源、冗余硬盘）。</li>
+<li><strong>没有显示器键盘</strong>：服务器版系统只有命令行，人靠远程登录操作。</li>
+<li><strong>按用途分工</strong>：有的存数据（数据库服务器），有的跑计算（GPU 训练服务器），有的对外提供网页（Web 服务器）。</li>
+</ol>
+<p>当多台服务器一起干活、对外像一台机器时，叫<strong>集群（Cluster）</strong>。大模型训练就是上百台 GPU 服务器组成集群，用高速网络连起来协同计算。</p>
+<h3 id="232-ipdns">2.3.2 IP、端口、域名、DNS</h3>
+<p>一台电脑要访问另一台，靠三个概念：</p>
+<ul>
+<li><strong>IP 地址</strong>：每台联网设备的门牌号，如 <code>192.168.1.100</code>。</li>
+<li><strong>端口（Port）</strong>：一台机器上"具体的服务入口"。IP 找到机器，端口找到这台机器上的哪个服务。类比：门牌号找到公司，部门分机号找到具体的人。HTTP 服务默认端口是 80，HTTPS 是 443，数据库 MySQL 是 3306。</li>
+<li><strong>域名与 DNS</strong>：记 IP 很难受，于是用域名（<code>example.com</code>）代替。DNS（域名系统）负责把域名翻译成 IP——类比"公司名查号台"。</li>
+</ul>
+<p>一条命令就能查 DNS：<code>nslookup example.com</code> 会返回它的 IP。你可以试试，会发现"www.baidu.com"背后其实有好几个 IP——这是负载均衡（见 2.7 节）的体现。</p>
+<h3 id="233-httphttps">2.3.3 HTTP/HTTPS：请求与响应</h3>
+<p>超文本传输协议（HyperText Transfer Protocol，HTTP）是浏览器（客户端）与服务器之间通信的规则。核心模型是<strong>请求-响应</strong>：</p>
+<ol>
+<li>客户端发一个<strong>请求</strong>：包含方法（Method）、地址（URL）、请求头（Header，如浏览器类型、认证信息）、可选请求体（Body，如表单数据）。</li>
+<li>服务器回一个<strong>响应</strong>：包含状态码（Status Code）、响应头、响应体（Body，通常是 HTML 或 JSON）。</li>
+</ol>
+<p><strong>HTTP 方法</strong>就几种，记住常用的：GET（取数据，不改变服务器状态）、POST（提交数据，如提交表单）、PUT/DELETE（更新/删除）。类比：GET 是"查台账"，POST 是"登记新记录"。</p>
+<p><strong>HTTP 状态码</strong>是服务器给客户的"一句话回执"，必须认识这几类：</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>含义</th>
+<th>工程师视角</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>成功</td>
+<td>请求处理完毕，正常返回</td>
+</tr>
+<tr>
+<td>301/302</td>
+<td>重定向</td>
+<td>内容搬走了，去新地址</td>
+</tr>
+<tr>
+<td>404</td>
+<td>找不到</td>
+<td>地址写错或资源不存在</td>
+</tr>
+<tr>
+<td>500</td>
+<td>服务器内部错误</td>
+<td>服务器自己出问题了</td>
+</tr>
+<tr>
+<td>403</td>
+<td>没有权限</td>
+<td>有地址但没权限访问</td>
+</tr>
+</tbody>
+</table>
+<p>HTTPS 是 HTTP 的加密版本：传输内容加密（相当于单据套了密封信封），防止中途被窃听或篡改。凡是要输入账号密码的网站，地址栏必须是 <code>https://</code>。</p>
+<h3 id="234">2.3.4 一次网页请求的旅程</h3>
+<p>你在浏览器输入 <code>https://example.com</code>，背后发生的事（图 2-4）：</p>
+<p><img alt="图 2-4 网页请求旅程（浏览器→DNS→服务器→数据库→返回）" src="../figures/ch2/fig2-4_%E7%BD%91%E9%A1%B5%E8%AF%B7%E6%B1%82%E6%97%85%E7%A8%8B.png" /></p>
+<ol>
+<li>浏览器先查 DNS："example.com 的 IP 是多少？"</li>
+<li>DNS 返回 IP（如 <code>93.184.216.34</code>）。</li>
+<li>浏览器向该 IP 的 443 端口发一个 HTTPS 请求（GET）。</li>
+<li>服务器收到请求，可能需要去数据库查数据（见 2.6 节）。</li>
+<li>服务器把结果打包成响应（状态码 200 + HTML/JSON 内容）。</li>
+<li>浏览器拿到响应，解析并渲染成你看到的页面。</li>
+</ol>
+<p>一次网页请求，就是一趟"查询-回传"的完整流程。2.10 节你会用 <code>curl</code> 亲手看到这个过程的原始形态。</p>
+<h3 id="235-ssh">2.3.5 SSH：远程操作服务器的标准方式</h3>
+<p>SSH（Secure Shell，安全外壳协议）是远程登录另一台电脑的命令行协议，AI 实践中最常用的操作方式——你租了一台云服务器，就是用 SSH 登录去配置它：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh<span class="w"> </span>用户名@服务器IP
+</code></pre></div>
+<p>连接后，你的终端就变成了那台服务器的终端，可以执行命令、传文件（<code>scp</code>）、跑训练。SSH 的"安全"体现在加密传输和密钥认证：生产环境用<strong>密钥对</strong>（公钥放服务器、私钥留本地）代替密码登录，更安全。2.10 节的实操会演示怎么用 SSH 连一个本地环境。</p>
+<hr />
+<h2 id="24">2.4 前端与后端：软件的一体两面</h2>
+<h3 id="241">2.4.1 浏览器如何工作</h3>
+<p>浏览器（Browser）是运行网页的程序。它做的事情可以概括为：<strong>拉取资源（HTML/CSS/JS/图片）→ 解析 → 渲染成可视页面 → 响应你的操作</strong>。你在地址栏输入网址，浏览器就是那个发起 HTTP 请求、接收响应、把代码"画"成页面的角色。</p>
+<p>浏览器的核心工作包括：解析 HTML 生成页面结构（DOM）、解析 CSS 计算样式、执行 JavaScript 处理交互。一个现代网页，本质是"内容结构 + 样式 + 行为"三部分的组合。</p>
+<h3 id="242-htmlcssjavascript">2.4.2 HTML、CSS、JavaScript：网页的三层</h3>
+<table>
+<thead>
+<tr>
+<th>技术</th>
+<th>全称</th>
+<th>负责什么</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTML</td>
+<td>超文本标记语言</td>
+<td>页面内容的结构（标题、段落、表格、图片）</td>
+<td>描述"有什么"</td>
+</tr>
+<tr>
+<td>CSS</td>
+<td>层叠样式表</td>
+<td>页面的外观（颜色、字体、布局）</td>
+<td>描述"长什么样"</td>
+</tr>
+<tr>
+<td>JavaScript（JS）</td>
+<td>—</td>
+<td>页面的行为（点击响应、数据更新、动画）</td>
+<td>描述"怎么动"</td>
+</tr>
+</tbody>
+</table>
+<p>三者的关系一句话：<strong>HTML 定义内容结构，CSS 定义外观，JavaScript 定义行为</strong>。后面第 6 章你用 AI 生成网页工具时，实际就是在生成这三层代码。</p>
+<h3 id="243-api-json">2.4.3 API 与 JSON：前端怎么向后端要数据</h3>
+<p><strong>前端（Frontend）</strong>：运行在用户浏览器里的部分——用户看得见、点得动的界面。<strong>后端（Backend）</strong>：运行在服务器上的部分——处理业务逻辑、读写数据库。两者不在同一台机器上，怎么通信？靠 API。</p>
+<p>应用程序接口（Application Programming Interface，API）是程序之间约定的通信方式。Web 领域最常见的是 <strong>REST API</strong>：后端把每个"能力"定义成一个 URL + 方法（如 <code>GET /api/devices</code> 表示"获取设备列表"），前端发请求、后端回 JSON。一次典型对话：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>前端发：GET /api/devices/MC-003
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>后端回：200 OK
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>{"设备编号": "MC-003", "状态": "运行中", "主轴转速": 1200}
+</code></pre></div>
+<p>如果需要一个记忆锚点：<strong>前端是用户看到的"操作面板"，后端是藏在服务器上的"控制柜"，API 是两者之间约定好的标准接口</strong>。第 6 章调用大模型 API，就是"前端/脚本向后端发请求、收 JSON"这个模式的直接应用。</p>
+<h3 id="244-qt">2.4.4 Qt 是什么（工业软件里的"前端"）</h3>
+<p>Qt 是一套跨平台桌面软件界面框架——用 C++/Python 等语言快速搭建 Windows、Linux、macOS 都能运行的桌面程序界面。工业软件（数控系统、仿真软件、上位机、SCADA 组态）大量使用 Qt，这是工程师最容易直接接触到的"前端"技术。</p>
+<p>和网页前端的区别：网页前端运行在浏览器里（需要浏览器这个"运行环境"），Qt 程序是独立运行的桌面应用（自带窗口，不需要浏览器）。但两者做的事本质相同：<strong>都负责"用户看到的界面 + 用户操作的响应"</strong>。学完 2.4 节，你再看 Qt 相关的招聘要求或软件文档，就不会觉得陌生了。</p>
+<hr />
+<p><img alt="图 2-5 前端与后端（含 API 与 JSON）" src="../figures/ch2/fig2-5_%E5%89%8D%E7%AB%AF%E5%90%8E%E7%AB%AF%E4%B8%8EQt.png" /></p>
+<h2 id="25-ui-ux">2.5 UI 与 UX：好看与好用</h2>
+<ul>
+<li><strong>UI</strong>（User Interface，用户界面）：界面的视觉设计——布局、颜色、按钮大小、图标。回答"界面长什么样"。</li>
+<li><strong>UX</strong>（User Experience，用户体验）：使用过程的整体体验——顺不顺手、容不容易误操作、新用户多久能上手。回答"界面好不好用"。</li>
+</ul>
+<p>两者的关系：<strong>UI 是 UX 的一部分</strong>。界面好看但操作别扭（急停按钮藏在角落），UX 差；操作合理但界面混乱没人愿意用，UI 拖后腿。</p>
+<p>工程师为什么也要懂一点 UI/UX？因为你做的 AI 工具最终要给别人用。判断标准很简单：<strong>UI 决定用户第一印象，UX 决定用户是否真的用下去</strong>。第 11 章讲"把工具做成别人愿意用的产品"时会展开。现阶段记住"先保证好用（UX），再追求好看（UI）"就够。</p>
+<hr />
+<p><img alt="图 2-6 UI 与 UX 的关系" src="../figures/ch2/fig2-6_UI%E4%B8%8EUX.png" /></p>
+<h2 id="26">2.6 数据库：软件的记忆库</h2>
+<h3 id="261-sql">2.6.1 关系型数据库与 SQL</h3>
+<p>数据库（Database）是结构化存储和管理数据的软件系统。最主流的是<strong>关系型数据库</strong>（Relational Database）：数据存成"表（Table）"，表有行（一条记录）和列（一个字段），表与表之间用<strong>主键/外键</strong>关联。典型：MySQL、PostgreSQL。</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>是什么</th>
+<th>对应你熟悉的东西</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表（Table）</td>
+<td>一类数据的集合</td>
+<td>一张台账表</td>
+</tr>
+<tr>
+<td>行（Row）</td>
+<td>一条记录</td>
+<td>台账里的一行</td>
+</tr>
+<tr>
+<td>列（Column）</td>
+<td>一个字段</td>
+<td>台账里的一列</td>
+</tr>
+<tr>
+<td>主键（Primary Key）</td>
+<td>唯一标识一条记录的字段</td>
+<td>设备编号（不重复）</td>
+</tr>
+<tr>
+<td>外键（Foreign Key）</td>
+<td>指向另一张表的字段</td>
+<td>"车间编号"指向车间表</td>
+</tr>
+</tbody>
+</table>
+<p>操作数据库的语言是 <strong>SQL</strong>（结构化查询语言）。几个最常用的语句：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">-- 查询：把 2025 年 3 月入库、材质含 45 钢的零件列出来</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="err">零件号</span><span class="p">,</span><span class="w"> </span><span class="err">名称</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="err">零件表</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">入库日期</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="s1">'2025-03-01'</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">'2025-03-31'</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="k">AND</span><span class="w"> </span><span class="err">材质</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">'%45钢%'</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">-- 新增一条记录</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="err">零件表</span><span class="w"> </span><span class="p">(</span><span class="err">零件号</span><span class="p">,</span><span class="w"> </span><span class="err">名称</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'P-1001'</span><span class="p">,</span><span class="w"> </span><span class="s1">'传动轴'</span><span class="p">);</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1">-- 更新</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">UPDATE</span><span class="w"> </span><span class="err">零件表</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="err">状态</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'已领用'</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="err">零件号</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'P-1001'</span><span class="p">;</span>
+</code></pre></div>
+<p>SQL 值得学，因为它是"和数据库说话"的标准语言，AI 项目里做数据准备（第 4、10 章）会反复用到。</p>
+<h3 id="262">2.6.2 事务与索引：数据库为什么可靠又快速</h3>
+<p>两个概念级认知，帮你理解数据库的工程价值：</p>
+<ul>
+<li><strong>事务（Transaction）</strong>：把一组操作打包成一个"要么全部成功、要么全部回滚"的整体。比如"转账 = 扣钱 + 加钱"，中途任何一步失败，整体回滚，账不会对不上。数据库通过事务保证数据一致性（ACID 原则）。</li>
+<li><strong>索引（Index）</strong>：数据库为某列建立的"查账目录"，让查询从"逐行翻台账"变成"按目录直接定位"，速度提升几个数量级。代价是索引占用存储、写入变慢。给哪些列建索引，是数据库优化的核心工作。</li>
+</ul>
+<h3 id="263">2.6.3 非关系型数据库与向量数据库</h3>
+<p>非关系型数据库（NoSQL）不要求固定表格结构，适合海量、多样、变化快的数据（典型：MongoDB、Redis——Redis 常作缓存，见 2.7 节）。</p>
+<p>AI 世界里还有一类必须提前认识的：<strong>向量数据库（Vector Database）</strong>。它存储的是数据的"向量表示"（一组数字坐标），支持按"相似度"检索——本质是"语义上最接近的内容"。第 7 章做企业知识库问答（RAG）时，它就是检索的核心部件。这里只需知道：<strong>AI 应用离不开数据存储，既有传统的关系型数据库，也有为 AI 设计的向量数据库</strong>。</p>
+<hr />
+<p><img alt="图 2-7 数据库：表、索引、事务" src="../figures/ch2/fig2-7_%E6%95%B0%E6%8D%AE%E5%BA%93.png" /></p>
+<h2 id="27">2.7 架构：把系统搭得像车间产线</h2>
+<h3 id="271">2.7.1 架构是什么，为什么要先规划</h3>
+<p>架构（Architecture）是软件系统的整体结构与模块划分：有哪些模块、模块之间怎么连接、数据怎么流动。就像车间要先做布局规划再进设备，软件不规划架构就开写，等于不画车间布局图就进场装设备——初期很爽，后期返工。</p>
+<h3 id="272">2.7.2 怎么看一张架构图</h3>
+<p>架构图就是"系统布局图"：<strong>方框 = 模块/服务，箭头 = 数据流/调用关系</strong>。拿到任何一张架构图，只问三个问题：</p>
+<ol>
+<li>有哪些模块（方框）？</li>
+<li>模块之间传什么（箭头上的标签）？</li>
+<li>数据从哪进、从哪出（边界在哪）？</li>
+</ol>
+<p>看懂这三个问题，你就能读懂绝大多数 AI 方案的架构图——这是"看得懂 AI 方案"能力的第一步。</p>
+<h3 id="273">2.7.3 分层架构与单体/微服务</h3>
+<p>最常见的架构是<strong>三层分层</strong>：前端（界面层）→ 后端（业务逻辑层）→ 数据库（数据层）。数据单向流动：前端请求 → 后端处理 → 数据库存取 → 结果返回前端。</p>
+<p><strong>单体架构（Monolithic）</strong>：所有功能在一个程序里，像一条大产线——简单好管，但一处改动影响全局、扩充困难。<strong>微服务（Microservices）</strong>：拆成多个独立服务，各自部署、独立升级，像多条专业化产线——灵活可扩展，但协调与运维复杂（这正是 Kubernetes 要解决的问题，见 2.8 节）。</p>
+<h3 id="274">2.7.4 高可用与负载均衡（概念级）</h3>
+<p>大型系统要解决两个现实问题：</p>
+<ul>
+<li><strong>负载均衡（Load Balancing）</strong>：一台服务器扛不住所有请求，于是前面放一个"调度员"（如 Nginx），把请求分发给多台服务器。这也是 <code>www.baidu.com</code> 背后有多个 IP 的原因。</li>
+<li><strong>高可用（High Availability）</strong>：单台服务器会坏，于是同一服务部署多份，一台故障自动切换。用"冗余"换"可靠"，和数控机床配双回路一个道理。</li>
+</ul>
+<p>这两个概念是"生产级系统"的标志，第 9 章部署 AI 服务时会再见到。</p>
+<hr />
+<h2 id="28">2.8 容器与部署：从"自己电脑能跑"到"全世界能用"</h2>
+<h3 id="281">2.8.1 部署是什么</h3>
+<p>部署（Deployment）是把软件安装配置到运行环境、并让它正式运行起来的过程。你写的程序在自己电脑能跑，只等于"车间试制成功"；要让别人都能用，需要放到一台 7×24 运行的机器上、配好环境、接好网络——这一整套动作就是部署。<strong>"本地能跑"和"正式可用"之间，隔着一个部署</strong>。</p>
+<p>运行环境分两类：<strong>本地/内网</strong>（自己电脑或企业内网）和<strong>云服务器</strong>（租云厂商的机器，阿里云、腾讯云、AWS 等）。云服务的分层概念：</p>
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>全称</th>
+<th>你得到什么</th>
+<th>类比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IaaS</td>
+<td>基础设施即服务</td>
+<td>一台裸的服务器（CPU/内存/硬盘）</td>
+<td>租一间空厂房</td>
+</tr>
+<tr>
+<td>PaaS</td>
+<td>平台即服务</td>
+<td>服务器 + 运行环境（数据库等）</td>
+<td>租厂房 + 装好水电</td>
+</tr>
+<tr>
+<td>SaaS</td>
+<td>软件即服务</td>
+<td>直接可用的软件</td>
+<td>直接租用整条产线</td>
+</tr>
+</tbody>
+</table>
+<h3 id="282-docker">2.8.2 Docker：把环境一起打包</h3>
+<p>程序员最经典的问题："在我电脑上明明能跑，到你电脑上就报错。"原因通常是<strong>环境不一致</strong>：依赖库版本、系统配置、路径不同。</p>
+<p>Docker 的解决方案：把"软件 + 它的运行环境（依赖库、配置、系统文件）"打包成一个标准单元。两个核心概念：</p>
+<ul>
+<li><strong>镜像（Image）</strong>：打包好的"只读模板"，包含全部环境——类比：刻好盘的整套设备 + 工装 + 参数设置。</li>
+<li><strong>容器（Container）</strong>：镜像运行起来的实例——类比：用这套模板开出的、正在运行的一台设备。同一镜像可以开出任意多个容器。</li>
+</ul>
+<p>打包方式写在一个叫 <strong>Dockerfile</strong> 的文本文件里（内容是"从什么基础镜像开始、装什么、拷什么、启动什么"），构建一次镜像，到处运行。多个容器要一起跑（如"网页服务 + 数据库"），用 <strong>Docker Compose</strong> 一个命令全部启动。</p>
+<p>如果需要一个记忆锚点：<strong>Docker 容器像标准集装箱</strong>——设备连同工装打包运输，到哪个码头都能直接卸下来用。它解决的核心问题是"环境一致性"。</p>
+<h3 id="283-kubernetesk8s">2.8.3 Kubernetes（K8s）：容器多了谁来管</h3>
+<p>容器解决了"单台机器上的环境一致性"，但生产环境里容器有成百上千个，分布在几十台服务器上，又出现新问题：容器挂了一个谁来重启？流量怎么分配给各容器？服务器坏了容器怎么迁移？——这叫<strong>容器编排（Orchestration）</strong>。</p>
+<p>Kubernetes（简称 K8s，读作"kube-eights"）是事实标准的容器编排平台。四个核心概念，概念级理解即可：</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>节点（Node）</td>
+<td>集群里的一台服务器（物理机或虚拟机）</td>
+</tr>
+<tr>
+<td>集群（Cluster）</td>
+<td>一组节点组成的一个整体，对外像一台超级计算机</td>
+</tr>
+<tr>
+<td>Pod</td>
+<td>K8s 里最小的运行单元（一个或多个容器装在一起）</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td>声明"我要跑几个 Pod"，K8s 自动维持这个数量</td>
+</tr>
+</tbody>
+</table>
+<p>K8s 的核心能力一句话：<strong>你告诉它"我要运行 3 个这种容器"，它负责在集群里调度、维持、自动重启、自动扩容</strong>。就像车间的中央调度系统：你只管下工单，它管排产、看机、换刀、报警。</p>
+<p>对工程师的实际意义：第 9 章私有化部署 AI 服务时，小规模用 Docker 就够；企业级、多服务、要扩缩容时，才需要 K8s。<strong>先知道"容器管一台，K8s 管一群"就够了</strong>。</p>
+<p><img alt="图 2-8 Docker 与 Kubernetes：容器与编排" src="../figures/ch2/fig2-8_Docker%E4%B8%8EKubernetes.png" /></p>
+<h3 id="284-cicd">2.8.4 CI/CD：自动化的交付流水线</h3>
+<p>CI/CD 是软件交付的自动化流水线：</p>
+<ul>
+<li><strong>CI（持续集成）</strong>：代码一提交，自动编译 + 自动跑测试——有问题立刻发现，不让坏代码积累。</li>
+<li><strong>CD（持续部署）</strong>：测试通过后，自动构建镜像、自动部署上线。</li>
+</ul>
+<p>类比：<strong>自动化的装配-检验-发货线</strong>——代码提交是"零件到位"，测试是"质检"，部署是"发货"。人工参与越少，交付越快越稳。第 3 章学 Git 后，你会第一次体验"提交代码触发自动化检查"。</p>
+<hr />
+<p><img alt="图 2-10 部署流程：本地 → 服务器 → 发布" src="../figures/ch2/fig2-10_%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B.png" /></p>
+<h2 id="29">2.9 软件是怎么造出来的：工程流程全景</h2>
+<h3 id="291">2.9.1 六个阶段</h3>
+<p>软件工程（Software Engineering）的完整流程，类比一个产品从需求到持续改进的生命周期（图 2-9）：</p>
+<p><img alt="图 2-9 软件工程流程全景" src="../figures/ch2/fig2-9_%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%B5%81%E7%A8%8B.png" /></p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>干什么</th>
+<th>产物</th>
+<th>你要知道的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>需求</td>
+<td>明确要解决什么问题</td>
+<td>PRD（产品需求文档）</td>
+<td>设计任务书</td>
+</tr>
+<tr>
+<td>设计</td>
+<td>规划怎么实现</td>
+<td>架构图、接口设计</td>
+<td>总体方案</td>
+</tr>
+<tr>
+<td>开发</td>
+<td>写代码</td>
+<td>代码</td>
+<td>制造装配</td>
+</tr>
+<tr>
+<td>测试</td>
+<td>验证功能与质量</td>
+<td>测试报告</td>
+<td>质检 / 出厂试验</td>
+</tr>
+<tr>
+<td>上线</td>
+<td>部署发布</td>
+<td>正式运行的服务</td>
+<td>交付投产</td>
+</tr>
+<tr>
+<td>迭代</td>
+<td>收集反馈、持续改进</td>
+<td>新版本</td>
+<td>持续改进</td>
+</tr>
+</tbody>
+</table>
+<p>软件工程不是什么神秘学科，它就是工程管理在软件上的翻版。你的流程思维（PDCA、质量控制、文档管理）几乎可以平移过来——这是工程师学软件的巨大优势。</p>
+<h3 id="292">2.9.2 三个必须认识的工程概念</h3>
+<ul>
+<li><strong>MVP（最小可行产品）</strong>：先做功能最简、但能验证需求是否成立的版本，再迭代。类比：先做一台能加工一件零件的验证机，确认方案可行，再考虑量产线。</li>
+<li><strong>Git 版本管理</strong>：代码的"图纸版本管理"——每次改动留版本、可回退、可多人协作（分支/合并）。第 3 章会实际用起来。</li>
+<li><strong>编译器与解释器</strong>：代码要变成机器能执行的指令，需要翻译。<strong>编译器</strong>（如 C++）把整个程序一次性翻译成机器码再运行；<strong>解释器</strong>（如 Python）边翻译边执行。这也是为什么 Python 代码要"运行"（解释器执行）而 C++ 要"编译"（生成可执行文件）。Python 是 AI 世界的主力语言，因为它开发效率高、生态完善——代价是执行速度比编译型慢，但在 AI 场景里通常不是瓶颈。</li>
+</ul>
+<hr />
+<h2 id="210">2.10 本章地图与练习</h2>
+<h3 id="2101-ai">2.10.1 一张"学 AI 前的计算机世界地图"</h3>
+<p>把全章收成一张图（图 2-1），六层，从底到顶：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>第6层 软件工程：需求→设计→开发→测试→上线→迭代（PRD/MVP/Git/CI-CD）
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>第5层 容器与部署：云服务器（IaaS/PaaS/SaaS）· Docker（镜像/容器）· Kubernetes（编排）
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>第4层 软件应用：前端/后端/API/JSON · 数据库（SQL/事务/索引）· 架构（分层/微服务）
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>第3层 服务器与网络：服务器/集群 · IP/端口/DNS · HTTP（方法/状态码）· SSH
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>第2层 Linux 与命令行：终端/Shell · 文件系统 · 命令集 · 环境变量/PATH · 包管理器
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>第1层 硬件：CPU（指令/时钟）· 内存/硬盘 · GPU（并行/显存）· 操作系统（进程/权限）
+</code></pre></div>
+<p><img alt="图 2-1 计算机世界地图（六层总览）" src="../figures/ch2/fig2-1_%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%96%E7%95%8C%E5%9C%B0%E5%9B%BE.png" /></p>
+<p>以后遇到任何不懂的计算机词，先问自己：<strong>它在这张地图的哪一层、解决什么问题？</strong>——这就是老张的"地图思维"。</p>
+<h3 id="2102-30">2.10.2 最小实操示例：30 分钟在命令行里走通一圈</h3>
+<p><strong>实操 A：Linux 命令集走一遍</strong>（macOS 终端或 Windows 的 WSL 均可，命令通用）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 本段做什么：建目录、查看内容、看进程——感受命令行的节奏</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">cd</span><span class="w"> </span>~<span class="w">                </span><span class="c1"># 回到个人目录</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>mkdir<span class="w"> </span>ai-learning<span class="w">   </span><span class="c1"># 新建项目目录</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">cd</span><span class="w"> </span>ai-learning<span class="w">      </span><span class="c1"># 进入它</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">pwd</span><span class="w">                 </span><span class="c1"># 确认当前路径</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>ls<span class="w"> </span>-la<span class="w">              </span><span class="c1"># 列出内容（含隐藏文件，此刻应该几乎为空）</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>ps<span class="w">                  </span><span class="c1"># 查看当前终端的进程</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span><span class="w">          </span><span class="c1"># 查看环境变量 PATH 的内容</span>
+</code></pre></div>
+<p>在本书写作环境实测，<code>pwd</code> 输出的是你所在的完整路径（每个人不同），<code>ls -la</code> 会列出 <code>.</code> 和 <code>..</code> 两行（表示当前目录和上级目录），<code>ps</code> 输出进程列表，<code>echo $PATH</code> 会打出一长串冒号分隔的目录——那正是 2.2.6 节讲的 PATH：系统找程序时按这个顺序搜索。</p>
+<p><strong>实操 B：安装 Python 库并运行一个脚本</strong>（第 3 章会系统学，这里先打通环境）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python3<span class="w"> </span>--version<span class="w">   </span><span class="c1"># 检查 Python 版本（要求 3.10+）</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>pip3<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span><span class="c1"># 安装数据分析库 pandas</span>
+</code></pre></div>
+<p>然后创建 <code>hello.py</code>（内容如下）并运行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 目标：验证环境跑通，并输出一句"工程话"</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Python 版本："</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">python_version</span><span class="p">())</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"你好，老张——你的 AI 之路，从这一行开始。"</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python3<span class="w"> </span>hello.py
+</code></pre></div>
+<p><strong>实操 C：用 curl 观察一次真实的 HTTP 请求</strong>（这是本章的"惊喜练习"）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>curl<span class="w"> </span>-sI<span class="w"> </span>https://www.baidu.com
+</code></pre></div>
+<p><code>-s</code> 静默模式，<code>-I</code> 只取响应头。在本书写作环境实测，输出如下——这就是 2.3 节讲的状态码和响应头：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>HTTP/1.1 200 OK
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Cache-Control: private, no-cache...
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Content-Type: text/html
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Server: bfe
+</code></pre></div>
+<p>看到 <code>200 OK</code>，说明这次请求成功了。把 URL 换成一个不存在的地址再跑一次：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>curl<span class="w"> </span>-sI<span class="w"> </span>https://www.baidu.com/nonexist-xyz
+</code></pre></div>
+<p>实测输出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>HTTP/1.1 404 Not Found
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Content-Type: text/html; charset=iso-8859-1
+</code></pre></div>
+<p><code>404</code> 的意思就是"找不到"——现在你亲眼见过两个最重要的 HTTP 状态码了。</p>
+<h3 id="2103">2.10.3 练习与检验标准</h3>
+<p><strong>练习 1（能跑通）</strong>：完成实操 A、B、C 全部命令，记录每步输出。再追加：<code>cd /etc</code> 后用 <code>ls | head</code> 看看系统配置文件目录里有什么。</p>
+<p><strong>练习 2（能讲清）</strong>：不看资料，向同事讲清楚：GPU 为什么适合 AI 训练？Linux 为什么是 AI 的主场？Docker 和 Kubernetes 各自解决什么问题？</p>
+<p><strong>练习 3（能画出）</strong>：默画"网页请求旅程"流程图（浏览器→DNS→服务器→数据库→返回），并标注每一步用到的概念（IP / 端口 / DNS / HTTP / 数据库 / 前端渲染）。</p>
+<p><strong>双验收标准</strong>：
+- 能讲清：完整复述"计算机世界地图"六层结构，每个概念说得出"是什么 + 解决什么问题"；
+- 能跑通：实操 A/B/C 全部成功，输出与本书一致；
+- 验收六问（本章附加）：
+  1. 命令行是什么？——用文本命令操作电脑的方式（终端 + Shell）。
+  2. 前端和后端各干什么？——前端是浏览器里用户看到的界面；后端是服务器上处理逻辑与数据的部分；两者用 API（HTTP + JSON）通信。
+  3. 数据库存什么？——结构化数据（关系型用表存、SQL 查；还有为 AI 设计的向量数据库）。
+  4. 部署是做什么的？——把软件配置到运行环境、正式投产；小规模用 Docker，集群规模用 Kubernetes。
+  5. 为什么 AI 训练离不开 GPU？——神经网络训练是海量矩阵运算，GPU 有数千个并行计算单元，算力远超 CPU；显存决定模型规模。
+  6. 为什么 AI 生态在 Linux 上？——服务器、CUDA 工具链、AI 框架都以 Linux 为第一平台。</p>
+<hr />
+<h2 id="211">2.11 常见坑与工程师贴士</h2>
+<h3 id="_1">常见坑（本章高频翻车点）</h3>
+<table>
+<thead>
+<tr>
+<th>坑</th>
+<th>表现</th>
+<th>纠正</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>把命令行当编程</td>
+<td>"我不会编程，不敢用命令行"</td>
+<td>命令行只是"对话方式"；先会用再理解</td>
+</tr>
+<tr>
+<td>内存和硬盘分不清</td>
+<td>以为没保存的文件断电后还在</td>
+<td>内存断电即失，硬盘持久保存；保存=写回硬盘</td>
+</tr>
+<tr>
+<td>以为 GPU = 好一点的显卡</td>
+<td>用打游戏的经验理解 AI 训练</td>
+<td>GPU 的核心价值是并行计算 + 显存；AI 训练拼的是算力和显存</td>
+</tr>
+<tr>
+<td>在个人 Windows 上硬装 AI 环境</td>
+<td>装 CUDA 反复失败</td>
+<td>先本地学语法，正式训练用云 GPU 服务器（Linux）</td>
+</tr>
+<tr>
+<td>以为"部署 = 发布 App"</td>
+<td>觉得部署是上架商店</td>
+<td>部署=正式投产；本地跑通只算试制成功</td>
+</tr>
+<tr>
+<td>命令背了就忘</td>
+<td>反复查同样命令</td>
+<td>记"每个命令在电脑里干什么"，理解优先于背诵</td>
+</tr>
+<tr>
+<td>把数据库当 Excel</td>
+<td>用 Excel 思路理解数据库</td>
+<td>数据库是"有约束、可并发、可事务"的工程化台账，靠 SQL 操作</td>
+</tr>
+<tr>
+<td>跳过环境隔离</td>
+<td>一个环境装所有包，依赖打架</td>
+<td>每个项目用独立虚拟环境（conda/venv），第 3 章会实践</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">工程师贴士：把电脑当成一台你要管理的设备</h3>
+<p>你管理过机床、产线、设备档案，现在把电脑和服务器当成同样的对象：<strong>硬件是设备本体，操作系统是设备的管理系统，命令行是操作面板，环境变量是参数设置，Docker 是把设备连同参数一起打包的标准单元，Kubernetes 是整条产线的中央调度</strong>。遇到任何不懂的计算机术语，先问两个问题：它在这台"设备"上是哪个部件？它解决什么问题？——答上来就懂了。大多数计算机概念，工程师在车间里早就见过类似的形态。</p>
+<hr />
+<h2 id="_3">本章小结</h2>
+<ol>
+<li>硬件：CPU 按节拍执行指令，内存断电即失，硬盘持久保存，GPU 靠数千并行单元成为 AI 训练主力（显存决定模型规模）；</li>
+<li>Linux 是 AI 的主场：服务器、CUDA、AI 框架都以 Linux 为第一平台，命令、文件系统、环境变量、包管理器是基本功；</li>
+<li>网络世界靠 IP（门牌号）、端口（分机号）、DNS（查号台）、HTTP（请求-响应 + 状态码）协作；SSH 是远程操作服务器的标准方式；</li>
+<li>软件应用：前端是浏览器里的界面，后端是服务器上的逻辑，API（HTTP+JSON）连接两者；数据库是工程化台账，架构是系统布局规划；</li>
+<li>部署让软件正式投产：Docker 解决"环境一致性"，Kubernetes 管"一群容器"，CI/CD 自动化交付；</li>
+<li>学 AI 前先拿到这张"计算机世界地图"，建立原生计算机素养——后面每一章你都不会迷路。</li>
+</ol>
+<h2 id="_4">延伸阅读</h2>
+<ul>
+<li><strong>easy-vibe</strong>（开源，datawhalechina 出品）：附录"知识体系"9 大领域与本章逐节对应——计算机基础（操作系统、数据编码、计算机网络、编程语言图谱）、开发工具（命令行与 Shell、环境变量与 PATH、SSH 与认证、包管理器）、浏览器与前端、服务器与后端（HTTP 协议、认证与授权、缓存、限流）、数据（数据库基础、数据模型）、架构与系统设计（单体到微服务、高可用）、基础设施与运维（Linux 基础、Docker 容器、Kubernetes、CI/CD、云平台、监控与日志）。学完本章后按需深入。</li>
+<li><strong>vibe-vibe</strong>（开源，datawhalechina 出品，www.vibevibe.cn）：进阶篇"开发常识与技术栈、UI 与 UX、环境变量与安全、数据持久化与数据库、Localhost 与公网访问、Git、无服务器部署与 CI/CD、域名 DNS、云服务器运维"——与本章 2.2–2.8 节对应，适合做项目时对照查阅。</li>
+<li><strong>CS50</strong>（哈佛大学计算机导论，公开免费，有中文字幕）：第 0–2 周（二进制、C 语言、数组）与本章 2.1、2.9 节对应；想听英文原味讲解的工程师可作补充。</li>
+<li>术语表：本章全部术语（第 2 章·L1）见随书飞书术语表，每条含"英文 + 中文 + 一句话解释"。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      本作品采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cuoluan2012/ai-for-engineers" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

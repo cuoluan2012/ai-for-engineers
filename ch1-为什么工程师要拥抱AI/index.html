@@ -1,0 +1,1673 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="理工科零基础学习指南 —— 面向"有工作经验、零计算机背景"的理工科工程师">
+      
+      
+      
+        <link rel="canonical" href="https://cuoluan2012.github.io/ai-for-engineers/ch1-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B7%A5%E7%A8%8B%E5%B8%88%E8%A6%81%E6%8B%A5%E6%8A%B1AI/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>第 1 章 为什么工程师要拥抱 AI - AI for Engineers · 从工程师到 AI 工程师</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-ai" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-header__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI for Engineers · 从工程师到 AI 工程师
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第 1 章 为什么工程师要拥抱 AI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 1 章 为什么工程师要拥抱 AI
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 2 章 计算机通识
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 3 章 Python 第一课
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 4 章 机器学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 5 章 深度学习
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 6 章 大语言模型
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 7 章 RAG 知识库
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 8 章 AI 智能体
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 9 章 微调与私有化部署
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 10 章 工业数据与落地
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  第 11 章 从学到做
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-tabs__link">
+          
+  
+  
+  附录
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI for Engineers · 从工程师到 AI 工程师" class="md-nav__button md-logo" aria-label="AI for Engineers · 从工程师到 AI 工程师" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI for Engineers · 从工程师到 AI 工程师
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cuoluan2012/ai-for-engineers" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 1 章 为什么工程师要拥抱 AI
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 1 章 为什么工程师要拥抱 AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.0 本章解决什么问题
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 AI 已经进入车间：四个真实场景速写
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 AI 已经进入车间：四个真实场景速写">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景一：机器视觉质检——用"眼睛"代替人眼
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景二：预测性维护——让设备"提前告诉你"它要坏了
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景三：图纸与标准知识问答——把"老师傅的经验"变成随时能问的助手
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景四：智能排产与工艺优化——把约束条件交给算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四个场景的共同规律
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 AI 的能力边界：能做什么、不能做什么
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 AI 的能力边界：能做什么、不能做什么">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 能做什么（四个能力圈）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 不能做什么（四个边界，工程师必须清楚）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 工程师的独特优势：领域知识是稀缺资源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 工程师的独特优势：领域知识是稀缺资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第一层：AI 不懂你的领域
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二层：AI 项目的大头工作，恰恰是工程活
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三层：工程师×AI 是乘法，不是加法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 本书的学习地图：五层框架与学习顺序
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 本书的学习地图：五层框架与学习顺序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五层框架
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习顺序的三个原则
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时间投入的现实建议
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-ai-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 用 AI 学 AI：把大模型当学习伙伴
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 用 AI 学 AI：把大模型当学习伙伴">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四个最实用的用法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一个完整的示例对话（示意）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一个必须记住的提醒
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-90" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 配套练习：写一份自己的 90 天学习计划
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 配套练习：写一份自己的 90 天学习计划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        计划模板（可直接抄用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        老张的计划（参考示例）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        工程师贴士：怎么向别人解释你在学什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本章小结
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        延伸阅读
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 2 章 计算机通识
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch3-Python%E7%AC%AC%E4%B8%80%E8%AF%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 3 章 Python 第一课
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch4-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 4 章 机器学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch5-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 5 章 深度学习
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch6-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 6 章 大语言模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch7-RAG%E7%9F%A5%E8%AF%86%E5%BA%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 7 章 RAG 知识库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch8-AI%E6%99%BA%E8%83%BD%E4%BD%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 8 章 AI 智能体
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch9-%E5%BE%AE%E8%B0%83%E4%B8%8E%E9%83%A8%E7%BD%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 9 章 微调与私有化部署
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch10-%E5%B7%A5%E4%B8%9A%E8%90%BD%E5%9C%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 10 章 工业数据与落地
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ch11-%E4%BB%8E%E5%AD%A6%E5%88%B0%E5%81%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    第 11 章 从学到做
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E6%9C%AF%E8%AF%AD%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/%E7%AB%A0%E8%8A%82%E8%A6%86%E7%9B%96%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    术语表章节覆盖矩阵
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1-ai">第 1 章 为什么工程师要拥抱 AI</h1>
+<blockquote>
+<p>所属框架层：L0 学习地图
+预计篇幅：约 7,000 字（本章为全书的"入口章"，无代码门槛，第 3 段为"最小实操示例"：与大模型对话）
+配套文件：本章配图（SVG 源文件见 <code>figures/ch1/</code> 目录）、术语表第 1 章-L0 条目
+版本：v0.1（首稿）</p>
+</blockquote>
+<p><strong>本章验收标准</strong>：学完后能不看资料回答——AI 能帮工程师做什么、不能做什么？工程师在 AI 时代为什么有独特优势？你的 90 天学习计划是什么？</p>
+<hr />
+<h2 id="10">1.0 本章解决什么问题</h2>
+<p>这一章解决你翻开这本书时的第一个困惑：<strong>AI 跟我这个画图、算强度、管产线的工程师，到底有什么关系？</strong></p>
+<p>先给你讲一个真实发生过的场景。</p>
+<p>老张，40 岁，某机械厂设计部的资深工程师。去年年底，厂里在质检车间上了一套自动检测设备，据说是"AI 视觉质检"；隔壁工艺部开始用软件查企业标准，说是"AI 问答"；领导把老张叫过去，说："你评估一下，AI 对我们设计部能有什么用，写个报告。"</p>
+<p>老张当天晚上就开始查资料。三小时后他关掉电脑，脑子里只剩三个问题：第一，满屏的"机器学习""神经网络""大模型"，每个词好像都认识，连起来不知道在说什么；第二，所有教程都默认你会编程，第一课就是"打开终端安装 Python 环境"，他连终端是什么都不知道；第三，也是最要命的——他搜不到任何一份资料，告诉他"一个会画图、懂工艺、做了十年设计的工程师，到底该怎么学 AI"。</p>
+<p>他不是不聪明。他闭着眼睛都能背出轴类零件调质处理的三种工艺路线。但 AI 这个世界，对他来说就像一台没有铭牌、没有图纸、接口全不认识的陌生设备。</p>
+<p>这一章就是那份"铭牌和图纸"。我们先不碰任何代码，只回答四个问题：AI 已经在你身边做了什么？它到底能干什么、不能干什么？你作为工程师，凭什么在 AI 时代有优势？以及，接下来 6~12 个月，你该怎么学。</p>
+<h2 id="11-ai">1.1 AI 已经进入车间：四个真实场景速写</h2>
+<p>先说结论：<strong>AI 不是遥远的实验室技术，它已经以四种最常见的形态，进到了制造业的车间和办公室。</strong> 这四种形态，恰好也是本书后续章节的主线。</p>
+<h3 id="_1">场景一：机器视觉质检——用"眼睛"代替人眼</h3>
+<p><strong>机器视觉（Machine Vision）</strong>：给机器装上摄像头和算法，让它"看"产品并判断好坏。</p>
+<p>在零件表面缺陷检测上，过去靠质检员肉眼抽检：人眼会疲劳，漏检率随班次时间上升；而且高速产线上，很多缺陷一闪而过，人根本看不过来。</p>
+<p>现在的做法是：摄像头对准产线，AI 模型学习了几千张"合格品 + 缺陷品"的照片之后，能连续 24 小时以稳定标准判断"这个零件表面有没有划伤、有没有气孔"。它不休息、不疲劳、标准不漂移。</p>
+<p><strong>工程师视角</strong>：你不需要会写检测算法，但你需要知道——AI 质检项目的核心不是算法，而是<strong>打光方案、数据采集和缺陷定义</strong>，这三样全是工程师的活。</p>
+<h3 id="_2">场景二：预测性维护——让设备"提前告诉你"它要坏了</h3>
+<p><strong>预测性维护（Predictive Maintenance）</strong>：通过设备运行数据（振动、温度、电流、声音），预测设备什么时候可能故障，提前安排维修。</p>
+<p>过去是"坏了再修"（事后维修）或"定期保养"（预防性维修）。定期保养有个矛盾：保养太勤浪费产能，保养太晚挡不住突发故障——一台关键机床非计划停机一小时，整条产线跟着停，损失可能是几万块。</p>
+<p>现在的做法是：在设备上装传感器，AI 持续学习这台设备"正常运行时振动长什么样"，一旦振动特征偏离正常模式，提前几天甚至几周发出预警："主轴轴承有异常，建议下个检修窗口更换。"</p>
+<p><strong>工程师视角</strong>：模型只是告诉你"有异常"，<strong>判断"这个异常该不该停机处理"，仍然是你的事</strong>——误报警率、停机成本、检修策略，都需要工程经验来兜底。</p>
+<h3 id="_3">场景三：图纸与标准知识问答——把"老师傅的经验"变成随时能问的助手</h3>
+<p>每个厂都有这样的痛点：老师傅的经验在企业标准、图纸注释、故障案例里，人走了经验就断档；新人问问题，老人没时间教；翻标准手册要半天，还不一定翻得对。</p>
+<p>现在的做法是：把企业标准、图纸说明、设备手册、历史故障记录整理成知识库，用大模型（见 1.2 节）做一个"企业问答机器人"。新员工可以直接问："这台设备的润滑周期是多少？""这个公差标注是什么意思？"机器人在企业自己的资料里找答案，并告诉你出处。</p>
+<p><strong>工程师视角</strong>：这个场景的关键不是大模型本身，而是<strong>"哪些资料能进知识库、资料怎么整理、答案怎么校验"</strong>——这又是工程管理的活。第 7 章我们会完整做一遍。</p>
+<h3 id="_4">场景四：智能排产与工艺优化——把约束条件交给算法</h3>
+<p>排产是制造企业最头疼的问题之一：订单、交期、设备能力、物料、换型时间，几十个约束缠在一起，老师傅排一个星期的计划要半天，还经常被插单打乱。</p>
+<p>现在的做法是：把产能、优先级、约束条件告诉算法，AI 在几分钟内给出多版排产方案，并说明"如果加急这个订单，会影响哪几个订单"。工艺侧同理：AI 根据零件特征和历史工艺数据，推荐加工参数、刀具组合的初始方案，工艺员在此基础上确认修改。</p>
+<p><strong>工程师视角</strong>：AI 排产输出的是"建议方案"，<strong>最终拍板、处理突发、背绩效的仍然是人</strong>。它的价值是把老师傅从"反复试排"里解放出来，去做更值钱的事。</p>
+<p><img alt="图 1-1 车间里的 AI 应用地图" src="../figures/ch1/fig1-1_%E8%BD%A6%E9%97%B4AI%E5%BA%94%E7%94%A8%E5%9C%B0%E5%9B%BE.png" /></p>
+<h3 id="_5">四个场景的共同规律</h3>
+<p>把上面四个场景放在一起，你会看到一个共同规律：</p>
+<blockquote>
+<p><strong>AI 的价值不在"取代人"，而在"把重复的、海量的、靠经验积累的工作自动化，让人去做判断、协调和创新"。</strong></p>
+</blockquote>
+<p>这也是本书贯穿全书的基本立场。第 10 章我们会用一整章讲"怎么评估一个场景适不适合上 AI"，现在你只需要记住：<strong>这四个场景——视觉质检、预测性维护、知识问答、排产优化——就是 AI 在制造业最常见的四种落地形态</strong>，它们分别对应本书的第 5 章（视觉）、第 4 章（预测）、第 6~7 章（大模型与知识库）、第 10 章（落地）。</p>
+<h2 id="12-ai">1.2 AI 的能力边界：能做什么、不能做什么</h2>
+<p>上一节让你看到 AI 能做什么。这一节非常重要，因为<strong>判断"AI 能不能上这个场景"，本质上是在判断它是否落在能力边界内</strong>。</p>
+<p>先说一个最基础的概念：</p>
+<p><strong>人工智能（Artificial Intelligence，AI）</strong>：让机器完成"需要人类智能才能完成的任务"的技术。<strong>机器学习（Machine Learning）</strong>是 AI 的一个分支：不写死规则，而是让程序<strong>从数据里自动总结规律</strong>。<strong>深度学习（Deep Learning）</strong>是机器学习的一种主流方法：用多层神经网络从大量数据中学习，擅长处理图像、语音、文本这类复杂信号。<strong>大语言模型（Large Language Model，LLM）</strong>是深度学习在"理解和生成人类语言"上的集大成者——你平时用的对话式 AI 助手，背后就是它。</p>
+<p>类比记法：AI 是整个"自动化车间"；机器学习是"从数据里学工艺"的方法；深度学习是"多层神经网络"这条具体产线；大语言模型是这条产线上最擅长"读懂人话、说人话"的那台设备。</p>
+<h3 id="ai">AI 能做什么（四个能力圈）</h3>
+<p><strong>① 模式识别</strong>：从图像、声音、振动信号里找出规律。典型应用：缺陷检测、语音识别、设备状态诊断。这是 AI 最成熟的能力，也是工业落地最多的领域。</p>
+<p><strong>② 语言理解与生成</strong>：读懂一段文字的意思、回答问题、写摘要、生成报告。典型应用：知识问答、文档处理、翻译。这是近三年进步最快的领域。</p>
+<p><strong>③ 预测与趋势外推</strong>：基于历史数据预测未来走向。典型应用：故障预测、需求预测、寿命评估。注意：它预测的是"统计上的大概率"，不是"必然发生"。</p>
+<p><strong>④ 规划与调度</strong>：在约束条件下寻找可行方案。典型应用：排产、路径规划、任务拆解。</p>
+<p><img alt="图 1-2 AI 能力边界：能做什么、不能做什么" src="../figures/ch1/fig1-2_AI%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C.png" /></p>
+<h3 id="ai_1">AI 不能做什么（四个边界，工程师必须清楚）</h3>
+<p><strong>① 不懂物理定律</strong>：AI 是从数据里学的"相关性"，不是从力学原理推导的"因果性"。它不知道"这根轴为什么在这里会断"，它只知道"历史上这种情况断过很多次"。<strong>凡是要追究物理机理、要出计算书、要签字负责的场合，AI 只能辅助，不能替代。</strong></p>
+<p><strong>② 不承担责任</strong>：AI 没有"责任"概念。出了问题，追责对象是人。所以 AI 的每个关键输出，都必须有人确认、有人负责。</p>
+<p><strong>③ 不是绝对可靠</strong>：AI 给出的是<strong>概率</strong>，不是<strong>确定答案</strong>。它一定会犯错——漏检、答错、算错。工程上的对策是：设计"人机分工 + 抽检复核"机制，而不是指望 AI 永远正确。</p>
+<p><strong>④ 不擅长因果推理</strong>：它可以发现"A 和 B 总是一起出现"，但它不知道"是 A 导致 B，还是 B 导致 A，还是 C 导致两者"。把相关当因果，是 AI 应用翻车最常见的根源。</p>
+<p><strong>工程师视角（贴士）</strong>：把 AI 想成"一个读过很多书、但没下过车间的新员工"：它知识面广、反应快、不知疲倦，但它不懂材料、不懂力学、不懂现场，而且会一本正经地胡说八道。<strong>你的价值，就是当那个"把关的老师傅"。</strong></p>
+<h2 id="13">1.3 工程师的独特优势：领域知识是稀缺资源</h2>
+<p>听到这里，你可能有个疑问："如果 AI 这么强，那还要我干什么？"</p>
+<p>答案是：<strong>恰恰因为 AI 不懂工程，懂工程的人才更值钱。</strong> 这一节讲清楚三个层次。</p>
+<h3 id="ai_2">第一层：AI 不懂你的领域</h3>
+<p>一个再强的 AI 模型，也不知道"Ra 1.6"和"Ra 3.2"对一根传动轴意味着什么；不知道"调质"和"正火"在工艺上差在哪；不知道图纸上那个形位公差框格为什么必须这样标注。</p>
+<p>模型知道的是"这些词经常一起出现"，不是"这些东西在物理世界里意味着什么"。而工程师每天都在和这些东西打交道——<strong>领域知识，是 AI 时代最难被替代、也最稀缺的资源。</strong></p>
+<h3 id="ai_3">第二层：AI 项目的大头工作，恰恰是工程活</h3>
+<p>一个 AI 落地项目，真正的难点通常不在算法，而在：</p>
+<ul>
+<li><strong>定义问题</strong>：这个场景到底要解决什么？判断标准是什么？（这是工程问题）</li>
+<li><strong>数据</strong>：数据在哪？怎么采？什么质量算合格？要不要标注？（这是工程问题）</li>
+<li><strong>验证</strong>：模型说"合格"，怎么抽检？误判的代价怎么算？（这是工程问题）</li>
+<li><strong>落地</strong>：怎么接进现有流程？现场人员怎么配合？出了问题怎么办？（这是工程问题）</li>
+</ul>
+<p>算法工程师解决"模型怎么训练"，而你解决"项目能不能成"。第 10 章我们会展开讲这套方法论。</p>
+<p><img alt="图 1-3 工程师 × AI：乘数效应" src="../figures/ch1/fig1-3_%E5%B7%A5%E7%A8%8B%E5%B8%88%E4%B9%98AI.png" /></p>
+<h3 id="ai_4">第三层：工程师×AI 是乘法，不是加法</h3>
+<p>纯程序员做 AI 应用，缺"懂业务"；纯工程师不用 AI，缺"能放大"。两者结合，才是完整的：</p>
+<blockquote>
+<p><strong>AI 提供"从数据里找规律"的通用能力；工程师提供"定义问题、判断对错、落地执行"的领域能力。两者相乘，才是真正的生产力。</strong></p>
+</blockquote>
+<p>所以本书的立场很明确：<strong>你不需要变成程序员，你只需要变成"会用 AI 的工程师"</strong>——这正是这本书和市面上所有资料的根本区别。</p>
+<h2 id="14">1.4 本书的学习地图：五层框架与学习顺序</h2>
+<p>现在回答那个最实际的问题：<strong>到底怎么学？学多久？</strong></p>
+<p>本书把学习过程分成五层（见下图），从零基础到能落地，每一层都有明确的"学完你能做什么"。</p>
+<p><img alt="图 学习路径地图：从工程师到 AI 工程师" src="../figures/learning-map.png" /></p>
+<h3 id="_6">五层框架</h3>
+<table>
+<thead>
+<tr>
+<th>层</th>
+<th>名称</th>
+<th>包含章节</th>
+<th>学完你能做什么</th>
+<th>建议时长</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L0</td>
+<td>学习地图</td>
+<td>第 1 章（本章）</td>
+<td>知道 AI 能做什么、怎么学、往哪走</td>
+<td>3~5 天</td>
+</tr>
+<tr>
+<td>L1</td>
+<td>计算机通识 + 编程地基</td>
+<td>第 2、3 章</td>
+<td>看懂计算机世界地图；能写能跑 Python 小程序</td>
+<td>6~8 周</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>AI 核心基础</td>
+<td>第 4、5 章</td>
+<td>理解机器学习/深度学习原理；跑通分类、检测示例</td>
+<td>6~8 周</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>AI 应用工程化</td>
+<td>第 6、7、8、9 章</td>
+<td>会用大模型、搭知识库、做智能体、部署服务</td>
+<td>8~10 周</td>
+</tr>
+<tr>
+<td>L4</td>
+<td>工业智能落地</td>
+<td>第 10、11 章</td>
+<td>能独立评估场景、写落地方案、推动企业试点</td>
+<td>4~6 周</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">学习顺序的三个原则</h3>
+<p><strong>原则一：先补地基，再上高楼。</strong> 第 2 章（计算机通识）是全书最特殊的一章——市面资料默认你懂的东西（命令行、Linux、服务器、数据库、部署），这一章专门为零基础补齐。<strong>请务必按顺序读，不要跳过第 2 章直接学 Python。</strong></p>
+<p><strong>原则二：每一层都要"跑通"再前进。</strong> 本书每一章都配了可运行的示例。学习的关键不是"看完"，而是"跑通"：命令行实操要真的敲一遍，Python 示例要真的运行出结果。跑不通，说明上一层的知识有缺口，回去补。</p>
+<p><strong>原则三：用 AI 学 AI。</strong> 学习过程中遇到任何不懂的概念，都可以直接问 AI 助手——下一节专门讲怎么问。</p>
+<h3 id="_8">时间投入的现实建议</h3>
+<ul>
+<li><strong>每天 1~2 小时</strong>，周末 4~6 小时，是可持续的节奏；</li>
+<li>全书主线约 <strong>6~12 个月</strong> 学完。不用赶进度，跑通比看完重要；</li>
+<li>每章末尾都有"验收标准"，<strong>能不看资料复述核心概念 + 能跑通示例代码</strong>，再进入下一章。</li>
+</ul>
+<h2 id="15-ai-ai">1.5 用 AI 学 AI：把大模型当学习伙伴</h2>
+<p>这一节给你一个"立刻能用"的实操：<strong>用对话式 AI 助手当你的私人老师。</strong> 这也是本书唯一不依赖编程环境的章节——你只需要有一个能对话的 AI 助手（网页版、App 均可）。</p>
+<p><strong>提示词（Prompt）</strong>：你发给 AI 的指令文字。别把它想复杂，它就是你跟 AI 说话时的那段话。想让 AI 教得好，关键不是技巧，而是<strong>把话说清楚</strong>。</p>
+<h3 id="_9">四个最实用的用法</h3>
+<p><strong>用法一：让 AI 用车间语言解释概念。</strong> 遇到不懂的术语，直接让它换一种说法：</p>
+<blockquote>
+<p>提示词："我是一个有 10 年经验的机械工程师，没写过代码。请用车间里的例子给我讲清楚什么是'神经网络'，不要用编程术语。"</p>
+</blockquote>
+<p><strong>用法二：让 AI 出题考你。</strong> 学完一节，让它出几道题检验：</p>
+<blockquote>
+<p>提示词："我刚学完'机器学习'的基本概念，请出 5 道判断题考我，每题给出答案和解释。"</p>
+</blockquote>
+<p><strong>用法三：把报错贴给 AI 改错。</strong> 以后你写代码遇到报错，把报错信息完整贴给它：</p>
+<blockquote>
+<p>提示词："我运行 Python 报了下面的错，我是初学者，请告诉我错在哪、怎么改：〔粘贴报错全文〕"</p>
+</blockquote>
+<p><strong>用法四：让 AI 帮你规划拆解。</strong> 把一个大任务拆成小步骤：</p>
+<blockquote>
+<p>提示词："我想在 3 个月内入门 Python 并用它做一个轴强度校核小工具，请帮我拆成每周的具体任务。"</p>
+</blockquote>
+<h3 id="_10">一个完整的示例对话（示意）</h3>
+<p>以"什么是过拟合"为例，一位工程师和 AI 的对话大致是这样（示意，实际输出以你的对话为准）：</p>
+<blockquote>
+<p><strong>你</strong>：我是机械工程师，没学过统计。请用车间里的例子解释"过拟合"。
+<strong>AI</strong>：可以。过拟合就是"模型只记住了训练用的那批数据，换一批数据就不行了"。打个比方：老师傅带徒弟，徒弟把上一批零件的加工参数背得滚瓜烂熟，这批零件做得完美；但换一批新零件，他就不会了——因为他背的是"这批零件的答案"，不是"加工的规律"。机器学习里的过拟合，就是这个徒弟。
+<strong>你</strong>：那怎么避免过拟合？
+<strong>AI</strong>：三个常用办法：一是增加训练数据（让徒弟多见不同的零件）；二是降低模型复杂度（让模型别把细节背得太死）；三是交叉验证（换几批数据反复检验）。第 4 章会用轴承故障数据完整演示。</p>
+</blockquote>
+<p>注意对话里的两个细节：<strong>AI 用了车间类比、且在第 4 章我们会兑现这个承诺</strong>——这就是"用 AI 学 AI"和本书结构配合的效果。</p>
+<h3 id="_11">一个必须记住的提醒</h3>
+<p>AI 会一本正经地胡说八道（这叫"幻觉"，第 6 章详解）。<strong>凡是涉及公式、标准、法规、安全的内容，必须以权威资料为准，AI 的回答只能当参考线索。</strong> 把 AI 当"博学的实习生"，别当"权威的教科书"。</p>
+<h2 id="16-90">1.6 配套练习：写一份自己的 90 天学习计划</h2>
+<p>本章的交付物，是一份你自己的 <strong>90 天学习计划</strong>。这很重要——没有计划，你会在"不知道学什么"里反复纠结，然后在第三周放弃。</p>
+<h3 id="_12">计划模板（可直接抄用）</h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>时间</th>
+<th>做什么</th>
+<th>完成标志</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一阶段：通识与方向</td>
+<td>第 1~30 天</td>
+<td>读完本书第 1、2 章；跟着第 2 章的命令行实操全部敲一遍</td>
+<td>能不看资料回答第 2 章验收四问</td>
+</tr>
+<tr>
+<td>第二阶段：编程入门</td>
+<td>第 31~60 天</td>
+<td>学第 3 章 Python；跑通"轴强度校核"小工具</td>
+<td>用自己的参数跑出校核报告</td>
+</tr>
+<tr>
+<td>第三阶段：第一个 AI 示例</td>
+<td>第 61~90 天</td>
+<td>学第 4 章机器学习；跑通"设备异常分类"示例</td>
+<td>用示例数据训练出模型并给出评估结果</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_13">老张的计划（参考示例）</h3>
+<ul>
+<li><strong>投入</strong>：工作日每晚 21:00–22:30，周末半天；</li>
+<li><strong>工具</strong>：一台普通笔记本（第 2 章会讲需要什么配置）；</li>
+<li><strong>第一阶段目标</strong>：第 2 章 10 节读完，命令行实操 A/B/C 全部完成，能把"计算机世界地图"六层结构给同事讲一遍；</li>
+<li><strong>第二阶段目标</strong>：Python 语法过一遍，把轴强度校核工具改造成"输入我们厂常用材料参数"的版本；</li>
+<li><strong>第三阶段目标</strong>：跑通轴承故障分类示例，能向领导演示"AI 能做设备诊断"。</li>
+</ul>
+<h3 id="_14">工程师贴士：怎么向别人解释你在学什么</h3>
+<p>当家人、同事问起"你在学什么"，用一句话版本：</p>
+<blockquote>
+<p>"我在学怎么让 AI 帮我们干活——比如让电脑帮我查标准、看零件缺陷、预测设备故障。不是学写代码当程序员，是学'怎么用 AI 这个新工具'，就像当年学 CAD 一样。"</p>
+</blockquote>
+<p>这句话有三个作用：让家人放心（不是转行）、让同事听懂（是工具不是威胁）、让你自己清醒（你的目标是用 AI 赋能本专业，不是变成程序员）。</p>
+<hr />
+<h2 id="_15">本章小结</h2>
+<ol>
+<li>AI 已以四种形态进入制造业：视觉质检、预测性维护、知识问答、排产优化；</li>
+<li>AI 能做的四件事：模式识别、语言理解、预测、规划；不能做的四件事：不懂物理、不担责任、不绝对可靠、不擅长因果；</li>
+<li>工程师的独特优势是领域知识——AI 项目的大头工作是工程活，工程师×AI 是乘法；</li>
+<li>全书五层框架（L0~L4），约 6~12 个月学完，每层"跑通"再前进；</li>
+<li>用 AI 学 AI 的四个用法：解释、出题、改错、拆解；关键结论要以权威资料为准。</li>
+</ol>
+<h2 id="_16">延伸阅读</h2>
+<ul>
+<li>开源入门资料：<a href="https://github.com/datawhalechina/vibe-vibe">vibe-vibe（零基础 AI 学习路线）</a>、<a href="https://github.com/datawhalechina/easy-vibe">easy-vibe（基础知识体系）</a>——本书第 2 章内容与这两个项目的附录知识体系相互印证</li>
+<li>概念加深：吴恩达《机器学习》课程第一课（免费公开）、李宏毅《机器学习》课程前两讲（中文）</li>
+<li>实操准备：下一章（第 2 章）不需要安装任何软件，直接开读即可</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      本作品采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cuoluan2012/ai-for-engineers" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

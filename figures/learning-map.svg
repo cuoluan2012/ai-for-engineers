@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="860" viewBox="0 0 1500 860" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#8A9099"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1500" height="860" rx="20" fill="#F7F8FA"/>
+  <text x="750" y="56" font-size="34" font-weight="bold" fill="#1F2329" text-anchor="middle">从工程师到 AI 工程师：全书学习路径</text>
+  <text x="750" y="88" font-size="18" fill="#646A73" text-anchor="middle">理工科零基础 · 三条主线 · 十一章节</text>
+
+  <!-- 批次 1：地基 -->
+  <rect x="60" y="130" width="430" height="560" rx="16" fill="#E8F0FA" stroke="#2B6CB0" stroke-width="2.5"/>
+  <rect x="60" y="130" width="430" height="64" rx="16" fill="#2B6CB0"/>
+  <text x="275" y="154" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">第一批 · 地基</text>
+  <text x="275" y="180" font-size="15" fill="#D6E4F5" text-anchor="middle">建立计算机素养（第 1–2 章）</text>
+  <!-- 节点 -->
+  <g font-size="17" fill="#1F2329" text-anchor="middle">
+    <rect x="95" y="225" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="275" y="250" font-weight="bold">第 1 章 · 为什么要学 AI</text>
+    <text x="275" y="274" font-size="13" fill="#646A73">产业趋势 · 学习路径 · 用 AI 学 AI</text>
+    <rect x="95" y="310" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="275" y="335" font-weight="bold">第 2 章 · 计算机通识</text>
+    <text x="275" y="359" font-size="13" fill="#646A73">硬件 · Linux · 网络 · 前端后端 · 数据库 · Docker</text>
+    <rect x="95" y="395" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="275" y="420" font-weight="bold">配套 · 术语表 / 工程类比</text>
+    <text x="275" y="444" font-size="13" fill="#646A73">glossary/ 随章节持续更新</text>
+    <rect x="95" y="480" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="275" y="505" font-weight="bold">配套 · 开发工具链</text>
+    <text x="275" y="529" font-size="13" fill="#646A73">Git · 命令行 · IDE · 环境搭建</text>
+    <rect x="95" y="565" width="360" height="58" rx="12" fill="#FFF1E5" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="275" y="590" font-weight="bold" fill="#FF7D00">学完检验：读懂一张架构图</text>
+    <text x="275" y="614" font-size="13" fill="#646A73">知道每个概念是什么、为什么存在</text>
+  </g>
+
+  <!-- 批次 2：AI 核心 -->
+  <rect x="535" y="130" width="430" height="560" rx="16" fill="#FFF1E5" stroke="#FF7D00" stroke-width="2.5"/>
+  <rect x="535" y="130" width="430" height="64" rx="16" fill="#FF7D00"/>
+  <text x="750" y="154" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">第二批 · AI 核心</text>
+  <text x="750" y="180" font-size="15" fill="#FFE9D6" text-anchor="middle">自己跑通 AI 示例（第 3–6 章）</text>
+  <g font-size="17" fill="#1F2329" text-anchor="middle">
+    <rect x="570" y="225" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="750" y="250" font-weight="bold">第 3 章 · Python 第一课</text>
+    <text x="750" y="274" font-size="13" fill="#646A73">变量 · 容器 · 控制流 · 函数 · 虚拟环境</text>
+    <rect x="570" y="310" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="750" y="335" font-weight="bold">第 4 章 · 机器学习</text>
+    <text x="750" y="359" font-size="13" fill="#646A73">经典算法 · 模型评估 · 特征工程</text>
+    <rect x="570" y="395" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="750" y="420" font-weight="bold">第 5 章 · 深度学习</text>
+    <text x="750" y="444" font-size="13" fill="#646A73">神经网络 · CNN/RNN · PyTorch 起步</text>
+    <rect x="570" y="480" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="750" y="505" font-weight="bold">第 6 章 · 大语言模型</text>
+    <text x="750" y="529" font-size="13" fill="#646A73">Token · Transformer · 提示工程</text>
+    <rect x="570" y="565" width="360" height="58" rx="12" fill="#FFF1E5" stroke="#FF7D00" stroke-width="1.5"/>
+    <text x="750" y="590" font-weight="bold" fill="#FF7D00">学完检验：独立跑通示例代码</text>
+    <text x="750" y="614" font-size="13" fill="#646A73">code/ 目录示例全部可运行</text>
+  </g>
+
+  <!-- 批次 3：工程落地 -->
+  <rect x="1010" y="130" width="430" height="560" rx="16" fill="#E8F6EF" stroke="#34C07C" stroke-width="2.5"/>
+  <rect x="1010" y="130" width="430" height="64" rx="16" fill="#34C07C"/>
+  <text x="1225" y="154" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">第三批 · 工程落地</text>
+  <text x="1225" y="180" font-size="15" fill="#D8F2E6" text-anchor="middle">把 AI 用回本专业（第 7–11 章）</text>
+  <g font-size="17" fill="#1F2329" text-anchor="middle">
+    <rect x="1045" y="225" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="1225" y="250" font-weight="bold">第 7 章 · RAG 知识库</text>
+    <text x="1225" y="274" font-size="13" fill="#646A73">企业标准 · 图纸 · 技术文档问答机器人</text>
+    <rect x="1045" y="310" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="1225" y="335" font-weight="bold">第 8 章 · AI 智能体</text>
+    <text x="1225" y="359" font-size="13" fill="#646A73">Agent · 工具调用 · 多智能体协作</text>
+    <rect x="1045" y="395" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="1225" y="420" font-weight="bold">第 9 章 · 微调与私有化部署</text>
+    <text x="1225" y="444" font-size="13" fill="#646A73">LoRA · 量化 · GPU 服务器 · 企业防火墙</text>
+    <rect x="1045" y="480" width="360" height="58" rx="12" fill="#FFFFFF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="1225" y="505" font-weight="bold">第 10 章 · 工业数据与落地场景</text>
+    <text x="1225" y="529" font-size="13" fill="#646A73">CAD/CAE/PLM · 数字孪生 · 产线场景</text>
+    <rect x="1045" y="565" width="360" height="58" rx="12" fill="#E8F6EF" stroke="#34C07C" stroke-width="1.5"/>
+    <text x="1225" y="590" font-weight="bold" fill="#34C07C">第 11 章 · 从学到做</text>
+    <text x="1225" y="614" font-size="13" fill="#646A73">企业试点 · ROI · 工程师的 AI 转型路线</text>
+  </g>
+
+  <!-- 批次间箭头 -->
+  <line x1="494" y1="410" x2="530" y2="410" stroke="#8A9099" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="969" y1="410" x2="1005" y2="410" stroke="#8A9099" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <!-- 底部 -->
+  <rect x="60" y="712" width="1380" height="70" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="750" y="742" font-size="19" font-weight="bold" fill="#1F2329" text-anchor="middle">一句话路线：先补计算机素养 → 再学 AI 核心 → 最后落回你的专业场景</text>
+  <text x="750" y="770" font-size="15" fill="#646A73" text-anchor="middle">每章配套：正文（Markdown）+ 配图（SVG/PNG）+ 示例代码 + 术语表 + PDF</text>
+
+  <text x="750" y="826" font-size="16" fill="#8A9099" text-anchor="middle">图：AI for Engineers 全书学习路径（示意，随写作进度更新）</text>
+</svg>
