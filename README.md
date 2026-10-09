@@ -13,7 +13,7 @@
 <a href="https://github.com/cuoluan2012/ai-for-engineers/releases"><img src="https://img.shields.io/badge/PDF-Download-ff7d00?style=for-the-badge&logo=adobeacrobatreader&logoColor=white&labelColor=1a1a2e" alt="PDF"></a>
 </p>
 
-**🔖 当前状态：第 1、2、3 章已完成（v0.1），全书按大纲推进中**
+**🔖 当前状态：全书 11 章 + 附录术语表已完成（v1.0 · 234 条术语）**
 
 </div>
 
@@ -59,20 +59,21 @@
 | 第 1 章 为什么工程师要拥抱 AI | 产业趋势、学习路径、用 AI 学 AI | ✅ 已完成 |
 | 第 2 章 计算机通识：学 AI 前必懂的基础课 | 硬件/CPU/GPU、Linux、服务器与网络、前端后端、UI/UX、数据库、架构、Docker/K8s、部署、软件工程 | ✅ 已完成 |
 | 第 3 章 编程第一课：像搭积木一样学 Python | 变量、容器、控制流、函数、虚拟环境 | ✅ 已完成 |
-| 第 4 章 机器学习：让机器从数据里找规律 | 经典算法、模型评估、特征工程 | 规划中 |
-| 第 5 章 深度学习与神经网络 | 神经网络、CNN/RNN、PyTorch 起步 | 规划中 |
-| 第 6 章 大语言模型与提示词 | Token、Transformer、提示工程 | 规划中 |
-| 第 7 章 RAG 知识库 | Embedding、向量数据库、企业标准/图纸问答 | 规划中 |
-| 第 8 章 AI 智能体：从"问答"到"干活" | Agent、工具调用、多智能体 | 规划中 |
-| 第 9 章 模型微调与私有化部署 | LoRA、量化、GPU 服务器、企业防火墙内部署 | 规划中 |
-| 第 10 章 工业数据与 AI 落地场景 | 工业数据资产、CAD/CAE/PLM 场景、数字孪生 | 规划中 |
-| 第 11 章 从学到做：企业试点与个人成长 | 试点选型、ROI、工程师的 AI 转型路线 | 规划中 |
+| 第 4 章 机器学习：让机器从数据里找规律 | 经典算法、模型评估、特征工程 | ✅ 已完成 |
+| 第 5 章 深度学习与神经网络 | 神经网络、CNN/RNN、PyTorch 起步 | ✅ 已完成 |
+| 第 6 章 大语言模型与提示词 | Token、Transformer、提示工程 | ✅ 已完成 |
+| 第 7 章 RAG 知识库 | Embedding、向量数据库、企业标准/图纸问答 | ✅ 已完成 |
+| 第 8 章 AI 智能体：从"问答"到"干活" | Agent、工具调用、多智能体 | ✅ 已完成 |
+| 第 9 章 模型微调与私有化部署 | LoRA、量化、GPU 服务器、企业防火墙内部署 | ✅ 已完成 |
+| 第 10 章 工业数据与 AI 落地 | 工业数据资产、CAD/CAE/PLM 场景、数字孪生 | ✅ 已完成 |
+| 第 11 章 从学到做：企业试点与个人成长 | 试点选型、ROI、工程师的 AI 转型路线 | ✅ 已完成 |
+| 附录 术语表（234 条） | 全章节术语、中文译名、工程类比、所属模块 | ✅ 已完成 |
 
 ## 在线阅读与下载
 
 - 📖 **在线文档**：<https://cuoluan2012.github.io/ai-for-engineers/>
-- 📄 **PDF 下载**：在 [Releases](https://github.com/cuoluan2012/ai-for-engineers/releases) 页面下载整书或分章 PDF
-- 📚 **术语表**：`glossary/` 目录（Markdown / CSV，随章节持续更新）
+- 📄 **PDF 下载**：在 [Releases](https://github.com/cuoluan2012/ai-for-engineers/releases) 页面下载分章 PDF（`tools/build-pdf.sh` 可本地一键生成全部章节）
+- 📚 **术语表**：`glossary/` 目录（Markdown / CSV，当前 **234 条**，覆盖全书 11 章）
 
 ## 仓库结构
 
@@ -82,8 +83,9 @@ ai-for-engineers/
 ├── LICENSE            # CC BY-NC-SA 4.0
 ├── docs/              # 全书 Markdown 源（MkDocs 站点）
 ├── figures/           # 配图（SVG 源 + PNG 导出）
-├── code/              # 示例代码（按章分目录）
-├── glossary/          # 术语表
+├── code/              # 示例代码（按章分目录，均真实运行过）
+├── glossary/          # 术语表（Markdown / CSV / 章节覆盖矩阵）
+├── artifacts/         # 分章 PDF 构建产物（通过 GitHub Releases 发布）
 └── tools/             # PDF 生成等脚本
 ```
 

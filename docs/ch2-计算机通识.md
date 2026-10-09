@@ -72,7 +72,7 @@
 AI 实践中最常见的 GPU 名词：NVIDIA 的 CUDA（GPU 的编程接口）、显存 8G/24G/80G（决定模型规模）、GPU 服务器（多卡集群，按小时租赁）。第 9 章讲私有化部署时会再算这笔账。
 
 
-![](figures/ch2/fig2-3_CPUvsGPU.png)
+![图 2-3 CPU vs GPU：串行 vs 并行](figures/ch2/fig2-3_CPUvsGPU.png)
 
 ### 2.1.4 操作系统：硬件之上的"管理者"
 
@@ -199,7 +199,7 @@ Linux 的一切文件都从根目录 `/` 开始，是一棵倒挂的树。几个
 ---
 
 
-![](figures/ch2/fig2-2_Linux工作台.png)
+![图 2-2 Linux 工作台：文件系统与命令](figures/ch2/fig2-2_Linux工作台.png)
 
 ## 2.3 服务器与网络
 
@@ -249,7 +249,7 @@ HTTPS 是 HTTP 的加密版本：传输内容加密（相当于单据套了密�
 你在浏览器输入 `https://example.com`，背后发生的事（图 2-4）：
 
 
-![](figures/ch2/fig2-4_网页请求旅程.png)
+![图 2-4 网页请求旅程（浏览器→DNS→服务器→数据库→返回）](figures/ch2/fig2-4_网页请求旅程.png)
 
 1. 浏览器先查 DNS："example.com 的 IP 是多少？"
 2. DNS 返回 IP（如 `93.184.216.34`）。
@@ -313,7 +313,7 @@ Qt 是一套跨平台桌面软件界面框架——用 C++/Python 等语言快�
 ---
 
 
-![](figures/ch2/fig2-5_前端后端与Qt.png)
+![图 2-5 前端与后端（含 API 与 JSON）](figures/ch2/fig2-5_前端后端与Qt.png)
 
 ## 2.5 UI 与 UX：好看与好用
 
@@ -327,7 +327,7 @@ Qt 是一套跨平台桌面软件界面框架——用 C++/Python 等语言快�
 ---
 
 
-![](figures/ch2/fig2-6_UI与UX.png)
+![图 2-6 UI 与 UX 的关系](figures/ch2/fig2-6_UI与UX.png)
 
 ## 2.6 数据库：软件的记忆库
 
@@ -376,7 +376,7 @@ AI 世界里还有一类必须提前认识的：**向量数据库（Vector Datab
 ---
 
 
-![](figures/ch2/fig2-7_数据库.png)
+![图 2-7 数据库：表、索引、事务](figures/ch2/fig2-7_数据库.png)
 
 ## 2.7 架构：把系统搭得像车间产线
 
@@ -456,7 +456,7 @@ K8s 的核心能力一句话：**你告诉它"我要运行 3 个这种容器"，
 对工程师的实际意义：第 9 章私有化部署 AI 服务时，小规模用 Docker 就够；企业级、多服务、要扩缩容时，才需要 K8s。**先知道"容器管一台，K8s 管一群"就够了**。
 
 
-![](figures/ch2/fig2-8_Docker与Kubernetes.png)
+![图 2-8 Docker 与 Kubernetes：容器与编排](figures/ch2/fig2-8_Docker与Kubernetes.png)
 
 ### 2.8.4 CI/CD：自动化的交付流水线
 
@@ -470,7 +470,7 @@ CI/CD 是软件交付的自动化流水线：
 ---
 
 
-![](figures/ch2/fig2-10_部署流程.png)
+![图 2-10 部署流程：本地 → 服务器 → 发布](figures/ch2/fig2-10_部署流程.png)
 
 ## 2.9 软件是怎么造出来的：工程流程全景
 
@@ -479,7 +479,7 @@ CI/CD 是软件交付的自动化流水线：
 软件工程（Software Engineering）的完整流程，类比一个产品从需求到持续改进的生命周期（图 2-9）：
 
 
-![](figures/ch2/fig2-9_软件工程流程.png)
+![图 2-9 软件工程流程全景](figures/ch2/fig2-9_软件工程流程.png)
 
 | 阶段 | 干什么 | 产物 | 你要知道的 |
 |---|---|---|---|
@@ -516,7 +516,7 @@ CI/CD 是软件交付的自动化流水线：
 ```
 
 
-![](figures/ch2/fig2-1_计算机世界地图.png)
+![图 2-1 计算机世界地图（六层总览）](figures/ch2/fig2-1_计算机世界地图.png)
 
 以后遇到任何不懂的计算机词，先问自己：**它在这张地图的哪一层、解决什么问题？**——这就是老张的"地图思维"。
 

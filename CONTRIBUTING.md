@@ -8,7 +8,7 @@
 |---|---|---|
 | 🐛 纠错 | 正文、配图、示例代码里的事实或文字错误 | 提 [Issue](https://github.com/cuoluan2012/ai-for-engineers/issues)，标题带章节号 |
 | 💡 建议 | 章节优先级、内容取舍、读者痛点补充 | GitHub [Discussion](https://github.com/cuoluan2012/ai-for-engineers/discussions) |
-| ✍️ 写作 | 认领未完成章节（第 1、3–11 章） | 先开 Issue 说明你想写哪章与大纲，经讨论后开工 |
+| ✍️ 写作 | 增补章节内容、扩充练习与案例（全书 11 章主体已完成） | 先开 Issue 说明想写什么，经讨论后开工 |
 | 🖼️ 配图 | 为章节绘制示意图、流程图、对比图（SVG 优先） | 跟随对应章节 PR |
 | 🔧 示例代码 | 让 `code/` 下的示例更简单、更可运行 | 跟随对应章节 PR |
 
