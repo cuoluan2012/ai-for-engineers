@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">从“预测下一个词”到写报告</text>
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  <marker id="arror" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#FF7D00"/></marker></defs>
+  <rect x="90" y="100" width="820" height="120" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="120" y="135" font-size="14" font-weight="bold" fill="#1F2329">老张在写设备检修报告：</text>
+  <text x="120" y="170" font-size="15" fill="#1F2329">“这台主轴轴承磨损</text>
+  <rect x="300" y="146" width="150" height="38" rx="8" fill="#FF7D00" opacity="0.15"/>
+  <text x="375" y="171" text-anchor="middle" font-size="15" font-weight="bold" fill="#D9480F">下一个词?</text>
+  <text x="120" y="205" font-size="14" fill="#646A73">模型看过几万亿个词，猜你最可能写：</text>
+<rect x="120" y="215" width="150" height="44" rx="10" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+<text x="195" y="243" text-anchor="middle" font-size="15" font-weight="bold" fill="#D9480F">明显，</text>
+<rect x="260" y="215" width="150" height="44" rx="10" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+<text x="335" y="243" text-anchor="middle" font-size="15" font-weight="bold" fill="#D9480F">得换轴承了，</text>
+<rect x="470" y="215" width="150" height="44" rx="10" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+<text x="545" y="243" text-anchor="middle" font-size="15" font-weight="bold" fill="#D9480F">严重，</text>
+
+  <rect x="90" y="300" width="820" height="190" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="120" y="335" font-size="14" font-weight="bold" fill="#2B6CB0">自回归生成：一个词一个词往外蹦</text>
+<rect x="120" y="350" width="260" height="90" rx="10" fill="#E8F3FF"/>
+  <text x="140" y="375" font-size="13" font-weight="bold" fill="#2B6CB0">① 预测</text>
+  <text x="140" y="400" font-size="14" fill="#1F2329">“磨损”</text>
+  <text x="140" y="424" font-size="12" fill="#646A73">已生成：这台主轴轴承磨损明显</text>
+<rect x="330" y="350" width="260" height="90" rx="10" fill="#E8F3FF"/>
+  <text x="350" y="375" font-size="13" font-weight="bold" fill="#2B6CB0">② 接上再预测</text>
+  <text x="350" y="400" font-size="14" fill="#1F2329">“明显”</text>
+  <text x="350" y="424" font-size="12" fill="#646A73">已生成：这台主轴轴承磨损明显</text>
+<rect x="560" y="350" width="260" height="90" rx="10" fill="#E8F3FF"/>
+  <text x="580" y="375" font-size="13" font-weight="bold" fill="#2B6CB0">③ 再接再预测</text>
+  <text x="580" y="400" font-size="14" fill="#1F2329">“，建议停机检修”</text>
+  <text x="580" y="424" font-size="12" fill="#646A73">已生成：这台主轴轴承磨损明显</text>
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 6-1 大模型本质是“预测下一个词”，一个词一个词地生成整段话（示意）</text>
+</svg>

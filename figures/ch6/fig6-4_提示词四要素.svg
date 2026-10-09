@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">提示词四要素：给新员工下工作指令</text>
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  <marker id="arror" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#FF7D00"/></marker></defs>
+  <rect x="80" y="95" width="840" height="60" rx="12" fill="#F1F5F9"/>
+  <text x="500" y="132" text-anchor="middle" font-size="14" fill="#1F2329">同样一个模型，提示词写得好不好，输出质量天差地别</text>
+<rect x="80" y="180" width="200" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="80" y="180" width="200" height="60" rx="14" fill="#2B6CB0"/>
+  <text x="180" y="207" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">角色 Role</text>
+  <text x="180" y="228" text-anchor="middle" font-size="12" fill="#FFFFFF" opacity="0.85">告诉模型“你是谁”</text>
+  <rect x="95" y="260" width="170" height="120" rx="10" fill="#E8F3FF"/>
+  <text x="180" y="285" text-anchor="middle" font-size="12" fill="#1F2329">“你是一名有 20 年经验的机械工程</text>
+  <text x="180" y="303" text-anchor="middle" font-size="12" fill="#1F2329">师”</text>
+  <text x="180" y="321" text-anchor="middle" font-size="12" fill="#1F2329"></text>
+  <text x="180" y="375" text-anchor="middle" font-size="13" fill="#646A73">像告诉新人“你是老师傅”</text>
+  <text x="180" y="397" text-anchor="middle" font-size="13" fill="#646A73">定了人设</text>
+<rect x="295" y="180" width="200" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="295" y="180" width="200" height="60" rx="14" fill="#D9480F"/>
+  <text x="395" y="207" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">上下文 Context</text>
+  <text x="395" y="228" text-anchor="middle" font-size="12" fill="#FFFFFF" opacity="0.85">告诉模型“背景是什么”</text>
+  <rect x="310" y="260" width="170" height="120" rx="10" fill="#FFF4E5"/>
+  <text x="395" y="285" text-anchor="middle" font-size="12" fill="#1F2329">“下面是设备图纸上的英文说明，请翻译</text>
+  <text x="395" y="303" text-anchor="middle" font-size="12" fill="#1F2329">成中文”</text>
+  <text x="395" y="321" text-anchor="middle" font-size="12" fill="#1F2329"></text>
+  <text x="395" y="375" text-anchor="middle" font-size="13" fill="#646A73">像介绍项目背景</text>
+  <text x="395" y="397" text-anchor="middle" font-size="13" fill="#646A73">给了上下文</text>
+<rect x="510" y="180" width="200" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="510" y="180" width="200" height="60" rx="14" fill="#18794E"/>
+  <text x="610" y="207" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">示例 Example</text>
+  <text x="610" y="228" text-anchor="middle" font-size="12" fill="#FFFFFF" opacity="0.85">给模型“照这样干”的样板</text>
+  <rect x="525" y="260" width="170" height="120" rx="10" fill="#E6F7ED"/>
+  <text x="610" y="285" text-anchor="middle" font-size="12" fill="#1F2329">“原文：…译文：…”</text>
+  <text x="610" y="303" text-anchor="middle" font-size="12" fill="#1F2329"></text>
+  <text x="610" y="321" text-anchor="middle" font-size="12" fill="#1F2329"></text>
+  <text x="610" y="375" text-anchor="middle" font-size="13" fill="#646A73">像给一份样板图纸</text>
+  <text x="610" y="397" text-anchor="middle" font-size="13" fill="#646A73">给了参考</text>
+<rect x="725" y="180" width="200" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="725" y="180" width="200" height="60" rx="14" fill="#7C4A21"/>
+  <text x="825" y="207" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">约束 Constraint</text>
+  <text x="825" y="228" text-anchor="middle" font-size="12" fill="#FFFFFF" opacity="0.85">告诉模型“必须/不能怎么做”</text>
+  <rect x="740" y="260" width="170" height="120" rx="10" fill="#F6EEDF"/>
+  <text x="825" y="285" text-anchor="middle" font-size="12" fill="#1F2329">“只输出译文；尺寸单位必须保留”</text>
+  <text x="825" y="303" text-anchor="middle" font-size="12" fill="#1F2329"></text>
+  <text x="825" y="321" text-anchor="middle" font-size="12" fill="#1F2329"></text>
+  <text x="825" y="375" text-anchor="middle" font-size="13" fill="#646A73">像规定验收标准</text>
+  <text x="825" y="397" text-anchor="middle" font-size="13" fill="#646A73">设了红线</text>
+
+  <rect x="80" y="540" width="840" height="64" rx="12" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="500" y="567" text-anchor="middle" font-size="14" font-weight="bold" fill="#2B6CB0">四要素拼装成一段完整提示词 → 模型照着执行</text>
+  <text x="500" y="590" text-anchor="middle" font-size="12" fill="#646A73">缺了约束，模型就敢给你编内容；缺了示例，它就不知道你要的格式</text>
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 6-4 提示词四要素：角色、上下文、示例、约束（示意）</text>
+</svg>

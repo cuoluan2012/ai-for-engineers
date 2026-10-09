@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">GPT 三步炼成：从“会接话”到“会聊天”</text>
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  <marker id="arror" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#FF7D00"/></marker></defs><rect x="70" y="110" width="270" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="110" width="270" height="46" rx="14" fill="#2B6CB0"/>
+  <text x="205" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">① 预训练 Pre-training</text>
+  <text x="205" y="190" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">读万卷书</text>
+  <rect x="90" y="215" width="230" height="120" rx="10" fill="#E8F3FF"/>
+  <text x="205" y="248" text-anchor="middle" font-size="13" fill="#1F2329">海量网页/书籍/代码，</text>
+  <text x="205" y="272" text-anchor="middle" font-size="13" fill="#1F2329">学会语法、常识、推理</text>
+  <text x="205" y="400" text-anchor="middle" font-size="13" fill="#646A73">模型知识的主要来源</text>
+<rect x="360" y="110" width="270" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="360" y="110" width="270" height="46" rx="14" fill="#D9480F"/>
+  <text x="495" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">② 指令微调 Instruction Tuning</text>
+  <text x="495" y="190" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">学会听指令</text>
+  <rect x="380" y="215" width="230" height="120" rx="10" fill="#FFF4E5"/>
+  <text x="495" y="248" text-anchor="middle" font-size="13" fill="#1F2329">“指令→标准回答”数据对，</text>
+  <text x="495" y="272" text-anchor="middle" font-size="13" fill="#1F2329">问什么答什么</text>
+  <text x="495" y="400" text-anchor="middle" font-size="13" fill="#646A73">让模型学会听命令</text>
+<rect x="650" y="110" width="270" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="650" y="110" width="270" height="46" rx="14" fill="#18794E"/>
+  <text x="785" y="140" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">③ RLHF 人类反馈强化学习</text>
+  <text x="785" y="190" text-anchor="middle" font-size="17" font-weight="bold" fill="#18794E">调教说话方式</text>
+  <rect x="670" y="215" width="230" height="120" rx="10" fill="#E6F7ED"/>
+  <text x="785" y="248" text-anchor="middle" font-size="13" fill="#1F2329">人类对回答打分排序，</text>
+  <text x="785" y="272" text-anchor="middle" font-size="13" fill="#1F2329">更完整、更礼貌、更少胡说</text>
+  <text x="785" y="400" text-anchor="middle" font-size="13" fill="#646A73">输出更靠谱更讨喜</text>
+
+  <path d="M340 275 L410 275" stroke="#94A3B8" stroke-width="3" marker-end="url(#arr)"/>
+  <path d="M630 275 L700 275" stroke="#94A3B8" stroke-width="3" marker-end="url(#arr)"/>
+  <rect x="330" y="470" width="340" height="64" rx="12" fill="#FFFFFF" stroke="#34C07C" stroke-width="2"/>
+  <text x="500" y="497" text-anchor="middle" font-size="14" font-weight="bold" fill="#18794E">炼成：会对话的 GPT（你正在用的聊天助手）</text>
+  <text x="500" y="520" text-anchor="middle" font-size="12" fill="#646A73">知识截止 = 训练数据的时间点；你厂的事它没读过</text>
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 6-3 GPT 三步炼成：预训练→指令微调→RLHF（示意）</text>
+</svg>

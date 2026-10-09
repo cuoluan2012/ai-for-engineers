@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">幻觉与能力边界：该信谁？</text>
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  <marker id="arror" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#FF7D00"/></marker>
+  <marker id="arrg" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#34C07C"/></marker></defs>
+  <rect x="60" y="90" width="420" height="430" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="60" y="90" width="420" height="46" rx="14" fill="#D9480F"/>
+  <text x="270" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">模型：不懂装懂</text>
+  <circle cx="270" cy="185" r="34" fill="#FBD9B8" stroke="#D9A876" stroke-width="1.5"/>
+  <circle cx="255" cy="181" r="6" fill="none" stroke="#1F2329" stroke-width="1.3"/>
+  <circle cx="285" cy="181" r="6" fill="none" stroke="#1F2329" stroke-width="1.3"/>
+  <path d="M245 200 Q270 215 295 200" stroke="#7C4A21" stroke-width="1.5" fill="none"/>
+  <rect x="120" y="240" width="300" height="120" rx="10" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+  <text x="150" y="268" font-size="13" font-weight="bold" fill="#D9480F">问：“这材料屈服强度多少？”</text>
+  <text x="150" y="292" font-size="13" fill="#1F2329">“大概 355MPa 吧”（编的）</text>
+  <text x="150" y="316" font-size="13" fill="#1F2329">说得一本正经，其实没学过</text>
+  <text x="150" y="340" font-size="13" fill="#646A73">→ 幻觉：无中生有、看着合理</text>
+  <rect x="120" y="385" width="300" height="100" rx="10" fill="#F1F5F9"/>
+  <text x="270" y="415" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F2329">它不是在骗你，是“不知道”</text>
+  <text x="270" y="440" text-anchor="middle" font-size="12" fill="#646A73">这个选项在它那里不存在</text>
+  <text x="270" y="460" text-anchor="middle" font-size="12" fill="#646A73">遇到没学过的就编一段最像样的</text>
+
+  <rect x="520" y="90" width="420" height="430" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="520" y="90" width="420" height="46" rx="14" fill="#18794E"/>
+  <text x="730" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">工程师：查标准手册</text>
+  <circle cx="730" cy="185" r="34" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="2"/>
+  <text x="730" y="192" text-anchor="middle" font-size="15" font-weight="bold" fill="#2B6CB0">手册</text>
+  <rect x="580" y="240" width="300" height="120" rx="10" fill="#E6F7ED" stroke="#34C07C" stroke-width="1.5"/>
+  <text x="610" y="268" font-size="13" font-weight="bold" fill="#18794E">问：“这材料屈服强度多少？”</text>
+  <text x="610" y="292" font-size="13" fill="#1F2329">翻手册：GB/T 699，Q355</text>
+  <text x="610" y="316" font-size="13" fill="#1F2329">屈服强度 ≥ 355MPa（原文）</text>
+  <text x="610" y="340" font-size="13" fill="#646A73">→ 出处可查、数值可核</text>
+  <rect x="580" y="385" width="300" height="100" rx="10" fill="#F1F5F9"/>
+  <text x="730" y="415" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F2329">防幻觉三板斧：</text>
+  <text x="730" y="440" text-anchor="middle" font-size="12" fill="#646A73">① 让它给出来源 ② 交叉问两遍</text>
+  <text x="730" y="460" text-anchor="middle" font-size="12" fill="#646A73">③ 人工抽查关键数值</text>
+  <text x="500" y="560" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">安全结论 = 模型第一稿 + 人工终审，红线清单三问</text>
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 6-7 幻觉是模型的固有边界：安全结论必须人工复核（示意）</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">上下文窗口：会议室的容量</text>
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  <marker id="arror" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#FF7D00"/></marker>
+  <marker id="arrg" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#34C07C"/></marker></defs>
+  <rect x="80" y="95" width="840" height="70" rx="12" fill="#F1F5F9"/>
+  <text x="500" y="126" text-anchor="middle" font-size="14" fill="#1F2329">会议室坐得下 50 人（上下文窗口 = N 个 Token）</text>
+  <text x="500" y="150" text-anchor="middle" font-size="13" fill="#646A73">你非要塞 200 人进来，后面的全被挤出去 —— 模型“看不见”被截断的内容</text>
+
+  <rect x="150" y="200" width="700" height="120" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="500" y="235" text-anchor="middle" font-size="15" font-weight="bold" fill="#2B6CB0">窗口之内（模型看得见）</text>
+<rect x="190" y="250" width="180" height="46" rx="8" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="1.2"/>
+  <text x="280.0" y="279" text-anchor="middle" font-size="13" fill="#2B6CB0">系统提示词</text><rect x="390" y="250" width="180" height="46" rx="8" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="1.2"/>
+  <text x="480.0" y="279" text-anchor="middle" font-size="13" fill="#2B6CB0">用户指令</text><rect x="590" y="250" width="220" height="46" rx="8" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="1.2"/>
+  <text x="700.0" y="279" text-anchor="middle" font-size="13" fill="#2B6CB0">资料关键章节</text>
+  <path d="M850 300 L920 300" stroke="#94A3B8" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="885" y="280" text-anchor="middle" font-size="12" fill="#646A73">超出的</text>
+  <rect x="922" y="270" width="60" height="52" rx="8" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="952" y="297" text-anchor="middle" font-size="11" font-weight="bold" fill="#D9480F">截断</text>
+  <text x="952" y="313" text-anchor="middle" font-size="10" fill="#D9480F">看不见</text>
+
+  <rect x="150" y="360" width="700" height="140" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="500" y="395" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">工程师铁律：喂给模型的材料，先裁剪到窗口能装下</text>
+  <rect x="200" y="415" width="240" height="60" rx="10" fill="#E6F7ED" stroke="#34C07C" stroke-width="1.2"/>
+  <text x="320" y="440" text-anchor="middle" font-size="13" font-weight="bold" fill="#18794E">100 页手册 → 目录 + 关键章节</text>
+  <text x="320" y="462" text-anchor="middle" font-size="12" fill="#646A73">先看重点，再按需深入</text>
+  <rect x="500" y="415" width="250" height="60" rx="10" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.2"/>
+  <text x="625" y="440" text-anchor="middle" font-size="13" font-weight="bold" fill="#D9480F">整本 100 页硬塞 → 被截断</text>
+  <text x="625" y="462" text-anchor="middle" font-size="12" fill="#646A73">模型没看见的关键内容被它“猜”</text>
+  <text x="500" y="535" text-anchor="middle" font-size="13" fill="#646A73">费用也按 Token 算：窗口内装得越满，单次调用越贵</text>
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 6-5 上下文窗口像会议室容量：装不下的内容被截断，先裁剪再提问（示意）</text>
+</svg>
