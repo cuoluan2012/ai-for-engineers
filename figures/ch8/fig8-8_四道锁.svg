@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">可靠性四道锁：缺一道都不敢上产线</text>
+
+  <rect x="80" y="110" width="410" height="200" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="80" y="110" width="410" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="285" y="142" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">锁 1 权限最小化</text>
+  <text x="285" y="196" text-anchor="middle" font-size="14" fill="#1F2329">只给必要的工具，只读优先</text>
+  <text x="285" y="222" text-anchor="middle" font-size="14" fill="#1F2329">AI 只能碰你给它接的设备</text>
+  <text x="285" y="262" text-anchor="middle" font-size="13" fill="#646A73">防：删文件、群发消息等危险动作</text>
+
+  <rect x="510" y="110" width="410" height="200" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="510" y="110" width="410" height="52" rx="14" fill="#FFF4E5"/>
+  <text x="715" y="142" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">锁 2 人工确认</text>
+  <text x="715" y="196" text-anchor="middle" font-size="14" fill="#1F2329">关键动作必须人点头</text>
+  <text x="715" y="222" text-anchor="middle" font-size="14" fill="#1F2329">花钱、下发、外发前必须停</text>
+  <text x="715" y="262" text-anchor="middle" font-size="13" fill="#646A73">防：不可逆动作（图 8-7）</text>
+
+  <rect x="80" y="340" width="410" height="200" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="80" y="340" width="410" height="52" rx="14" fill="#EAFBF0"/>
+  <text x="285" y="372" text-anchor="middle" font-size="17" font-weight="bold" fill="#1E7A46">锁 3 日志审计</text>
+  <text x="285" y="426" text-anchor="middle" font-size="14" fill="#1F2329">每步思考 / 调用 / 结果都记录</text>
+  <text x="285" y="452" text-anchor="middle" font-size="14" fill="#1F2329">出问题先看“黑匣子”</text>
+  <text x="285" y="492" text-anchor="middle" font-size="13" fill="#646A73">防：出问题无法定位（图 8-4 步数上限）</text>
+
+  <rect x="510" y="340" width="410" height="200" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="510" y="340" width="410" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="715" y="372" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">锁 4 评测闭环</text>
+  <text x="715" y="426" text-anchor="middle" font-size="14" fill="#1F2329">准备任务集，逐条判成败</text>
+  <text x="715" y="452" text-anchor="middle" font-size="14" fill="#1F2329">正常任务 + 边界任务都要测</text>
+  <text x="715" y="492" text-anchor="middle" font-size="13" fill="#646A73">防：上线后才发现不行（7.5.4 思路）</text>
+
+  <rect x="180" y="562" width="640" height="44" rx="12" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+  <text x="500" y="588" text-anchor="middle" font-size="15" font-weight="bold" fill="#D9480F">四道锁缺一道，智能体就不能上产线——先想清楚“出了事谁负责”</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 8-8 可靠性四道锁：权限 / 确认 / 日志 / 评测（示意）</text>
+</svg>

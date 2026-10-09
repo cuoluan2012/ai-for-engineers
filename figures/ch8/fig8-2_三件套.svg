@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="46" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">智能体三件套：规划 / 工具 / 记忆</text>
+
+  <defs>
+    <marker id="arrb2" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  </defs>
+
+  <rect x="310" y="110" width="380" height="140" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+  <rect x="310" y="110" width="380" height="50" rx="14" fill="#E8F3FF"/>
+  <text x="500" y="141" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">大模型（大脑）：决定下一步做什么</text>
+  <text x="500" y="186" text-anchor="middle" font-size="14" fill="#1F2329">拆步骤 → 选工具 → 填参数 → 看结果</text>
+  <text x="500" y="212" text-anchor="middle" font-size="14" fill="#1F2329">→ 再决定（8.5 的循环）</text>
+  <text x="500" y="240" text-anchor="middle" font-size="13" fill="#646A73">模型不执行代码，只“下单”</text>
+
+  <line x1="380" y1="250" x2="200" y2="315" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb2)"/>
+  <line x1="500" y1="250" x2="500" y2="315" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb2)"/>
+  <line x1="620" y1="250" x2="800" y2="315" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb2)"/>
+
+  <rect x="70" y="320" width="260" height="240" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="320" width="260" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="200" y="352" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">① 规划 Planning</text>
+  <text x="200" y="402" text-anchor="middle" font-size="14" fill="#1F2329">把大任务拆成有序步骤</text>
+  <text x="200" y="428" text-anchor="middle" font-size="14" fill="#1F2329">查材料 → 算转速 → 自检</text>
+  <text x="200" y="454" text-anchor="middle" font-size="14" fill="#1F2329">→ 填卡片 → 确认</text>
+  <text x="200" y="498" text-anchor="middle" font-size="13" fill="#646A73">工程类比：先排工艺路线</text>
+  <text x="200" y="520" text-anchor="middle" font-size="13" fill="#646A73">计划走一步看一步</text>
+
+  <rect x="370" y="320" width="260" height="240" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="370" y="320" width="260" height="52" rx="14" fill="#FFF4E5"/>
+  <text x="500" y="352" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">③ 工具 Tool</text>
+  <text x="500" y="402" text-anchor="middle" font-size="14" fill="#1F2329">程序 / 接口，有输入有输出</text>
+  <text x="500" y="428" text-anchor="middle" font-size="14" fill="#1F2329">查手册、算转速、填卡片</text>
+  <text x="500" y="454" text-anchor="middle" font-size="14" fill="#1F2329">AI 调用你的程序干活</text>
+  <text x="500" y="498" text-anchor="middle" font-size="13" fill="#646A73">工程类比：车床、三坐标、检具</text>
+  <text x="500" y="520" text-anchor="middle" font-size="13" fill="#646A73">工具就是安全边界</text>
+
+  <rect x="670" y="320" width="260" height="240" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="670" y="320" width="260" height="52" rx="14" fill="#EAFBF0"/>
+  <text x="800" y="352" text-anchor="middle" font-size="17" font-weight="bold" fill="#1E7A46">② 记忆 Memory</text>
+  <text x="800" y="402" text-anchor="middle" font-size="14" fill="#1F2329">短期：当前任务上下文</text>
+  <text x="800" y="428" text-anchor="middle" font-size="14" fill="#1F2329">（对话里“做到哪一步”）</text>
+  <text x="800" y="454" text-anchor="middle" font-size="14" fill="#1F2329">长期：第 7 章知识库</text>
+  <text x="800" y="498" text-anchor="middle" font-size="13" fill="#646A73">工程类比：脑子 + 资料柜</text>
+  <text x="800" y="520" text-anchor="middle" font-size="13" fill="#646A73">需要时按需取用</text>
+
+  <path d="M 690 150 C 790 55 210 55 310 150" fill="none" stroke="#FF7D00" stroke-width="2.5" marker-end="url(#arrb2)"/>
+  <text x="500" y="74" text-anchor="middle" font-size="14" font-weight="bold" fill="#D9480F">反思 Reflection：干完自查，错了重来</text>
+
+  <rect x="180" y="580" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="606" text-anchor="middle" font-size="14" fill="#646A73">三件套缺一不可：不会拆任务、没有工具、记不住上下文，都干不了活</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 8-2 智能体三件套：规划 / 工具 / 记忆 + 反思环（示意）</text>
+</svg>

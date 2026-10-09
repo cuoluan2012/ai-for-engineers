@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">Function Calling 协议四步：模型下单，程序干活</text>
+  <defs>
+    <marker id="arrb3" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  </defs>
+
+  <rect x="70" y="105" width="172" height="230" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="105" width="172" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="156" y="136" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">① 选工具</text>
+  <text x="156" y="182" text-anchor="middle" font-size="14" fill="#1F2329">模型读工具描述</text>
+  <text x="156" y="206" text-anchor="middle" font-size="14" fill="#1F2329">判断该用</text>
+  <text x="156" y="230" text-anchor="middle" font-size="14" fill="#1F2329">“算转速”工具</text>
+  <text x="156" y="272" text-anchor="middle" font-size="13" fill="#646A73">调度员开派工单</text>
+
+  <line x1="242" y1="220" x2="278" y2="220" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb3)"/>
+
+  <rect x="284" y="105" width="172" height="230" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="284" y="105" width="172" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="370" y="136" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">② 填参数</text>
+  <text x="370" y="182" text-anchor="middle" font-size="14" fill="#1F2329">模型按格式填好</text>
+  <text x="370" y="206" text-anchor="middle" font-size="14" fill="#1F2329">{"diameter": 50,</text>
+  <text x="370" y="230" text-anchor="middle" font-size="14" fill="#1F2329">"speed": 100}</text>
+  <text x="370" y="272" text-anchor="middle" font-size="13" fill="#646A73">派工单写明工件和参数</text>
+
+  <line x1="456" y1="220" x2="492" y2="220" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb3)"/>
+
+  <rect x="498" y="105" width="172" height="230" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="498" y="105" width="172" height="52" rx="14" fill="#FFF4E5"/>
+  <text x="584" y="136" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">③ 执行</text>
+  <text x="584" y="182" text-anchor="middle" font-size="14" fill="#1F2329">你的程序运行工具</text>
+  <text x="584" y="206" text-anchor="middle" font-size="14" fill="#1F2329">n = 1000 × 100 ÷</text>
+  <text x="584" y="230" text-anchor="middle" font-size="14" fill="#1F2329">(π × 50) ≈ 637</text>
+  <text x="584" y="272" text-anchor="middle" font-size="13" fill="#646A73">工人真的下车间干活</text>
+
+  <line x1="670" y1="220" x2="706" y2="220" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb3)"/>
+
+  <rect x="712" y="105" width="172" height="230" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="712" y="105" width="172" height="52" rx="14" fill="#FFF4E5"/>
+  <text x="798" y="136" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">④ 回填</text>
+  <text x="798" y="182" text-anchor="middle" font-size="14" fill="#1F2329">真实结果交给模型</text>
+  <text x="798" y="206" text-anchor="middle" font-size="14" fill="#1F2329">模型基于 637</text>
+  <text x="798" y="230" text-anchor="middle" font-size="14" fill="#1F2329">给出最终回答</text>
+  <text x="798" y="272" text-anchor="middle" font-size="13" fill="#646A73">工人回报结果，调度员定论</text>
+
+  <rect x="70" y="370" width="814" height="100" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="370" width="814" height="52" rx="14" fill="#EAFBF0"/>
+  <text x="477" y="401" text-anchor="middle" font-size="17" font-weight="bold" fill="#1E7A46">①② 由模型完成（下单） | ③④ 由你的程序完成（执行 + 回填）</text>
+  <text x="477" y="440" text-anchor="middle" font-size="15" fill="#1F2329">模型返回的是 JSON 调用请求，不是答案——执行权始终在程序手里</text>
+  <text x="477" y="462" text-anchor="middle" font-size="13" fill="#646A73">安全根基：模型想碰什么，只能通过你定义的工具</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 8-3 Function Calling 四步：选工具 → 填参数 → 执行 → 回填（示意）</text>
+</svg>

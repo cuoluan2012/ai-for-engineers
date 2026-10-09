@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">Agent 循环：思考 → 行动 → 观察 → 再思考</text>
+  <defs>
+    <marker id="arrb4" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  </defs>
+
+  <rect x="110" y="170" width="280" height="210" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+  <rect x="110" y="170" width="280" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="250" y="201" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">思考 Reasoning</text>
+  <text x="250" y="246" text-anchor="middle" font-size="14" fill="#1F2329">结合任务目标，决定下一步</text>
+  <text x="250" y="272" text-anchor="middle" font-size="14" fill="#1F2329">“该查手册了”</text>
+  <text x="250" y="298" text-anchor="middle" font-size="14" fill="#1F2329">“转速算好了，该填卡片”</text>
+  <text x="250" y="344" text-anchor="middle" font-size="13" fill="#646A73">真实环境由大模型完成</text>
+
+  <line x1="390" y1="230" x2="560" y2="230" stroke="#94A3B8" stroke-width="2.5" marker-end="url(#arrb4)"/>
+  <text x="475" y="214" text-anchor="middle" font-size="13" font-weight="bold" fill="#646A73">行动</text>
+
+  <rect x="565" y="130" width="300" height="200" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="565" y="130" width="300" height="52" rx="14" fill="#FFF4E5"/>
+  <text x="715" y="161" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">行动 Action</text>
+  <text x="715" y="206" text-anchor="middle" font-size="14" fill="#1F2329">调用工具：查手册 / 算转速</text>
+  <text x="715" y="232" text-anchor="middle" font-size="14" fill="#1F2329">/ 填卡片</text>
+  <text x="715" y="278" text-anchor="middle" font-size="13" fill="#646A73">上限 MAX_STEPS=6</text>
+  <text x="715" y="300" text-anchor="middle" font-size="13" fill="#646A73">循环必须有上限</text>
+
+  <line x1="715" y1="330" x2="715" y2="398" stroke="#94A3B8" stroke-width="2.5" marker-end="url(#arrb4)"/>
+  <text x="736" y="370" text-anchor="middle" font-size="13" font-weight="bold" fill="#646A73">观察</text>
+
+  <rect x="565" y="403" width="300" height="200" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="565" y="403" width="300" height="52" rx="14" fill="#EAFBF0"/>
+  <text x="715" y="434" text-anchor="middle" font-size="17" font-weight="bold" fill="#1E7A46">观察 Observation</text>
+  <text x="715" y="479" text-anchor="middle" font-size="14" fill="#1F2329">读工具返回的真实结果</text>
+  <text x="715" y="505" text-anchor="middle" font-size="14" fill="#1F2329">“转速 637 r/min，未超限”</text>
+  <text x="715" y="551" text-anchor="middle" font-size="13" fill="#646A73">结果影响下一步，不是“走完流程”</text>
+
+  <path d="M 565 480 C 430 500 375 470 386 372" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrb4)"/>
+  <text x="455" y="515" text-anchor="middle" font-size="13" font-weight="bold" fill="#646A73">再思考（回到循环起点）</text>
+
+  <rect x="110" y="420" width="280" height="120" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="250" y="452" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">循环什么时候停？</text>
+  <text x="250" y="480" text-anchor="middle" font-size="14" fill="#1F2329">任务完成，或步数用尽</text>
+  <text x="250" y="506" text-anchor="middle" font-size="13" fill="#646A73">没上限会无限重试，费用白烧</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 8-4 Agent 循环：思考 → 行动 → 观察 → 再思考（ReAct，示意）</text>
+</svg>

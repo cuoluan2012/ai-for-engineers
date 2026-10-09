@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">多智能体协作：车间班组分工</text>
+  <defs>
+    <marker id="arrb6" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  </defs>
+
+  <rect x="300" y="110" width="400" height="110" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+  <rect x="300" y="110" width="400" height="50" rx="14" fill="#E8F3FF"/>
+  <text x="500" y="141" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">协调者 Coordinator（工艺组长）</text>
+  <text x="500" y="178" text-anchor="middle" font-size="14" fill="#1F2329">派活、汇总、仲裁分歧</text>
+  <text x="500" y="202" text-anchor="middle" font-size="13" fill="#646A73">协调者不干活，只做路由和仲裁</text>
+
+  <line x1="400" y1="220" x2="200" y2="295" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb6)"/>
+  <line x1="500" y1="220" x2="500" y2="295" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb6)"/>
+  <line x1="600" y1="220" x2="800" y2="295" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb6)"/>
+
+  <rect x="70" y="300" width="260" height="230" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="300" width="260" height="52" rx="14" fill="#EAFBF0"/>
+  <text x="200" y="332" text-anchor="middle" font-size="17" font-weight="bold" fill="#1E7A46">工艺智能体</text>
+  <text x="200" y="378" text-anchor="middle" font-size="14" fill="#1F2329">出加工方案</text>
+  <text x="200" y="404" text-anchor="middle" font-size="14" fill="#1F2329">算转速、填卡片</text>
+  <text x="200" y="448" text-anchor="middle" font-size="13" fill="#646A73">输出：方案 + 参数</text>
+  <text x="200" y="470" text-anchor="middle" font-size="13" fill="#646A73">（消息给质检）</text>
+
+  <rect x="370" y="300" width="260" height="230" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="370" y="300" width="260" height="52" rx="14" fill="#FFF4E5"/>
+  <text x="500" y="332" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">质检智能体</text>
+  <text x="500" y="378" text-anchor="middle" font-size="14" fill="#1F2329">找问题、验参数</text>
+  <text x="500" y="404" text-anchor="middle" font-size="14" fill="#1F2329">“转速超限，退回”</text>
+  <text x="500" y="448" text-anchor="middle" font-size="13" fill="#646A73">输出：通过 / 退回</text>
+  <text x="500" y="470" text-anchor="middle" font-size="13" fill="#646A73">（消息给工艺）</text>
+
+  <rect x="670" y="300" width="260" height="230" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="670" y="300" width="260" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="800" y="332" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">设计智能体</text>
+  <text x="800" y="378" text-anchor="middle" font-size="14" fill="#1F2329">改图纸、查可加工性</text>
+  <text x="800" y="404" text-anchor="middle" font-size="14" fill="#1F2329">配合工艺调整</text>
+  <text x="800" y="448" text-anchor="middle" font-size="13" fill="#646A73">输出：修订意见</text>
+  <text x="800" y="470" text-anchor="middle" font-size="13" fill="#646A73">（消息给协调者）</text>
+
+  <line x1="330" y1="420" x2="368" y2="420" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb6)"/>
+  <line x1="368" y1="446" x2="330" y2="446" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb6)"/>
+  <text x="349" y="410" text-anchor="middle" font-size="12" fill="#646A73">方案</text>
+  <text x="349" y="464" text-anchor="middle" font-size="12" fill="#646A73">退回</text>
+
+  <rect x="930" y="80" width="0" height="0" fill="none"/>
+  <line x1="700" y1="205" x2="900" y2="130" stroke="#D9480F" stroke-width="2" marker-end="url(#arrb6)"/>
+  <rect x="880" y="120" width="0" height="0" fill="none"/>
+  <text x="886" y="168" text-anchor="middle" font-size="13" font-weight="bold" fill="#D9480F">升级给人</text>
+  <text x="886" y="186" text-anchor="middle" font-size="12" fill="#646A73">退改 2 次仍无解</text>
+
+  <rect x="180" y="560" width="640" height="44" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="586" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">智能体之间解决不了的，必须升级给人——不能无限互踢皮球</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 8-6 多智能体协作：工艺 / 质检 / 设计班组（示意）</text>
+</svg>

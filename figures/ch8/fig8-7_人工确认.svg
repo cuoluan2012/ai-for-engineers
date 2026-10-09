@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">人工确认：关键动作先停下来等人点头</text>
+  <defs>
+    <marker id="arrb7" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  </defs>
+
+  <rect x="70" y="160" width="260" height="210" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="160" width="260" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="200" y="191" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">将要执行的动作</text>
+  <text x="200" y="238" text-anchor="middle" font-size="14" fill="#1F2329">主轴转速 637 r/min</text>
+  <text x="200" y="264" text-anchor="middle" font-size="14" fill="#1F2329">下发车间开始加工</text>
+  <text x="200" y="316" text-anchor="middle" font-size="13" fill="#646A73">不可逆：执行后影响实际加工</text>
+
+  <line x1="330" y1="270" x2="376" y2="270" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb7)"/>
+
+  <rect x="380" y="110" width="280" height="320" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="380" y="110" width="280" height="52" rx="14" fill="#FFF4E5"/>
+  <text x="520" y="141" text-anchor="middle" font-size="17" font-weight="bold" fill="#D9480F">确认清单（三问）</text>
+  <text x="420" y="196" font-size="14" font-weight="bold" fill="#1F2329">做什么：</text>
+  <text x="420" y="222" font-size="14" fill="#1F2329">以 637 r/min 下发车间</text>
+  <text x="420" y="262" font-size="14" font-weight="bold" fill="#1F2329">影响什么：</text>
+  <text x="420" y="288" font-size="14" fill="#1F2329">按此参数实际加工，</text>
+  <text x="420" y="310" font-size="14" fill="#1F2329">超限会损伤刀具</text>
+  <text x="420" y="350" font-size="14" font-weight="bold" fill="#1F2329">能不能撤销：</text>
+  <text x="420" y="376" font-size="14" fill="#1F2329">一旦执行不可撤销</text>
+
+  <line x1="660" y1="270" x2="696" y2="270" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb7)"/>
+
+  <rect x="700" y="160" width="240" height="210" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+  <rect x="700" y="160" width="240" height="52" rx="14" fill="#E8F3FF"/>
+  <text x="820" y="191" text-anchor="middle" font-size="17" font-weight="bold" fill="#2B6CB0">人工确认</text>
+  <text x="820" y="246" text-anchor="middle" font-size="15" fill="#1F2329">工程师看清单</text>
+  <text x="820" y="272" text-anchor="middle" font-size="15" fill="#1F2329">点“确认”或“拒绝”</text>
+  <text x="820" y="326" text-anchor="middle" font-size="13" fill="#646A73">不确认，卡片不生效</text>
+
+  <line x1="820" y1="370" x2="820" y2="415" stroke="#94A3B8" stroke-width="2"/>
+  <line x1="820" y1="415" x2="280" y2="415" stroke="#94A3B8" stroke-width="2"/>
+  <line x1="820" y1="415" x2="720" y2="415" stroke="#94A3B8" stroke-width="2"/>
+  <line x1="280" y1="415" x2="280" y2="446" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb7)"/>
+  <line x1="720" y1="415" x2="720" y2="446" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb7)"/>
+
+  <rect x="180" y="452" width="200" height="52" rx="10" fill="#EAFBF0" stroke="#1E7A46" stroke-width="1.5"/>
+  <text x="280" y="474" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">确认通过</text>
+  <text x="280" y="494" text-anchor="middle" font-size="12" fill="#646A73">卡片生效，可下发</text>
+
+  <rect x="620" y="452" width="200" height="52" rx="10" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+  <text x="720" y="474" text-anchor="middle" font-size="14" font-weight="bold" fill="#D9480F">拒绝 / 不确认</text>
+  <text x="720" y="494" text-anchor="middle" font-size="12" fill="#646A73">卡片不生效，回去改</text>
+
+  <rect x="180" y="560" width="640" height="44" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="586" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">时机：花钱、改数据、对外发布前必须停——可逆动作放宽，不可逆必确认</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 8-7 人工确认环节：关键动作先点头（示意）</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">工具 = 给 AI 的“专用设备”</text>
+  <defs>
+    <marker id="arrb5" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#94A3B8"/></marker>
+  </defs>
+
+  <text x="200" y="96" text-anchor="middle" font-size="16" font-weight="bold" fill="#1F2329">车间设备（人用）</text>
+  <text x="800" y="96" text-anchor="middle" font-size="16" font-weight="bold" fill="#1F2329">AI 工具（智能体用）</text>
+
+  <rect x="70" y="120" width="260" height="150" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="120" width="260" height="48" rx="14" fill="#E8F3FF"/>
+  <text x="200" y="151" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">车床</text>
+  <text x="200" y="194" text-anchor="middle" font-size="14" fill="#1F2329">输入：毛坯、程序</text>
+  <text x="200" y="220" text-anchor="middle" font-size="14" fill="#1F2329">输出：加工好的零件</text>
+  <text x="200" y="252" text-anchor="middle" font-size="13" fill="#646A73">旁边贴着操作规程卡</text>
+
+  <rect x="70" y="300" width="260" height="150" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="300" width="260" height="48" rx="14" fill="#E8F3FF"/>
+  <text x="200" y="331" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">三坐标测量机</text>
+  <text x="200" y="374" text-anchor="middle" font-size="14" fill="#1F2329">输入：工件、测量程序</text>
+  <text x="200" y="400" text-anchor="middle" font-size="14" fill="#1F2329">输出：尺寸报告</text>
+  <text x="200" y="432" text-anchor="middle" font-size="13" fill="#646A73">只测不加工，只读</text>
+
+  <rect x="70" y="480" width="260" height="120" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="480" width="260" height="48" rx="14" fill="#E8F3FF"/>
+  <text x="200" y="511" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">检具</text>
+  <text x="200" y="546" text-anchor="middle" font-size="14" fill="#1F2329">输入：工件</text>
+  <text x="200" y="572" text-anchor="middle" font-size="14" fill="#1F2329">输出：合格 / 不合格</text>
+
+  <line x1="330" y1="195" x2="650" y2="195" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb5)"/>
+  <line x1="330" y1="375" x2="650" y2="375" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb5)"/>
+  <line x1="330" y1="540" x2="650" y2="540" stroke="#94A3B8" stroke-width="2" marker-end="url(#arrb5)"/>
+  <text x="490" y="168" text-anchor="middle" font-size="13" font-weight="bold" fill="#646A73">算转速</text>
+  <text x="490" y="348" text-anchor="middle" font-size="13" font-weight="bold" fill="#646A73">查手册</text>
+  <text x="490" y="513" text-anchor="middle" font-size="13" font-weight="bold" fill="#646A73">填卡片</text>
+
+  <rect x="660" y="120" width="270" height="150" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="660" y="120" width="270" height="48" rx="14" fill="#EAFBF0"/>
+  <text x="795" y="151" text-anchor="middle" font-size="16" font-weight="bold" fill="#1E7A46">参数计算工具</text>
+  <text x="795" y="194" text-anchor="middle" font-size="14" fill="#1F2329">输入：直径、切削速度</text>
+  <text x="795" y="220" text-anchor="middle" font-size="14" fill="#1F2329">输出：主轴转速 n</text>
+  <text x="795" y="252" text-anchor="middle" font-size="13" fill="#646A73">description：什么时候用、参数怎么填</text>
+
+  <rect x="660" y="300" width="270" height="150" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="660" y="300" width="270" height="48" rx="14" fill="#EAFBF0"/>
+  <text x="795" y="331" text-anchor="middle" font-size="16" font-weight="bold" fill="#1E7A46">手册检索工具</text>
+  <text x="795" y="374" text-anchor="middle" font-size="14" fill="#1F2329">输入：材料名</text>
+  <text x="795" y="400" text-anchor="middle" font-size="14" fill="#1F2329">输出：切削速度、刀具建议</text>
+  <text x="795" y="432" text-anchor="middle" font-size="13" fill="#646A73">只查不改（只读工具优先）</text>
+
+  <rect x="660" y="480" width="270" height="120" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="660" y="480" width="270" height="48" rx="14" fill="#EAFBF0"/>
+  <text x="795" y="511" text-anchor="middle" font-size="16" font-weight="bold" fill="#1E7A46">模板填充工具</text>
+  <text x="795" y="546" text-anchor="middle" font-size="14" fill="#1F2329">输入：各项参数</text>
+  <text x="795" y="572" text-anchor="middle" font-size="14" fill="#1F2329">输出：工艺卡片文本</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 8-5 工具 = 专用设备：车间设备映射 AI 工具（示意）</text>
+</svg>

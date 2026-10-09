@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <text x="500.0" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">普通大模型：只会聊天 | 智能体：会干活</text>
+
+  <rect x="70" y="100" width="420" height="340" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="70" y="100" width="420" height="56" rx="14" fill="#E8F3FF"/>
+  <text x="280" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#2B6CB0">普通大模型：只会“答”</text>
+  <rect x="110" y="180" width="340" height="44" rx="10" fill="#F0F2F5"/>
+  <text x="130" y="208" font-size="14" fill="#1F2329">帮我出一张 45 钢传动轴工艺卡片</text>
+  <text x="280" y="268" text-anchor="middle" font-size="15" fill="#1F2329">“45 钢是优质碳素结构钢……建议采用车削……”</text>
+  <text x="280" y="292" text-anchor="middle" font-size="15" fill="#1F2329">说得头头是道，但：</text>
+  <text x="280" y="322" text-anchor="middle" font-size="14" fill="#646A73">没有转速 / 进给量 / 刀具型号</text>
+  <text x="280" y="346" text-anchor="middle" font-size="14" fill="#646A73">不查你厂设备参数</text>
+  <rect x="110" y="378" width="340" height="44" rx="10" fill="#FFF4E5" stroke="#FF7D00" stroke-width="1.5"/>
+  <text x="280" y="407" text-anchor="middle" font-size="14" font-weight="bold" fill="#D9480F">产出：一段文字，没有一张能用的卡片</text>
+
+  <rect x="510" y="100" width="420" height="340" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="510" y="100" width="420" height="56" rx="14" fill="#EAFBF0"/>
+  <text x="720" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#1E7A46">智能体：自己拆任务、调工具、出成品</text>
+  <text x="550" y="196" font-size="14" fill="#1F2329">① 拆任务：查材料 → 算转速 → 自检 → 填卡片</text>
+  <text x="550" y="228" font-size="14" fill="#1F2329">② 调工具：查手册 / 转速公式 / 卡片模板</text>
+  <text x="550" y="260" font-size="14" fill="#1F2329">③ 自检：转速是否超机床上限</text>
+  <rect x="550" y="292" width="340" height="52" rx="10" fill="#EAFBF0"/>
+  <text x="720" y="314" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E7A46">产出：一张能下发的工艺卡片</text>
+  <text x="720" y="334" text-anchor="middle" font-size="13" fill="#646A73">+ 人工确认清单，你点头才生效</text>
+
+  <rect x="180" y="470" width="640" height="66" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500" y="500" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">差别不在“更聪明”，而在“架构”</text>
+  <text x="500" y="524" text-anchor="middle" font-size="13" fill="#646A73">智能体把“拆任务、干活、检查”变成程序可执行的结构（图 8-2 三件套）</text>
+
+  <rect x="180.0" y="622" width="640" height="40" rx="10" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="500.0" y="648" text-anchor="middle" font-size="14" fill="#646A73">图 8-1 只会聊天 vs 会干活：普通大模型 vs 智能体（示意）</text>
+</svg>
