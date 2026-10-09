@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="680" fill="#F7F8FA"/>
+  <!-- 标题 -->
+  <text x="500" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">老张的 Python 工作台</text>
+
+  <!-- 中央：老张 + 电脑 -->
+  <g>
+    <!-- 老张简笔头像：安全帽 + 圆脸 -->
+    <circle cx="500" cy="250" r="46" fill="#FFD9A0"/>
+    <path d="M452 216 a48 48 0 0 1 96 0 l-18 6 a30 30 0 0 0 -60 0 Z" fill="#F5A623"/>
+    <path d="M500 222 q10 -4 18 0" stroke="#C77D1F" stroke-width="3" fill="none"/>
+    <path d="M470 258 q-2 10 8 12 M530 258 q2 10 -8 12" stroke="#C77D1F" stroke-width="3" fill="none"/>
+    <rect x="462" y="272" width="76" height="60" rx="6" fill="#2B6CB0"/>
+    <rect x="468" y="280" width="64" height="8" rx="2" fill="#1E4E8C"/>
+    <rect x="468" y="296" width="52" height="8" rx="2" fill="#FFFFFF" opacity="0.7"/>
+    <rect x="468" y="312" width="58" height="8" rx="2" fill="#FFFFFF" opacity="0.5"/>
+    <!-- 办公桌 -->
+    <rect x="400" y="332" width="200" height="14" rx="4" fill="#A0AEC0"/>
+  </g>
+  <!-- 工作台标签 -->
+  <text x="500" y="376" text-anchor="middle" font-size="16" fill="#646A73">终端 + VS Code + Jupyter，一套就够</text>
+
+  <!-- 左上：终端卡片 -->
+  <g>
+    <rect x="60" y="120" width="270" height="230" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="60" y="120" width="270" height="40" rx="14" fill="#1E293B"/>
+    <circle cx="84" cy="140" r="6" fill="#FF5F57"/><circle cx="102" cy="140" r="6" fill="#FEBC2E"/><circle cx="120" cy="140" r="6" fill="#28C840"/>
+    <text x="150" y="146" font-size="15" fill="#E2E8F0">终端 Terminal</text>
+    <text x="80" y="190" font-size="14" fill="#E2E8F0" font-family="Menlo, monospace">$ python3 --version</text>
+    <text x="80" y="212" font-size="14" fill="#A5B4FC">Python 3.13.9</text>
+    <text x="80" y="240" font-size="14" fill="#34C07C">(myenv) $ pip install numpy</text>
+    <text x="80" y="262" font-size="14" fill="#E2E8F0">Collecting numpy ... done</text>
+    <text x="80" y="300" font-size="13" fill="#94A3B8"># 提示符前的 (myenv)</text>
+    <text x="80" y="322" font-size="13" fill="#94A3B8"># 说明已在虚拟环境里</text>
+  </g>
+
+  <!-- 右上：VS Code 卡片 -->
+  <g>
+    <rect x="660" y="120" width="280" height="230" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="660" y="120" width="280" height="40" rx="14" fill="#2B6CB0"/>
+    <text x="800" y="146" text-anchor="middle" font-size="15" fill="#FFFFFF">VS Code 编辑器</text>
+    <rect x="680" y="176" width="240" height="158" rx="6" fill="#1E293B"/>
+    <text x="696" y="204" font-size="13" fill="#E2E8F0" font-family="Menlo, monospace">def calc_safety(ys, d):</text>
+    <text x="696" y="226" font-size="13" fill="#A5B4FC" font-family="Menlo, monospace">    n = ys / stress(d)</text>
+    <text x="696" y="248" font-size="13" fill="#E2E8F0" font-family="Menlo, monospace">    return round(n, 2)</text>
+    <text x="696" y="278" font-size="13" fill="#34C07C" font-family="Menlo, monospace">Run</text>
+    <text x="740" y="278" font-size="13" fill="#94A3B8" font-family="Menlo, monospace">n = 6.19 OK</text>
+    <text x="696" y="306" font-size="12" fill="#64748B"># 错误有红波浪线提示，像图纸审校批注</text>
+  </g>
+
+  <!-- 右下：Jupyter 卡片 -->
+  <g>
+    <rect x="660" y="390" width="280" height="210" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="660" y="390" width="280" height="40" rx="14" fill="#FF7D00"/>
+    <text x="800" y="416" text-anchor="middle" font-size="15" fill="#FFFFFF">Jupyter Notebook 试算纸</text>
+    <rect x="680" y="448" width="240" height="40" rx="6" fill="#F1F5F9"/>
+    <text x="696" y="474" font-size="13" fill="#1F2329" font-family="Menlo, monospace">W = π × 40³ / 32 = 6283 mm³</text>
+    <text x="944" y="474" font-size="14" fill="#34C07C">▶</text>
+    <rect x="680" y="500" width="240" height="40" rx="6" fill="#EEF2FF"/>
+    <text x="696" y="526" font-size="13" fill="#1F2329" font-family="Menlo, monospace">σ = 300000 / 6283 = 47.7 MPa</text>
+    <text x="944" y="526" font-size="14" fill="#34C07C">▶</text>
+    <text x="680" y="572" font-size="12" fill="#64748B"># 每个格子单独运行、立刻看结果</text>
+  </g>
+
+  <!-- 左下：虚拟环境提示卡 -->
+  <g>
+    <rect x="60" y="390" width="270" height="120" rx="14" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="1.5"/>
+    <text x="80" y="424" font-size="15" font-weight="bold" fill="#2B6CB0">虚拟环境（每个项目一套）</text>
+    <text x="80" y="452" font-size="13" fill="#1F2329">项目 A：NumPy 1.26 ✓</text>
+    <text x="80" y="474" font-size="13" fill="#1F2329">项目 B：NumPy 2.0 ✓ 互不干扰</text>
+    <text x="80" y="496" font-size="12" fill="#64748B">像每个项目有自己的工具箱和量具</text>
+  </g>
+
+  <!-- 底部图注 -->
+  <text x="500" y="648" text-anchor="middle" font-size="16" fill="#646A73">图 3-1 老张的 Python 工作台：终端 + 虚拟环境 + 编辑器（示意）</text>
+</svg>

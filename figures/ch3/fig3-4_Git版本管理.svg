@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="600" fill="#F7F8FA"/>
+  <!-- 标题 -->
+  <text x="500" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">Git 版本管理：像管图纸版本一样管代码</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6 Z" fill="#2B6CB0"/></marker>
+    <marker id="arrBack" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6 Z" fill="#D32F2F"/></marker>
+  </defs>
+
+  <!-- 第一步：写代码 -->
+  <g>
+    <rect x="40" y="120" width="170" height="150" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <text x="125" y="160" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">写代码</text>
+    <text x="125" y="190" text-anchor="middle" font-size="13" fill="#1F2329">改 / 新增文件</text>
+    <rect x="60" y="205" width="130" height="40" rx="6" fill="#F1F5F9"/>
+    <text x="125" y="230" text-anchor="middle" font-size="12" fill="#1F2329">03-8_project.py</text>
+    <text x="125" y="258" text-anchor="middle" font-size="12" fill="#64748B">像图纸出图前的手改</text>
+  </g>
+
+  <!-- 箭头 -->
+  <path d="M210 195 L270 195" stroke="#2B6CB0" stroke-width="4" fill="none" marker-end="url(#arr)"/>
+
+  <!-- 第二步：git add -->
+  <g>
+    <rect x="280" y="120" width="170" height="150" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <text x="365" y="160" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">git add .</text>
+    <text x="365" y="190" text-anchor="middle" font-size="13" fill="#1F2329">放进"待提交区"</text>
+    <rect x="300" y="205" width="130" height="40" rx="6" fill="#E8F3FF"/>
+    <text x="365" y="230" text-anchor="middle" font-size="12" fill="#1F2329">📥 待审阅筐</text>
+    <text x="365" y="258" text-anchor="middle" font-size="12" fill="#64748B">像图纸送审前的归集</text>
+  </g>
+
+  <!-- 箭头 -->
+  <path d="M450 195 L510 195" stroke="#2B6CB0" stroke-width="4" fill="none" marker-end="url(#arr)"/>
+
+  <!-- 第三步：git commit -->
+  <g>
+    <rect x="520" y="120" width="170" height="150" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2"/>
+    <text x="605" y="160" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">git commit</text>
+    <text x="605" y="190" text-anchor="middle" font-size="13" fill="#1F2329">存成一个版本</text>
+    <rect x="540" y="205" width="130" height="40" rx="6" fill="#E8F8E8"/>
+    <text x="605" y="222" text-anchor="middle" font-size="12" fill="#1F2329">A0 → A1</text>
+    <text x="605" y="242" text-anchor="middle" font-size="12" fill="#64748B">-m "第3章正文"</text>
+    <text x="605" y="258" text-anchor="middle" font-size="12" fill="#64748B">像图纸升版留说明</text>
+  </g>
+
+  <!-- 箭头 -->
+  <path d="M690 195 L750 195" stroke="#2B6CB0" stroke-width="4" fill="none" marker-end="url(#arr)"/>
+
+  <!-- 第四步：git push -->
+  <g>
+    <rect x="760" y="120" width="200" height="150" rx="14" fill="#FFFFFF" stroke="#FF7D00" stroke-width="2"/>
+    <text x="860" y="160" text-anchor="middle" font-size="16" font-weight="bold" fill="#FF7D00">git push</text>
+    <text x="860" y="190" text-anchor="middle" font-size="13" fill="#1F2329">推到 GitHub 归档</text>
+    <rect x="780" y="205" width="160" height="40" rx="6" fill="#FFF3E0"/>
+    <text x="860" y="222" text-anchor="middle" font-size="12" fill="#1F2329">☁ GitHub 图库</text>
+    <text x="860" y="242" text-anchor="middle" font-size="12" fill="#64748B">像定版图纸入库</text>
+    <text x="860" y="258" text-anchor="middle" font-size="12" fill="#64748B">git pull = 拉最新版</text>
+  </g>
+
+  <!-- 底部：历史与回退 -->
+  <g>
+    <rect x="40" y="330" width="920" height="110" rx="14" fill="#FFFFFF" stroke="#A0AEC0" stroke-width="2"/>
+    <text x="500" y="366" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">git log：翻版本履历，改坏了随时回退</text>
+    <!-- 版本时间线 -->
+    <rect x="80" y="388" width="120" height="34" rx="8" fill="#E8F3FF"/>
+    <text x="140" y="411" text-anchor="middle" font-size="13" fill="#2B6CB0">v1 初版</text>
+    <path d="M200 405 L230 405" stroke="#A0AEC0" stroke-width="3"/>
+    <rect x="240" y="388" width="120" height="34" rx="8" fill="#E8F3FF"/>
+    <text x="300" y="411" text-anchor="middle" font-size="13" fill="#2B6CB0">v2 加功能</text>
+    <path d="M360 405 L390 405" stroke="#A0AEC0" stroke-width="3"/>
+    <rect x="400" y="388" width="120" height="34" rx="8" fill="#FFE3E3" stroke="#D32F2F" stroke-width="1.5"/>
+    <text x="460" y="411" text-anchor="middle" font-size="13" fill="#D32F2F">v3 改坏了</text>
+    <path d="M520 405 L550 405" stroke="#D32F2F" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#arrBack)"/>
+    <rect x="560" y="388" width="140" height="34" rx="8" fill="#E8F8E8"/>
+    <text x="630" y="411" text-anchor="middle" font-size="13" fill="#34C07C">回到 v2（回退）</text>
+    <text x="500" y="436" text-anchor="middle" font-size="12" fill="#64748B">回退不是删掉重来，是"翻履历找到好版本，恢复它"——和图纸找回旧版一样</text>
+  </g>
+
+  <!-- 底部图注 -->
+  <text x="500" y="570" text-anchor="middle" font-size="16" fill="#646A73">图 3-4 Git 版本管理：像图纸版本一样管理代码（示意）</text>
+</svg>

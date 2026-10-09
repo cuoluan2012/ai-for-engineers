@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="620" fill="#F7F8FA"/>
+  <!-- 标题 -->
+  <text x="500" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">数据容器：装数据的三种方式</text>
+
+  <!-- 列表卡片 -->
+  <g>
+    <rect x="60" y="90" width="270" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="60" y="90" width="270" height="46" rx="14" fill="#2B6CB0"/>
+    <text x="195" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">列表 List</text>
+    <text x="195" y="160" text-anchor="middle" font-size="14" fill="#1F2329">有序 · 可变（可增删）</text>
+    <rect x="80" y="180" width="230" height="120" rx="8" fill="#F1F5F9"/>
+    <text x="100" y="210" font-size="13" fill="#1F2329" font-family="Menlo, monospace">diameters = [40.02,</text>
+    <text x="100" y="232" font-size="13" fill="#1F2329" font-family="Menlo, monospace">              40.01,</text>
+    <text x="100" y="254" font-size="13" fill="#1F2329" font-family="Menlo, monospace">              40.08, ...]</text>
+    <text x="100" y="286" font-size="12" fill="#64748B"># 一叠实测直径记录，随测随记</text>
+    <text x="195" y="330" text-anchor="middle" font-size="13" fill="#2B6CB0">append() 追加 / 索引取值</text>
+    <text x="195" y="382" text-anchor="middle" font-size="13" fill="#64748B">零件盒：可以往里加、拿出来</text>
+  </g>
+
+  <!-- 元组卡片 -->
+  <g>
+    <rect x="365" y="90" width="270" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="365" y="90" width="270" height="46" rx="14" fill="#34C07C"/>
+    <text x="500" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">元组 Tuple</text>
+    <text x="500" y="160" text-anchor="middle" font-size="14" fill="#1F2329">有序 · 不可变（定死）</text>
+    <rect x="385" y="180" width="230" height="120" rx="8" fill="#F1F5F9"/>
+    <text x="405" y="210" font-size="13" fill="#1F2329" font-family="Menlo, monospace">axis = ("steel", 40,</text>
+    <text x="405" y="232" font-size="13" fill="#1F2329" font-family="Menlo, monospace">        "HT")</text>
+    <text x="405" y="258" font-size="12" fill="#64748B"># 材料、直径、热处理</text>
+    <text x="405" y="280" font-size="12" fill="#64748B"># 内容不允许修改</text>
+    <text x="500" y="330" text-anchor="middle" font-size="13" fill="#34C07C">🔒 写入后锁定</text>
+    <text x="500" y="382" text-anchor="middle" font-size="13" fill="#64748B">装箱单：内容定死，防止误改</text>
+  </g>
+
+  <!-- 字典卡片 -->
+  <g>
+    <rect x="670" y="90" width="270" height="330" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <rect x="670" y="90" width="270" height="46" rx="14" fill="#FF7D00"/>
+    <text x="805" y="120" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">字典 Dictionary</text>
+    <text x="805" y="160" text-anchor="middle" font-size="14" fill="#1F2329">键值对 · 按名称查值</text>
+    <rect x="690" y="180" width="230" height="120" rx="8" fill="#F1F5F9"/>
+    <text x="710" y="210" font-size="13" fill="#1F2329" font-family="Menlo, monospace">axis = {"id": "ax-01",</text>
+    <text x="710" y="232" font-size="13" fill="#1F2329" font-family="Menlo, monospace">        "mat": "steel",</text>
+    <text x="710" y="254" font-size="13" fill="#1F2329" font-family="Menlo, monospace">        "d": 40}</text>
+    <text x="710" y="282" font-size="12" fill="#64748B">axis["mat"] → "steel"</text>
+    <text x="805" y="330" text-anchor="middle" font-size="13" fill="#FF7D00">按键取值，一条不落</text>
+    <text x="805" y="382" text-anchor="middle" font-size="13" fill="#64748B">图册目录：按词条名查内容</text>
+  </g>
+
+  <!-- 底部小结条 -->
+  <rect x="60" y="452" width="880" height="70" rx="12" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="1.5"/>
+  <text x="500" y="484" text-anchor="middle" font-size="15" font-weight="bold" fill="#2B6CB0">怎么选：要增删改的记录 → 列表；内容定死不让人动 → 元组；按名称查值 → 字典</text>
+  <text x="500" y="508" text-anchor="middle" font-size="13" fill="#1F2329">实际项目里三者常组合使用：列表装一批字典，就是"一张表"</text>
+
+  <!-- 底部图注 -->
+  <text x="500" y="590" text-anchor="middle" font-size="16" fill="#646A73">图 3-2 数据容器：列表 / 元组 / 字典（示意）</text>
+</svg>

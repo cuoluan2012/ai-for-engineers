@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" font-family="PingFang SC, Heiti SC, sans-serif">
+  <rect width="1000" height="640" fill="#F7F8FA"/>
+  <!-- 标题 -->
+  <text x="500" y="52" text-anchor="middle" font-size="26" font-weight="bold" fill="#1F2329">科学计算三件套：各管一段</text>
+
+  <!-- 数据流主线箭头：输入 → 三件套 → 输出 -->
+  <!-- 输入 -->
+  <rect x="60" y="210" width="160" height="120" rx="12" fill="#FFFFFF" stroke="#A0AEC0" stroke-width="2"/>
+  <text x="140" y="246" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">输入</text>
+  <text x="140" y="272" text-anchor="middle" font-size="13" fill="#1F2329">axes.csv</text>
+  <text x="140" y="294" text-anchor="middle" font-size="12" fill="#64748B">轴参数表</text>
+
+  <!-- 箭头1 -->
+  <path d="M220 270 L290 270" stroke="#2B6CB0" stroke-width="4" fill="none" marker-end="url(#arr)"/>
+  <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6 Z" fill="#2B6CB0"/></marker></defs>
+
+  <!-- NumPy -->
+  <rect x="300" y="150" width="200" height="240" rx="14" fill="#FFFFFF" stroke="#2B6CB0" stroke-width="2.5"/>
+  <circle cx="400" cy="196" r="30" fill="#E8F3FF"/>
+  <text x="400" y="203" text-anchor="middle" font-size="16" font-weight="bold" fill="#2B6CB0">NumPy</text>
+  <text x="400" y="240" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">负责"算"</text>
+  <text x="400" y="266" text-anchor="middle" font-size="13" fill="#1F2329">数组 + 向量化计算</text>
+  <text x="400" y="288" text-anchor="middle" font-size="12" fill="#64748B">整批数据一起算</text>
+  <text x="400" y="306" text-anchor="middle" font-size="12" fill="#64748B">不用逐行写循环</text>
+  <text x="400" y="340" text-anchor="middle" font-size="13" fill="#2B6CB0">σ = 32M / πd³</text>
+  <text x="400" y="360" text-anchor="middle" font-size="13" fill="#2B6CB0">W = πd³ / 32</text>
+
+  <!-- 箭头2 -->
+  <path d="M500 270 L570 270" stroke="#FF7D00" stroke-width="4" fill="none" marker-end="url(#arr2)"/>
+  <defs><marker id="arr2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6 Z" fill="#FF7D00"/></marker></defs>
+
+  <!-- Pandas -->
+  <rect x="580" y="150" width="200" height="240" rx="14" fill="#FFFFFF" stroke="#FF7D00" stroke-width="2.5"/>
+  <circle cx="680" cy="196" r="30" fill="#FFF3E0"/>
+  <text x="680" y="203" text-anchor="middle" font-size="16" font-weight="bold" fill="#FF7D00">Pandas</text>
+  <text x="680" y="240" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">负责"表"</text>
+  <text x="680" y="266" text-anchor="middle" font-size="13" fill="#1F2329">DataFrame 表格</text>
+  <text x="680" y="288" text-anchor="middle" font-size="12" fill="#64748B">Excel 搬进 Python</text>
+  <text x="680" y="306" text-anchor="middle" font-size="12" fill="#64748B">加列 / 筛选 / 分组</text>
+  <text x="680" y="340" text-anchor="middle" font-size="13" fill="#FF7D00">df["安全系数"]</text>
+  <text x="680" y="360" text-anchor="middle" font-size="13" fill="#FF7D00">df[df["结论"]=="不合格"]</text>
+
+  <!-- 箭头3 -->
+  <path d="M780 270 L850 270" stroke="#34C07C" stroke-width="4" fill="none" marker-end="url(#arr3)"/>
+  <defs><marker id="arr3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6 Z" fill="#34C07C"/></marker></defs>
+
+  <!-- Matplotlib -->
+  <rect x="860" y="150" width="110" height="240" rx="14" fill="#FFFFFF" stroke="#34C07C" stroke-width="2.5"/>
+  <circle cx="915" cy="196" r="30" fill="#E8F8E8"/>
+  <text x="915" y="203" text-anchor="middle" font-size="14" font-weight="bold" fill="#34C07C">Matplotlib</text>
+  <text x="915" y="240" text-anchor="middle" font-size="14" font-weight="bold" fill="#1F2329">负责"画"</text>
+  <text x="915" y="266" text-anchor="middle" font-size="12" fill="#1F2329">柱状图</text>
+  <text x="915" y="284" text-anchor="middle" font-size="12" fill="#1F2329">折线图</text>
+  <text x="915" y="302" text-anchor="middle" font-size="12" fill="#1F2329">保存 PNG</text>
+  <text x="915" y="336" text-anchor="middle" font-size="13" fill="#34C07C">plt.bar()</text>
+  <text x="915" y="356" text-anchor="middle" font-size="13" fill="#34C07C">plt.savefig()</text>
+
+  <!-- 输出 -->
+  <rect x="60" y="410" width="910" height="80" rx="12" fill="#FFFFFF" stroke="#A0AEC0" stroke-width="2"/>
+  <text x="515" y="446" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F2329">输出</text>
+  <text x="515" y="472" text-anchor="middle" font-size="13" fill="#1F2329">校核结果.csv（表格）＋ 安全系数分布.png（图）＋ 控制台报告</text>
+
+  <!-- 协作提示条 -->
+  <rect x="60" y="516" width="910" height="56" rx="12" fill="#E8F3FF" stroke="#2B6CB0" stroke-width="1.5"/>
+  <text x="515" y="545" text-anchor="middle" font-size="14" font-weight="bold" fill="#2B6CB0">分工一句话：NumPy 整批算 → Pandas 管表格 → Matplotlib 出图，配合起来就是"数据处理流水线"</text>
+
+  <!-- 底部图注 -->
+  <text x="500" y="610" text-anchor="middle" font-size="16" fill="#646A73">图 3-3 科学计算三件套：NumPy 算 / Pandas 表 / Matplotlib 画（示意）</text>
+</svg>

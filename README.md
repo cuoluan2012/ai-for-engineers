@@ -13,7 +13,7 @@
 <a href="https://github.com/cuoluan2012/ai-for-engineers/releases"><img src="https://img.shields.io/badge/PDF-Download-ff7d00?style=for-the-badge&logo=adobeacrobatreader&logoColor=white&labelColor=1a1a2e" alt="PDF"></a>
 </p>
 
-**🔖 当前状态：第 1 章 + 第 2 章已完成（v0.1），全书按大纲推进中**
+**🔖 当前状态：第 1、2、3 章已完成（v0.1），全书按大纲推进中**
 
 </div>
 
@@ -57,8 +57,8 @@
 | 章节 | 核心内容 | 状态 |
 |---|---|---|
 | 第 1 章 为什么工程师要拥抱 AI | 产业趋势、学习路径、用 AI 学 AI | ✅ 已完成 |
-| 第 2 章 计算机通识：学 AI 前必懂的基础课 | 硬件/CPU/GPU、Linux、服务器与网络、前端后端、UI/UX、数据库、架构、Docker/K8s、部署、软件工程 | ✅ 样章完成 |
-| 第 3 章 编程第一课：像搭积木一样学 Python | 变量、容器、控制流、函数、虚拟环境 | 规划中 |
+| 第 2 章 计算机通识：学 AI 前必懂的基础课 | 硬件/CPU/GPU、Linux、服务器与网络、前端后端、UI/UX、数据库、架构、Docker/K8s、部署、软件工程 | ✅ 已完成 |
+| 第 3 章 编程第一课：像搭积木一样学 Python | 变量、容器、控制流、函数、虚拟环境 | ✅ 已完成 |
 | 第 4 章 机器学习：让机器从数据里找规律 | 经典算法、模型评估、特征工程 | 规划中 |
 | 第 5 章 深度学习与神经网络 | 神经网络、CNN/RNN、PyTorch 起步 | 规划中 |
 | 第 6 章 大语言模型与提示词 | Token、Transformer、提示工程 | 规划中 |
